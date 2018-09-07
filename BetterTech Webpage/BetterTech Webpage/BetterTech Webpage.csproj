@@ -68,10 +68,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminHomePage.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Reports.aspx" />
+    <Content Include="SearchPage.aspx" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserHomePage.aspx" />
     <Content Include="Web.config" />
@@ -83,6 +85,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminHomePage.aspx.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminHomePage.aspx.designer.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="BetterTech.Master.cs">
       <DependentUpon>BetterTech.Master</DependentUpon>
@@ -112,6 +121,13 @@
     </Compile>
     <Compile Include="Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPage.aspx.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchPage.aspx.designer.cs">
+      <DependentUpon>SearchPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="TestPage.aspx.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>
