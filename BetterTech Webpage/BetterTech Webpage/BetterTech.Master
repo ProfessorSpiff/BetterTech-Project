@@ -901,7 +901,7 @@
                                                     <span class="old-price">£190.00</span>
                                                 </div>
                                             </div>
-                                            <a href="single-product-left-sidebar.html" class="see-all">See all features</a>
+                                            <a href="ProductPage.aspx" class="see-all">View product</a>
                                             <div class="quick-add-to-cart">
                                                 <form method="post" class="cart">
                                                     <div class="numbers-row">
@@ -911,7 +911,7 @@
                                                 </form>
                                             </div>
                                             <div class="quick-desc">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero.
+                                                Specs
                                    
                                             </div>
                                             <div class="social-sharing">
