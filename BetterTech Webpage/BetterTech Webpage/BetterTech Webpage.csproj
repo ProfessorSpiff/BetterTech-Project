@@ -69,6 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminHomePage.aspx" />
+    <Content Include="App_Data\BetterTech_DB.mdf" />
+    <Content Include="App_Data\BetterTech_DB_log.ldf">
+      <DependentUpon>BetterTech_DB.mdf</DependentUpon>
+    </Content>
     <Content Include="CategoryPage.aspx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
