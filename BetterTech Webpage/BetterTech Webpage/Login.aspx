@@ -38,8 +38,8 @@
                                         <p>If you have an account with us, Please log in.</p>
                                         <input runat="server" id="loginEmail" type="text" name="name" placeholder="Email Address">
                                         <input runat ="server" id="loginPassword" type="password" name="password" placeholder="Password">
-                                        <p><small><a href="#">Forgot our password?</a></small></p>
-                                        <asp:button runat="server" ID="login" class="submit-btn-1 btn-hover-1" text="login" OnClick="login_Click" />
+                                        <p><small><a href="#">Forgot your password?</a></small></p>
+                                        <asp:button runat="server" ID="login" class="submit-btn-1 btn-hover-1" text="login" OnClick="login_Click"/>
                                     </div>
                                 </form>
                             </div>

@@ -14,17 +14,18 @@ namespace BetterTech_Webpage
         {
 
         }
+
         protected void login_Click(object sender, EventArgs e)
         {
             var db = new DataLinqDataContext();
             dynamic userL = from u in db.Users
-                        select u;
+                            select u;
             string display = "";
             foreach (User x in userL)
             {
-                if(x.Email == loginEmail.Value)
+                if (x.Email == loginEmail.Value)
                 {
-                    if(x.Password == Secrecy.Secrecy.HashPassword(loginPassword.Value))
+                    if (x.Password == Secrecy.Secrecy.HashPassword(loginPassword.Value))
                     {
                         Session["Username"] = x.Username;
                         Session["AuthLevel"] = x.UserType;
