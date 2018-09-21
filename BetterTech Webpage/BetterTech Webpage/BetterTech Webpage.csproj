@@ -83,6 +83,7 @@
     <Content Include="ContactUs.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="ProductPage.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="SearchPage.aspx" />
@@ -140,6 +141,13 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductPage.aspx.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -167,6 +175,7 @@
     <Compile Include="SearchPage.aspx.designer.cs">
       <DependentUpon>SearchPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Secrecy.cs" />
     <Compile Include="TestPage.aspx.cs">
       <DependentUpon>TestPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

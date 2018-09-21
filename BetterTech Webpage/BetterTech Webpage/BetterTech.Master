@@ -89,7 +89,7 @@
                                     <div class="col-md-2 col-sm-6 col-xs-12">
                                         <div class="logo">
                                             <a href="index.html">
-                                                <img src="img/logo/logo.png" alt="main logo">
+                                                <img src="noimage.jpg" alt="main logo">
                                             </a>
                                         </div>
                                     </div>
@@ -741,7 +741,7 @@
                                         <div class="col-lg-4 col-md-5 col-sm-4">
                                             <div class="single-footer footer-about">
                                                 <div class="footer-logo">
-                                                    <img src="img/logo/logo.png" alt="">
+                                                    <img src="noimage.jpg" alt="">
                                                 </div>
                                                 <div class="footer-brief">
                                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the subas industry's standard dummy text ever since the 1500s,</p>
