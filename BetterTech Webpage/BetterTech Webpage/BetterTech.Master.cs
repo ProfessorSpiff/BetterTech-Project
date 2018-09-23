@@ -11,7 +11,12 @@ namespace BetterTech_Webpage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.Session["Username"] != null)
+            {
+                myaccountlink.Visible = true;
+                loginlink.Visible = false;
+                logoutlink.Visible = true;
+            }
         }
     }
 }

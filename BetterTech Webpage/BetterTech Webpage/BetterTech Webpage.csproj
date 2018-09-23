@@ -82,6 +82,7 @@
     <Content Include="ContactUs.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="ProductPage.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="SearchPage.aspx" />
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductPage.aspx.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
