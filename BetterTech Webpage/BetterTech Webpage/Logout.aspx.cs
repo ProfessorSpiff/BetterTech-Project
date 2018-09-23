@@ -13,6 +13,7 @@ namespace BetterTech_Webpage
         {
             HttpContext.Current.Session["Username"] = null;
             HttpContext.Current.Session["AuthLevel"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }
