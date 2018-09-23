@@ -77,6 +77,14 @@
       <DependentUpon>BetterTech_DB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Media\Product\Product_Id1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Media\Product\Product_Id224.jpg" />
+    <Content Include="App_Media\Product\Product_Id225.jpg" />
+    <Content Include="App_Media\Product\Product_Id3.jpg" />
+    <Content Include="App_Media\Product\Product_Id4.jpg" />
+    <Content Include="App_Media\Product\Product_Id5.jpg" />
     <Content Include="CategoryPage.aspx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -216,6 +224,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

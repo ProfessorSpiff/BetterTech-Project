@@ -389,64 +389,8 @@
                             <aside class="widget widget-categories box-shadow mb-30">
                                 <h6 class="widget-title border-left mb-20">Categories</h6>
                                 <div id="cat-treeview" class="product-cat">
-                                    <ul>
-                                        <li class="closed"><a href="#">Desktop Computer</a>
-                                            <ul>
-                                                <li><a href="#">Core i9 PCs</a></li>
-                                                <li><a href="#">Core i7 PCs</a></li>
-                                                <li><a href="#">Core i5 PCs</a></li>
-                                                <li><a href="#">Core i3 PCs</a></li>
-                                                <li><a href="#">RYZEN 7 PCs</a></li>
-                                                <li><a href="#">RYZEN 5 PCs</a></li>
-                                                <li><a href="#">Gaming PCs</a></li>
-                                                <li><a href="#">View All PCs</a></li>
-                                            </ul>
-                                        </li>  
-                                        <li class="closed"><a href="#">Graphics Card</a>
-                                            <ul>
-                                                <li><a href="#">NVIDIA GeForce</a></li>
-                                                <li><a href="#">AMD Radeon</a></li>
-                                                <li><a href="#">NVIDIA RTX</a></li>
-                                                <li><a href="#">View All Graphics Cards</a></li>
-                                            </ul>
-                                        </li>                                       
-                                        <li class="closed"><a href="#">CPU (Processors)</a>
-                                            <ul>
-                                                <li><a href="#">AMD</a></li>
-                                                <li><a href="#">INTEL</a></li>
-                                                <li><a href="#">View All CPUs</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="closed"><a href="#">Motherboard</a>
-                                            <ul>
-                                                <li><a href="#">Intel Motherboards</a></li>
-                                                <li><a href="#">AMD Motherboards</a></li>
-                                                <li><a href="#">View All Motherboards</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="closed"><a href="#">Hard Drive</a>
-                                            <ul>
-                                                <li><a href="#">Internal Hard Drives</a></li>
-                                                <li><a href="#">Solid State Drives</a></li>
-                                                <li><a href="#">External Hard Drives</a></li>
-                                                <li><a href="#">View All Hard Drives</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="closed"><a href="#">Memory (RAM)</a>
-                                            <ul>
-                                                <li><a href="#">DDR4 Memory</a></li>
-                                                <li><a href="#">DDR3 Memory</a></li>
-                                                <li><a href="#">View All Memory</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="closed"><a href="#">Power Supply Units (PSU)</a>
-                                            <ul>
-                                                <li><a href="#">Below 500W PSU</a></li>
-                                                <li><a href="#">500W-1000W PSU</a></li>
-                                                <li><a href="#">Above 1000W PSU</a></li>
-                                                <li><a href="#">View All PSU</a></li>
-                                            </ul>
-                                        </li>
+                                    <ul id="ulCategoryList" runat="server">
+
                                     </ul>
                                 </div>
                             </aside>
