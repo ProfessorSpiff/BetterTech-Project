@@ -26,20 +26,22 @@
         <div id="page-content" class="page-wrapper">
 
             <!-- LOGIN SECTION START -->
-            <div class="login-section mb-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
+            <div class="login-section mb-80" runat="server">
+                <div class="container" runat="server">
+                    <div class="row" runat="server">
+                        <div class="col-md-6" runat="server">
                             <div id="error" runat="server" visible=false class="alert alert-danger"></div>
-                            <div class="registered-customers">
+                            <div class="registered-customers" runat="server">
                                 <h6 class="widget-title border-left mb-50">REGISTERED CUSTOMERS</h6>
                                 <form action="#">
-                                    <div class="login-account p-30 box-shadow">
+                                    <div runat="server" class="login-account p-30 box-shadow">
                                         <p>If you have an account with us, Please log in.</p>
                                         <input runat="server" id="loginEmail" type="text" name="name" placeholder="Email Address">
                                         <input runat ="server" id="loginPassword" type="password" name="password" placeholder="Password">
                                         <p><small><a href="#">Forgot your password?</a></small></p>
-                                        <asp:button runat="server" ID="login" class="submit-btn-1 btn-hover-1" text="login" OnClick="login_Click"/>
+<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+                                        <button id="loginBtn" runat="server" class="submit-btn-1 btn-hover-1" type="submit" onserverclick="login_ServerClick">login</button>
+                                        
                                     </div>
                                 </form>
                             </div>
