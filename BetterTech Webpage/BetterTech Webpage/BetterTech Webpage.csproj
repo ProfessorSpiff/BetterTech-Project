@@ -95,6 +95,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="ProductPage.aspx" />
     <Content Include="Reports.aspx" />
+    <Content Include="ReportsNumVisits.aspx" />
     <Content Include="SearchPage.aspx" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserHomePage.aspx" />
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsNumVisits.aspx.cs">
+      <DependentUpon>ReportsNumVisits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportsNumVisits.aspx.designer.cs">
+      <DependentUpon>ReportsNumVisits.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchPage.aspx.cs">
       <DependentUpon>SearchPage.aspx</DependentUpon>
