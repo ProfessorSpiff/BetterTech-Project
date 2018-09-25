@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="css/custom.css">
 
     <!-- Modernizr JS -->
-    <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script> -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

@@ -33,78 +33,52 @@
                             <div id="error" runat="server" visible=false class="alert alert-danger"></div>
                             <div class="registered-customers" runat="server">
                                 <h6 class="widget-title border-left mb-50">REGISTERED CUSTOMERS</h6>
-                                <form action="#">
+                                
                                     <div runat="server" class="login-account p-30 box-shadow">
                                         <p>If you have an account with us, Please log in.</p>
                                         <input runat="server" id="loginEmail" type="text" name="name" placeholder="Email Address">
                                         <input runat ="server" id="loginPassword" type="password" name="password" placeholder="Password">
                                         <p><small><a href="#">Forgot your password?</a></small></p>
-<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
-                                        <button id="loginBtn" runat="server" class="submit-btn-1 btn-hover-1" type="submit" onserverclick="login_ServerClick">login</button>
+                                        <asp:Button id="loginb" runat="server" CssClass="submit-btn-1 btn-hover-1" OnClick="login_Click" Text="login"/>
                                         
                                     </div>
-                                </form>
+                                
                             </div>
                         </div>
                         <!-- new-customers -->
                         <div class="col-md-6">
                             <div class="new-customers">
-                                <form action="#">
+                                <div id="alertReg" runat="server" visible=false class="alert alert-danger"></div>
                                     <h6 class="widget-title border-left mb-50">NEW CUSTOMERS</h6>
                                     <div class="login-account p-30 box-shadow">
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <input type="text"  placeholder="First Name">
+                                                <input runat="server" id="username" type="text"  placeholder="Username">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="text"  placeholder="last Name">
+                                                <input runat="server" id="firstname" type="text"  placeholder="First Name">
                                             </div>
                                             <div class="col-sm-6">
-                                                <select class="custom-select">
-                                                    <option value="defalt">country</option>
-                                                    <option value="c-1">Australia</option>
-                                                    <option value="c-2">Bangladesh</option>
-                                                    <option value="c-3">Unitd States</option>
-                                                    <option value="c-4">Unitd Kingdom</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <select class="custom-select">
-                                                    <option value="defalt">State</option>
-                                                    <option value="c-1">Melbourne</option>
-                                                    <option value="c-2">Dhaka</option>
-                                                    <option value="c-3">New York</option>
-                                                    <option value="c-4">London</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <select class="custom-select">
-                                                    <option value="defalt">Town/City</option>
-                                                    <option value="c-1">Victoria</option>
-                                                    <option value="c-2">Chittagong</option>
-                                                    <option value="c-3">Boston</option>
-                                                    <option value="c-4">Cambridge</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <input type="text"  placeholder="Phone here...">
+                                                <input type="text"  runat="server" id="lastname" placeholder="last Name">
                                             </div>
                                         </div>
-                                        <input type="text"  placeholder="Company neme here...">
-                                        <input type="text"  placeholder="Email address here...">
-                                        <input type="password"  placeholder="Password">
-                                        <input type="password"  placeholder="Confirm Password">
+                                        <input type="text" runat="server" id="add1" placeholder="Address Line 1...">
+                                        <input type="text" runat="server" id="add2" placeholder="Address Line 2...">
+                                        <input type="text" runat="server" id="zip" placeholder="Zip Code...">
+                                        <input type="text" runat="server" id="email" placeholder="Email address here...">
+                                        <input type="password"  runat="server" id="pass1" placeholder="Password">
+                                        <input type="password" runat="server" id="pass2"  placeholder="Confirm Password">
                                         
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <button id="registerBTN" class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Register</button>
+                                                <asp:Button runat="server" id="regBtn" CssClass="submit-btn-1 mt-20 btn-hover-1" OnClick="regBtn_Click" Text="Register"/>
                                             </div>
                                             <div class="col-md-6">
                                                 <button class="submit-btn-1 mt-20 btn-hover-1 f-right" type="reset">Clear</button>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                
                             </div>
                         </div>
                     </div>
