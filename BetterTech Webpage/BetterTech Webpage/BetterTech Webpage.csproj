@@ -94,8 +94,13 @@
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="ProductPage.aspx" />
+    <Content Include="ReportGross.aspx" />
+    <Content Include="ReportNumCustom.aspx" />
+    <Content Include="ReportNumProducts.aspx" />
+    <Content Include="ReportNumRegUsers.aspx" />
     <Content Include="Reports.aspx" />
     <Content Include="ReportsNumVisits.aspx" />
+    <Content Include="ReportSOH.aspx" />
     <Content Include="SearchPage.aspx" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserHomePage.aspx" />
@@ -178,6 +183,34 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReportGross.aspx.cs">
+      <DependentUpon>ReportGross.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportGross.aspx.designer.cs">
+      <DependentUpon>ReportGross.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNumCustom.aspx.cs">
+      <DependentUpon>ReportNumCustom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportNumCustom.aspx.designer.cs">
+      <DependentUpon>ReportNumCustom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNumProducts.aspx.cs">
+      <DependentUpon>ReportNumProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportNumProducts.aspx.designer.cs">
+      <DependentUpon>ReportNumProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNumRegUsers.aspx.cs">
+      <DependentUpon>ReportNumRegUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportNumRegUsers.aspx.designer.cs">
+      <DependentUpon>ReportNumRegUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports.aspx.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,6 +224,13 @@
     </Compile>
     <Compile Include="ReportsNumVisits.aspx.designer.cs">
       <DependentUpon>ReportsNumVisits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSOH.aspx.cs">
+      <DependentUpon>ReportSOH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSOH.aspx.designer.cs">
+      <DependentUpon>ReportSOH.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchPage.aspx.cs">
       <DependentUpon>SearchPage.aspx</DependentUpon>

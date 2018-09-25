@@ -44,7 +44,7 @@
                                             <h5 class="blog-title-2"><a href="ReportNumVisits.aspx">Number of Visits</a></h5>
                                             <div id="numVisits" runat="server"></div>
                                             <div class="read-more">
-                                                <a href="#">Read more</a>
+                                                <a href="ReportNumVisits.aspx">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -63,10 +63,10 @@
                                     </div>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-desc">
-                                            <h5 class="blog-title-2"><a href="#">Number of Registered Users</a></h5>
+                                            <h5 class="blog-title-2"><a href="ReportNumRegUsers.aspx">Number of Registered Users</a></h5>
                                             <div id="numRegUsers" runat="server"></div>
                                             <div class="read-more">
-                                                <a href="#">Read more</a>
+                                                <a href="ReportNumRegUsers.aspx">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -85,10 +85,10 @@
                                     </div>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-desc">
-                                            <h5 class="blog-title-2"><a href="#">Number of Products</a></h5>
+                                            <h5 class="blog-title-2"><a href="ReportNumProducts.aspx">Number of Products</a></h5>
                                             <div id="numProducts" runat="server"></div>
                                             <div class="read-more">
-                                                <a href="#">Read more</a>
+                                                <a href="ReportNumProducts.aspx">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -107,10 +107,10 @@
                                     </div>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-desc">
-                                            <h5 class="blog-title-2"><a href="#">Stock on Hand</a></h5>
+                                            <h5 class="blog-title-2"><a href="ReportSOH.aspx">Stock on Hand</a></h5>
                                             <p>Click read more to get a detailed description of stock on hand.</p>
                                             <div class="read-more">
-                                                <a href="#">Read more</a>
+                                                <a href="ReportSOH.aspx">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -129,10 +129,10 @@
                                     </div>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-desc">
-                                            <h5 class="blog-title-2"><a href="#">Gross Revenue</a></h5>
+                                            <h5 class="blog-title-2"><a href="ReportGross.aspx">Gross Revenue</a></h5>
                                             <div id="grossRev" runat="server"></div>
                                             <div class="read-more">
-                                                <a href="#">Read more</a>
+                                                <a href="ReportGross.aspx">Read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -151,10 +151,10 @@
                                     </div>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-desc">
-                                            <h5 class="blog-title-2"><a href="#">Number of Custom Computers Sold</a></h5>
+                                            <h5 class="blog-title-2"><a href="ReportNumCustom.aspx">Number of Custom Computers Sold</a></h5>
                                             <p>There are many variations of passages of in psum available, but the majority have sufe ered on in some form...</p>
                                             <div class="read-more">
-                                                <a href="#">Read more</a>
+                                                <a href="ReportNumCustom.aspx">Read more</a>
                                             </div>
                                         </div>
                                     </div>
