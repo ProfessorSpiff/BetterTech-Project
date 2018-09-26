@@ -36,15 +36,15 @@ namespace BetterTech_Webpage
     partial void InsertItem(Item instance);
     partial void UpdateItem(Item instance);
     partial void DeleteItem(Item instance);
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
     partial void InsertWishlist(Wishlist instance);
     partial void UpdateWishlist(Wishlist instance);
     partial void DeleteWishlist(Wishlist instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
     #endregion
 		
 		public DataLinqDataContext() : 
@@ -93,14 +93,6 @@ namespace BetterTech_Webpage
 			}
 		}
 		
-		public System.Data.Linq.Table<Product> Products
-		{
-			get
-			{
-				return this.GetTable<Product>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Wishlist> Wishlists
 		{
 			get
@@ -114,6 +106,14 @@ namespace BetterTech_Webpage
 			get
 			{
 				return this.GetTable<User>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Product> Products
+		{
+			get
+			{
+				return this.GetTable<Product>();
 			}
 		}
 	}
@@ -537,364 +537,6 @@ namespace BetterTech_Webpage
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
-	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Product_Id;
-		
-		private string _Product_Name;
-		
-		private decimal _Product_Price;
-		
-		private string _Product_Description;
-		
-		private string _Product_Type;
-		
-		private string _Product_Img;
-		
-		private int _Product_NumSold;
-		
-		private int _Product_OnHand;
-		
-		private bool _Product_IsSpecial;
-		
-		private System.Nullable<float> _Product_SpclPercantage;
-		
-		private string _Product_Brand;
-		
-		private EntitySet<Item> _Items;
-		
-		private EntitySet<Wishlist> _Wishlists;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnProduct_IdChanging(int value);
-    partial void OnProduct_IdChanged();
-    partial void OnProduct_NameChanging(string value);
-    partial void OnProduct_NameChanged();
-    partial void OnProduct_PriceChanging(decimal value);
-    partial void OnProduct_PriceChanged();
-    partial void OnProduct_DescriptionChanging(string value);
-    partial void OnProduct_DescriptionChanged();
-    partial void OnProduct_TypeChanging(string value);
-    partial void OnProduct_TypeChanged();
-    partial void OnProduct_ImgChanging(string value);
-    partial void OnProduct_ImgChanged();
-    partial void OnProduct_NumSoldChanging(int value);
-    partial void OnProduct_NumSoldChanged();
-    partial void OnProduct_OnHandChanging(int value);
-    partial void OnProduct_OnHandChanged();
-    partial void OnProduct_IsSpecialChanging(bool value);
-    partial void OnProduct_IsSpecialChanged();
-    partial void OnProduct_SpclPercantageChanging(System.Nullable<float> value);
-    partial void OnProduct_SpclPercantageChanged();
-    partial void OnProduct_BrandChanging(string value);
-    partial void OnProduct_BrandChanged();
-    #endregion
-		
-		public Product()
-		{
-			this._Items = new EntitySet<Item>(new Action<Item>(this.attach_Items), new Action<Item>(this.detach_Items));
-			this._Wishlists = new EntitySet<Wishlist>(new Action<Wishlist>(this.attach_Wishlists), new Action<Wishlist>(this.detach_Wishlists));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Product_Id
-		{
-			get
-			{
-				return this._Product_Id;
-			}
-			set
-			{
-				if ((this._Product_Id != value))
-				{
-					this.OnProduct_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Id = value;
-					this.SendPropertyChanged("Product_Id");
-					this.OnProduct_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Product_Name
-		{
-			get
-			{
-				return this._Product_Name;
-			}
-			set
-			{
-				if ((this._Product_Name != value))
-				{
-					this.OnProduct_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Name = value;
-					this.SendPropertyChanged("Product_Name");
-					this.OnProduct_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Price", DbType="Money NOT NULL")]
-		public decimal Product_Price
-		{
-			get
-			{
-				return this._Product_Price;
-			}
-			set
-			{
-				if ((this._Product_Price != value))
-				{
-					this.OnProduct_PriceChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Price = value;
-					this.SendPropertyChanged("Product_Price");
-					this.OnProduct_PriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Description", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Product_Description
-		{
-			get
-			{
-				return this._Product_Description;
-			}
-			set
-			{
-				if ((this._Product_Description != value))
-				{
-					this.OnProduct_DescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Description = value;
-					this.SendPropertyChanged("Product_Description");
-					this.OnProduct_DescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Product_Type
-		{
-			get
-			{
-				return this._Product_Type;
-			}
-			set
-			{
-				if ((this._Product_Type != value))
-				{
-					this.OnProduct_TypeChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Type = value;
-					this.SendPropertyChanged("Product_Type");
-					this.OnProduct_TypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Img", DbType="VarChar(50)")]
-		public string Product_Img
-		{
-			get
-			{
-				return this._Product_Img;
-			}
-			set
-			{
-				if ((this._Product_Img != value))
-				{
-					this.OnProduct_ImgChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Img = value;
-					this.SendPropertyChanged("Product_Img");
-					this.OnProduct_ImgChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_NumSold", DbType="Int NOT NULL")]
-		public int Product_NumSold
-		{
-			get
-			{
-				return this._Product_NumSold;
-			}
-			set
-			{
-				if ((this._Product_NumSold != value))
-				{
-					this.OnProduct_NumSoldChanging(value);
-					this.SendPropertyChanging();
-					this._Product_NumSold = value;
-					this.SendPropertyChanged("Product_NumSold");
-					this.OnProduct_NumSoldChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_OnHand", DbType="Int NOT NULL")]
-		public int Product_OnHand
-		{
-			get
-			{
-				return this._Product_OnHand;
-			}
-			set
-			{
-				if ((this._Product_OnHand != value))
-				{
-					this.OnProduct_OnHandChanging(value);
-					this.SendPropertyChanging();
-					this._Product_OnHand = value;
-					this.SendPropertyChanged("Product_OnHand");
-					this.OnProduct_OnHandChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_IsSpecial", DbType="Bit NOT NULL")]
-		public bool Product_IsSpecial
-		{
-			get
-			{
-				return this._Product_IsSpecial;
-			}
-			set
-			{
-				if ((this._Product_IsSpecial != value))
-				{
-					this.OnProduct_IsSpecialChanging(value);
-					this.SendPropertyChanging();
-					this._Product_IsSpecial = value;
-					this.SendPropertyChanged("Product_IsSpecial");
-					this.OnProduct_IsSpecialChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_SpclPercantage", DbType="Real")]
-		public System.Nullable<float> Product_SpclPercantage
-		{
-			get
-			{
-				return this._Product_SpclPercantage;
-			}
-			set
-			{
-				if ((this._Product_SpclPercantage != value))
-				{
-					this.OnProduct_SpclPercantageChanging(value);
-					this.SendPropertyChanging();
-					this._Product_SpclPercantage = value;
-					this.SendPropertyChanged("Product_SpclPercantage");
-					this.OnProduct_SpclPercantageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Brand", DbType="VarChar(50)")]
-		public string Product_Brand
-		{
-			get
-			{
-				return this._Product_Brand;
-			}
-			set
-			{
-				if ((this._Product_Brand != value))
-				{
-					this.OnProduct_BrandChanging(value);
-					this.SendPropertyChanging();
-					this._Product_Brand = value;
-					this.SendPropertyChanged("Product_Brand");
-					this.OnProduct_BrandChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Item", Storage="_Items", ThisKey="Product_Id", OtherKey="Product_Id")]
-		public EntitySet<Item> Items
-		{
-			get
-			{
-				return this._Items;
-			}
-			set
-			{
-				this._Items.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Wishlist", Storage="_Wishlists", ThisKey="Product_Id", OtherKey="Product_Id")]
-		public EntitySet<Wishlist> Wishlists
-		{
-			get
-			{
-				return this._Wishlists;
-			}
-			set
-			{
-				this._Wishlists.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Items(Item entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = this;
-		}
-		
-		private void detach_Items(Item entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = null;
-		}
-		
-		private void attach_Wishlists(Wishlist entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = this;
-		}
-		
-		private void detach_Wishlists(Wishlist entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Wishlist")]
 	public partial class Wishlist : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -905,9 +547,9 @@ namespace BetterTech_Webpage
 		
 		private int _Product_Id;
 		
-		private EntityRef<Product> _Product;
-		
 		private EntityRef<User> _User;
+		
+		private EntityRef<Product> _Product;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -921,8 +563,8 @@ namespace BetterTech_Webpage
 		
 		public Wishlist()
 		{
-			this._Product = default(EntityRef<Product>);
 			this._User = default(EntityRef<User>);
+			this._Product = default(EntityRef<Product>);
 			OnCreated();
 		}
 		
@@ -974,40 +616,6 @@ namespace BetterTech_Webpage
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Wishlist", Storage="_Product", ThisKey="Product_Id", OtherKey="Product_Id", IsForeignKey=true)]
-		public Product Product
-		{
-			get
-			{
-				return this._Product.Entity;
-			}
-			set
-			{
-				Product previousValue = this._Product.Entity;
-				if (((previousValue != value) 
-							|| (this._Product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Product.Entity = null;
-						previousValue.Wishlists.Remove(this);
-					}
-					this._Product.Entity = value;
-					if ((value != null))
-					{
-						value.Wishlists.Add(this);
-						this._Product_Id = value.Product_Id;
-					}
-					else
-					{
-						this._Product_Id = default(int);
-					}
-					this.SendPropertyChanged("Product");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Wishlist", Storage="_User", ThisKey="Username", OtherKey="Username", IsForeignKey=true)]
 		public User User
 		{
@@ -1038,6 +646,40 @@ namespace BetterTech_Webpage
 						this._Username = default(string);
 					}
 					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Wishlist", Storage="_Product", ThisKey="Product_Id", OtherKey="Product_Id", IsForeignKey=true)]
+		public Product Product
+		{
+			get
+			{
+				return this._Product.Entity;
+			}
+			set
+			{
+				Product previousValue = this._Product.Entity;
+				if (((previousValue != value) 
+							|| (this._Product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Product.Entity = null;
+						previousValue.Wishlists.Remove(this);
+					}
+					this._Product.Entity = value;
+					if ((value != null))
+					{
+						value.Wishlists.Add(this);
+						this._Product_Id = value.Product_Id;
+					}
+					else
+					{
+						this._Product_Id = default(int);
+					}
+					this.SendPropertyChanged("Product");
 				}
 			}
 		}
@@ -1394,6 +1036,388 @@ namespace BetterTech_Webpage
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
+	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Product_Id;
+		
+		private string _Product_Name;
+		
+		private decimal _Product_Price;
+		
+		private string _Product_Description;
+		
+		private string _Product_Type;
+		
+		private string _Product_Img;
+		
+		private int _Product_NumSold;
+		
+		private int _Product_OnHand;
+		
+		private bool _Product_IsSpecial;
+		
+		private System.Nullable<float> _Product_SpclPercantage;
+		
+		private string _Product_Brand;
+		
+		private System.Nullable<System.DateTime> _Product_DateAdded;
+		
+		private EntitySet<Item> _Items;
+		
+		private EntitySet<Wishlist> _Wishlists;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnProduct_IdChanging(int value);
+    partial void OnProduct_IdChanged();
+    partial void OnProduct_NameChanging(string value);
+    partial void OnProduct_NameChanged();
+    partial void OnProduct_PriceChanging(decimal value);
+    partial void OnProduct_PriceChanged();
+    partial void OnProduct_DescriptionChanging(string value);
+    partial void OnProduct_DescriptionChanged();
+    partial void OnProduct_TypeChanging(string value);
+    partial void OnProduct_TypeChanged();
+    partial void OnProduct_ImgChanging(string value);
+    partial void OnProduct_ImgChanged();
+    partial void OnProduct_NumSoldChanging(int value);
+    partial void OnProduct_NumSoldChanged();
+    partial void OnProduct_OnHandChanging(int value);
+    partial void OnProduct_OnHandChanged();
+    partial void OnProduct_IsSpecialChanging(bool value);
+    partial void OnProduct_IsSpecialChanged();
+    partial void OnProduct_SpclPercantageChanging(System.Nullable<float> value);
+    partial void OnProduct_SpclPercantageChanged();
+    partial void OnProduct_BrandChanging(string value);
+    partial void OnProduct_BrandChanged();
+    partial void OnProduct_DateAddedChanging(System.Nullable<System.DateTime> value);
+    partial void OnProduct_DateAddedChanged();
+    #endregion
+		
+		public Product()
+		{
+			this._Items = new EntitySet<Item>(new Action<Item>(this.attach_Items), new Action<Item>(this.detach_Items));
+			this._Wishlists = new EntitySet<Wishlist>(new Action<Wishlist>(this.attach_Wishlists), new Action<Wishlist>(this.detach_Wishlists));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Product_Id
+		{
+			get
+			{
+				return this._Product_Id;
+			}
+			set
+			{
+				if ((this._Product_Id != value))
+				{
+					this.OnProduct_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Id = value;
+					this.SendPropertyChanged("Product_Id");
+					this.OnProduct_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Product_Name
+		{
+			get
+			{
+				return this._Product_Name;
+			}
+			set
+			{
+				if ((this._Product_Name != value))
+				{
+					this.OnProduct_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Name = value;
+					this.SendPropertyChanged("Product_Name");
+					this.OnProduct_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Price", DbType="Money NOT NULL")]
+		public decimal Product_Price
+		{
+			get
+			{
+				return this._Product_Price;
+			}
+			set
+			{
+				if ((this._Product_Price != value))
+				{
+					this.OnProduct_PriceChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Price = value;
+					this.SendPropertyChanged("Product_Price");
+					this.OnProduct_PriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Description", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Product_Description
+		{
+			get
+			{
+				return this._Product_Description;
+			}
+			set
+			{
+				if ((this._Product_Description != value))
+				{
+					this.OnProduct_DescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Description = value;
+					this.SendPropertyChanged("Product_Description");
+					this.OnProduct_DescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Type", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Product_Type
+		{
+			get
+			{
+				return this._Product_Type;
+			}
+			set
+			{
+				if ((this._Product_Type != value))
+				{
+					this.OnProduct_TypeChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Type = value;
+					this.SendPropertyChanged("Product_Type");
+					this.OnProduct_TypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Img", DbType="VarChar(50)")]
+		public string Product_Img
+		{
+			get
+			{
+				return this._Product_Img;
+			}
+			set
+			{
+				if ((this._Product_Img != value))
+				{
+					this.OnProduct_ImgChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Img = value;
+					this.SendPropertyChanged("Product_Img");
+					this.OnProduct_ImgChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_NumSold", DbType="Int NOT NULL")]
+		public int Product_NumSold
+		{
+			get
+			{
+				return this._Product_NumSold;
+			}
+			set
+			{
+				if ((this._Product_NumSold != value))
+				{
+					this.OnProduct_NumSoldChanging(value);
+					this.SendPropertyChanging();
+					this._Product_NumSold = value;
+					this.SendPropertyChanged("Product_NumSold");
+					this.OnProduct_NumSoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_OnHand", DbType="Int NOT NULL")]
+		public int Product_OnHand
+		{
+			get
+			{
+				return this._Product_OnHand;
+			}
+			set
+			{
+				if ((this._Product_OnHand != value))
+				{
+					this.OnProduct_OnHandChanging(value);
+					this.SendPropertyChanging();
+					this._Product_OnHand = value;
+					this.SendPropertyChanged("Product_OnHand");
+					this.OnProduct_OnHandChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_IsSpecial", DbType="Bit NOT NULL")]
+		public bool Product_IsSpecial
+		{
+			get
+			{
+				return this._Product_IsSpecial;
+			}
+			set
+			{
+				if ((this._Product_IsSpecial != value))
+				{
+					this.OnProduct_IsSpecialChanging(value);
+					this.SendPropertyChanging();
+					this._Product_IsSpecial = value;
+					this.SendPropertyChanged("Product_IsSpecial");
+					this.OnProduct_IsSpecialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_SpclPercantage", DbType="Real")]
+		public System.Nullable<float> Product_SpclPercantage
+		{
+			get
+			{
+				return this._Product_SpclPercantage;
+			}
+			set
+			{
+				if ((this._Product_SpclPercantage != value))
+				{
+					this.OnProduct_SpclPercantageChanging(value);
+					this.SendPropertyChanging();
+					this._Product_SpclPercantage = value;
+					this.SendPropertyChanged("Product_SpclPercantage");
+					this.OnProduct_SpclPercantageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_Brand", DbType="VarChar(50)")]
+		public string Product_Brand
+		{
+			get
+			{
+				return this._Product_Brand;
+			}
+			set
+			{
+				if ((this._Product_Brand != value))
+				{
+					this.OnProduct_BrandChanging(value);
+					this.SendPropertyChanging();
+					this._Product_Brand = value;
+					this.SendPropertyChanged("Product_Brand");
+					this.OnProduct_BrandChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_DateAdded", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Product_DateAdded
+		{
+			get
+			{
+				return this._Product_DateAdded;
+			}
+			set
+			{
+				if ((this._Product_DateAdded != value))
+				{
+					this.OnProduct_DateAddedChanging(value);
+					this.SendPropertyChanging();
+					this._Product_DateAdded = value;
+					this.SendPropertyChanged("Product_DateAdded");
+					this.OnProduct_DateAddedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Item", Storage="_Items", ThisKey="Product_Id", OtherKey="Product_Id")]
+		public EntitySet<Item> Items
+		{
+			get
+			{
+				return this._Items;
+			}
+			set
+			{
+				this._Items.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Wishlist", Storage="_Wishlists", ThisKey="Product_Id", OtherKey="Product_Id")]
+		public EntitySet<Wishlist> Wishlists
+		{
+			get
+			{
+				return this._Wishlists;
+			}
+			set
+			{
+				this._Wishlists.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Items(Item entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Items(Item entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
+		
+		private void attach_Wishlists(Wishlist entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Wishlists(Wishlist entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
 		}
 	}
 }
