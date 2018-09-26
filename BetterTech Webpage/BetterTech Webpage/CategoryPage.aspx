@@ -65,7 +65,9 @@
                                 <div class="tab-content">
                                     <!-- grid-view -->
                                     <div role="tabpanel" class="tab-pane active" id="gridImg" runat="server">
-                                        
+
+                                        <%--Product Images in Grid View Placed Here--%>
+
                                     </div>
                                     <!-- list-view -->
                                     <div role="tabpanel" class="tab-pane" id="list-view">
@@ -312,6 +314,8 @@
                                  <div id="cat-treeview" class="product-cat" >
                                     <ul id="ulCategoryList" runat="server">
 
+                                        <%--Category Selection--%>
+
                                     </ul>
                                 </div>
                             </aside>
@@ -328,9 +332,9 @@
                             </aside>
 
                             <!-- widget-product -->
-                            <aside class="widget widget-product box-shadow">
+                            <aside class="widget widget-product box-shadow" id="WidgetProduct" runat="server">
                                 <h6 class="widget-title border-left mb-20">recent products</h6>
-                                <!-- product-item start -->
+                                <%--<!-- product-item start -->
                                 <div class="product-item">
                                     <div class="product-img">
                                         <a href="ProductPage.aspx">
@@ -374,7 +378,7 @@
                                         <h3 class="pro-price">$ 869.00</h3>
                                     </div>
                                 </div>
-                                <!-- product-item end -->                               
+                                <!-- product-item end --> --%>                              
                             </aside>
                         </div>
                     </div>
