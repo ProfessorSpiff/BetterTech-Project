@@ -37,6 +37,14 @@
       <Association Name="Product_Wishlist" Member="Wishlists" ThisKey="Product_Id" OtherKey="Product_Id" Type="Wishlist" />
     </Type>
   </Table>
+  <Table Name="dbo.Wishlist" Member="Wishlists">
+    <Type Name="Wishlist">
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Product_Wishlist" Member="Product" ThisKey="Product_Id" OtherKey="Product_Id" Type="Product" IsForeignKey="true" />
+      <Association Name="User_Wishlist" Member="User" ThisKey="Username" OtherKey="Username" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.[User]" Member="Users">
     <Type Name="User">
       <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -48,16 +56,9 @@
       <Column Name="AddressLine1" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="AddressLine2" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="ZipCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DateRegistered" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="User_Invoice" Member="Invoices" ThisKey="Username" OtherKey="Username" Type="Invoice" />
       <Association Name="User_Wishlist" Member="Wishlists" ThisKey="Username" OtherKey="Username" Type="Wishlist" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Wishlist" Member="Wishlists">
-    <Type Name="Wishlist">
-      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="Product_Wishlist" Member="Product" ThisKey="Product_Id" OtherKey="Product_Id" Type="Product" IsForeignKey="true" />
-      <Association Name="User_Wishlist" Member="User" ThisKey="Username" OtherKey="Username" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
