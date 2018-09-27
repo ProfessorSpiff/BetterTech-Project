@@ -173,24 +173,24 @@
         <section id="page-content" class="page-wrapper">
 
             <!-- ADDRESS SECTION START -->
-            <div class="address-section mb-80">
+ <div class="address-section mb-80">
                 <div class="container">
                     <div class="row">
-                     <!--   <div class="col-sm-4 col-xs-12">
+                        <div class="col-sm-4 col-xs-12">
                             <div class="contact-address box-shadow">
                                 <i class="zmdi zmdi-pin"></i>
-                                <h6>House 06, Road 01, Katashur, Mohammadpur,</h6>
-                                <h6>Dhaka-1207, Bangladesh</h6>
+                                <h6>101A South Ave, Atholl, Sandton,</h6>
+                                <h6>2196, South Africa</h6>
                             </div>
-                        </div> -->
-                        <div class="col-sm-6 col-xs-12">
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
                             <div class="contact-address box-shadow">
                                 <i class="zmdi zmdi-phone"></i>
                                 <h6>(+880) 1945 082759</h6>
                                 <h6>(+880) 1945 082759</h6>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-xs-12">
+                        <div class="col-sm-4 col-xs-12">
                             <div class="contact-address box-shadow">
                                 <i class="zmdi zmdi-email"></i>
                                 <h6>companyname@gmail.com</h6>
@@ -202,52 +202,57 @@
             </div>
             <!-- ADDRESS SECTION END --> 
             
-            <!-- GOOGLE MAP SECTION START 
+            <!-- GOOGLE MAP SECTION START --> 
             <div class="google-map-section">
                 <div class="container-fluid">
-                    <div class="google-map plr-185">
+                    <div class="google-map plr-100">
                         <div id="googleMap"></div>
                     </div>
                 </div>
             </div>
-            GOOGLE MAP SECTION END -->
+            <!--GOOGLE MAP SECTION END -->
             
             <!-- MESSAGE BOX SECTION START -->
-
-            <div class="message-box-section mt--50 mb-80">
+                    <div class="message-box-section mt--50 mb-80">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="message-box box-shadow white-bg">                    
-                                <form id="contact-form" action="mail.php" method="post">
+                            <div class="message-box box-shadow white-bg">
+                              <!--  <form id="contact-form" action="mail.php" method="post"></form> -->
+                                    
                                     <div class="row">
                                         <div class="col-md-12">
                                             <h4 class="blog-section-title border-left mb-30">get in touch</h4>
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="name" placeholder="Your name here">
+                                            <input runat="server" type="text" id="txtName" placeholder="Your name here">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="email" placeholder="Your email here">
+                                            <input runat="server" type="text" id="txtEmail" placeholder="Your email here">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="subject" placeholder="Subject here">
+                                            <input runat="server" type="text" id="txtSubject" placeholder="Subject here">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" name="phone" placeholder="Your phone here">
+                                            <input runat="server" type="password" id="txtPassword" placeholder="Your email password here">
                                         </div>
                                         <div class="col-md-12">
-                                            <textarea class="custom-textarea" name="message" placeholder="Message"></textarea>
-                                            <button class="submit-btn-1 mt-30 btn-hover-1" type="submit">submit message</button>
+                                             <textarea runat="server" class="custom-textarea" id="txtMessage" placeholder="Message"></textarea>
+                                            <asp:Button runat="server" id="btnSubmitMessage" class="submit-btn-1 mt-30 btn-hover-1" text="submit message" OnClick="submitMessage_Click" />
                                         </div>
                                     </div>
-                                </form>
-                                <p class="form-messege"></p>
+
+                                   <div class="alert alert-warning" id="missingField" runat="server" visible="false"><strong>Warning!</strong> Please fill in all the fields.</div>
+                                   <div class="alert alert-success" id="messageSent" runat="server" visible="false"><strong>Success!</strong> Message was sent.</div>
+                                   <p runat="server" id="P1"></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+
             <!-- MESSAGE BOX SECTION END --> 
         </section>
         <!-- End page content -->
@@ -259,21 +264,21 @@
 
     <!-- Placed JS at the end of the document so the pages load faster -->
 
-    <!-- jquery latest version -->
+  <!-- jquery latest version -->
     <script src="js/vendor/jquery-3.1.1.min.js"></script>
-    <!-- Bootstrap framework js -->
+   <!-- Bootstrap framework js -->
     <script src="js/bootstrap.min.js"></script>
     <!-- jquery.nivo.slider js -->
     <script src="lib/js/jquery.nivo.slider.js"></script>
     <!-- Google Map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
-    <script src="js/map.js"></script>
+    <script src="map.js"></script>
     <!-- All js plugins included in this file. -->
     <script src="js/plugins.js"></script>
-    <!-- ajax-mail js -->
-    <script src="js/ajax-mail.js"></script>
-    <!-- Main js file that contents all jQuery plugins activation. -->
-    <script src="js/main.js"></script>
+    <!--ajax-mail js -->
+    <script src="ajax-mail.js"></script> 
+    <!--Main js file that contents all jQuery plugins activation. -->
+    <script src="js/main.js"></script> 
 
 </section>
 
