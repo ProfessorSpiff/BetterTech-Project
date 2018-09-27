@@ -77,6 +77,14 @@
       <DependentUpon>BetterTech_DB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Media\Product\Product_Id1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Media\Product\Product_Id224.jpg" />
+    <Content Include="App_Media\Product\Product_Id225.jpg" />
+    <Content Include="App_Media\Product\Product_Id3.jpg" />
+    <Content Include="App_Media\Product\Product_Id4.jpg" />
+    <Content Include="App_Media\Product\Product_Id5.jpg" />
     <Content Include="CategoryPage.aspx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -84,8 +92,15 @@
     <Content Include="About.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="ProductPage.aspx" />
+    <Content Include="ReportGross.aspx" />
+    <Content Include="ReportNumCustom.aspx" />
+    <Content Include="ReportNumProducts.aspx" />
+    <Content Include="ReportNumRegUsers.aspx" />
     <Content Include="Reports.aspx" />
+    <Content Include="ReportsNumVisits.aspx" />
+    <Content Include="ReportSOH.aspx" />
     <Content Include="SearchPage.aspx" />
     <Content Include="TestPage.aspx" />
     <Content Include="UserHomePage.aspx" />
@@ -148,6 +163,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductPage.aspx.cs">
       <DependentUpon>ProductPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,12 +183,54 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ReportGross.aspx.cs">
+      <DependentUpon>ReportGross.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportGross.aspx.designer.cs">
+      <DependentUpon>ReportGross.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNumCustom.aspx.cs">
+      <DependentUpon>ReportNumCustom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportNumCustom.aspx.designer.cs">
+      <DependentUpon>ReportNumCustom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNumProducts.aspx.cs">
+      <DependentUpon>ReportNumProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportNumProducts.aspx.designer.cs">
+      <DependentUpon>ReportNumProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportNumRegUsers.aspx.cs">
+      <DependentUpon>ReportNumRegUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportNumRegUsers.aspx.designer.cs">
+      <DependentUpon>ReportNumRegUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reports.aspx.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsNumVisits.aspx.cs">
+      <DependentUpon>ReportsNumVisits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportsNumVisits.aspx.designer.cs">
+      <DependentUpon>ReportsNumVisits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSOH.aspx.cs">
+      <DependentUpon>ReportSOH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSOH.aspx.designer.cs">
+      <DependentUpon>ReportSOH.aspx</DependentUpon>
     </Compile>
     <Compile Include="SearchPage.aspx.cs">
       <DependentUpon>SearchPage.aspx</DependentUpon>
@@ -216,6 +280,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

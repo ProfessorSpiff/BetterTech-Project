@@ -20,19 +20,12 @@
       <Association Name="Product_Item" Member="Product" ThisKey="Product_Id" OtherKey="Product_Id" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Product" Member="Products">
-    <Type Name="Product">
+  <Table Name="dbo.Wishlist" Member="Wishlists">
+    <Type Name="Wishlist">
+      <Column Name="Username" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Product_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Product_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="Product_Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Product_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Product_Img" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Product_NumSold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Product_OnHand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Product_IsSpecial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Product_SpclPercantage" Type="System.Single" DbType="Real" CanBeNull="true" />
-      <Association Name="Product_Item" Member="Items" ThisKey="Product_Id" OtherKey="Product_Id" Type="Item" />
+      <Association Name="User_Wishlist" Member="User" ThisKey="Username" OtherKey="Username" Type="User" IsForeignKey="true" />
+      <Association Name="Product_Wishlist" Member="Product" ThisKey="Product_Id" OtherKey="Product_Id" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="Users">
@@ -46,7 +39,27 @@
       <Column Name="AddressLine1" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="AddressLine2" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="ZipCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DateRegistered" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="User_Invoice" Member="Invoices" ThisKey="Username" OtherKey="Username" Type="Invoice" />
+      <Association Name="User_Wishlist" Member="Wishlists" ThisKey="Username" OtherKey="Username" Type="Wishlist" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Product_Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Product_Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Product_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Product_Img" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Product_NumSold" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Product_OnHand" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Product_IsSpecial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Product_SpclPercantage" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Product_Brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Product_DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Product_Item" Member="Items" ThisKey="Product_Id" OtherKey="Product_Id" Type="Item" />
+      <Association Name="Product_Wishlist" Member="Wishlists" ThisKey="Product_Id" OtherKey="Product_Id" Type="Wishlist" />
     </Type>
   </Table>
 </Database>
