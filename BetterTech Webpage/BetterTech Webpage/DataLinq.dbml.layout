@@ -47,23 +47,23 @@
         <classShapeMoniker Id="5f5991a9-0da5-4a7e-a00c-f8efa20d21a3" />
       </nodes>
     </associationConnector>
-    <classShape Id="0877da93-ed76-4a59-a24c-16afd1e092f2" absoluteBounds="2, 3.625, 2, 3.1170068359375">
+    <classShape Id="bc824cb4-7ba3-4efc-86f6-2fb7cc3f2ffa" absoluteBounds="1.375, 3.75, 2, 3.3093082682291666">
       <DataClassMoniker Name="/DataLinqDataContext/Product" />
       <nestedChildShapes>
-        <elementListCompartment Id="92b7141a-c192-4706-858d-0fc3288b51b3" absoluteBounds="2.015, 4.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e0cef78e-32ac-4379-97f6-208871adfc6d" absoluteBounds="1.3900000000000001, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.71875 : 3.625); (3.71875 : 2.73484537760417); (4.5 : 2.73484537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.375 : 6.67710611979167); (4.53125 : 6.67710611979167); (4.53125 : 2.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataLinqDataContext/Product/Product_Item" />
       <nodes>
-        <classShapeMoniker Id="0877da93-ed76-4a59-a24c-16afd1e092f2" />
+        <classShapeMoniker Id="bc824cb4-7ba3-4efc-86f6-2fb7cc3f2ffa" />
         <classShapeMoniker Id="c2f0e8be-fe90-46e0-bfc5-b0f35255e0cb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2 : 5.18350341796875); (0.90625 : 5.18350341796875); (0.90625 : 1.69399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.375 : 5.40465413411458); (0.9374995 : 5.40465413411458); (0.9374995 : 1.69399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataLinqDataContext/Product/Product_Wishlist" />
       <nodes>
-        <classShapeMoniker Id="0877da93-ed76-4a59-a24c-16afd1e092f2" />
+        <classShapeMoniker Id="bc824cb4-7ba3-4efc-86f6-2fb7cc3f2ffa" />
         <classShapeMoniker Id="5f5991a9-0da5-4a7e-a00c-f8efa20d21a3" />
       </nodes>
     </associationConnector>

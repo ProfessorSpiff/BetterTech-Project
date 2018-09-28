@@ -1069,6 +1069,8 @@ namespace BetterTech_Webpage
 		
 		private System.Nullable<System.DateTime> _Product_DateAdded;
 		
+		private System.Nullable<bool> _Product_IsActive;
+		
 		private EntitySet<Item> _Items;
 		
 		private EntitySet<Wishlist> _Wishlists;
@@ -1101,6 +1103,8 @@ namespace BetterTech_Webpage
     partial void OnProduct_BrandChanged();
     partial void OnProduct_DateAddedChanging(System.Nullable<System.DateTime> value);
     partial void OnProduct_DateAddedChanged();
+    partial void OnProduct_IsActiveChanging(System.Nullable<bool> value);
+    partial void OnProduct_IsActiveChanged();
     #endregion
 		
 		public Product()
@@ -1346,6 +1350,26 @@ namespace BetterTech_Webpage
 					this._Product_DateAdded = value;
 					this.SendPropertyChanged("Product_DateAdded");
 					this.OnProduct_DateAddedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Product_IsActive", DbType="Bit")]
+		public System.Nullable<bool> Product_IsActive
+		{
+			get
+			{
+				return this._Product_IsActive;
+			}
+			set
+			{
+				if ((this._Product_IsActive != value))
+				{
+					this.OnProduct_IsActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Product_IsActive = value;
+					this.SendPropertyChanged("Product_IsActive");
+					this.OnProduct_IsActiveChanged();
 				}
 			}
 		}
