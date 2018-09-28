@@ -13,6 +13,16 @@ namespace BetterTech_Webpage
         protected void Page_Load(object sender, EventArgs e)
         {
             var db = new DataLinqDataContext();
+            //......................................................................................Navigation Tab (grid view, List view)
+            //string strDisplayNvTb = "";
+
+            //strDisplayNvTb += "<li class=active'>";
+            //strDisplayNvTb += "<a href='#grid-view' data-toggle='tab'><i class='zmdi zmdi-view-module'></i></a>";
+            //strDisplayNvTb += "</li>";
+            //strDisplayNvTb += "<li>";
+            //strDisplayNvTb += "<a href='#listview' data-toggle='tab'><i class='zmdi zmdi-view-list-alt'></i></a>";
+            //strDisplayNvTb += "</li>";
+            //NavTab.InnerHtml = strDisplayNvTb;
 
             //......................................................................................Product Category List
             string divCategoryDisplay = "";
@@ -53,8 +63,8 @@ namespace BetterTech_Webpage
                                  select productImg).Take(9);
             }
 
-            ImgDisplay += "<div class='row'>";
-            ImgDisplay2 += "<div class='row'>";
+            //ImgDisplay += "<div class='row'>";
+            //ImgDisplay2 += "<div class='row'>";
 
             foreach (Product prdctImg in ProductImgLst)
             {
@@ -69,6 +79,7 @@ namespace BetterTech_Webpage
                 ImgDisplay += " <div class='product-info'>";
                 ImgDisplay += " <h6 class='product-title'>";
                 ImgDisplay += " <a href=ProductPage.aspx?ProductId=" + prdctImg.Product_Id + " >" + prdctImg.Product_Name + "</a>";
+                Session["ProductId"] = prdctImg.Product_Id;
                 ImgDisplay += " </h6>";
                 //ImgDisplay += " <div class='pro-rating'>";
                 //ImgDisplay += " <a href=#><i class='zmdi zmdi-star'></i></a>";
@@ -97,7 +108,7 @@ namespace BetterTech_Webpage
                 ImgDisplay += " </div>";
 
                 //........................................................................For List View Display
-                ImgDisplay2 += " <div class='col - md - 12'>";
+                ImgDisplay2 += " <div class='col-md-12'>";
                 ImgDisplay2 += " <div class='shop-list product-item'>";
                 ImgDisplay2 += " <div class='product-img'>";
                 ImgDisplay2 += " <a href=ProductPage.aspx?ProductId=" + prdctImg.Product_Id + ">";
@@ -137,26 +148,26 @@ namespace BetterTech_Webpage
                 ImgDisplay2 += " </div>";
 
             }
-            ImgDisplay += "</div>";
-            ImgDisplay2 += "</div>";
+            //ImgDisplay += "</div>";
+            //ImgDisplay2 += "</div>";
 
-            //listImg.InnerHtml = ImgDisplay2;
+            listImg.InnerHtml = ImgDisplay2;
             gridImg.InnerHtml = ImgDisplay;
 
-            //..................................................................................................Populate Recent Products
+            //...........................................................................................Populate Recent Products
 
             dynamic RecentProductList = (from product in db.Products
                                         orderby product.Product_DateAdded descending
                                         select product).Take(3);
 
-            string strDisplayRcnt = "";
+            string strDisplayRcnt = "<h6 class='widget-title border-left mb-20'>recent products</h6>";
 
             foreach(Product prdct in RecentProductList)
             {
                 strDisplayRcnt += " <div class='product-item'>";
                 strDisplayRcnt += " <div class='product-img'>";
                 strDisplayRcnt += " <a href='ProductPage.aspx?ProductId="+prdct.Product_Id+"'>";
-                strDisplayRcnt += " <img src='"+prdct.Product_Img+"' alt='' width=90 height=100/>";
+                strDisplayRcnt += " <img src='"+prdct.Product_Img+"' alt='' width=90 height=80/>";
                 strDisplayRcnt += " </a>";
                 strDisplayRcnt += " </div>";
                 strDisplayRcnt += " <div class='product-info'>";
