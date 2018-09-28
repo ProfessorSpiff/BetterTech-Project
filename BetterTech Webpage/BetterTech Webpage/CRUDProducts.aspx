@@ -86,16 +86,28 @@
                                         <div id="editProd" runat="server">
 
                                         </div>
-                                        <input runat="server" id="prodIDE" type="text" name="name" placeholder="Product ID">
-                                        <input runat="server" id="prodNameE" type="text" name="name" placeholder="Product Name">
-                                        <input runat="server" id="prodPriceE" type="text" name="name" placeholder="Product Price">
-                                        <input runat="server" id="prodDescE" type="text" name="name" placeholder="Product Description">
-                                        <input runat="server" id="prodTypeE" type="text" name="name" placeholder="Product Type">
-                                        <input runat="server" id="prodImgE" type="text" name="name" placeholder="Product Image">
-                                        <input runat="server" id="prodSOHE" type="text" name="name" placeholder="Stock On Hand">
-                                        <input runat="server" id="prodBrandE" type="text" name="name" placeholder="Product Brand">
-                                        <asp:Button id="editBtn" runat="server" CssClass="submit-btn-1 btn-hover-1" Text="Add" OnClick="editBtn_Click"/>
-                                        <div id="Div1" runat="server"></div>
+                                        <div class="short-by f-left text-center">
+                                         <span>Edit:</span>
+                                          <select size="1" runat="server" name="edit" id="edit">
+                                               <option selected="selected" name="editID" runat="server">Product ID</option>
+                                               <option name="editName" runat="server">Product Name</option>
+                                               <option name="editDesc" runat="server">Product Description</option>
+                                               <option name="editType" runat="server">Product Type</option>
+                                              <option name="editImg" runat="server">Product Image</option>
+                                              <option name="editOH" runat="server">Product On Hand</option>
+                                              <option name="editBrand" runat="server">Product Brand</option>
+                                            </select> 
+                                        </div> 
+                                        <br/>
+
+                                        <br/>
+                                        <input runat="server" id="prodEditThing" type="text" name="name" placeholder="Product...">
+                                        <br />
+
+                                        <br/>
+                                        
+                                        <asp:Button ID="editButton" runat="server" CssClass="submit-btn-1 btn-hover-1" Text="Edit" OnClick="editBtn_Click"/>
+                                        <!-- <div id="responseEdit" runat="server"></div> -->
                                     </div>
                                 </div>
                             </div>
