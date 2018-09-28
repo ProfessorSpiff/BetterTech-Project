@@ -153,6 +153,13 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CRUDProducts.aspx.cs">
+      <DependentUpon>CRUDProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CRUDProducts.aspx.designer.cs">
+      <DependentUpon>CRUDProducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataLinq.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

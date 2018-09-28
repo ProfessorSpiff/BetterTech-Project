@@ -58,6 +58,7 @@
       <Column Name="Product_SpclPercantage" Type="System.Single" DbType="Real" CanBeNull="true" />
       <Column Name="Product_Brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Product_DateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Product_IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Product_Item" Member="Items" ThisKey="Product_Id" OtherKey="Product_Id" Type="Item" />
       <Association Name="Product_Wishlist" Member="Wishlists" ThisKey="Product_Id" OtherKey="Product_Id" Type="Wishlist" />
     </Type>
