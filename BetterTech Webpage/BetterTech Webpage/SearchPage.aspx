@@ -65,15 +65,17 @@
                                             <a href="#list-view" data-toggle="tab"><i class="zmdi zmdi-view-list-alt"></i></a>
                                         </li>
                                     </ul>
-                                    <!-- short-by -->
+                                    <!-- sort-by -->
                                     <div class="short-by f-left text-center">
                                         <span>Sort by :</span>
-                                        <select>
-                                            <option value="volvo">Newest items</option>
-                                            <option value="saab">Saab</option>
-                                            <option value="mercedes">Mercedes</option>
-                                            <option value="audi">Audi</option>
+                                        <select id="selectsection" runat="server">
+                                            <option value="SortbyName" runat="server">Name</option>
+                                            <option value="SortbypriceHigh" runat="server">Price(High-to-low)</option>
+                                            <option value="SortbypriceLow" runat="server">Price(Low-to-high)</option>
+                                            <option value="Sortbytype" runat="server">Type</option>
+                                            <option value="Sortbybrand" runat="server">Brand</option>
                                         </select> 
+                                        <asp:Button ID="btnsort" runat="server" Text="Sort" OnClick="btnsort_Click" />
                                     </div> 
                                     <!-- showing -->
                                     <div class="showing f-right text-right">
