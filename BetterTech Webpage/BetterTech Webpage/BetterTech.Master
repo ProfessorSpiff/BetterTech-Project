@@ -248,14 +248,12 @@
                                                     <button class="search-toggle">
                                                         <i class="zmdi zmdi-search"></i>
                                                     </button>
-                                                    <form action="#">
                                                         <div class="top-search-box">
-                                                            <input type="text" placeholder="Search here your product...">
-                                                            <button type="submit">
+                                                            <input type="text" placeholder="Search here your product..." id="searchtext" runat="server">
+                                                            <button type="submit" id="searchbarbutton" runat="server" onserverclick="Btnsearch_Click">
                                                                 <i class="zmdi zmdi-search"></i>
                                                             </button>
                                                         </div>
-                                                    </form>
                                                 </div>
                                             </div>
                                             <!-- total-cart -->

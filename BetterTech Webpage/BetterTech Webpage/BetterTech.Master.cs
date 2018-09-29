@@ -18,5 +18,12 @@ namespace BetterTech_Webpage
                 logoutlink.Visible = true;
             }
         }
+
+        protected void Btnsearch_Click(object sender, EventArgs e)
+        {
+            String thingtosearch = "SearchPage.aspx?search=" + searchtext.Value;
+            Response.Redirect(thingtosearch);
+
+        }
     }
 }
