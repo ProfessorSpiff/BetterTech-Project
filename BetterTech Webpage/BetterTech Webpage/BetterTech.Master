@@ -104,6 +104,9 @@
                                         <nav id="primary-menu">
                                             <ul class="main-menu text-center">
                                                 <li><a href="index.html">Home</a>
+                                                </li>         
+                                                <%-- the control specials page is visible for testing only --%>
+                                                <li><a href="ControlSpecials.aspx" visible="true" id="cspecialslink" runat="server">Control Specials</a>
                                                 </li>
                                                 <li class="mega-parent"><a href="#">Hardware</a>
                                                     <div class="mega-menu-area clearfix">

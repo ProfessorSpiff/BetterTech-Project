@@ -90,6 +90,8 @@
     </Content>
     <Content Include="ContactUs.aspx" />
     <Content Include="About.aspx" />
+    <Content Include="Controlsingleproduct.aspx" />
+    <Content Include="ControlSpecials.aspx" />
     <Content Include="CRUDProducts.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="UserAccountInfoPage.aspx" />
@@ -145,6 +147,20 @@
     </Compile>
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controlsingleproduct.aspx.cs">
+      <DependentUpon>Controlsingleproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controlsingleproduct.aspx.designer.cs">
+      <DependentUpon>Controlsingleproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlSpecials.aspx.cs">
+      <DependentUpon>ControlSpecials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlSpecials.aspx.designer.cs">
+      <DependentUpon>ControlSpecials.aspx</DependentUpon>
     </Compile>
     <Compile Include="CRUDProducts.aspx.cs">
       <DependentUpon>CRUDProducts.aspx</DependentUpon>
