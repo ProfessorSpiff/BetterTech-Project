@@ -251,14 +251,12 @@
                                                     <button class="search-toggle">
                                                         <i class="zmdi zmdi-search"></i>
                                                     </button>
-                                                    <form action="#">
                                                         <div class="top-search-box">
-                                                            <input type="text" placeholder="Search here your product...">
-                                                            <button type="submit">
+                                                            <input type="text" placeholder="Search here your product..." id="searchtext" runat="server">
+                                                            <button type="submit" id="searchbarbutton" runat="server" onserverclick="Btnsearch_Click">
                                                                 <i class="zmdi zmdi-search"></i>
                                                             </button>
                                                         </div>
-                                                    </form>
                                                 </div>
                                             </div>
                                             <!-- total-cart -->
@@ -670,8 +668,10 @@
                                 <div class="modal-body">
                                     <div class="modal-product clearfix">
                                         <div class="product-images">
-                                            <div class="main-image images">
-                                                <img alt="" src="img/product/quickview.jpg">
+                                            <div class="main-image images" id="QckVwImg" runat="server">
+
+                                                <%--<img alt="" src="img/product/quickview.jpg">--%>
+
                                             </div>
                                         </div>
                                         <!-- .product-images -->
@@ -679,12 +679,17 @@
                                         <div class="product-info">
                                             <h1>Aenean eu tristique</h1>
                                             <div class="price-box-3">
-                                                <div class="s-price-box">
-                                                    <span class="new-price">£160.00</span>
-                                                    <span class="old-price">£190.00</span>
+                                                <div class="s-price-box" id="QckVwPrdctPrc" runat="server">
+
+                                                    <%--<span class="new-price">£160.00</span>
+                                                    <span class="old-price">£190.00</span>--%>
+
                                                 </div>
                                             </div>
-                                            <a href="ProductPage.aspx" class="see-all">View product</a>
+                                            <div>
+                                                <a href="ProductPage.aspx" class="see-all">View product</a>
+                                            </div>
+                                            
                                             <div class="quick-add-to-cart">
                                                 <form method="post" class="cart">
                                                     <div class="numbers-row">
@@ -693,8 +698,8 @@
                                                     <button class="single_add_to_cart_button" type="submit">Add to cart</button>
                                                 </form>
                                             </div>
-                                            <div class="quick-desc">
-                                                Specs
+                                            <div class="quick-desc" id="QckVwPrdctSpecs" runat="server">
+                                                <%--Specs--%>
                                    
                                             </div>
                                             <div class="social-sharing">

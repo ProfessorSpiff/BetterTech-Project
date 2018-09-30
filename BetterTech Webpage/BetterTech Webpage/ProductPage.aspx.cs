@@ -52,7 +52,7 @@ namespace BetterTech_Webpage
                 strDisplayRcnt += " <div class='product-item'>";
                 strDisplayRcnt += " <div class='product-img'>";
                 strDisplayRcnt += " <a href='ProductPage.aspx?ProductId=" + prdct.Product_Id + "'>";
-                strDisplayRcnt += " <img src='" + prdct.Product_Img + "' alt='' width=90 height=100/>";
+                strDisplayRcnt += " <img src='" + prdct.Product_Img + "' alt='' width=90 height=80/>";
                 strDisplayRcnt += " </a>";
                 strDisplayRcnt += " </div>";
                 strDisplayRcnt += " <div class='product-info'>";
