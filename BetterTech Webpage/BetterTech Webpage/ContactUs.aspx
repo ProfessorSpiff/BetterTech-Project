@@ -205,7 +205,7 @@
             <!-- GOOGLE MAP SECTION START --> 
             <div class="google-map-section">
                 <div class="container-fluid">
-                    <div class="google-map plr-100">
+                    <div class="google-map plr-185">
                         <div id="googleMap"></div>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
     <script src="lib/js/jquery.nivo.slider.js"></script>
     <!-- Google Map js -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuU_0_uLMnFM-2oWod_fzC0atPZj7dHlU"></script>
-    <script src="map.js"></script>
+    <script src="js/map.js"></script>
     <!-- All js plugins included in this file. -->
     <script src="js/plugins.js"></script>
     <!--ajax-mail js -->

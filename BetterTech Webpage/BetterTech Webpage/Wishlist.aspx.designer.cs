@@ -13,12 +13,12 @@ namespace BetterTech_Webpage {
     public partial class Wishlist1 {
         
         /// <summary>
-        /// detials control.
+        /// b control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow detials;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl b;
     }
 }
