@@ -69,6 +69,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Media\Developers\Akshar_crop.jpg" />
+    <Content Include="App_Media\Developers\Brij_crop.jpg" />
+    <Content Include="App_Media\Developers\Jen_crop.jpg" />
+    <Content Include="App_Media\Developers\Chris_crop.jpg" />
     <Content Include="AdminHomePage.aspx" />
     <Content Include="App_Data\BetterTech_DB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -93,6 +97,10 @@
     <Content Include="Controlsingleproduct.aspx" />
     <Content Include="ControlSpecials.aspx" />
     <Content Include="CRUDProducts.aspx" />
+    <Content Include="App_Media\Developers\Akshar.jpg" />
+    <Content Include="App_Media\Developers\Chris.jpg" />
+    <Content Include="App_Media\Developers\Brij.jpg" />
+    <Content Include="App_Media\Developers\Jen.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="UserAccountInfoPage.aspx" />
     <Content Include="Login.aspx" />
@@ -109,6 +117,7 @@
     <Content Include="TestPage.aspx" />
     <Content Include="UserHomePage.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Wishlist.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -285,6 +294,13 @@
     </Compile>
     <Compile Include="UserHomePage.aspx.designer.cs">
       <DependentUpon>UserHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wishlist.aspx.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wishlist.aspx.designer.cs">
+      <DependentUpon>Wishlist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
