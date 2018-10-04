@@ -90,6 +90,7 @@
     <Content Include="App_Media\Product\Product_Id3.jpg" />
     <Content Include="App_Media\Product\Product_Id4.jpg" />
     <Content Include="App_Media\Product\Product_Id5.jpg" />
+    <Content Include="BuildCustomPC.aspx" />
     <Content Include="CategoryPage.aspx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="BetterTech.Master.designer.cs">
       <DependentUpon>BetterTech.Master</DependentUpon>
+    </Compile>
+    <Compile Include="BuildCustomPC.aspx.cs">
+      <DependentUpon>BuildCustomPC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BuildCustomPC.aspx.designer.cs">
+      <DependentUpon>BuildCustomPC.aspx</DependentUpon>
     </Compile>
     <Compile Include="CategoryPage.aspx.cs">
       <DependentUpon>CategoryPage.aspx</DependentUpon>
