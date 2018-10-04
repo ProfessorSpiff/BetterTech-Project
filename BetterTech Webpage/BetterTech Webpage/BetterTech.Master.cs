@@ -26,20 +26,13 @@ namespace BetterTech_Webpage
             //.............................................................................QuickView Product(not working)
             //if (HttpContext.Current.Session["ProductId"] != null)
             //{
-
             //    var db = new DataLinqDataContext();
-
             //    dynamic ProductQkVw = (from product in db.Products
             //                       where (product.Product_Id).Equals(Request.QueryString["ProductId"])
             //                       select product).FirstOrDefault();
-
-
-
             //    QckVwImg.InnerHtml = "<img alt='' src='" + ProductQkVw.Product_Img + "' width=270 height=300>";
             //    QckVwPrdctPrc.InnerHtml = "<span class='new-price'>R " + ProductQkVw.Product_Price + "</span>";
             //    QckVwPrdctSpecs.InnerHtml = ProductQkVw.Product_Description;
-
-
             //}
         }
 
@@ -47,7 +40,6 @@ namespace BetterTech_Webpage
         {
             String thingtosearch = "SearchPage.aspx?search=" + searchtext.Value;
             Response.Redirect(thingtosearch);
-
         }
     }
 }
