@@ -203,16 +203,16 @@
                                                     <h6 class="widget-title border-left mb-20">Product</h6>
                                                     <div id="cat-treeview-2" class="product-cat">
                                                         <ul>
-                                                            <li class="closed"><a href="#">Add Product</a></li>                                       
-                                                            <li class="open"><a href="#">Delete Product</a></li>
-                                                            <li class="closed"><a href="#">Edit Product details</a></li>
+                                                            <li class="closed"><a href="CRUDProducts.aspx">Add Product</a></li>                                       
+                                                            <li class="open"><a href="CRUDProducts.aspx">Delete Product</a></li>
+                                                            <li class="closed"><a href="CRUDProducts.aspx">Edit Product details</a></li>
                                                         </ul>
                                                     </div>
                                                 </aside>
                                             </div>
                                         </div>
                                         <!-- Tags -->
-                                        <div class="dropdown f-left">
+                                       <%-- <div class="dropdown f-left">
                                             <button class="option-btn">
                                                 Tags
                                                 <i class="zmdi zmdi-chevron-down"></i>
@@ -231,7 +231,7 @@
                                                     </ul>                  
                                                 </aside>      
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                                 <!-- blog-option end -->
