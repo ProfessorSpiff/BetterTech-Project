@@ -8,13 +8,13 @@
                 <div class="col-md-2 col-sm-12">
                     <ul class="cart-tab">
                         <li>
-                            <a class="active" href="#preferences" data-toggle="tab">
+                            <a runat="server" id="prefBut" class="active" href="#preferences" data-toggle="tab">
                                 <span>P</span>
                                 Preferences
                                     </a>
                         </li>
                         <li>
-                            <a href="#cpu" data-toggle="tab">
+                            <a runat="server" id="cpuBut" href="#cpu" data-toggle="tab">
                                 <span>01</span>
                                 CPU
                                     </a>
@@ -78,7 +78,7 @@
                 <div class="col-md-10 col-sm-12">
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane active" id="preferences">
+                        <div runat="server" class="tab-pane active" id="preferences">
                             <div class="shopping-cart-content">
                                 <div runat="server" id="pref" class="table-content table-responsive mb-50">
                                     <div class="login-account p-30 box-shadow">
@@ -120,85 +120,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="cpu">
+                        <div runat="server" class="tab-pane" id="cpu">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="cpuDiv" class="table-content table-responsive mb-50">
-                                    <table class="text-center">
-                                        <thead>
-                                            <tr>
-                                                <th class="product-thumbnail">product</th>
-                                                <th class="product-price">price</th>
-                                                <th class="product-remove">select</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- tr -->
-                                            <tr>
-                                                <td class="product-thumbnail">
-                                                    <div class="pro-thumbnail-img">
-                                                        <img src="img/cart/1.jpg" alt="">
-                                                    </div>
-                                                    <div class="pro-thumbnail-info text-left">
-                                                        <h6 class="product-title-2">
-                                                            <a href="#">dummy product name</a>
-                                                        </h6>
-                                                        <p>Brand: Brand Name</p>
-                                                        <p>Model: Grand s2</p>
-                                                        <p>Color: Black, White</p>
-                                                    </div>
-                                                </td>
-                                                <td class="product-price">$560.00</td>
-                                                <td class="product-remove">
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                </td>
-                                            </tr>
-                                            <!-- tr -->
-                                            <tr>
-                                                <td class="product-thumbnail">
-                                                    <div class="pro-thumbnail-img">
-                                                        <img src="img/cart/2.jpg" alt="">
-                                                    </div>
-                                                    <div class="pro-thumbnail-info text-left">
-                                                        <h6 class="product-title-2">
-                                                            <a href="#">dummy product name</a>
-                                                        </h6>
-                                                        <p>Brand: Brand Name</p>
-                                                        <p>Model: Grand s2</p>
-                                                        <p>Color: Black, White</p>
-                                                    </div>
-                                                </td>
-                                                <td class="product-price">$560.00</td>
-                                                <td class="product-remove">
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                </td>
-                                            </tr>
-                                            <!-- tr -->
-                                            <tr>
-                                                <td class="product-thumbnail">
-                                                    <div class="pro-thumbnail-img">
-                                                        <img src="img/cart/3.jpg" alt="">
-                                                    </div>
-                                                    <div class="pro-thumbnail-info text-left">
-                                                        <h6 class="product-title-2">
-                                                            <a href="#">dummy product name</a>
-                                                        </h6>
-                                                        <p>Brand: Brand Name</p>
-                                                        <p>Model: Grand s2</p>
-                                                        <p>Color: Black, White</p>
-                                                    </div>
-                                                </td>
-                                                <td class="product-price">$560.00</td>
-                                                <td class="product-remove">
-                                                    <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                           
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>

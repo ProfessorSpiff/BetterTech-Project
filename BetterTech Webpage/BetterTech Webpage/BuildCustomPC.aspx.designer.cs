@@ -13,6 +13,33 @@ namespace BetterTech_Webpage {
     public partial class BuildCustomPC {
         
         /// <summary>
+        /// prefBut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor prefBut;
+        
+        /// <summary>
+        /// cpuBut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor cpuBut;
+        
+        /// <summary>
+        /// preferences control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl preferences;
+        
+        /// <summary>
         /// pref control.
         /// </summary>
         /// <remarks>
@@ -56,6 +83,15 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button general;
+        
+        /// <summary>
+        /// cpu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpu;
         
         /// <summary>
         /// cpuDiv control.
