@@ -104,7 +104,7 @@
                                                 <%-- the control specials page is visible for testing only --%>
                                                 <li><a href="ControlSpecials.aspx" visible="true" id="cspecialslink" runat="server">Control Specials</a>
                                                 </li>
-                                                <li class="mega-parent"><a href="#">Hardware</a>
+                                                <li class="mega-parent"><p>Hardware</p>
                                                     <div class="mega-menu-area clearfix">
                                                         <div class="mega-menu-link mega-menu-link-4  f-left">
                                                             <ul class="single-mega-item">
