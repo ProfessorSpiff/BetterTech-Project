@@ -407,7 +407,7 @@
 
                             <!-- widget-product -->
                             <aside class="widget widget-product box-shadow" id="WidgetProduct" runat="server">
-                                <h6 class="widget-title border-left mb-20">recent products</h6>
+                                
                                 <%--<!-- product-item start -->
                                 <div class="product-item">
                                     <div class="product-img">

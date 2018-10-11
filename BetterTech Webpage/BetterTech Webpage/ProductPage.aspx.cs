@@ -30,7 +30,8 @@ namespace BetterTech_Webpage
                 divCategoryDisplay += "<ul>";
                 foreach (Product prdctItm in ProductItmLst)
                 {
-                    divCategoryDisplay += "<li><a href=#>" + prdctItm.Product_Name + "</a></li>";
+                    //divCategoryDisplay += "<li><a href=#>" + prdctItm.Product_Name + "</a></li>";
+                    divCategoryDisplay += "<li><a href='ProductPage.aspx?ProductId=" + prdctItm.Product_Id + "'>" + prdctItm.Product_Name + "</a></li>";
                 }
                 divCategoryDisplay += "<li><a href='CategoryPage.aspx?Category=" + prdctType + "'>View All</a></li>";
                 divCategoryDisplay += "</ul>";
@@ -46,7 +47,7 @@ namespace BetterTech_Webpage
                                          select product).Take(3);
 
             string strDisplayRcnt = "";
-
+            strDisplayRcnt += "<h6 class='widget-title border-left mb-20'>recent products</h6>";
             foreach (Product prdct in RecentProductList)
             {
                 strDisplayRcnt += " <div class='product-item'>";

@@ -98,8 +98,11 @@
                             <!-- widget-search -->
                             <aside class="widget-search mb-30">
                                 <form action="#">
-                                    <input type="text" placeholder="Search here...">
-                                    <button type="submit"><i class="zmdi zmdi-search"></i></button>
+                                    <input type="text" placeholder="Search here..." runat="server" id="txtSrch">
+                                   <%-- <button type="submit"><i class="zmdi zmdi-search"></i></button>--%>
+                                    <br />
+                                    <asp:LinkButton CssClass="zmdi zmdi-search" ID="btnSrchLst" runat="server" Text=" Search" OnClick="btnSrchLst_Click" />
+
                                 </form>
                             </aside>
                             <!-- widget-categories -->
@@ -119,10 +122,13 @@
                                 <h6 class="widget-title border-left mb-20">Price</h6>
                                 <div class="price_filter">
                                     <div class="price_slider_amount">
-                                        <input type="submit"  value="You range :"/> 
-                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" /> 
+                                        <input type="submit"  value="You range :"/>
+                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" runat="server" ClientIDMode="Static"/>
                                     </div>
                                     <div id="slider-range"></div>
+                                    <br />
+                                   <%-- <a class="button extra-small mb-20" href="CategoryPage.aspx"><span>Buttons </span> </a>--%>
+                                    <asp:LinkButton CssClass="button extra-small mb-20" ID="btnSrchPrc" runat="server" OnClick="btnSrchPrc_Click" > Search </asp:LinkButton>
                                 </div>
                             </aside>
 

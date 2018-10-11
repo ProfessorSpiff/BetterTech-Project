@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace BetterTech_Webpage
 {
@@ -24,16 +25,17 @@ namespace BetterTech_Webpage
             }
 
             //.............................................................................QuickView Product(not working)
-            //if (HttpContext.Current.Session["ProductId"] != null)
-            //{
-            //    var db = new DataLinqDataContext();
-            //    dynamic ProductQkVw = (from product in db.Products
-            //                       where (product.Product_Id).Equals(Request.QueryString["ProductId"])
-            //                       select product).FirstOrDefault();
-            //    QckVwImg.InnerHtml = "<img alt='' src='" + ProductQkVw.Product_Img + "' width=270 height=300>";
-            //    QckVwPrdctPrc.InnerHtml = "<span class='new-price'>R " + ProductQkVw.Product_Price + "</span>";
-            //    QckVwPrdctSpecs.InnerHtml = ProductQkVw.Product_Description;
-            //}
+            if (HttpContext.Current.Session["ProductId"] != null)
+            {
+                Debug.WriteLine("............... "+Session["ProductId"]);
+                var db = new DataLinqDataContext();
+                dynamic ProductQkVw = (from product in db.Products
+                                       where (product.Product_Id).Equals(Session["ProductId"])
+                                       select product).FirstOrDefault();
+                QckVwImg.InnerHtml = "<img alt='' src='" + ProductQkVw.Product_Img + "' width=270 height=300>";
+                QckVwPrdctPrc.InnerHtml = "<span class='new-price'>R " + ProductQkVw.Product_Price + "</span>";
+                QckVwPrdctSpecs.InnerHtml = ProductQkVw.Product_Description;
+            }
         }
 
         protected void Btnsearch_Click(object sender, EventArgs e)

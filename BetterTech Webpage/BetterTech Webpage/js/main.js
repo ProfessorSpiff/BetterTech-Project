@@ -235,15 +235,17 @@
 	******************************************** */
     $( "#slider-range" ).slider({
         range: true,
-        min: 50,
-        max: 2000,
-        values: [ 50, 999 ],
+        /*min: 50,
+        max: 2000,*/
+		min: 0,
+        max: 100000,
+        values: [ 0, 10000 ],
         slide: function( event, ui ) {
-            $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            $( "#amount" ).val( "R" + ui.values[ 0 ] + " - R" + ui.values[ 1 ] );
         }
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-    " - $" + $( "#slider-range" ).slider( "values", 1 ) ); 
+    $( "#amount" ).val( "R" + $( "#slider-range" ).slider( "values", 0 ) +
+    " - R" + $( "#slider-range" ).slider( "values", 1 ) ); 
 
 	/* ********************************************
 		10. Fancybox active
