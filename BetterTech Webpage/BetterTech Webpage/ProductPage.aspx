@@ -5,8 +5,8 @@
 
     <div class="wrapper">
 
-        <%-- <!-- BREADCRUMBS SETCTION START -->
-        <div class="breadcrumbs-section plr-200 mb-80">
+         <!-- BREADCRUMBS SETCTION START -->
+       <%-- <div class="breadcrumbs-section plr-200 mb-80">
             <div class="breadcrumbs overlay-bg">
                 <div class="container">
                     <div class="row">
@@ -22,8 +22,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- BREADCRUMBS SETCTION END -->--%>
+        </div>--%>
+        <!-- BREADCRUMBS SETCTION END -->
 
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
