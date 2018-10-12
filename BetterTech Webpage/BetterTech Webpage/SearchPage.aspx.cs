@@ -234,14 +234,11 @@ namespace BetterTech_Webpage
                     listImg.InnerHtml = ImgDisplay2;
                     gridImg.InnerHtml = ImgDisplay;
                     
-                }else
+                }else if(productfound==false)
                 {
-                    productfound = false;
+                    todisplay = "Could not find result";
                 }
-                if (productfound == false)
-                {
-                    todisplay = todisplay + "Cannot find result";
-                }
+                
             }
             productsearchdetails.InnerHtml = todisplay;
         }
@@ -473,15 +470,11 @@ namespace BetterTech_Webpage
                         ImgDisplay2 += " </div>";
                         listImg.InnerHtml = ImgDisplay2;
                         gridImg.InnerHtml = ImgDisplay;
-                    }
-                    else
+                    }else if (productfound == false)
                     {
-                        productfound = false;
+                        todisplay = "Could not find result";
                     }
-                    if (productfound == false)
-                    {
-                        todisplay = todisplay + "Cannot find result";
-                    }
+
                 }
                 productsearchdetails.InnerHtml = todisplay;
             }
@@ -706,14 +699,11 @@ namespace BetterTech_Webpage
                         listImg.InnerHtml = ImgDisplay2;
                         gridImg.InnerHtml = ImgDisplay;
                     }
-                    else
+                    else if (productfound == false)
                     {
-                        productfound = false;
+                        todisplay = "Could not find result";
                     }
-                    if (productfound == false)
-                    {
-                        todisplay = todisplay + "Cannot find result";
-                    }
+
                 }
                
                 productsearchdetails.InnerHtml = todisplay;
@@ -939,14 +929,11 @@ namespace BetterTech_Webpage
                         listImg.InnerHtml = ImgDisplay2;
                         gridImg.InnerHtml = ImgDisplay;
                     }
-                    else
+                    else if (productfound == false)
                     {
-                        productfound = false;
+                        todisplay = "Could not find result";
                     }
-                    if (productfound == false)
-                    {
-                        todisplay = todisplay + "Cannot find result";
-                    }
+
                 }
                 
                 productsearchdetails.InnerHtml = todisplay;
@@ -1172,14 +1159,11 @@ namespace BetterTech_Webpage
                         listImg.InnerHtml = ImgDisplay2;
                         gridImg.InnerHtml = ImgDisplay;
                     }
-                    else
+                    else if (productfound == false)
                     {
-                        productfound = false;
+                        todisplay = "Could not find result";
                     }
-                    if (productfound == false)
-                    {
-                        todisplay = todisplay + "Cannot find result";
-                    }
+
                 }
                 
                 productsearchdetails.InnerHtml = todisplay;
@@ -1406,14 +1390,11 @@ namespace BetterTech_Webpage
                         listImg.InnerHtml = ImgDisplay2;
                         gridImg.InnerHtml = ImgDisplay;
                     }
-                    else
+                    else if (productfound == false)
                     {
-                        productfound = false;
+                        todisplay = "Could not find result";
                     }
-                    if (productfound == false)
-                    {
-                        todisplay = todisplay + "Cannot find result";
-                    }
+
                 }
                 
                 productsearchdetails.InnerHtml = todisplay;
