@@ -235,9 +235,6 @@
                                                 <li>
                                                     <a href="ContactUs.aspx">Contact</a>
                                                 </li>
-                                                     <%--<li>
-                                                         <a href="Wishlist.aspx">Wishlist</a>
-                                                </li>--%>
                                             </ul>
                                         </nav>
                                     </div>
@@ -555,8 +552,8 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4">
                                             <div class="single-footer">
-                                                <h4 class="footer-title border-left">Get in touch</h4>
-                                                <%--<div class="footer-message">
+                                               <%-- <h4 class="footer-title border-left">Get in touch</h4>
+                                                <div class="footer-message">
                                                     <form action="#">
                                                         <input type="text" name="name" placeholder="Your name here...">
                                                         <input type="text" name="email" placeholder="Your email here...">
@@ -643,14 +640,14 @@
                                                 <a href="ProductPage.aspx" class="see-all">View product</a>
                                             </div>
                                             
-                                            <div class="quick-add-to-cart">
+                                           <%-- <div class="quick-add-to-cart"> //this code doesnt work for some reason
                                                 <form method="post" class="cart">
                                                     <div class="numbers-row">
                                                         <input type="number" id="french-hens" value="3">
                                                     </div>
                                                     <button class="single_add_to_cart_button" type="submit">Add to cart</button>
                                                 </form>
-                                            </div>
+                                            </div>--%>
                                             <div class="quick-desc" id="QckVwPrdctSpecs" runat="server">
                                                 <%--Specs--%>
                                             </div>
@@ -683,6 +680,7 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
           
+        </div>
         </div>
     </form>
 </body>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BetterTech.Master" AutoEventWireup="true" CodeBehind="CategoryPage.aspx.cs" Inherits="BetterTech_Webpage.CategoryPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BetterTech.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="CategoryPage.aspx.cs" Inherits="BetterTech_Webpage.CategoryPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -127,8 +127,9 @@
                                     </div>
                                     <div id="slider-range"></div>
                                     <br />
-                                   <%-- <a class="button extra-small mb-20" href="CategoryPage.aspx"><span>Buttons </span> </a>--%>
-                                    <asp:LinkButton CssClass="button extra-small mb-20" ID="btnSrchPrc" runat="server" OnClick="btnSrchPrc_Click" > Search </asp:LinkButton>
+                                    <%--<a class="button extra-small mb-20" href="CategoryPage.aspx" runat="server"><span>Buttons </span> </a>--%>
+                                    <asp:LinkButton CssClass="button extra-small mb-20" ButtonType="LinkButton" ID="btnSrchPrc" runat="server" OnClick="btnSrchPrc_Click" > Search </asp:LinkButton>
+                                    <%--<asp:LinkButton ID="LinkButton1" runat="server">LinkButton</asp:LinkButton>--%>
                                 </div>
                             </aside>
 

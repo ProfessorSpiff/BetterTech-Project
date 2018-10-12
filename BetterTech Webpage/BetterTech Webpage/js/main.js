@@ -239,7 +239,7 @@
         max: 2000,*/
 		min: 0,
         max: 100000,
-        values: [ 0, 10000 ],
+        values: [ 0, 100000 ],
         slide: function( event, ui ) {
             $( "#amount" ).val( "R" + ui.values[ 0 ] + " - R" + ui.values[ 1 ] );
         }

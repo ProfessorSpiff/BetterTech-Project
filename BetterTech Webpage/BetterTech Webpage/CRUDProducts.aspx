@@ -11,7 +11,7 @@
                             <div class="breadcrumbs-inner">
                                 <h1 class="breadcrumbs-title">Accordion</h1>
                                 <ul class="breadcrumb-list">
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.aspx">Home</a></li>
                                     <li>Accordion</li>
                                 </ul>
                             </div>

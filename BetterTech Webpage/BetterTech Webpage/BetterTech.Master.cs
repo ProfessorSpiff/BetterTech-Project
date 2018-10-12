@@ -30,7 +30,7 @@ namespace BetterTech_Webpage
                 Debug.WriteLine("............... "+Session["ProductId"]);
                 var db = new DataLinqDataContext();
                 dynamic ProductQkVw = (from product in db.Products
-                                       where (product.Product_Id).Equals(Session["ProductId"])
+                                       where (product.Product_Id).Equals(Request.QueryString["productID"])
                                        select product).FirstOrDefault();
                 QckVwImg.InnerHtml = "<img alt='' src='" + ProductQkVw.Product_Img + "' width=270 height=300>";
                 QckVwPrdctPrc.InnerHtml = "<span class='new-price'>R " + ProductQkVw.Product_Price + "</span>";
