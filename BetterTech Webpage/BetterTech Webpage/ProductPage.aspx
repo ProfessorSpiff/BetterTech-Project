@@ -5,7 +5,7 @@
 
     <div class="wrapper">
 
-         <!-- BREADCRUMBS SETCTION START -->
+        <%-- <!-- BREADCRUMBS SETCTION START -->
         <div class="breadcrumbs-section plr-200 mb-80">
             <div class="breadcrumbs overlay-bg">
                 <div class="container">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <!-- BREADCRUMBS SETCTION END -->
+        <!-- BREADCRUMBS SETCTION END -->--%>
 
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
@@ -46,7 +46,7 @@
 
                                             </div>
                                             
-                                            <div class="row">
+                                            <%--<div class="row">
                                                 <div class="col-xs-12">
                                                     <div id="gallery_01" class="carousel-btn slick-arrow-3 mt-30">
                                                         <div class="p-c">
@@ -81,7 +81,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>--%>
                                         </div>
                                     </div>
                                     <!-- imgs-zoom-area end -->
@@ -407,7 +407,7 @@
 
                             <!-- widget-product -->
                             <aside class="widget widget-product box-shadow" id="WidgetProduct" runat="server">
-                                <h6 class="widget-title border-left mb-20">recent products</h6>
+                                
                                 <%--<!-- product-item start -->
                                 <div class="product-item">
                                     <div class="product-img">
