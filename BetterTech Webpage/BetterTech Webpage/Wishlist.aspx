@@ -47,7 +47,7 @@
     <div class="wrapper">
 
         <!-- START MOBILE MENU AREA -->
-        <div class="mobile-menu-area hidden-lg hidden-md">
+       <%-- <div class="mobile-menu-area hidden-lg hidden-md">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -201,7 +201,7 @@
                 </div>
             </div>
         </div>
-        <!-- BREADCRUMBS SETCTION END -->
+        <!-- BREADCRUMBS SETCTION END -->--%>
 
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
