@@ -144,6 +144,54 @@
                                 </div>
                             </div>
                         </div>
+                        <div runat="server" class="tab-pane" id="graphics">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="gpuDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
+                        <div runat="server" class="tab-pane" id="memory">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="memDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
+                        <div runat="server" class="tab-pane" id="harddrives">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="hardDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
+                        <div runat="server" class="tab-pane" id="PSU">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="psuDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
+                        <div runat="server" class="tab-pane" id="Additional">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="addDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
+                        <div runat="server" class="tab-pane" id="case">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="caseDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
