@@ -76,6 +76,14 @@ namespace BetterTech_Webpage
             //                     //&& ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
             //                     select productImg);
             //}
+
+            //............................................................................View Products by Brand
+            if(Request.QueryString["BrndNm"] != null)
+            {
+                ProductImgLst = from productImg in db.Products
+                                where (productImg.Product_Brand.Equals(Request.QueryString["BrndNm"]))
+                                select productImg;
+            }
            
             //............................................................................Default start Page Image Load
             if (!ProductImgLst.Any())
@@ -282,8 +290,8 @@ namespace BetterTech_Webpage
         protected void btnShwLess_Click(object sender, EventArgs e)
         {
             Session["PgNum"] = null;
-            Response.Redirect("ProductPage.aspx");
-            //Page.Response.Redirect(Page.Request.Url.ToString());
+            
+            Page.Response.Redirect(Page.Request.Url.ToString());
         }
     }
 }

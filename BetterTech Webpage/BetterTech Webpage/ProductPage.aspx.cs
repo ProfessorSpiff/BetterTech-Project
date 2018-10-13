@@ -141,18 +141,23 @@ namespace BetterTech_Webpage
                     //strDisplay += " </div>";
                     strDisplay += " <h3 class='pro-price'>R" + String.Format("{0:0.00}", prdct.Product_Price) + "</h3>";
                     strDisplay += " <ul class='action-button'>";
+
                     strDisplay += " <li>";
-                    strDisplay += " <a href=# title=Wishlist><i class='zmdi zmdi-favorite'></i></a>";
+                    strDisplay += " <a href='ProductPage.aspx?AddToWshLst=" + prdct.Product_Id + "' title=Wishlist><i class='zmdi zmdi-favorite'></i></a>";
                     strDisplay += " </li>";
+
+                    //strDisplay += " <li>";
+                    //strDisplay += " <a href=# data-toggle=modal data-target=#productModal title=Quickview><i class='zmdi zmdi-zoom-in'></i></a>";
+                    //strDisplay += " </li>";
+
+                    //strDisplay += " <li>";
+                    //strDisplay += " <a href=# title=Compare><i class='zmdi zmdi-refresh'></i></a>";
+                    //strDisplay += " </li>";
+
                     strDisplay += " <li>";
-                    strDisplay += " <a href=# data-toggle=modal data-target=#productModal title=Quickview><i class='zmdi zmdi-zoom-in'></i></a>";
+                    strDisplay += " <a href='ProductPage.aspx?AddToShpCrt=" + prdct.Product_Id + "' title=Add to cart><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
                     strDisplay += " </li>";
-                    strDisplay += " <li>";
-                    strDisplay += " <a href=# title=Compare><i class='zmdi zmdi-refresh'></i></a>";
-                    strDisplay += " </li>";
-                    strDisplay += " <li>";
-                    strDisplay += " <a href=# title=Add to cart><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
-                    strDisplay += " </li>";
+
                     strDisplay += " </ul>";
                     strDisplay += " </div>";
                     strDisplay += " </div>";
