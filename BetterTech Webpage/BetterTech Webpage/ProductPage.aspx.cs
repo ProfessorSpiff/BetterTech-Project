@@ -171,10 +171,25 @@ namespace BetterTech_Webpage
             {
                 if (HttpContext.Current.Session["Username"] != null)
                 {
+                    var AddToWshList = new Wishlist
+                    {
+                        Username = Convert.ToString(HttpContext.Current.Session["Username"]),
+                        Product_Id = Convert.ToInt32(Request.QueryString["AddToWshLst"]),
+                    };
+                    db.Wishlists.InsertOnSubmit(AddToWshList);
 
+                    try
+                    {
+                        db.SubmitChanges();
+                        Response.Redirect("CategoryPage.aspx");
+                    }catch(Exception ex)
+                    {
+                        ex.GetBaseException();
+                    }
                 }
                 else
                 {
+                    Session["AddWishList"] = Request.QueryString["AddToWshLst"];
                     Response.Redirect("Login.aspx");
                 }
             }//...............................................................end of else if

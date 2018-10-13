@@ -13,6 +13,9 @@ namespace BetterTech_Webpage
         {
             HttpContext.Current.Session["Username"] = null;
             HttpContext.Current.Session["AuthLevel"] = null;
+
+            HttpContext.Current.Session["AddWishList"] = null;
+
             Response.Redirect("Index.aspx");
         }
     }
