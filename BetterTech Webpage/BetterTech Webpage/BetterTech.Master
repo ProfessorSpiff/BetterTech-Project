@@ -531,22 +531,16 @@
                                                     </li>
                                                     <li>
                                                         <a href="Wishlist.aspx"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="cart.html"><i class="zmdi zmdi-circle"></i><span>My Cart</span></a>
-                                                    </li>
+                                                    </li>                                                   
                                                     <li>
                                                         <a href="Login.aspx"><i class="zmdi zmdi-circle"></i><span>Sign In</span></a>
                                                     </li>
                                                     <li>
                                                         <a href="Login.aspx"><i class="zmdi zmdi-circle"></i><span>Registration</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="checkout.html"><i class="zmdi zmdi-circle"></i><span>Check out</span></a>
-                                                    </li>
-                                                    <li>
+                                                    </li>                            
+                                                    <%--<li>
                                                         <a href="order.html"><i class="zmdi zmdi-circle"></i><span>Oder Complete</span></a>
-                                                    </li>
+                                                    </li>--%>
                                                 </ul>
                                             </div>
                                         </div>
