@@ -74,6 +74,32 @@ namespace BetterTech_Webpage
         protected void savebtn_Click(object sender, EventArgs e)
         {
 
+            if (HttpContext.Current.Session["Username"] != null)
+            {
+                String sessionuname = (String)HttpContext.Current.Session["Username"];
+                var db = new DataLinqDataContext();
+                User userd = (from g in db.Users
+                                   where sessionuname.Equals(g.Username)
+                                   select g).FirstOrDefault();
+
+                if (pass1.Value.Equals(pass2.Value))
+                {
+                userd.Username = UName.Value;
+                userd.FirstName = fname.Value;
+                userd.Surname =lname.Value;
+                userd.Email =email.Value;
+                userd.AddressLine1 =location1.Value;
+                userd.AddressLine2 =location2.Value;
+                userd.ZipCode =zipcode.Value;
+                userd.Password = Secrecy.Secrecy.HashPassword(pass1.Value);
+                }
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception exep) { exep.GetBaseException(); }
+                Response.Redirect("UserHomePage.aspx");
+            }
         }
     }
 }
