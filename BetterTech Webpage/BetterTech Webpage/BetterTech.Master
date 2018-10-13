@@ -176,7 +176,7 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="mega-parent"><a href="shop.html">Pre-Built Systems and Laptops</a>
+                                                <li class="mega-parent"><a href="#">Pre-Built Systems and Laptops</a>
                                                     <div class="mega-menu-area clearfix">
                                                         <div class="mega-menu-link f-left">
                                                             <ul class="single-mega-item">
@@ -371,7 +371,7 @@
                 <!-- END HEADER AREA -->
 
                 <!-- START MOBILE MENU AREA -->
-                <div class="mobile-menu-area hidden-lg hidden-md">
+              <%--  <div class="mobile-menu-area hidden-lg hidden-md">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12">
@@ -379,11 +379,11 @@
                                     <nav id="dropdown">
                                         <ul>
                                             <li><a href="Index.aspx">Home</a>
-                                            </li>
+                                            </li>--%>
                                           <%--  <li>
                                                 <a href="shop.html">Products</a>
                                             </li--%>>
-                                            <li><a href="#">Pages</a>
+                                           <%-- <li><a href="#">Pages</a>
                                                 <ul>
                                                     <li>
                                                         <a href="shop.html">Shop</a>
@@ -472,7 +472,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <!-- END MOBILE MENU AREA -->
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
@@ -489,19 +489,19 @@
                                                     <img src="noimage.jpg" alt="">
                                                 </div>
                                                 <div class="footer-brief">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the subas industry's standard dummy text ever since the 1500s,</p>
-                                                    <p>When an unknown printer took a galley of type and If you are going to use a passage of Lorem Ipsum scrambled it to make.</p>
+                                                    <h4>BetterTech</h4>
+                                                    <h4>Since 2018</h4>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 hidden-md hidden-sm">
+                                       <%--<%-- <div class="col-lg-2 hidden-md hidden-sm">
                                             <div class="single-footer">
                                                 <h4 class="footer-title border-left">Shipping</h4>
                                                 <ul class="footer-menu">
-                                                    <li>
+                                                    <%--<li>
                                                         <a href="#"><i class="zmdi zmdi-circle"></i><span>New Products</span></a>
-                                                    </li>
-                                                    <li>
+                                                    </li>--%>
+                                                  <%--  <li>
                                                         <a href="#"><i class="zmdi zmdi-circle"></i><span>Discount Products</span></a>
                                                     </li>
                                                     <li>
@@ -521,7 +521,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                         <div class="col-lg-2 col-md-3 col-sm-4">
                                             <div class="single-footer">
                                                 <h4 class="footer-title border-left">my account</h4>
@@ -552,7 +552,7 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4">
                                             <div class="single-footer">
-                                               <%-- <h4 class="footer-title border-left">Get in touch</h4>
+                                              <%--  <h4 class="footer-title border-left">Get in touch</h4>
                                                 <div class="footer-message">
                                                     <form action="#">
                                                         <input type="text" name="name" placeholder="Your name here...">
@@ -574,11 +574,11 @@
                                 <div class="copyright">
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-12">
-                                            <div class="copyright-text">
+                                           <%-- <div class="copyright-text">
                                                 <p>&copy; <a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank">CodeCarnival</a> 2016. All Rights Reserved.</p>
-                                            </div>
+                                            </div>--%>
                                         </div>
-                                        <div class="col-sm-6 col-xs-12">
+                                 <%--       <div class="col-sm-6 col-xs-12">
                                             <ul class="footer-payment text-right">
                                                 <li>
                                                     <a href="#">
@@ -597,7 +597,7 @@
                                                         <img src="img/payment/4.jpg" alt=""></a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                             </div>

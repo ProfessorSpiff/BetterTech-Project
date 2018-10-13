@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BetterTech.Master" AutoEventWireup="true" CodeBehind="CategoryPage.aspx.cs" Inherits="BetterTech_Webpage.CategoryPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/BetterTech.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="CategoryPage.aspx.cs" Inherits="BetterTech_Webpage.CategoryPage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -6,7 +6,7 @@
     <div class="wrapper">
         
         <!-- BREADCRUMBS SETCTION START -->
-        <div class="breadcrumbs-section plr-200 mb-80">
+        <%--<div class="breadcrumbs-section plr-200 mb-80">
             <div class="breadcrumbs overlay-bg">
                 <div class="container">
                     <div class="row">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- BREADCRUMBS SETCTION END -->
         
         <!-- Start page content -->
@@ -47,18 +47,22 @@
                                     </ul>
                                     <!-- short-by -->
                                     <div class="short-by f-left text-center">
-                                        <span>Sort by :</span>
-                                        <select>
+                                        <%--<span>Sort by :</span>--%>
+
+                                        <%--<select>
                                             <option value="lowestprice">Special Prices</option>
                                             <option value="lowestprice">Lowest to Highest Price</option>
                                             <option value="highestprice">Highest to Lowest Price</option>
                                             
-                                        </select> 
+                                        </select>--%>
+
+                                        <%--<asp:DropDownList ID="prcDrpDwn" runat="server"></asp:DropDownList>--%>
+
                                     </div> 
                                     <!-- showing -->
-                                    <div class="showing f-right text-right">
+                                    <%--<div class="showing f-right text-right">
                                         <span>Showing : 01-09 of 17.</span>
-                                    </div>                                   
+                                    </div> --%>                                  
                                 </div>
                                 <!-- shop-option end -->
                                 <!-- Tab Content start -->
@@ -82,15 +86,15 @@
                                 </div>
                                 <!-- Tab Content end -->
                                 <!-- shop-pagination start -->
-                                <ul class="shop-pagination box-shadow text-center ptblr-10-30">
-                                    <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
-                                    <li><a href="#">01</a></li>
-                                    <li><a href="#">02</a></li>
-                                    <li><a href="#">03</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">05</a></li>
-                                    <li class="active"><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+
+                                <ul class="shop-pagination text-left ptblr-10-30">
+                                    <asp:LinkButton ID="btnShwMore" CssClass="zmdi zmdi-arrow-forward" runat="server" OnClick="btnShwMore_Click"><h6> Show More Products</h6></asp:LinkButton>
                                 </ul>
+                                <br />
+                                <ul class="shop-pagination text-right ptblr-10-30">
+                                    <asp:LinkButton ID="btnShwLess" CssClass="zmdi zmdi-arrow-back" runat="server" OnClick="btnShwLess_Click"><h6> Show Less Products</h6></asp:LinkButton>
+                                </ul>
+                                
                                 <!-- shop-pagination end -->
                             </div>
                         </div>
@@ -98,8 +102,11 @@
                             <!-- widget-search -->
                             <aside class="widget-search mb-30">
                                 <form action="#">
-                                    <input type="text" placeholder="Search here...">
-                                    <button type="submit"><i class="zmdi zmdi-search"></i></button>
+                                    <input type="text" placeholder="Search here..." runat="server" id="txtSrch">
+                                   <%-- <button type="submit"><i class="zmdi zmdi-search"></i></button>--%>
+                                    <br />
+                                    <asp:LinkButton CssClass="zmdi zmdi-search" ID="btnSrchLst" runat="server" OnClick="btnSrchLst_Click"><h6>Search</h6></asp:LinkButton>
+
                                 </form>
                             </aside>
                             <!-- widget-categories -->
@@ -119,10 +126,14 @@
                                 <h6 class="widget-title border-left mb-20">Price</h6>
                                 <div class="price_filter">
                                     <div class="price_slider_amount">
-                                        <input type="submit"  value="You range :"/> 
-                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" /> 
+                                        <input type="submit"  value="You range :"/>
+                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" runat="server" ClientIDMode="Static"/>
                                     </div>
                                     <div id="slider-range"></div>
+                                    <br />
+                                    <%--<a class="button extra-small mb-20" href="CategoryPage.aspx" runat="server"><span>Buttons </span> </a>--%>
+                                    <asp:LinkButton CssClass="button extra-small mb-20" ButtonType="LinkButton" ID="btnSrchPrc" runat="server" OnClick="btnSrchPrc_Click" > Search </asp:LinkButton>
+                                    <%--<asp:LinkButton ID="LinkButton1" runat="server">LinkButton</asp:LinkButton>--%>
                                 </div>
                             </aside>
 

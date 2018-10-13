@@ -18,10 +18,11 @@ namespace BetterTech_Webpage
 
             foreach (Product pr in pro)
             {
-                todisplay = todisplay + "<img src=" + pr.Product_Img + " alt=''>";
+                todisplay = todisplay + "<img src=" + pr.Product_Img + "  height=300 width=270 alt=''>";
+                todisplay = todisplay + "<p></p>";
                 todisplay = todisplay + "<a href=Controlsingleproduct.aspx?ProductId=" + pr.Product_Id + ">" + pr.Product_Name + "</a>";
-                todisplay = todisplay + "<p>Current Product price:R " + pr.Product_Price + "</p>";
-                todisplay = todisplay + "<p>Current Discount Percentage: " + pr.Product_SpclPercantage + "</p>";
+                todisplay = todisplay + "<p>Current Product price:R " + String.Format("{0:0.00}",pr.Product_Price) + " and Current Discount Percentage: " + pr.Product_SpclPercantage  + " </p>";
+                todisplay = todisplay + "<hr>";
             }
             cspec.InnerHtml = todisplay;
         }

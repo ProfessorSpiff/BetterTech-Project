@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- BREADCRUMBS SETCTION START -->
-        <div class="breadcrumbs-section plr-200 mb-80">
+        <%--<div class="breadcrumbs-section plr-200 mb-80">
             <div class="breadcrumbs overlay-bg">
                 <div class="container">
                     <div class="row">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- BREADCRUMBS SETCTION END -->
 
         <!-- Start page content -->
