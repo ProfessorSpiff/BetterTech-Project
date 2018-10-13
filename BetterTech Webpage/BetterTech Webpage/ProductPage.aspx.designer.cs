@@ -22,6 +22,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl ProductImg;
         
         /// <summary>
+        /// PrdctNmBrnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PrdctNmBrnd;
+        
+        /// <summary>
         /// description control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl description;
+        
+        /// <summary>
+        /// btnAction control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnAction;
         
         /// <summary>
         /// RelatedPrdct control.

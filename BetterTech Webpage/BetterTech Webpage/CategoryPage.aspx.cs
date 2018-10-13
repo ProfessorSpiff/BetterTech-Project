@@ -15,6 +15,8 @@ namespace BetterTech_Webpage
     {
         protected string strPrcRng = "";
         protected string strSrch = "";
+
+        //protected int intNumToShow = 3;
         protected void Page_Load(object sender, EventArgs e)
         {
             var db = new DataLinqDataContext();
@@ -52,92 +54,75 @@ namespace BetterTech_Webpage
             string ImgDisplay = "";
             string ImgDisplay2 = "";
 
-            strSrch = txtSrch.Value;//...........................Search value
+            //...........................Search value
+            if(strSrch.Equals(""))
+            {
+                strSrch = txtSrch.Value;
+            }
             strPrcRng = amount.Value;//.........................amount range value
 
             int intVal1 = 0;
             int intVal2 = 0;
-
-            //...............................................seperating val1 and val2 
-            //if (!strPrcRng.Equals(""))
-            //{
-            //    intVal1 = Convert.ToInt32(strPrcRng.Substring(strPrcRng.IndexOf("R") + 1, strPrcRng.IndexOf("-") - 1));
-            //    intVal2 = Convert.ToInt32(strPrcRng.Substring(strPrcRng.IndexOf("-") + 3));
-            //}
             
             var ProductImgLst = (from productImg in db.Products
                                  where productImg.Product_Type.Equals(Request.QueryString["Category"])
-                                 select productImg).Take(9);
-
-
-
-
-            //var ProductImgLst = (from productImg in db.Products
-            //                     where (((productImg.Product_Type).Equals(Request.QueryString["Category"])) && (((productImg.Product_Price) >= intVal1) && ((productImg.Product_Price) <= intVal2))) ||
-            //                     ((((productImg.Product_Name).ToLower()).Contains(strSrch.ToLower())) && (((productImg.Product_Price) >= intVal1) && ((productImg.Product_Price) <= intVal2)))
-            //                     select productImg).Take(9);
-
-            //.....................................................search where price range match and search match
-            if ((!strSrch.Equals("")) && (!strPrcRng.Equals("")))
-            {
-                ProductImgLst = (from productImg in db.Products
-                                 where (((productImg.Product_Name).ToLower()).Contains(strSrch.ToLower())) && (((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2))
-                                 select productImg).Take(9);
-            }
+                                 select productImg);
+            
             //..............................................where price range match for particular category
-            else if (!strPrcRng.Equals(""))
-            {
-                ProductImgLst = (from productImg in db.Products
-                                 where (productImg.Product_Type.Equals(Request.QueryString["Category"]))
-                                 //&& ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
-                                 select productImg).Take(9);
-            }
-            //...............................................search
-            //else if (!strSrch.Equals(""))
+            //if (!strPrcRng.Equals(""))
             //{
             //    ProductImgLst = (from productImg in db.Products
-            //                     where (((productImg.Product_Name).ToLower()).Contains(strSrch.ToLower())) && (((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2))
-            //                     select productImg).Take(9);
+            //                     where (productImg.Product_Type.Equals(Request.QueryString["Category"]))
+            //                     //&& ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
+            //                     select productImg);
             //}
-            
-
-
+           
             //............................................................................Default start Page Image Load
             if (!ProductImgLst.Any())
             {
                 ProductImgLst = (from productImg in db.Products
-                                 select productImg).Take(9);
+                                 select productImg);
                 //...............................................make price range on default list
                 if (!strPrcRng.Equals(""))
                 {
                     ProductImgLst = (from productImg in db.Products
                                      where ((productImg.Product_Price) > intVal1 && (productImg.Product_Price) < intVal2)
-                                     select productImg).Take(9);
+                                     select productImg);
                 }
             }
 
+            //.............................................................................Specials for particular category
             if ((Request.QueryString["CategorySpcl"]) != null)
             {
-                Debug.WriteLine(".........................." + (Request.QueryString["CategorySpcl"]));
+                //strSrch = "";
                 ProductImgLst = from productImg in db.Products
                                 where ((productImg.Product_Type).Equals(Request.QueryString["CategorySpcl"])) &&
                                 ((productImg.Product_IsSpecial).Equals(true)) 
                                 select productImg;
-
-                //PropertyInfo isreadonly = typeof(System.Collections.Specialized.NameValueCollection).GetProperty("IsReadOnly", BindingFlags.Instance | BindingFlags.NonPublic);
-                //// make collection editable
-                //isreadonly.SetValue(this.Request.QueryString, false, null);
-                //// remove
-                //this.Request.QueryString.Remove("CategorySpcl");
             }
 
+            //...................................................................Specials for all products
             if ((Request.QueryString["Category"]) == "AllSpecial")
             {
-                Debug.WriteLine(".........................." + intVal1 +".." + intVal2);
+                //strSrch = "";
                 ProductImgLst = (from productImg in db.Products
                                  where ((productImg.Product_IsSpecial).Equals(true))
                                  
-                                 select productImg).Take(9);
+                                 select productImg);
+            }
+
+            //..............................................................Search for product
+            if ((!strSrch.Equals("")))
+            {
+                ProductImgLst = (from productImg in db.Products
+                                 where (((productImg.Product_Name).ToLower()).Contains(strSrch.ToLower()))
+                                 select productImg);
+            }
+
+            
+            if(HttpContext.Current.Session["PgNum"] == null)
+            {
+                Session["PgNum"] = 9;
             }
 
             if (!strPrcRng.Equals(""))
@@ -148,17 +133,15 @@ namespace BetterTech_Webpage
                 ProductImgLst = (from productImg in ProductImgLst
                                  where ((productImg.Product_IsActive) == true)
                                  && ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
-                                 select productImg).Take(9);
+                                 select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
             }
             else
             {
                 ProductImgLst = (from productImg in ProductImgLst
                                  where ((productImg.Product_IsActive) == true)
-                                 select productImg).Take(9);
+                                 select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
             }
-
             
-
             foreach (Product prdctImg in ProductImgLst)
             {
                 //...................................................................For GridView Display
@@ -176,22 +159,25 @@ namespace BetterTech_Webpage
                 ImgDisplay += " </h6>";
                 ImgDisplay += " <h3 class='pro-price'>R" + String.Format("{0:0.00}", prdctImg.Product_Price) + "</h3>";
                 ImgDisplay += " <ul class='action-button'>";
-                ImgDisplay += " <li>";
-                ImgDisplay += " <a href=# title=Wishlist><i class='zmdi zmdi-favorite'></i></a>";
-                ImgDisplay += " </li>";
 
                 ImgDisplay += " <li>";
+                ImgDisplay += " <a href='ProductPage.aspx?AddToWshLst="+ prdctImg.Product_Id+ "' title=Wishlist><i class='zmdi zmdi-favorite'></i></a>";
+                ImgDisplay += " </li>";
+
+                //ImgDisplay += " <li>";
                 //ImgDisplay += " <a href='#' data-toggle=modal data-target=#productModal title=Quickview id='QckVw' OnServerClick='setProductID("+ prdctImg.Product_Id + ")'><i class='zmdi zmdi-zoom-in'></i></a>";
                 //ImgDisplay += " <a href='CategoryPage.aspx?s=<%=Session('"+ prdctImg.Product_Id + "')%> data -toggle=modal data-target=#productModal title=Quickview id='QckVw' OnServerClick='setProductID(" + prdctImg.Product_Id + ")'><i class='zmdi zmdi-zoom-in'></i></a>";
                 //ImgDisplay += " <asp:LinkButton href='#' data-toggle=modal data-target=#productModal title=Quickview id='btnQckVw' runat='server' CommandArgument='"+prdctImg.Product_Id+ "' OnClick='btnQckVw_Click'><i class='zmdi zmdi-zoom-in'></i></asp:LinkButton>";
-                ImgDisplay += " </li>";
+                //ImgDisplay += " </li>";
+
+                //ImgDisplay += " <li>";
+                //ImgDisplay += " <a href=# title=Compare><i class='zmdi zmdi-refresh'></i></a>";
+                //ImgDisplay += " </li>";
 
                 ImgDisplay += " <li>";
-                ImgDisplay += " <a href=# title=Compare><i class='zmdi zmdi-refresh'></i></a>";
+                ImgDisplay += " <a href='ProductPage.aspx?AddToShpCrt="+prdctImg.Product_Id+"' title=Add to cart><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
                 ImgDisplay += " </li>";
-                ImgDisplay += " <li>";
-                ImgDisplay += " <a href=# title=Add to cart><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
-                ImgDisplay += " </li>";
+
                 ImgDisplay += " </ul>";
                 ImgDisplay += " </div>";
                 ImgDisplay += " </div>";
@@ -213,18 +199,25 @@ namespace BetterTech_Webpage
                 ImgDisplay2 += " <h3 class='pro-price'>R" + String.Format("{0:0.00}", prdctImg.Product_Price) + "</h3>";
                 ImgDisplay2 += "<p>"+prdctImg.Product_Description+"</p>";
                 ImgDisplay2 += " <ul class='action-button'>";
+
                 ImgDisplay2 += " <li>";
                 ImgDisplay2 += " <a href=# title=Wishlist><i class='zmdi zmdi-favorite'></i></a>";
                 ImgDisplay2 += " </li>";
-                ImgDisplay2 += " <li>";
-                ImgDisplay2 += " <a href=# data-toggle=modal data-target=#productModal title=Quickview><i class='zmdi zmdi-zoom-in'></i></a>";
-                ImgDisplay2 += " </li>";
-                ImgDisplay2 += " <li>";
-                ImgDisplay2 += " <a href=# title=Compare><i class='zmdi zmdi-refresh'></i></a>";
-                ImgDisplay2 += " </li>";
+
+                //ImgDisplay += " <li>";
+                //ImgDisplay += " <a href='#' data-toggle=modal data-target=#productModal title=Quickview id='QckVw' OnServerClick='setProductID("+ prdctImg.Product_Id + ")'><i class='zmdi zmdi-zoom-in'></i></a>";
+                //ImgDisplay += " <a href='CategoryPage.aspx?s=<%=Session('"+ prdctImg.Product_Id + "')%> data -toggle=modal data-target=#productModal title=Quickview id='QckVw' OnServerClick='setProductID(" + prdctImg.Product_Id + ")'><i class='zmdi zmdi-zoom-in'></i></a>";
+                //ImgDisplay += " <asp:LinkButton href='#' data-toggle=modal data-target=#productModal title=Quickview id='btnQckVw' runat='server' CommandArgument='"+prdctImg.Product_Id+ "' OnClick='btnQckVw_Click'><i class='zmdi zmdi-zoom-in'></i></asp:LinkButton>";
+                //ImgDisplay += " </li>";
+
+                //ImgDisplay += " <li>";
+                //ImgDisplay += " <a href=# title=Compare><i class='zmdi zmdi-refresh'></i></a>";
+                //ImgDisplay += " </li>";
+
                 ImgDisplay2 += " <li>";
                 ImgDisplay2 += " <a href=# title=Add to cart><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
                 ImgDisplay2 += " </li>";
+
                 ImgDisplay2 += " </ul>";
                 ImgDisplay2 += " </div>";
                 ImgDisplay2 += " </div>";
@@ -265,16 +258,8 @@ namespace BetterTech_Webpage
             strSrch = "";
             strPrcRng = "";
 
-        }
-
-        void btnQckVw_Click(object sender, EventArgs e)
-        {
-            Debug.WriteLine("/////////////////////Selected");
-            LinkButton btn = (LinkButton)(sender);
-            string val = btn.CommandArgument;
-            Session["ProductId"] = val;
-        }
-
+        }//..........................................................end of page load
+        
         protected void btnSrchPrc_Click(object sender, EventArgs e)
         {
             //strPrcRng = amount.Value;
@@ -284,6 +269,21 @@ namespace BetterTech_Webpage
         protected void btnSrchLst_Click(object sender, EventArgs e)
         {
             //strSrch = txtSrch.Value;
+        }
+
+        protected void btnShwMore_Click(object sender, EventArgs e)
+        {
+            int intNum = Convert.ToInt16(HttpContext.Current.Session["PgNum"]);
+            Session["PgNum"] = (intNum + 3);
+            
+            Page.Response.Redirect(Page.Request.Url.ToString());
+        }
+
+        protected void btnShwLess_Click(object sender, EventArgs e)
+        {
+            Session["PgNum"] = null;
+            Response.Redirect("ProductPage.aspx");
+            //Page.Response.Redirect(Page.Request.Url.ToString());
         }
     }
 }

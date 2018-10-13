@@ -88,16 +88,20 @@
                                     <!-- single-product-info start -->
                                     <div class="col-md-7 col-sm-7 col-xs-12"> 
                                         <div class="single-product-info">
-                                            <h3 class="text-black-1">Dummy Product Name </h3>
-                                            <h6 class="brand-name-2">brand name</h6>
+
+                                            <div id="PrdctNmBrnd" runat="server">
+                                                 <%--<h3 class="text-black-1">Dummy Product Name </h3>
+                                                 <h6 class="brand-name-2">brand name</h6>--%>
+                                            </div>
+                                           
                                             <!-- hr -->
                                             <hr>
                                             <!-- single-product-tab -->
                                             <div class="single-product-tab">
                                                 <ul class="reviews-tab mb-20">
                                                     <li  class="active"><a href="#description" data-toggle="tab">Specifications</a></li>
-                                                    <li ><a href="#information" data-toggle="tab">Warranty & Returns</a></li>
-                                                    <li ><a href="#reviews" data-toggle="tab">Reviews</a></li>
+                                                    <%--<li ><a href="#information" data-toggle="tab">Warranty & Returns</a></li>
+                                                    <li ><a href="#reviews" data-toggle="tab">Reviews</a></li>--%>
                                                 </ul>
                                                 <div class="tab-content">
                                                     <%--Specifications--%>
@@ -106,11 +110,13 @@
                                                         <%--Product Specification Code--%>
 
                                                     </div>
-                                                    <div role="tabpanel" class="tab-pane" id="information">
+
+                                                    <%--<div role="tabpanel" class="tab-pane" id="information">
                                                         <p>Warranty</p>
                                                         <p>Return Policies</p>
-                                                    </div>
-                                                    <div role="tabpanel" class="tab-pane" id="reviews">
+                                                    </div>--%>
+
+                                                    <%--<div role="tabpanel" class="tab-pane" id="reviews">
                                                         <!-- reviews-tab-desc -->
                                                         <div class="reviews-tab-desc">
                                                             <!-- single comments -->
@@ -124,13 +130,7 @@
                                                                             <h6 class="media-heading"><a href="#">Gerald Barnes</a></h6>
                                                                             <p class="mb-10">27 Jun, 2016 at 2:30pm</p>
                                                                         </div>
-                                                                        <%--<div class="pull-right">
-                                                                            <ul class="reply-delate">
-                                                                                <li><a href="#">Reply</a></li>
-                                                                                <li>/</li>
-                                                                                <li><a href="#">Delate</a></li>
-                                                                            </ul>
-                                                                        </div>--%>
+                                                                        
                                                                     </div>
                                                                     <p class="mb-0">Comment.</p>
                                                                 </div>
@@ -146,19 +146,13 @@
                                                                             <h6 class="media-heading"><a href="#">Gerald Barnes</a></h6>
                                                                             <p class="mb-10">27 Jun, 2016 at 2:30pm</p>
                                                                         </div>
-                                                                        <%--<div class="pull-right">
-                                                                            <ul class="reply-delate">
-                                                                                <li><a href="#">Reply</a></li>
-                                                                                <li>/</li>
-                                                                                <li><a href="#">Delate</a></li>
-                                                                            </ul>
-                                                                        </div>--%>
+                                                                        
                                                                     </div>
                                                                     <p class="mb-0">Comment.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div>--%>
                                                 </div>
                                             </div>
                                             <!--  hr -->
@@ -196,20 +190,27 @@
                                                     </div>   
                                                 </div>
                                                 <div class="sin-pro-action f-right">
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist" tabindex="0"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal" data-target="#productModal" title="Quickview" tabindex="0"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare" tabindex="0"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart" tabindex="0"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
+
+                                                    <div id="btnAction" runat="server">
+                                                        <ul class="action-button">
+                                                            <%--<li>
+                                                                <a href="#" title="Wishlist" tabindex="0"><i class="zmdi zmdi-favorite"></i></a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" data-toggle="modal" data-target="#productModal" title="Quickview" tabindex="0"><i class="zmdi zmdi-zoom-in"></i></a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" title="Compare" tabindex="0"><i class="zmdi zmdi-refresh"></i></a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="#" title="Add to cart" tabindex="0"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                                            </li>--%>
+                                                        </ul>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>    
@@ -222,165 +223,16 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="section-title text-left mb-40">
-                                            <h2 class="uppercase">related product</h2>
-                                            <h6>There are many variations of passages of brands available,</h6>
+                                            <h2 class="uppercase">related products</h2>
+                                            <%--<h6>There are many variations of passages of brands available,</h6>--%>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="active-related-product" id="RelatedPrdct" runat="server">
-                                        <%-- <!-- product-item start -->
-                                        <div class="col-xs-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="ProductPage.aspx">
-                                                        <img src="img/product/1.jpg" alt=""/>
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <h6 class="product-title">
-                                                        <a href="ProductPage.aspx">Product Name</a>
-                                                    </h6>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                                                    </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product-item end -->
-                                         <!-- product-item start -->
-                                        <div class="col-xs-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="ProductPage.aspx">
-                                                        <img src="img/product/1.jpg" alt=""/>
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <h6 class="product-title">
-                                                        <a href="ProductPage.aspx">Product Name</a>
-                                                    </h6>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                                                    </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product-item end -->
-                                         <!-- product-item start -->
-                                        <div class="col-xs-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="ProductPage.aspx">
-                                                        <img src="img/product/1.jpg" alt=""/>
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <h6 class="product-title">
-                                                        <a href="ProductPage.aspx">Product Name</a>
-                                                    </h6>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                                                    </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product-item end -->
-                                         <!-- product-item start -->
-                                        <div class="col-xs-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/1.jpg" alt=""/>
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <h6 class="product-title">
-                                                        <a href="single-product.html">Product Name</a>
-                                                    </h6>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                                                    </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product-item end -->--%>
+                                        
+                                        <%--Related Products Placed Here--%>
+
                                     </div>   
                                 </div>
                             </div>

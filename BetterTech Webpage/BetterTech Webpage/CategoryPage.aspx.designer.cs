@@ -40,6 +40,24 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl listImg;
         
         /// <summary>
+        /// btnShwMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnShwMore;
+        
+        /// <summary>
+        /// btnShwLess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnShwLess;
+        
+        /// <summary>
         /// txtSrch control.
         /// </summary>
         /// <remarks>

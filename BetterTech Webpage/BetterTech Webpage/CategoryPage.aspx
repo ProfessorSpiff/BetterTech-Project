@@ -47,18 +47,22 @@
                                     </ul>
                                     <!-- short-by -->
                                     <div class="short-by f-left text-center">
-                                        <span>Sort by :</span>
-                                        <select>
+                                        <%--<span>Sort by :</span>--%>
+
+                                        <%--<select>
                                             <option value="lowestprice">Special Prices</option>
                                             <option value="lowestprice">Lowest to Highest Price</option>
                                             <option value="highestprice">Highest to Lowest Price</option>
                                             
-                                        </select> 
+                                        </select>--%>
+
+                                        <%--<asp:DropDownList ID="prcDrpDwn" runat="server"></asp:DropDownList>--%>
+
                                     </div> 
                                     <!-- showing -->
-                                    <div class="showing f-right text-right">
+                                    <%--<div class="showing f-right text-right">
                                         <span>Showing : 01-09 of 17.</span>
-                                    </div>                                   
+                                    </div> --%>                                  
                                 </div>
                                 <!-- shop-option end -->
                                 <!-- Tab Content start -->
@@ -82,15 +86,15 @@
                                 </div>
                                 <!-- Tab Content end -->
                                 <!-- shop-pagination start -->
-                                <ul class="shop-pagination box-shadow text-center ptblr-10-30">
-                                    <li><a href="#"><i class="zmdi zmdi-chevron-left"></i></a></li>
-                                    <li><a href="#">01</a></li>
-                                    <li><a href="#">02</a></li>
-                                    <li><a href="#">03</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">05</a></li>
-                                    <li class="active"><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+
+                                <ul class="shop-pagination text-left ptblr-10-30">
+                                    <asp:LinkButton ID="btnShwMore" CssClass="zmdi zmdi-arrow-forward" runat="server" OnClick="btnShwMore_Click"><h6> Show More Products</h6></asp:LinkButton>
                                 </ul>
+                                <br />
+                                <ul class="shop-pagination text-right ptblr-10-30">
+                                    <asp:LinkButton ID="btnShwLess" CssClass="zmdi zmdi-arrow-back" runat="server" OnClick="btnShwLess_Click"><h6> Show Less Products</h6></asp:LinkButton>
+                                </ul>
+                                
                                 <!-- shop-pagination end -->
                             </div>
                         </div>
@@ -101,7 +105,7 @@
                                     <input type="text" placeholder="Search here..." runat="server" id="txtSrch">
                                    <%-- <button type="submit"><i class="zmdi zmdi-search"></i></button>--%>
                                     <br />
-                                    <asp:LinkButton CssClass="zmdi zmdi-search" ID="btnSrchLst" runat="server" Text=" Search" OnClick="btnSrchLst_Click" />
+                                    <asp:LinkButton CssClass="zmdi zmdi-search" ID="btnSrchLst" runat="server" OnClick="btnSrchLst_Click"><h6>Search</h6></asp:LinkButton>
 
                                 </form>
                             </aside>
