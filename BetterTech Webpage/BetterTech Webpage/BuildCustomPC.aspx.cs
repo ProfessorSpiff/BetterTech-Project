@@ -84,7 +84,7 @@ namespace BetterTech_Webpage
             cpuDis += "</td>";
             cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";           
             cpuDis += "<td class=product-remove>";
-            cpuDis += "<a href=SelectItem.aspx?ID=" + cpu1.Product_Id + "><i class=\"zmdi zmdi-close\"></i></a>";     
+            cpuDis += "<input type=\"radio\" runat=\"server\" id=\"cpu1\" name=\"cpu\">Select</input>";     
             cpuDis += "</td>";
             cpuDis += "</tr>";
 
@@ -109,7 +109,7 @@ namespace BetterTech_Webpage
             cpuDis += "</td>";
             cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
             cpuDis += "<td class=product-remove>";
-            cpuDis += "<a href=SelectItem.aspx?ID=" + cpu2.Product_Id + "><i class=\"zmdi zmdi-close\"></i></a>";
+            cpuDis += "<input type=\"radio\" runat=\"server\" id=\"cpu2\" name=\"cpu\">Select</input>";
             cpuDis += "</td>";
             cpuDis += "</tr>";
 
@@ -133,7 +133,7 @@ namespace BetterTech_Webpage
             cpuDis += "</td>";
             cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
             cpuDis += "<td class=product-remove>";
-            cpuDis += "<a href=SelectItem.aspx?ID=" + cpu3.Product_Id + "><i class=\"zmdi zmdi-close\"></i></a>";
+            cpuDis += "<input type =\"radio\" runat=\"server\" id=\"cpu3\" name=\"cpu\">Select</input>";
             cpuDis += "</td>";
             cpuDis += "</tr>";
 
@@ -181,7 +181,7 @@ namespace BetterTech_Webpage
             moboDis += "</td>";
             moboDis += "<td class=\"product-price\">" + mobo1.Product_Price + "</td>";
             moboDis += "<td class=product-remove>";
-            moboDis += "<a href=SelectItem.aspx?ID=" + mobo1.Product_Id + "><i class=\"zmdi zmdi-close\"></i></a>";
+            moboDis += "<input type=\"radio\" runat=\"server\" id=\"mobo1\" name=\"mobo\">Select</input>";
             moboDis += "</td>";
             moboDis += "</tr>";
 
@@ -206,7 +206,7 @@ namespace BetterTech_Webpage
             moboDis += "</td>";
             moboDis += "<td class=\"product-price\">" + mobo2.Product_Price + "</td>";
             moboDis += "<td class=product-remove>";
-            moboDis += "<a href=SelectItem.aspx?ID=" + mobo2.Product_Id + "><i class=\"zmdi zmdi-close\"></i></a>";
+            moboDis += "<input type=\"radio\" runat=\"server\" id=\"mobo2\" name=\"mobo\">Select</input>";
             moboDis += "</td>";
             moboDis += "</tr>";
 
@@ -230,7 +230,7 @@ namespace BetterTech_Webpage
             moboDis += "</td>";
             moboDis += "<td class=\"product-price\">" + mobo3.Product_Price + "</td>";
             moboDis += "<td class=product-remove>";
-            moboDis += "<a href=SelectItem.aspx?ID=" + mobo3.Product_Id + "><i class=\"zmdi zmdi-close\"></i></a>";
+            moboDis += "<input type=\"radio\" runat=\"server\" id=\"mobo3\" name=\"mobo\">Select</input>";
             moboDis += "</td>";
             moboDis += "</tr>";
 
@@ -795,6 +795,23 @@ namespace BetterTech_Webpage
 
         protected void gaming1_Click(object sender, EventArgs e)
         {
+
+            var db = new DataLinqDataContext();
+
+            dynamic products = from a in db.Products
+                               select a;
+
+            int bud = int.Parse(budget.Value);
+            var cpuBud = bud * cpuPer;
+            var gpuBud = bud * gpuPer;
+            var moboBud = bud * moboPer;
+            var ramBud = bud * ramPer;
+            var hardBud = bud * hardPer;
+            var psuBud = bud * psuPer;
+            var caseBud = bud * casePer;
+            var coolBud = bud * coolPer;
+            var accBud = bud * accPer;
+            var differential = bud * 0.05;
             cpuPer = 0.2;
             gpuPer = 0.3;
             chosen = true;
@@ -1546,6 +1563,23 @@ namespace BetterTech_Webpage
             gpuPer = 0.25;
             chosen = true;
             string cpuDis = "";
+
+            var db = new DataLinqDataContext();
+
+            dynamic products = from a in db.Products
+                               select a;
+
+            int bud = int.Parse(budget.Value);
+            var cpuBud = bud * cpuPer;
+            var gpuBud = bud * gpuPer;
+            var moboBud = bud * moboPer;
+            var ramBud = bud * ramPer;
+            var hardBud = bud * hardPer;
+            var psuBud = bud * psuPer;
+            var caseBud = bud * casePer;
+            var coolBud = bud * coolPer;
+            var accBud = bud * accPer;
+            var differential = bud * 0.05;
 
             cpuDis += "<table class=text-center>";
             cpuDis += "<thead>";
