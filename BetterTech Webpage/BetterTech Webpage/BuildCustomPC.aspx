@@ -128,6 +128,22 @@
                                 </div>
                             </div>
                         </div>
+                        <div runat="server" class="tab-pane" id="motherboard">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="moboDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
+                        <div runat="server" class="tab-pane" id="cooling">
+                            <div class="shopping-cart-content">
+
+                                <div runat="server" id="coolDiv" class="table-content table-responsive mb-50">
+                                           
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
