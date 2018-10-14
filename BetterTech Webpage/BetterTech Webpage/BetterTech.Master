@@ -62,10 +62,8 @@
                                                     My Account
                                         </a>
                                             </li>
-                                            <li>
-                                                <a href="wishlist.html">
-                                                    <i class="zmdi zmdi-favorite"></i>
-                                                    Wish List (0)
+                                            <li visible="true">
+                                                <a href="wishlist.aspx" runat="server"  id="wishlist">
                                         </a>
                                             </li>
                                             <li>

@@ -46,7 +46,7 @@
     <!-- Body main wrapper start -->
     <div class="wrapper">
 
-        <!-- START MOBILE MENU AREA -->
+        <!-- START MOBILE MENU AREA 
         <div class="mobile-menu-area hidden-lg hidden-md">
             <div class="container">
                 <div class="row">
@@ -180,10 +180,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- END MOBILE MENU AREA -->
+        </div> END MOBILE MENU AREA -->
 
-        <!-- BREADCRUMBS SETCTION START -->
+        <!-- BREADCRUMBS SETCTION START
         <div class="breadcrumbs-section plr-200 mb-80">
             <div class="breadcrumbs overlay-bg">
                 <div class="container">
@@ -200,8 +199,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- BREADCRUMBS SETCTION END -->
+        </div> BREADCRUMBS SETCTION END -->
 
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
@@ -244,99 +242,7 @@
                                 <!-- shopping-cart start -->
                                 <div class="tab-pane" id="shopping-cart">
                                     <div class="shopping-cart-content">
-                                        <form action="#">
-                                            <div class="table-content table-responsive mb-50">
-                                                <table class="text-center">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="product-thumbnail">product</th>
-                                                            <th class="product-price">price</th>
-                                                            <th class="product-quantity">Quantity</th>
-                                                            <th class="product-subtotal">total</th>
-                                                            <th class="product-remove">remove</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <!-- tr -->
-                                                        <tr>
-                                                            <td class="product-thumbnail">
-                                                                <div class="pro-thumbnail-img">
-                                                                    <img src="img/cart/1.jpg" alt="">
-                                                                </div>
-                                                                <div class="pro-thumbnail-info text-left">
-                                                                    <h6 class="product-title-2">
-                                                                        <a href="#">dummy product name</a>
-                                                                    </h6>
-                                                                    <p>Brand: Brand Name</p>
-                                                                    <p>Model: Grand s2</p>
-                                                                    <p> Color: Black, White</p>
-                                                                </div>
-                                                            </td>
-                                                            <td class="product-price">$560.00</td>
-                                                            <td class="product-quantity">
-                                                                <div class="cart-plus-minus f-left">
-                                                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                                </div> 
-                                                            </td>
-                                                            <td class="product-subtotal">$1020.00</td>
-                                                            <td class="product-remove">
-                                                                <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                        <!-- tr -->
-                                                        <tr>
-                                                            <td class="product-thumbnail">
-                                                                <div class="pro-thumbnail-img">
-                                                                    <img src="img/cart/2.jpg" alt="">
-                                                                </div>
-                                                                <div class="pro-thumbnail-info text-left">
-                                                                    <h6 class="product-title-2">
-                                                                        <a href="#">dummy product name</a>
-                                                                    </h6>
-                                                                    <p>Brand: Brand Name</p>
-                                                                    <p>Model: Grand s2</p>
-                                                                    <p> Color: Black, White</p>
-                                                                </div>
-                                                            </td>
-                                                            <td class="product-price">$560.00</td>
-                                                            <td class="product-quantity">
-                                                                <div class="cart-plus-minus f-left">
-                                                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                                </div> 
-                                                            </td>
-                                                            <td class="product-subtotal">$1020.00</td>
-                                                            <td class="product-remove">
-                                                                <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                        <!-- tr -->
-                                                        <tr>
-                                                            <td class="product-thumbnail">
-                                                                <div class="pro-thumbnail-img">
-                                                                    <img src="img/cart/3.jpg" alt="">
-                                                                </div>
-                                                                <div class="pro-thumbnail-info text-left">
-                                                                    <h6 class="product-title-2">
-                                                                        <a href="#">dummy product name</a>
-                                                                    </h6>
-                                                                    <p>Brand: Brand Name</p>
-                                                                    <p>Model: Grand s2</p>
-                                                                    <p> Color: Black, White</p>
-                                                                </div>
-                                                            </td>
-                                                            <td class="product-price">$560.00</td>
-                                                            <td class="product-quantity">
-                                                                <div class="cart-plus-minus f-left">
-                                                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                                </div> 
-                                                            </td>
-                                                            <td class="product-subtotal">$1020.00</td>
-                                                            <td class="product-remove">
-                                                                <a href="#"><i class="zmdi zmdi-close"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div class="table-content table-responsive mb-50"  runat="server" id="cartDisplay">
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -353,19 +259,19 @@
                                                         <table>
                                                             <tr>
                                                                 <td class="td-title-1">Cart Subtotal</td>
-                                                                <td class="td-title-2">$155.00</td>
+                                                                <td class="td-title-2" runat="server" id="tdCartSubtotal"></td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="td-title-1">Shipping and Handing</td>
-                                                                <td class="td-title-2">$15.00</td>
+                                                                <td class="td-title-2"  runat="server" id="tdShipping"></td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="td-title-1">Vat</td>
-                                                                <td class="td-title-2">$00.00</td>
+                                                                <td class="td-title-2"  runat="server" id="tdVat"></td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="order-total">Order Total</td>
-                                                                <td class="order-total-price">$170.00</td>
+                                                                <td class="order-total-price"  runat="server" id="tdTotalPrice"></td>
                                                             </tr>
                                                         </table>
                                                     </div>
@@ -393,7 +299,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                                 <!-- shopping-cart end -->
@@ -410,29 +315,22 @@
                                 <!-- checkout start -->
                                 <div class="tab-pane" id="checkout">
                                     <div class="checkout-content box-shadow p-30">
-                                        <form action="#">
                                             <div class="row">
                                                 <!-- billing details -->
                                                 <div class="col-md-6">
                                                     <div class="billing-details pr-10">
                                                         <h6 class="widget-title border-left mb-20">billing details</h6>
                                                         <input type="text"  placeholder="Your Name Here...">
-                                                        <input type="text"  placeholder="Email address here...">
-                                                        <input type="text"  placeholder="Phone here...">
-                                                        <input type="text"  placeholder="Company neme here...">
+                                                        <input  runat="server" id="txtEmail" type="text"  placeholder="Email address here...">
+                                                        <input type="text"  runat="server" id="txtPhone" placeholder="Phone here...">
+                                                        <input type="text"  placeholder="Company name here...">
                                                         <select class="custom-select">
                                                             <option value="defalt">country</option>
                                                             <option value="c-1">Australia</option>
                                                             <option value="c-2">Bangladesh</option>
                                                             <option value="c-3">Unitd States</option>
                                                             <option value="c-4">Unitd Kingdom</option>
-                                                        </select>
-                                                        <select class="custom-select">
-                                                            <option value="defalt">State</option>
-                                                            <option value="c-1">Melbourne</option>
-                                                            <option value="c-2">Dhaka</option>
-                                                            <option value="c-3">New York</option>
-                                                            <option value="c-4">London</option>
+                                                            <option value="c-5">South Africa</option>
                                                         </select>
                                                         <select class="custom-select">
                                                             <option value="defalt">Town/City</option>
@@ -441,39 +339,12 @@
                                                             <option value="c-3">Boston</option>
                                                             <option value="c-4">Cambridge</option>
                                                         </select>
-                                                        <textarea class="custom-textarea" placeholder="Your address here..."></textarea>
+                                                        <textarea runat="server" id="txtAddress" class="custom-textarea" placeholder="Your address here..."></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <!-- our order -->
-                                                    <div class="payment-details pl-10 mb-50">
-                                                        <h6 class="widget-title border-left mb-20">our order</h6>
-                                                        <table>
-                                                            <tr>
-                                                                <td class="td-title-1">Dummy Product Name x 2</td>
-                                                                <td class="td-title-2">$1855.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="td-title-1">Dummy Product Name</td>
-                                                                <td class="td-title-2">$555.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="td-title-1">Cart Subtotal</td>
-                                                                <td class="td-title-2">$2410.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="td-title-1">Shipping and Handing</td>
-                                                                <td class="td-title-2">$15.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="td-title-1">Vat</td>
-                                                                <td class="td-title-2">$00.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="order-total">Order Total</td>
-                                                                <td class="order-total-price">$2425.00</td>
-                                                            </tr>
-                                                        </table>
+                                                    <div runat="server" id="checkoutOrder" class="payment-details pl-10 mb-50">
                                                     </div> 
                                                     <!-- payment-method -->
                                                     <div class="payment-method">
@@ -524,10 +395,10 @@
                                                         </div>
                                                     </div>
                                                     <!-- payment-method end -->
-                                                    <button class="submit-btn-1 mt-30 btn-hover-1" type="submit">place order</button>
+                                                    <asp:Button runat="server" id="btnSubmit" onClick="btnSubmit_Click" class="submit-btn-1 mt-30 btn-hover-1" type="submit" text="place order" />
+
                                                 </div>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                                 <!-- checkout end -->
@@ -541,87 +412,40 @@
                                             <ul class="order-info-list">
                                                 <li>
                                                     <h6>order no</h6>
-                                                    <p>m 2653257</p>
+                                                    <p runat="server" id="displayOrderNo1"></p>
                                                 </li>
                                                 <li>
                                                     <h6>order no</h6>
-                                                    <p>m 2653257</p>
+                                                    <p runat="server" id="displayOrderNo2"></p>
                                                 </li>
                                                 <li>
                                                     <h6>order no</h6>
-                                                    <p>m 2653257</p>
+                                                    <p runat="server" id="displayOrderNo3"></p>
                                                 </li>
                                                 <li>
                                                     <h6>order no</h6>
-                                                    <p>m 2653257</p>
+                                                    <p runat="server" id="displayOrderNo4"></p>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="row">
                                             <!-- our order -->
                                             <div class="col-md-6">
-                                                <div class="payment-details p-30">
-                                                    <h6 class="widget-title border-left mb-20">our order</h6>
-                                                    <table>
-                                                        <tr>
-                                                            <td class="td-title-1">Dummy Product Name x 2</td>
-                                                            <td class="td-title-2">$1855.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Dummy Product Name</td>
-                                                            <td class="td-title-2">$555.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Cart Subtotal</td>
-                                                            <td class="td-title-2">$2410.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Shipping and Handing</td>
-                                                            <td class="td-title-2">$15.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Vat</td>
-                                                            <td class="td-title-2">$00.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="order-total">Order Total</td>
-                                                            <td class="order-total-price">$2425.00</td>
-                                                        </tr>
-                                                    </table>
+                                                <div runat="server" id="displayOrderComplete" class="payment-details p-30">
                                                 </div>         
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="bill-details p-30">
                                                     <h6 class="widget-title border-left mb-20">billing details</h6>
                                                     <ul class="bill-address">
-                                                        <li>
+                                                        <li runat="server" id="liAddress">
                                                             <span>Address:</span>
-                                                            28 Green Tower, Street Name, New York City, USA
                                                         </li>
-                                                        <li>
+                                                        <li  runat="server" id="liEmail">
                                                             <span>email:</span>
-                                                            info@companyname.com
                                                         </li>
-                                                        <li>
-                                                            <span>phone : </span>
-                                                            (+880) 19453 821758
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="bill-details pl-30">
-                                                    <h6 class="widget-title border-left mb-20">billing details</h6>
-                                                    <ul class="bill-address">
-                                                        <li>
-                                                            <span>Address:</span>
-                                                            28 Green Tower, Street Name, New York City, USA
-                                                        </li>
-                                                        <li>
-                                                            <span>email:</span>
-                                                            info@companyname.com
-                                                        </li>
-                                                        <li>
-                                                            <span>phone : </span>
-                                                            (+880) 19453 821758
+                                                        <li runat="server" id="liPhone">
+                                                            <span>phone: </span>
                                                         </li>
                                                     </ul>
                                                 </div>

@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addQuantity.aspx" />
     <Content Include="App_Media\Developers\Akshar_crop.jpg" />
     <Content Include="App_Media\Developers\Brij_crop.jpg" />
     <Content Include="App_Media\Developers\Jen_crop.jpg" />
@@ -92,6 +93,7 @@
     <Content Include="CategoryPage.aspx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="close.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="About.aspx" />
     <Content Include="App_Media\Developers\Akshar.jpg" />
@@ -99,6 +101,7 @@
     <Content Include="App_Media\Developers\Brij.jpg" />
     <Content Include="App_Media\Developers\Jen.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="minusQuantity.aspx" />
     <Content Include="UserAccountInfoPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -124,6 +127,13 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="addQuantity.aspx.cs">
+      <DependentUpon>addQuantity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addQuantity.aspx.designer.cs">
+      <DependentUpon>addQuantity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminHomePage.aspx.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -146,6 +156,13 @@
     <Compile Include="CategoryPage.aspx.designer.cs">
       <DependentUpon>CategoryPage.aspx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="close.aspx.cs">
+      <DependentUpon>close.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="close.aspx.designer.cs">
+      <DependentUpon>close.aspx</DependentUpon>
     </Compile>
     <Compile Include="ContactUs.aspx.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
@@ -172,6 +189,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="minusQuantity.aspx.cs">
+      <DependentUpon>minusQuantity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="minusQuantity.aspx.designer.cs">
+      <DependentUpon>minusQuantity.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserAccountInfoPage.aspx.cs">
       <DependentUpon>UserAccountInfoPage.aspx</DependentUpon>

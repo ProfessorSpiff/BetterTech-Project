@@ -40,6 +40,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor myaccountlink;
         
         /// <summary>
+        /// wishlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor wishlist;
+        
+        /// <summary>
         /// loginlink control.
         /// </summary>
         /// <remarks>
