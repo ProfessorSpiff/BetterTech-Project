@@ -158,7 +158,7 @@
                                             <!--  hr -->
                                             <hr>
                                             <!-- single-pro-color-rating -->
-                                            <div class="single-pro-color-rating clearfix">
+                                            <div class="single-pro-color-rating clearfix" id="PriceDsp" runat="server">
                                                 <%--<div class="sin-pro-color f-left">
                                                     <p class="color-title f-left">Color</p>
                                                     <div class="widget-color f-left">
@@ -186,7 +186,7 @@
                                                 <div class="sin-plus-minus f-left clearfix">
                                                     <p class="color-title f-left">Qty</p>
                                                     <div class="cart-plus-minus f-left">
-                                                        <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                                        <input type="text" value="1" name="qtybutton" class="cart-plus-minus-box" id="inItemQty" runat="server">
                                                     </div>   
                                                 </div>
                                                 <div class="sin-pro-action f-right">
