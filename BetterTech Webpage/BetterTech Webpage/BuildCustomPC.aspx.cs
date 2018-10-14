@@ -795,7 +795,9 @@ namespace BetterTech_Webpage
 
         protected void gaming1_Click(object sender, EventArgs e)
         {
-
+            cpuPer = 0.2;
+            gpuPer = 0.3;
+            chosen = true;
             var db = new DataLinqDataContext();
 
             dynamic products = from a in db.Products
@@ -812,9 +814,7 @@ namespace BetterTech_Webpage
             var coolBud = bud * coolPer;
             var accBud = bud * accPer;
             var differential = bud * 0.05;
-            cpuPer = 0.2;
-            gpuPer = 0.3;
-            chosen = true;
+            
             string cpuDis = "";
 
             cpuDis += "<table class=text-center>";
