@@ -82,6 +82,11 @@
       <DependentUpon>BetterTech_DB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Media\Product\Brand_Asus.jpg" />
+    <Content Include="App_Media\Product\Brand_Ballistix.jpg" />
+    <Content Include="App_Media\Product\Brand_Intel.jpg" />
+    <Content Include="App_Media\Product\Brand_MSI.jpg" />
+    <Content Include="App_Media\Product\Brand_WD.jpg" />
     <Content Include="App_Media\Product\Product_Id1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

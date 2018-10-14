@@ -239,12 +239,12 @@
                         </div>
                         <div class="col-md-3 col-md-pull-9 col-xs-12">
                             <!-- widget-search -->
-                            <aside class="widget-search mb-30">
+                            <%--<aside class="widget-search mb-30">
                                 <form action="#">
                                     <input type="text" placeholder="Search here...">
                                     <button type="submit"><i class="zmdi zmdi-search"></i></button>
                                 </form>
-                            </aside>
+                            </aside>--%>
                             <!-- widget-categories -->
                             <aside class="widget widget-categories box-shadow mb-30">
                                 <h6 class="widget-title border-left mb-20">Categories</h6>
