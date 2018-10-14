@@ -5,7 +5,7 @@
 
     
         <!-- BREADCRUMBS SETCTION START -->
-        <div class="breadcrumbs-section plr-200 mb-80">
+      <%--  <div class="breadcrumbs-section plr-200 mb-80">
             <div class="breadcrumbs overlay-bg">
                 <div class="container">
                     <div class="row">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- BREADCRUMBS SETCTION END -->
 
         <!-- Start page content -->
@@ -47,66 +47,39 @@
                                                     <div class="p-30">
                                                         <div class="row">
                                                             <div class="col-sm-6">
-                                                                <input type="text"  placeholder="First Name">
+                                                                <label runat="server" id="lblun"> </label>
+                                                                 <input type="text"  placeholder="User Name" runat="server" id="UName">
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <input type="text"  placeholder="last Name">
+                                                                <label runat="server" id="lblfn"> </label>
+                                                                <input type="text"  placeholder="First Name" runat="server" id="fname">
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <select class="custom-select">
-                                                                    <option value="defalt">country</option>
-                                                                    <option value="c-1">Australia</option>
-                                                                    <option value="c-2">Bangladesh</option>
-                                                                    <option value="c-3">Unitd States</option>
-                                                                    <option value="c-4">Unitd Kingdom</option>
-                                                                </select>
+                                                                <label runat="server" id="Labelln"> </label>
+                                                                <input type="text"  placeholder="Last Name" runat="server" id="lname">
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <select class="custom-select">
-                                                                    <option value="defalt">State</option>
-                                                                    <option value="c-1">Melbourne</option>
-                                                                    <option value="c-2">Dhaka</option>
-                                                                    <option value="c-3">New York</option>
-                                                                    <option value="c-4">London</option>
-                                                                </select>
+                                                                <label runat="server" id="Lble"> </label>
+                                                                 <input type="text"  placeholder="E-Mail" runat="server" id="email">
                                                             </div>
                                                             <div class="col-sm-6">
-                                                                <select class="custom-select">
-                                                                    <option value="defalt">Town/City</option>
-                                                                    <option value="c-1">Victoria</option>
-                                                                    <option value="c-2">Chittagong</option>
-                                                                    <option value="c-3">Boston</option>
-                                                                    <option value="c-4">Cambridge</option>
-                                                                </select>
+                                                                <label runat="server" id="Labelp"> </label>
+                                                                 <input type="text"  placeholder="Province/city" runat="server" id="location1">
                                                             </div>
+                                                            <label runat="server" id="Lblc"> </label>
+                                                                <input type="text"  placeholder="Physical Address" runat="server" id="location2">
                                                             <div class="col-sm-6">
-                                                                <input type="text"  placeholder="Phone here...">
+                                                                <label runat="server" id="Lblzip"> </label>
+                                                                 <input type="text"  placeholder="Zip Code" runat="server" id="zipcode">
                                                             </div>
                                                         </div>
-                                                        <input type="text"  placeholder="Company neme here...">
-                                                        <input type="text"  placeholder="Email address here...">
-                                                        <input type="password"  placeholder="Password">
-                                                        <input type="password"  placeholder="Confirm Password">
-                                                        <textarea class="custom-textarea" placeholder="Additional information..."></textarea>
-                                                        <div class="checkbox">
-                                                            <label class="mr-10"> 
-                                                                <small>
-                                                                    <input type="checkbox" name="signup">I wish to subscribe to the 69 Fashion newsletter.
-                                                                </small>
-                                                            </label>
-                                                            <br>
-                                                            <label> 
-                                                                <small>
-                                                                    <input type="checkbox" name="signup">I have read and agree to the <a href="#">Privacy Policy</a>
-                                                                </small>
-                                                            </label>
-                                                        </div>
+                                                        <label runat="server" id="Lblpass">Password: </label>
+                                                        <input type="password"  placeholder="Password" runat="server" id="pass1">
+                                                        <input type="password"  placeholder="Confirm Password" runat="server" id="pass2"> 
+                                                        
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Save</button>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <button class="submit-btn-1 mt-20 btn-hover-1 f-right" type="reset">Clear</button>
+                                                                <asp:Button ID="savebtn" runat="server" Text="Save" OnClick="savebtn_Click" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -115,7 +88,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- My shipping address -->
+                                 <div id="Invoices" runat="server">
+                                    <%--this is where the past invoices go--%>    
+                                 </div>
+                        <%--        <!-- My shipping address -->
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
@@ -179,9 +155,9 @@
                                             </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <!-- My billing details -->
-                                <div class="panel panel-default">
+                          <%--      <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion2" href="#billing_address">My billing details</a>
@@ -229,111 +205,7 @@
                                             </form>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- My Order info -->
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#My_order_info">My Order info</a>
-                                        </h4>
-                                    </div>
-                                    <div id="My_order_info" class="panel-collapse collapse" role="tabpanel" >
-                                        <div class="panel-body">
-                                            <form action="#">
-                                                <!-- our order -->
-                                                <div class="payment-details p-30">
-                                                    <table>
-                                                        <tr>
-                                                            <td class="td-title-1">Dummy Product Name x 2</td>
-                                                            <td class="td-title-2">$1855.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Dummy Product Name</td>
-                                                            <td class="td-title-2">$555.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Cart Subtotal</td>
-                                                            <td class="td-title-2">$2410.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Shipping and Handing</td>
-                                                            <td class="td-title-2">$15.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="td-title-1">Vat</td>
-                                                            <td class="td-title-2">$00.00</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="order-total">Order Total</td>
-                                                            <td class="order-total-price">$2425.00</td>
-                                                        </tr>
-                                                    </table>
-                                                    <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">Save</button>
-                                                </div> 
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Payment Method -->
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion2" href="#My_payment_method">Payment Method</a>
-                                        </h4>
-                                    </div>
-                                    <div id="My_payment_method" class="panel-collapse collapse" role="tabpanel" >
-                                        <div class="panel-body">
-                                            <form action="#">
-                                                <div class="new-customers p-30">
-                                                    <select class="custom-select">
-                                                        <option value="defalt">Card Type</option>
-                                                        <option value="c-1">Master Card</option>
-                                                        <option value="c-2">Paypal</option>
-                                                        <option value="c-3">Paypal</option>
-                                                        <option value="c-4">Paypal</option>
-                                                    </select>
-                                                    <div class="row">
-                                                        <div class="col-sm-6">
-                                                            <input type="text"  placeholder="Card Number">
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <input type="text"  placeholder="Card Security Code">
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <select class="custom-select">
-                                                                <option value="defalt">Month</option>
-                                                                <option value="c-1">January</option>
-                                                                <option value="c-2">February</option>
-                                                                <option value="c-3">March</option>
-                                                                <option value="c-4">April</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <select class="custom-select">
-                                                                <option value="defalt">Year</option>
-                                                                <option value="c-4">2017</option>
-                                                                <option value="c-1">2016</option>
-                                                                <option value="c-2">2015</option>
-                                                                <option value="c-3">2014</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">pay now</button>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <button class="submit-btn-1 mt-20 btn-hover-1" type="submit" value="register">cancel order</button>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <button class="submit-btn-1 mt-20 f-right btn-hover-1" type="submit" value="register">continue</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>--%>
                             </div>
                         </div>
                     </div>

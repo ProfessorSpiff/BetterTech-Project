@@ -1,7 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BetterTech.master.cs" Inherits="BetterTech_Webpage.BetterTech" %>
 
 <!DOCTYPE html>
-
 <html class="no-js" lang="en">
 <head runat="server">
     <meta charset="utf-8">
@@ -49,25 +48,26 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-sm-6 hidden-xs">
-                                    <div class="call-us">
-                                        <p class="mb-0 roboto">(+27) 83 300 8633</p>
-                                    </div>
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
                                     <div class="top-link clearfix">
                                         <ul class="link f-right">
                                             <li>
-                                                <a href="my-account.html" runat="server" id="myaccountlink" visible="false">
+                                                <a href="UserAccountInfoPage.aspx" runat="server" id="myaccountlink" visible="false">
                                                     <i class="zmdi zmdi-account"></i>
                                                     My Account
                                         </a>
                                             </li>
+                                            <li>
+                                                <a href="Wishlist.aspx">
+                                                    <i class="zmdi zmdi-favorite"></i>
+                                                    Wish List (0)
                                             <li visible="true">
                                                 <a href="wishlist.aspx" runat="server"  id="wishlist">
                                         </a>
                                             </li>
                                             <li>
-                                                <a href="login.aspx" runat="server" id="loginlink">
+                                                <a href="Login.aspx" runat="server" id="loginlink">
                                                     <i class="zmdi zmdi-lock"></i>
                                                     Login
                                         </a>
@@ -92,7 +92,7 @@
                                     <!-- logo -->
                                     <div class="col-md-2 col-sm-6 col-xs-12">
                                         <div class="logo">
-                                            <a href="index.html">
+                                            <a href="index.aspx">
                                                 <img src="noimage.jpg" alt="main logo">
                                             </a>
                                         </div>
@@ -101,7 +101,10 @@
                                     <div class="col-md-8 hidden-sm hidden-xs">
                                         <nav id="primary-menu">
                                             <ul class="main-menu text-center">
-                                                <li><a href="index.html">Home</a>
+                                                <li><a href="index.aspx">Home</a>
+                                                </li>         
+                                                <%-- the control specials page is visible for testing only --%>
+                                                <li><a href="ControlSpecials.aspx" visible="true" id="cspecialslink" runat="server">Control Specials</a>
                                                 </li>
                                                 <li class="mega-parent"><a href="#">Hardware</a>
                                                     <div class="mega-menu-area clearfix">
@@ -109,52 +112,52 @@
                                                             <ul class="single-mega-item">
                                                                 <li class="menu-title">Main Components</li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=GPU">Graphics Cards</a>
+                                                                    <a href="CategoryPage.aspx?Category=GPU">Graphics Cards</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=Processor">Processors/CPU's/APU's</a>
+                                                                    <a href="CategoryPage.aspx?Category=CPU">Processors/CPU's/APU's</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=ram">Ram Memory</a>
+                                                                    <a href="CategoryPage.aspx?Category=RAM">Ram Memory</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=mb">Motherboards</a>
+                                                                    <a href="CategoryPage.aspx?Category=Motherboard">Motherboards</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=psu">Power Suply Units</a>
+                                                                    <a href="CategoryPage.aspx?Category=psu">Power Suply Units</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=case">Cases</a>
+                                                                    <a href="CategoryPage.aspx?Category=case">Cases</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=hd">Hard Drives/Solid State Drives</a>
+                                                                    <a href="CategoryPage.aspx?Category=HardDrive">Hard Drives/Solid State Drives</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=cooling">Fans,CPU and Liquid Cooling</a>
+                                                                    <a href="CategoryPage.aspx?Category=cooling">Fans,CPU and Liquid Cooling</a>
                                                                 </li>
                                                             </ul>
                                                             <ul class="single-mega-item">
                                                                 <li class="menu-title">Peripherals</li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=display">Moniters, Screens and Projectors</a>
+                                                                    <a href="CategoryPage.aspx?Category=display">Moniters, Screens and Projectors</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=input">Keyboards, Mice and Controlers</a>
+                                                                    <a href="CategoryPage.aspx?Category=input">Keyboards, Mice and Controlers</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=sound">Headsets,Speakers and Sound Equipment</a>
+                                                                    <a href="CategoryPage.aspx?Category=sound">Headsets,Speakers and Sound Equipment</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=scanprint">Printers and Scanners</a>
+                                                                    <a href="CategoryPage.aspx?Category=scanprint">Printers and Scanners</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=chairs">Gaming and Comfort Chairs</a>
+                                                                    <a href="CategoryPage.aspx?Category=chairs">Gaming and Comfort Chairs</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=drives">DVD Writters and Drives</a>
+                                                                    <a href="CategoryPage.aspx?Category=drives">DVD Writters and Drives</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="CategoryPage.aspx?cat=network">Modems and Network Equipment</a>
+                                                                    <a href="CategoryPage.aspx?Category=network">Modems and Network Equipment</a>
                                                                 </li>                                                        
                                                             </ul>
                                                             <ul class="single-mega-item">
@@ -175,7 +178,7 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="mega-parent"><a href="shop.html">Pre-Built Systems and Laptops</a>
+                                                <li class="mega-parent"><a href="#">Pre-Built Systems and Laptops</a>
                                                     <div class="mega-menu-area clearfix">
                                                         <div class="mega-menu-link f-left">
                                                             <ul class="single-mega-item">
@@ -229,13 +232,10 @@
                                                     </div>
                                                 </li> 
                                                 <li>
-                                                    <a href="about.html">About us</a>
+                                                    <a href="About.aspx">About us</a>
                                                 </li>
                                                 <li>
-                                                    <a href="contact.html">Contact</a>
-                                                </li>
-                                                     <li>
-                                                         <a href="Wishlist.aspx">Wishlist.aspx</a>
+                                                    <a href="ContactUs.aspx">Contact</a>
                                                 </li>
                                             </ul>
                                         </nav>
@@ -373,51 +373,19 @@
                 <!-- END HEADER AREA -->
 
                 <!-- START MOBILE MENU AREA -->
-                <div class="mobile-menu-area hidden-lg hidden-md">
+              <%--  <div class="mobile-menu-area hidden-lg hidden-md">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="mobile-menu">
                                     <nav id="dropdown">
                                         <ul>
-                                            <li><a href="index.html">Home</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="index.html">Home Version 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2.html">Home Version 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">Home Version 3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-4.html">Home 4 Animated Text</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-5.html">Home 5 Animated Text Ovlerlay</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-6.html">Home 6 Background Video</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-7.html">Home 7 BG-Video Ovlerlay</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-8.html">Home 8 Boxed-1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-9.html">Home 9 Gradient</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-10.html">Home 10 Boxed-2</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
+                                            <li><a href="Index.aspx">Home</a>
+                                            </li>--%>
+                                          <%--  <li>
                                                 <a href="shop.html">Products</a>
-                                            </li>
-                                            <li><a href="#">Pages</a>
+                                            </li--%>>
+                                           <%-- <li><a href="#">Pages</a>
                                                 <ul>
                                                     <li>
                                                         <a href="shop.html">Shop</a>
@@ -447,7 +415,7 @@
                                                         <a href="cart.html">Shopping Cart</a>
                                                     </li>
                                                     <li>
-                                                        <a href="wishlist.html">Wishlist</a>
+                                                        <a href="Wishlist.aspx">Wishlist</a>
                                                     </li>
                                                     <li>
                                                         <a href="checkout.html">Checkout</a>
@@ -456,13 +424,13 @@
                                                         <a href="order.html">Order</a>
                                                     </li>
                                                     <li>
-                                                        <a href="login.html">Login</a>
+                                                        <a href="Login.aspx">Login</a>
                                                     </li>
                                                     <li>
-                                                        <a href="My-account.html">My Account</a>
+                                                        <a href="UserAccountInfoPage.aspx">My Account</a>
                                                     </li>
                                                     <li>
-                                                        <a href="about.html">About us</a>
+                                                        <a href="About.aspx">About us</a>
                                                     </li>
                                                     <li>
                                                         <a href="404.html">404</a>
@@ -495,10 +463,10 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="about.html">About Us</a>
+                                                <a href="About.aspx">About Us</a>
                                             </li>
                                             <li>
-                                                <a href="contact.html">Contact</a>
+                                                <a href="ContactUs.aspx">Contact</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -506,7 +474,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
                 <!-- END MOBILE MENU AREA -->
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
@@ -523,33 +491,19 @@
                                                     <img src="noimage.jpg" alt="">
                                                 </div>
                                                 <div class="footer-brief">
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the subas industry's standard dummy text ever since the 1500s,</p>
-                                                    <p>When an unknown printer took a galley of type and If you are going to use a passage of Lorem Ipsum scrambled it to make.</p>
+                                                    <h4>BetterTech</h4>
+                                                    <h4>Since 2018</h4>
                                                 </div>
-                                                <ul class="footer-social">
-                                                    <li>
-                                                        <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="google-plus" href="" title="Google Plus"><i class="zmdi zmdi-google-plus"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="twitter" href="" title="Twitter"><i class="zmdi zmdi-twitter"></i></a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
-                                                    </li>
-                                                </ul>
                                             </div>
                                         </div>
-                                        <div class="col-lg-2 hidden-md hidden-sm">
+                                       <%--<%-- <div class="col-lg-2 hidden-md hidden-sm">
                                             <div class="single-footer">
                                                 <h4 class="footer-title border-left">Shipping</h4>
                                                 <ul class="footer-menu">
-                                                    <li>
+                                                    <%--<li>
                                                         <a href="#"><i class="zmdi zmdi-circle"></i><span>New Products</span></a>
-                                                    </li>
-                                                    <li>
+                                                    </li>--%>
+                                                  <%--  <li>
                                                         <a href="#"><i class="zmdi zmdi-circle"></i><span>Discount Products</span></a>
                                                     </li>
                                                     <li>
@@ -569,38 +523,32 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div>--%>
                                         <div class="col-lg-2 col-md-3 col-sm-4">
                                             <div class="single-footer">
                                                 <h4 class="footer-title border-left">my account</h4>
                                                 <ul class="footer-menu">
                                                     <li>
-                                                        <a href="my-account.html"><i class="zmdi zmdi-circle"></i><span>My Account</span></a>
+                                                        <a href="UserAccountInfoPage.aspx"><i class="zmdi zmdi-circle"></i><span>My Account</span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="wishlist.html"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
+                                                        <a href="Wishlist.aspx"><i class="zmdi zmdi-circle"></i><span>My Wishlist</span></a>
+                                                    </li>                                                   
+                                                    <li>
+                                                        <a href="Login.aspx"><i class="zmdi zmdi-circle"></i><span>Sign In</span></a>
                                                     </li>
                                                     <li>
-                                                        <a href="cart.html"><i class="zmdi zmdi-circle"></i><span>My Cart</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="login.html"><i class="zmdi zmdi-circle"></i><span>Sign In</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="login.html"><i class="zmdi zmdi-circle"></i><span>Registration</span></a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="checkout.html"><i class="zmdi zmdi-circle"></i><span>Check out</span></a>
-                                                    </li>
-                                                    <li>
+                                                        <a href="Login.aspx"><i class="zmdi zmdi-circle"></i><span>Registration</span></a>
+                                                    </li>                            
+                                                    <%--<li>
                                                         <a href="order.html"><i class="zmdi zmdi-circle"></i><span>Oder Complete</span></a>
-                                                    </li>
+                                                    </li>--%>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 col-sm-4">
                                             <div class="single-footer">
-                                                <h4 class="footer-title border-left">Get in touch</h4>
+                                              <%--  <h4 class="footer-title border-left">Get in touch</h4>
                                                 <div class="footer-message">
                                                     <form action="#">
                                                         <input type="text" name="name" placeholder="Your name here...">
@@ -608,7 +556,7 @@
                                                         <textarea class="height-80" name="message" placeholder="Your messege here..."></textarea>
                                                         <button class="submit-btn-1 mt-20 btn-hover-1" type="submit">submit message</button>
                                                     </form>
-                                                </div>
+                                                </div>--%>
                                             </div>
                                         </div>
                                     </div>
@@ -622,11 +570,11 @@
                                 <div class="copyright">
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-12">
-                                            <div class="copyright-text">
+                                           <%-- <div class="copyright-text">
                                                 <p>&copy; <a href="https://themeforest.net/user/codecarnival/portfolio" target="_blank">CodeCarnival</a> 2016. All Rights Reserved.</p>
-                                            </div>
+                                            </div>--%>
                                         </div>
-                                        <div class="col-sm-6 col-xs-12">
+                                 <%--       <div class="col-sm-6 col-xs-12">
                                             <ul class="footer-payment text-right">
                                                 <li>
                                                     <a href="#">
@@ -645,7 +593,7 @@
                                                         <img src="img/payment/4.jpg" alt=""></a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                             </div>
@@ -688,51 +636,17 @@
                                                 <a href="ProductPage.aspx" class="see-all">View product</a>
                                             </div>
                                             
-                                            <div class="quick-add-to-cart">
+                                           <%-- <div class="quick-add-to-cart"> //this code doesnt work for some reason
                                                 <form method="post" class="cart">
                                                     <div class="numbers-row">
                                                         <input type="number" id="french-hens" value="3">
                                                     </div>
                                                     <button class="single_add_to_cart_button" type="submit">Add to cart</button>
                                                 </form>
-                                            </div>
+                                            </div>--%>
                                             <div class="quick-desc" id="QckVwPrdctSpecs" runat="server">
                                                 <%--Specs--%>
-                                   
                                             </div>
-                                            <div class="social-sharing">
-                                                <div class="widget widget_socialsharing_widget">
-                                                    <h3 class="widget-title-modal">Share this product</h3>
-                                                    <ul class="social-icons clearfix">
-                                                        <li>
-                                                            <a class="facebook" href="#" target="_blank" title="Facebook">
-                                                                <i class="zmdi zmdi-facebook"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="google-plus" href="#" target="_blank" title="Google +">
-                                                                <i class="zmdi zmdi-google-plus"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="twitter" href="#" target="_blank" title="Twitter">
-                                                                <i class="zmdi zmdi-twitter"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="pinterest" href="#" target="_blank" title="Pinterest">
-                                                                <i class="zmdi zmdi-pinterest"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="rss" href="#" target="_blank" title="RSS">
-                                                                <i class="zmdi zmdi-rss"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <!-- .product-info -->
                                     </div>
                                     <!-- .modal-product -->
@@ -762,6 +676,7 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
           
+        </div>
         </div>
     </form>
 </body>

@@ -10,51 +10,60 @@
 namespace BetterTech_Webpage {
     
     
-    public partial class Index {
+    public partial class Controlsingleproduct {
         
         /// <summary>
-        /// topSldr control.
+        /// singlepro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl topSldr;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl singlepro;
         
         /// <summary>
-        /// brandLst control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl brandLst;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// bstSldPrdct control.
+        /// newper control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bstSldPrdct;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText newper;
         
         /// <summary>
-        /// nwArrvl control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nwArrvl;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// spclPrdcts control.
+        /// Cbspecial control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spclPrdcts;
+        protected global::System.Web.UI.WebControls.CheckBox Cbspecial;
+        
+        /// <summary>
+        /// btnupdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnupdate;
     }
 }

@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
            <!-- BREADCRUMBS SETCTION START -->
-        <div class="breadcrumbs-section plr-200 mb-80">
+       <%-- <div class="breadcrumbs-section plr-200 mb-80">
             <div class="breadcrumbs overlay-bg">
                 <div class="container">
                     <div class="row">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
         <!-- BREADCRUMBS SETCTION END -->
 
         <!-- Start page content -->
@@ -85,7 +85,7 @@
                                         <h5 class="member-name"><a href="#">Chistopher</a></h5>
                                         <p class="member-position">Founder and Manager</p>
                                         <p class="mb-20">Our talented and dedicated leader. A graduate of Computer Science at the Univercity of Johannesburg is driven to give the best possible experience to our costomers.</p>
-                                        <ul class="footer-social">
+                                       <%-- <ul class="footer-social">
                                             <li>
                                                 <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
                                             </li>
@@ -98,7 +98,7 @@
                                             <li>
                                                 <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
                                             </li>
-                                        </ul>                                     
+                                        </ul> --%>                                    
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@
                                         <h5 class="member-name"><a href="#">Akshar</a></h5>
                                         <p class="member-position">web designer</p>
                                         <p class="mb-20">A valuable and trusted member of the team. He is calm, precise and efficient. With a degree in Computer Science at the Univercity of Johannesburg. </p>
-                                        <ul class="footer-social">
+                                        <%--<ul class="footer-social">
                                             <li>
                                                 <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
                                             </li>
@@ -126,7 +126,7 @@
                                             <li>
                                                 <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
                                             </li>
-                                        </ul>                                     
+                                        </ul> --%>                                    
                                     </div>
                                 </div>
                             </div>
@@ -141,7 +141,7 @@
                                         <h5 class="member-name"><a href="#">Jenique Peters</a></h5>
                                         <p class="member-position">Backend development</p>
                                         <p class="mb-20">Focused on providing the quality work and utilising all of the skills she is able to provide the best services to her ability. Degree in Computer Science at the Univercity of Johannesburg</p>
-                                        <ul class="footer-social">
+                                      <%--  <ul class="footer-social">
                                             <li>
                                                 <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
                                             </li>
@@ -154,7 +154,7 @@
                                             <li>
                                                 <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
                                             </li>
-                                        </ul>                                     
+                                        </ul> --%>                                    
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@
                                         <h5 class="member-name"><a href="#">Brijesh</a></h5>
                                         <p class="member-position">Databse manager</p>
                                         <p class="mb-20">Upbeat, energetic, and always on the go. Brijesh works tirelessly to perfect his skills, with a degree in Computer Science at the Univercity of Johannesburg, there is little that he can't do.</p>
-                                        <ul class="footer-social">
+                                       <%-- <ul class="footer-social">
                                             <li>
                                                 <a class="facebook" href="" title="Facebook"><i class="zmdi zmdi-facebook"></i></a>
                                             </li>
@@ -182,7 +182,7 @@
                                             <li>
                                                 <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
                                             </li>
-                                        </ul>                                     
+                                        </ul> --%>                                    
                                     </div>
                                 </div>
                             </div>

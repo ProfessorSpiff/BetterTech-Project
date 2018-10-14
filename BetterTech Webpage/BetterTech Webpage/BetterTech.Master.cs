@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace BetterTech_Webpage
 {
@@ -16,6 +17,11 @@ namespace BetterTech_Webpage
                 myaccountlink.Visible = true;
                 loginlink.Visible = false;
                 logoutlink.Visible = true;
+            }
+
+            if ((String)HttpContext.Current.Session["AuthLevel"] == "Administrator")
+            {
+                cspecialslink.Visible = true;
             }
 
             //.............................................................................QuickView Product(not working)
@@ -63,7 +69,6 @@ namespace BetterTech_Webpage
         {
             String thingtosearch = "SearchPage.aspx?search=" + searchtext.Value;
             Response.Redirect(thingtosearch);
-
         }
     }
 }

@@ -10,177 +10,240 @@
 namespace BetterTech_Webpage {
     
     
-    public partial class UserHomePage {
+    public partial class BuildCustomPC {
         
         /// <summary>
-        /// lblun control.
+        /// prefBut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblun;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor prefBut;
         
         /// <summary>
-        /// UName control.
+        /// cpuBut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText UName;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor cpuBut;
         
         /// <summary>
-        /// lblfn control.
+        /// preferences control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblfn;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl preferences;
         
         /// <summary>
-        /// fname control.
+        /// pref control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fname;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl pref;
         
         /// <summary>
-        /// Labelln control.
+        /// budget control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Labelln;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText budget;
         
         /// <summary>
-        /// lname control.
+        /// video control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText lname;
+        protected global::System.Web.UI.WebControls.Button video;
         
         /// <summary>
-        /// Lble control.
+        /// gaming1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Lble;
+        protected global::System.Web.UI.WebControls.Button gaming1;
         
         /// <summary>
-        /// email control.
+        /// general control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
+        protected global::System.Web.UI.WebControls.Button general;
         
         /// <summary>
-        /// Labelp control.
+        /// cpu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Labelp;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpu;
         
         /// <summary>
-        /// location1 control.
+        /// cpuDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText location1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpuDiv;
         
         /// <summary>
-        /// Lblc control.
+        /// motherboard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Lblc;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl motherboard;
         
         /// <summary>
-        /// location2 control.
+        /// moboDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText location2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl moboDiv;
         
         /// <summary>
-        /// Lblzip control.
+        /// cooling control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Lblzip;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cooling;
         
         /// <summary>
-        /// zipcode control.
+        /// coolDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText zipcode;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl coolDiv;
         
         /// <summary>
-        /// Lblpass control.
+        /// graphics control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Lblpass;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl graphics;
         
         /// <summary>
-        /// pass1 control.
+        /// gpuDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword pass1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gpuDiv;
         
         /// <summary>
-        /// pass2 control.
+        /// memory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword pass2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl memory;
         
         /// <summary>
-        /// savebtn control.
+        /// memDiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button savebtn;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl memDiv;
         
         /// <summary>
-        /// Invoices control.
+        /// harddrives control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Invoices;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl harddrives;
+        
+        /// <summary>
+        /// hardDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hardDiv;
+        
+        /// <summary>
+        /// PSU control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PSU;
+        
+        /// <summary>
+        /// psuDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl psuDiv;
+        
+        /// <summary>
+        /// Additional control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Additional;
+        
+        /// <summary>
+        /// addDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl addDiv;
+        
+        /// <summary>
+        /// case control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl @case;
+        
+        /// <summary>
+        /// caseDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl caseDiv;
     }
 }

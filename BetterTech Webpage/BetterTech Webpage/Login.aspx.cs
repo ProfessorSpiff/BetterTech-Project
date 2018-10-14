@@ -29,6 +29,13 @@ namespace BetterTech_Webpage
                     {
                         Session["Username"] = x.Username;
                         Session["AuthLevel"] = x.UserType;
+
+                        //.........................................Redirects user to Products PAge
+                        if (HttpContext.Current.Session["AddWishList"] != null)
+                        {
+                            Response.Redirect("ProductPage.aspx?ProductId=" + HttpContext.Current.Session["AddWishList"]);
+                        }
+
                         Response.Redirect("index.aspx");
                     }
                     else

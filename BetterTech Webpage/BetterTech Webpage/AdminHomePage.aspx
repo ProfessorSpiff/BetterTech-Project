@@ -184,7 +184,9 @@
         <!-- Start page content -->
         <div id="page-content" class="page-wrapper">
 
-            <!-- BLOG SECTION START -->
+            <%--most of this was useless--%>
+
+            <!-- BLOG SECTION START --> 
             <div class="blog-section mb-50">
                 <div class="container">
                     <div class="row">
@@ -203,16 +205,16 @@
                                                     <h6 class="widget-title border-left mb-20">Product</h6>
                                                     <div id="cat-treeview-2" class="product-cat">
                                                         <ul>
-                                                            <li class="closed"><a href="#">Add Product</a></li>                                       
-                                                            <li class="open"><a href="#">Delete Product</a></li>
-                                                            <li class="closed"><a href="#">Edit Product details</a></li>
+                                                            <li class="closed"><a href="CRUDProducts.aspx">Add Product</a></li>                                       
+                                                            <li class="open"><a href="CRUDProducts.aspx">Delete Product</a></li>
+                                                            <li class="closed"><a href="CRUDProducts.aspx">Edit Product details</a></li>
                                                         </ul>
                                                     </div>
                                                 </aside>
                                             </div>
                                         </div>
                                         <!-- Tags -->
-                                        <div class="dropdown f-left">
+                                       <%-- <div class="dropdown f-left">
                                             <button class="option-btn">
                                                 Tags
                                                 <i class="zmdi zmdi-chevron-down"></i>
@@ -231,7 +233,7 @@
                                                     </ul>                  
                                                 </aside>      
                                             </div>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                 </div>
                                 <!-- blog-option end -->
@@ -252,7 +254,7 @@
                         </div>
             <!-- ADDRESS SECTION END --> 
                                 <!-- blog-item start -->
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <%--<div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog-item">
                                         <img src="img/blog/1.jpg" alt="">
                                         <div class="blog-desc">
@@ -274,10 +276,10 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <!-- blog-item end -->
                                 <!-- blog-item start -->
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <%--<div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog-item">
                                         <img src="img/blog/2.jpg" alt="">
                                         <div class="blog-desc">
@@ -299,10 +301,10 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <!-- blog-item end -->
                                 <!-- blog-item start -->
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                               <%-- <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog-item">
                                         <img src="img/blog/3.jpg" alt="">
                                         <div class="blog-desc">
@@ -374,10 +376,10 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <!-- blog-item end -->
                                 <!-- blog-item start -->
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                               <%-- <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog-item">
                                         <img src="img/blog/6.jpg" alt="">
                                         <div class="blog-desc">
@@ -399,21 +401,21 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <!-- blog-item end -->
                                
                             </div>                            
                         </div>
                         <!-- sidebar -->
                         <div class="col-md-3 col-xs-12">
-                            <!-- widget-categories -->
+                            <!-- widget-categories and links now work-->
                             <aside class="widget widget-categories box-shadow mb-30">
                                 <h6 class="widget-title border-left mb-20">Product</h6>
                                 <div id="cat-treeview" class="product-cat">
                                     <ul>
-                                        <li class="closed"><a href="#">Add Product</a></li>
-                                        <li class="open"><a href="#">Delete Product</a></li>
-                                        <li class="closed"><a href="#">Edit Product details</a></li>
+                                        <li class="closed"><a href="CRUDProducts.aspx">Add Product</a></li>
+                                        <li class="open"><a href="CRUDProducts.aspx">Delete Product</a></li>
+                                        <li class="closed"><a href="CRUDProducts.aspx">Edit Product details</a></li>
                                     </ul>
                                 </div>
                             </aside>
