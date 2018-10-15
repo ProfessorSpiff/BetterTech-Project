@@ -49,13 +49,40 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl PriceDsp;
         
         /// <summary>
-        /// inItemQty control.
+        /// btnMinus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inItemQty;
+        protected global::System.Web.UI.WebControls.Button btnMinus;
+        
+        /// <summary>
+        /// lblQty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQty;
+        
+        /// <summary>
+        /// QtyCnt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl QtyCnt;
+        
+        /// <summary>
+        /// btnPlus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPlus;
         
         /// <summary>
         /// btnAction control.

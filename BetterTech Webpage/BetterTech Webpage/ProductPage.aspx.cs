@@ -10,8 +10,11 @@ namespace BetterTech_Webpage
 {
     public partial class ProductPage : System.Web.UI.Page
     {
+        private static int PrdctQty = 1;
+        private static int PrdctID = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             var db = new DataLinqDataContext();
 
             //...........................................................................................Product Category List
@@ -81,6 +84,13 @@ namespace BetterTech_Webpage
             //.............................................................................Show Details of Selected Product
             if (Request.QueryString["ProductId"] != null)
             {
+                //PrdctID = Convert.ToInt32(Request.QueryString["ProductId"]);
+                if(!PrdctID.Equals(Convert.ToInt32(Request.QueryString["ProductId"])))
+                {
+                    PrdctID = Convert.ToInt32(Request.QueryString["ProductId"]);
+                    PrdctQty = 1;
+                }
+
                 //..................................................................Selected Product Specifications
 
                 var Product = (from product in db.Products
@@ -191,6 +201,12 @@ namespace BetterTech_Webpage
             //.......................................................add to wishlist of the user
             else if(Request.QueryString["AddToWshLst"] != null)
             {
+                if (!PrdctID.Equals(Convert.ToInt32(Request.QueryString["AddToWshLst"])))
+                {
+                    PrdctID = Convert.ToInt32(Request.QueryString["AddToWshLst"]);
+                    PrdctQty = 1;
+                }
+
                 if (HttpContext.Current.Session["Username"] != null)
                 {
                     var chkWshLst = (from wishlst in db.Wishlists
@@ -229,6 +245,12 @@ namespace BetterTech_Webpage
             //...........................................................Adding to shopping cart
             else if(Request.QueryString["AddToShpCrt"] != null)
             {
+                if (!PrdctID.Equals(Convert.ToInt32(Request.QueryString["AddToShpCrt"])))
+                {
+                    PrdctID = Convert.ToInt32(Request.QueryString["AddToShpCrt"]);
+                    PrdctQty = 1;
+                }
+
                 if (HttpContext.Current.Session["Username"] != null)
                 {
                     //.................................................check if item exist in cart
@@ -240,22 +262,33 @@ namespace BetterTech_Webpage
                     if(ChckCart != null)
                     {
                         int RlQty = ChckCart.Quantity;
-                        ChckCart.Quantity = RlQty + 1;
+                        RlQty = RlQty + PrdctQty;
+                        
 
-                        try
+                        int getPrdct = (from product in db.Products
+                                        where (product.Product_Id.Equals(Request.QueryString["AddToShpCrt"]))
+                                        select product.Product_OnHand).FirstOrDefault();
+                        if(ChckCart.Quantity < getPrdct)
                         {
-                            db.SubmitChanges();
-                        }catch(Exception ex)
-                        {
-                            ex.GetBaseException();
+                            ChckCart.Quantity = RlQty;
+                            try
+                            {
+                                db.SubmitChanges();
+                            }
+                            catch (Exception ex)
+                            {
+                                ex.GetBaseException();
+                            }
                         }
+                        
                     }else
                     {
                         //.................................................adding to cart table
+                        Debug.WriteLine(PrdctQty);
                         var AddToCart = new Cart
                         {
                             Product_Id = Convert.ToInt32(Request.QueryString["AddToShpCrt"]),
-                            Quantity = Convert.ToInt32(inItemQty.Value),
+                            Quantity = PrdctQty,
                             Username = Convert.ToString(HttpContext.Current.Session["Username"]),
                         };
                         db.Carts.InsertOnSubmit(AddToCart);
@@ -317,5 +350,37 @@ namespace BetterTech_Webpage
             }
 
         }//.......................................................................................end of pageload
+
+        protected void btnPlus_Click(object sender, EventArgs e)
+        {
+            
+            int intQty = Convert.ToInt32(lblQty.Text);
+
+            var db = new DataLinqDataContext();
+            int getPrdct = (from product in db.Products
+                           where (product.Product_Id.Equals(Request.QueryString["AddToShpCrt"])) ||
+                           (product.Product_Id.Equals(Request.QueryString["AddToWshLst"])) ||
+                           (product.Product_Id.Equals(Request.QueryString["ProductId"]))
+                            select product.Product_OnHand).FirstOrDefault();
+            
+            if(intQty < getPrdct)
+            {
+                lblQty.Text =(Convert.ToString(intQty + 1));
+                PrdctQty = Convert.ToInt32(lblQty.Text);
+
+
+            }
+            Debug.WriteLine(lblQty.Text);
+        }
+
+        protected void btnMinus_Click(object sender, EventArgs e)
+        {
+            int intQty = Convert.ToInt32(lblQty.Text);
+            if(intQty > 1)
+            {
+                lblQty.Text = Convert.ToString(intQty - 1);
+                PrdctQty = Convert.ToInt32(lblQty.Text);
+            }
+        }
     }
 }
