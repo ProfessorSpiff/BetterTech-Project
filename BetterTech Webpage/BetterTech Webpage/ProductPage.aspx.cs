@@ -252,9 +252,11 @@ namespace BetterTech_Webpage
                     }else
                     {
                         //.................................................adding to cart table
+                        //Debug.WriteLine(inItemQty.Value);
                         var AddToCart = new Cart
                         {
                             Product_Id = Convert.ToInt32(Request.QueryString["AddToShpCrt"]),
+                           
                             Quantity = Convert.ToInt32(inItemQty.Value),
                             Username = Convert.ToString(HttpContext.Current.Session["Username"]),
                         };
