@@ -54,7 +54,6 @@ namespace BetterTech_Webpage
                     day7++;
                 }
             }
-            
         }
     }
 }
