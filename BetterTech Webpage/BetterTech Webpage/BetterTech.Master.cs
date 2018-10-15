@@ -10,6 +10,7 @@ namespace BetterTech_Webpage
 {
     public partial class BetterTech : System.Web.UI.MasterPage
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (HttpContext.Current.Session["Username"] != null)
@@ -23,7 +24,11 @@ namespace BetterTech_Webpage
             {
                 cspecialslink.Visible = true;
             }
-            
+
+
+
+            //......................................................Show number of items in whishlist
+
             if (Session["username"] != null)
             {
                 var db = new DataLinqDataContext();

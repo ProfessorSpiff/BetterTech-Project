@@ -59,11 +59,8 @@
                                         </a>
                                             </li>
                                             <li>
-                                                <a href="Wishlist.aspx">
-                                                    <i class="zmdi zmdi-favorite"></i>
-                                                    Wish List
-                                            <li visible="true">
-                                                <a href="wishlist.aspx" runat="server"  id="wishlist">
+                                                <a href="Wishlist.aspx" runat="server" id="wishlist" visible="false">
+                                                    <i class="zmdi zmdi-account"></i>
                                         </a>
                                             </li>
                                             <li>
