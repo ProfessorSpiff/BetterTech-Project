@@ -240,7 +240,6 @@
                                     </div>
                                     <div id="My_order_info" class="panel-collapse collapse" role="tabpanel" >
                                         <div class="panel-body">
-                                            <form action="#">
                                                 <!-- our order -->
                                                 <div id="Invoices" runat="server">
                                                     <%--<div class="payment-details p-30">
@@ -274,9 +273,6 @@
                                                 </div>--%>
                                                   
                                                 </div>
-                                                 
-                                               
-                                            </form>
                                         </div>
                                     </div>
                                 </div>

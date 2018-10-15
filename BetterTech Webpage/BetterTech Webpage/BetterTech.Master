@@ -61,7 +61,7 @@
                                             <li>
                                                 <a href="Wishlist.aspx">
                                                     <i class="zmdi zmdi-favorite"></i>
-                                                    Wish List (0)
+                                                    Wish List
                                             <li visible="true">
                                                 <a href="wishlist.aspx" runat="server"  id="wishlist">
                                         </a>
@@ -93,7 +93,7 @@
                                     <div class="col-md-2 col-sm-6 col-xs-12">
                                         <div class="logo">
                                             <a href="index.aspx">
-                                                <img src="noimage.jpg" alt="main logo">
+                                                <img height="30" width="71" src="App_Media/logo.jpg" alt="main logo">
                                             </a>
                                         </div>
                                     </div>
@@ -178,7 +178,7 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="mega-parent"><a href="#">Pre-Built Systems and Laptops</a>
+                                                <li class="mega-parent"><a href="#">Prebuilt</a>
                                                     <div class="mega-menu-area clearfix">
                                                         <div class="mega-menu-link f-left">
                                                             <ul class="single-mega-item">
@@ -217,10 +217,7 @@
                                                              <ul class="single-mega-item">
                                                                 <li class="menu-title">Custom Builds</li>
                                                                 <li>
-                                                                    <a href="">Custom create your own Pc</a>
-                                                                </li>
-                                                                 <li>
-                                                                    <a href="">Choose one of our recomended pc's</a>
+                                                                    <a href="BuildCustomPc.aspx">Custom create your own Pc</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -500,7 +497,7 @@
                                         <div class="col-lg-4 col-md-5 col-sm-4">
                                             <div class="single-footer footer-about">
                                                 <div class="footer-logo">
-                                                    <img src="noimage.jpg" alt="">
+                                                    <img height="30" width="71" src="App_Media/logo.jpg" alt="main logo">
                                                 </div>
                                                 <div class="footer-brief">
                                                     <h4>BetterTech</h4>

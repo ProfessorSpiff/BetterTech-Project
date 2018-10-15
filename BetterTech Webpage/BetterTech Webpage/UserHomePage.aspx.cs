@@ -29,8 +29,8 @@ namespace BetterTech_Webpage
 
                 //this code is copied from brij's attempt with the useraccountinfopage.aspx
                 dynamic InvoicesList = from invoices in db.Invoices
-                                           //where (invoices.Username).Equals(Session["Username"])
-                                       where (invoices.Username).Equals("Eva")//.....checking purpose only
+                                        where (invoices.Username).Equals(Session["Username"])
+                                      // where (invoices.Username).Equals("Eva")//.....checking purpose only
                                        select invoices;
 
                 if (InvoicesList != null)
