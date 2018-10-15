@@ -145,7 +145,8 @@ namespace BetterTech_Webpage
                     displayCart += "                                     <td class='product-quantity'>";
                     displayCart += "                                            <div>";
                     displayCart += "                                               <a href = 'minusQuantity.aspx?ProductId=" + product.Product_Id + "'>-</a>";
-                    displayCart += "                                               <input wrap='true' ReadOnly='true' type ='text' value='" + c.Quantity +"'>";
+                    displayCart += "                                               <label>" + c.Quantity +"</lable>";
+
                     displayCart += "                                               <a href = 'addQuantity.aspx?ProductId=" + product.Product_Id + "'>+</a>";
                     displayCart += "                                            </div>";
                     displayCart += "                                        </td>";
@@ -268,8 +269,15 @@ namespace BetterTech_Webpage
                 displayOrderNo3.InnerText = Convert.ToString(newInvoice.Invoice_Id);
                 displayOrderNo4.InnerText = Convert.ToString(newInvoice.Invoice_Id);
 
-               // Response.Redirect("Wishlist.aspx#order-complete");
+                // Response.Redirect("Wishlist.aspx#order-complete");
                 //  liPhone = phone;
+
+                //preferences.Attributes.Remove("class");
+                //preferences.Attributes.Add("class", "tab-pane");
+                //cpuBut.Attributes.Add("class", "active");
+                //cpu.Attributes.Remove("class");
+                //cpu.Attributes.Add("class", "tab-pane active");
+
             }
         }
        
