@@ -47,18 +47,7 @@
                         <div class="col-md-12">
                             <div class="section-title  text-center mb-40">
                                 <div runat="server" id="numRegGraph">
-                                    <asp:Chart ID="Chart1" runat="server">
-                                        <Series>
-                                            <asp:Series runat="server" Name="Series1"></asp:Series>
-                                        </Series>
-                                        <ChartAreas>
-                                            <asp:ChartArea runat="server" Name="ChartArea1"></asp:ChartArea>
-                                        </ChartAreas>
-                                    </asp:Chart>
-
-                                </div>
-                                
-                                
+                                </div>                           
                             </div>
                         </div>
                     </div><hr>
