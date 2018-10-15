@@ -32,7 +32,8 @@ namespace BetterTech_Webpage
                 //                         select item).Take(3);
 
                 dynamic ProductItmLst = (from item in db.Products
-                                         where (item.Product_Type.Equals(prdctType))
+                                         where (item.Product_Type.Equals(prdctType) &&
+                                        (item.Product_IsActive == true))
                                          select item).Take(3);
 
                 divCategoryDisplay += "<ul>";
@@ -52,6 +53,7 @@ namespace BetterTech_Webpage
             //..............................................................................Populate Recent Products
 
             dynamic RecentProductList = (from product in db.Products
+                                         where (product.Product_IsActive == true)
                                          orderby product.Product_DateAdded descending
                                          select product).Take(3);
 
@@ -91,6 +93,22 @@ namespace BetterTech_Webpage
 
                 ProductImg.InnerHtml = "<img id='zoom_03' src='" + Product.Product_Img + "' data-zoom-image='" + Product.Product_Img + "' alt=''>";
 
+                string DspPrc = "";
+                if (Product.Product_IsSpecial == true)
+                {
+                    decimal prc1 = (Product.Product_Price) - ((Product.Product_Price) * Convert.ToDecimal(Product.Product_SpclPercantage / 100));
+                    DspPrc += "<h5>Old Price</h5>";
+                    DspPrc += "<s>" + String.Format("{0:0.00}", Product.Product_Price) + "</s>";
+                    DspPrc += "<h5>Special Price</h5>";
+                    DspPrc += "<h6><mark>" + String.Format("{0:0.00}", prc1) + "</mark></h6>";
+                }
+                else
+                {
+                    DspPrc += "<h5>Price</h5>";
+                    DspPrc += "<h6><mark>" + String.Format("{0:0.00}", Product.Product_Price) + "</mark></h6>";
+                }
+                PriceDsp.InnerHtml = DspPrc;
+
                 string strBtnActnDsply = "";
 
                 strBtnActnDsply += "<ul class='action-button'>";
@@ -106,6 +124,9 @@ namespace BetterTech_Webpage
                 strBtnActnDsply += "</ul>";
 
                 btnAction.InnerHtml = strBtnActnDsply;
+
+
+
                 //.............................................................................Related Product Images
 
 
@@ -115,7 +136,8 @@ namespace BetterTech_Webpage
 
                 dynamic RelatedPrdctLst = (from product in db.Products
                                            where (product.Product_Type).Equals(RelatedProduct.Product_Type) &&
-                                           (!(product.Product_Id).Equals(RelatedProduct.Product_Id))
+                                           (!(product.Product_Id).Equals(RelatedProduct.Product_Id)) &&
+                                           (product.Product_IsActive == true)
                                            select product).Take(3);
 
                 string strDisplay = "";
@@ -171,40 +193,128 @@ namespace BetterTech_Webpage
             {
                 if (HttpContext.Current.Session["Username"] != null)
                 {
-                    var AddToWshList = new Wishlist
-                    {
-                        Username = Convert.ToString(HttpContext.Current.Session["Username"]),
-                        Product_Id = Convert.ToInt32(Request.QueryString["AddToWshLst"]),
-                    };
-                    db.Wishlists.InsertOnSubmit(AddToWshList);
+                    var chkWshLst = (from wishlst in db.Wishlists
+                                     where ((wishlst.Username).Equals(HttpContext.Current.Session["Username"])) &&
+                                     ((wishlst.Product_Id).Equals(Request.QueryString["AddToShpCrt"]))
+                                     select wishlst).FirstOrDefault();
 
-                    try
+                    if (chkWshLst == null)
                     {
-                        db.SubmitChanges();
-                        Response.Redirect("CategoryPage.aspx");
-                    }catch(Exception ex)
-                    {
-                        ex.GetBaseException();
+                        var AddToWshList = new Wishlist
+                        {
+                            Username = Convert.ToString(HttpContext.Current.Session["Username"]),
+                            Product_Id = Convert.ToInt32(Request.QueryString["AddToWshLst"]),
+                        };
+                        db.Wishlists.InsertOnSubmit(AddToWshList);
+
+                        try
+                        {
+                            db.SubmitChanges();
+                            Response.Redirect("CategoryPage.aspx");
+                        }
+                        catch (Exception ex)
+                        {
+                            ex.GetBaseException();
+                        }
                     }
+                    
                 }
                 else
                 {
-                    Session["AddWishList"] = Request.QueryString["AddToWshLst"];
+                    Session["AddListItm"] = Request.QueryString["AddToWshLst"];
                     Response.Redirect("Login.aspx");
                 }
             }//...............................................................end of else if
 
+            //...........................................................Adding to shopping cart
             else if(Request.QueryString["AddToShpCrt"] != null)
             {
                 if (HttpContext.Current.Session["Username"] != null)
                 {
+                    //.................................................check if item exist in cart
+                    var ChckCart = (from cart in db.Carts
+                                    where ((cart.Product_Id).Equals(Request.QueryString["AddToShpCrt"])) &&
+                                    ((cart.Username).Equals(HttpContext.Current.Session["Username"]))
+                                    select cart).FirstOrDefault();
+                    
+                    if(ChckCart != null)
+                    {
+                        int RlQty = ChckCart.Quantity;
+                        ChckCart.Quantity = RlQty + 1;
 
+                        try
+                        {
+                            db.SubmitChanges();
+                        }catch(Exception ex)
+                        {
+                            ex.GetBaseException();
+                        }
+                    }else
+                    {
+                        //.................................................adding to cart table
+                        var AddToCart = new Cart
+                        {
+                            Product_Id = Convert.ToInt32(Request.QueryString["AddToShpCrt"]),
+                            Quantity = Convert.ToInt32(inItemQty.Value),
+                            Username = Convert.ToString(HttpContext.Current.Session["Username"]),
+                        };
+                        db.Carts.InsertOnSubmit(AddToCart);
+                        try
+                        {
+                            db.SubmitChanges();
+                            //Response.Redirect("CategoryPage.aspx");
+                        }
+                        catch (Exception ex)
+                        {
+                            ex.GetBaseException();
+                        }
+                    }
+                    
+                    //.............................................deleting item from wishlist if exists
+                    var CheckWshLst = (from wishlst in db.Wishlists
+                                       where ((wishlst.Username).Equals(HttpContext.Current.Session["Username"])) &&
+                                       ((wishlst.Product_Id).Equals(Request.QueryString["AddToShpCrt"]))
+                                       select wishlst).FirstOrDefault();
+
+                    if(CheckWshLst != null)
+                    {
+                        db.Wishlists.DeleteOnSubmit(CheckWshLst);
+                        try
+                        {
+                            db.SubmitChanges();
+                        }catch(Exception ex)
+                        {
+                            ex.GetBaseException();
+                        }
+                    }
+
+                    Response.Redirect("CategoryPage.aspx");
                 }
                 else
                 {
+                    Session["AddListItm"] = Request.QueryString["AddToShpCrt"];
                     Response.Redirect("Login.aspx");
                 }
             }//................................................................end of else if
+
+            //.................................................................Removing from Shopping cart
+            else if(Request.QueryString["DelFrmShpCrt"] != null)
+            {
+                var DelFromShopCart = (from cart in db.Carts
+                                       where ((cart.Username).Equals(HttpContext.Current.Session["Username"])) &&
+                                       ((cart.Product_Id).Equals(Request.QueryString["DelFrmShpCrt"]))
+                                       select cart).FirstOrDefault();
+
+                db.Carts.DeleteOnSubmit(DelFromShopCart);
+                try
+                {
+                    db.SubmitChanges();
+                    Response.Redirect("CategoryPage.aspx");
+                }catch(Exception ex)
+                {
+                    ex.GetBaseException();
+                }
+            }
 
         }//.......................................................................................end of pageload
     }

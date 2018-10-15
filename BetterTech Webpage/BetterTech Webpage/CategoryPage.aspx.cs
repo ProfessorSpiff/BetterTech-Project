@@ -35,7 +35,8 @@ namespace BetterTech_Webpage
                 divCategoryDisplay += " <li class='closed'><a href='CategoryPage.aspx?Category="+ prdctType + "'>"+ prdctType + "</a>";
 
                 dynamic ProductItmLst = (from item in db.Products
-                                        where (item.Product_Type.Equals(prdctType))
+                                        where (item.Product_Type.Equals(prdctType) &&
+                                        (item.Product_IsActive == true))
                                         select item).Take(3);
                 divCategoryDisplay += "<ul>";
                 divCategoryDisplay += "<li><a href='CategoryPage.aspx?CategorySpcl=" + prdctType + "'>View All " + prdctType + " Specials</a></li>";
@@ -239,6 +240,7 @@ namespace BetterTech_Webpage
             //...........................................................................................Populate Recent Products
 
             dynamic RecentProductList = (from product in db.Products
+                                         where (product.Product_IsActive == true)
                                         orderby product.Product_DateAdded descending
                                         select product).Take(3);
 

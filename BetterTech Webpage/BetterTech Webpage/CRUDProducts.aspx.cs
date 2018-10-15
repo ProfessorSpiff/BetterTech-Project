@@ -11,6 +11,7 @@ namespace BetterTech_Webpage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             var db = new DataLinqDataContext();
 
             dynamic products = from a in db.Products
@@ -51,19 +52,10 @@ namespace BetterTech_Webpage
             dynamic products = from a in db.Products
                                select a;
             bool isReg = false;
-            foreach (Product p in products)
-            {
-                if(p.Product_Id == int.Parse(prodID.Value))
-                {
-                    addResponse.InnerHtml = "<div class=alert alert-warning><strong>Warning!</strong> The ID is already taken.</div>";
-                    isReg = true;
-                }
-            }
             if (isReg == false)
             {
                 Product newProd = new Product
                 {
-                    Product_Id = int.Parse(prodID.Value),
                     Product_Name = prodName.Value,
                     Product_Price = Convert.ToDecimal(prodPrice.Value),
                     Product_Description = prodDesc.Value,
