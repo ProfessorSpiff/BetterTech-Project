@@ -49,10 +49,10 @@
                                 <div runat="server" id="numRegGraph">
                                     <asp:Chart ID="Chart1" runat="server">
                                         <Series>
-                                            <asp:Series Name="Series1"></asp:Series>
+                                            <asp:Series runat="server" Name="Series1"></asp:Series>
                                         </Series>
                                         <ChartAreas>
-                                            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                                            <asp:ChartArea runat="server" Name="ChartArea1"></asp:ChartArea>
                                         </ChartAreas>
                                     </asp:Chart>
 

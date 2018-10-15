@@ -11,6 +11,7 @@ namespace BetterTech_Webpage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             var db = new DataLinqDataContext();
 
             dynamic products = from a in db.Products
