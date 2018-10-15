@@ -178,7 +178,7 @@
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="mega-parent"><a href="#">Pre-Built Systems and Laptops</a>
+                                                <li class="mega-parent"><a href="#">Prebuilt</a>
                                                     <div class="mega-menu-area clearfix">
                                                         <div class="mega-menu-link f-left">
                                                             <ul class="single-mega-item">
@@ -217,10 +217,7 @@
                                                              <ul class="single-mega-item">
                                                                 <li class="menu-title">Custom Builds</li>
                                                                 <li>
-                                                                    <a href="">Custom create your own Pc</a>
-                                                                </li>
-                                                                 <li>
-                                                                    <a href="">Choose one of our recomended pc's</a>
+                                                                    <a href="BuildCustomPc.aspx">Custom create your own Pc</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
