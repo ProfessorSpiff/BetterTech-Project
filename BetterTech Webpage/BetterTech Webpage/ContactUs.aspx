@@ -186,15 +186,13 @@
                         <div class="col-sm-4 col-xs-12">
                             <div class="contact-address box-shadow">
                                 <i class="zmdi zmdi-phone"></i>
-                                <h6>(+880) 1945 082759</h6>
-                                <h6>(+880) 1945 082759</h6>
+                                <h6>(+72) 1945 082759</h6>
                             </div>
                         </div>
                         <div class="col-sm-4 col-xs-12">
                             <div class="contact-address box-shadow">
                                 <i class="zmdi zmdi-email"></i>
-                                <h6>companyname@gmail.com</h6>
-                                <h6>info@domainname.com</h6>
+                                <h6>betterbettertech@gmail.com</h6>
                             </div>
                         </div>
                     </div>

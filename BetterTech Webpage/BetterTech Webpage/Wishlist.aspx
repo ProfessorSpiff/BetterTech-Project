@@ -230,6 +230,13 @@
                                                             </tr>
                                                         </table>
                                                     </div>
+                                                    
+                                <div runat="server" id="displaySpecial"  visble="false"></div>
+                                                    
+                                <div runat="server" id="shippingDiscount" visble="false"></div>
+                                                    
+                                <div visble="false" runat="server" id="overallDiscount"></div>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -257,8 +264,8 @@
                                                         <h6 class="widget-title border-left mb-20">billing details</h6>
                                                        
                                                         
-                                                         <input type="text"  placeholder="Enter country...">
-                                                         <input type="text"  placeholder="Town/City...">
+                                                         <input runat="server" id="txtCountry" type="text"  placeholder="Enter country...">
+                                                         <input runat="server" id="txtCity" type="text"  placeholder="Town/City...">
 
                                                         <textarea runat="server" id="txtAddress" class="custom-textarea" placeholder="Your address here..."></textarea>
                                                     </div>
@@ -317,14 +324,17 @@
                                                 <div class="bill-details p-30">
                                                     <h6 class="widget-title border-left mb-20">billing details</h6>
                                                     <ul class="bill-address">
-                                                        <li runat="server" id="liAddress">
-                                                            <span>Address:</span>
+                                                        <li>
+                                                            <span>Country:</span>
+                                                            <p runat="server" id="liCountry" ></p>
                                                         </li>
-                                                        <li  runat="server" id="liEmail">
-                                                            <span>email:</span>
+                                                        <li>
+                                                            <span>Town/City:</span>
+                                                            <p runat="server" id="liCity" ></p>
                                                         </li>
-                                                        <li runat="server" id="liPhone">
-                                                            <span>phone: </span>
+                                                        <li>
+                                                            <span>Addresss: </span>
+                                                            <p runat="server" id="liAddress" ></p>
                                                         </li>
                                                     </ul>
                                                 </div>

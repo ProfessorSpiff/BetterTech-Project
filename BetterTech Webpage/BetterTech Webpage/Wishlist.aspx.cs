@@ -121,8 +121,25 @@ namespace BetterTech_Webpage
                                    where p.Product_Id.Equals(c.Product_Id)
                                    select p).FirstOrDefault();
 
+                    var totalProductPrice = 0.00;
+                    
 
-                    var totalProductPrice = product.Product_Price * c.Quantity;
+                    if (product.Product_IsSpecial)
+                    {
+                        var discount = Convert.ToInt32(totalProductPrice) * (product.Product_SpclPercantage / 100);
+                        var discountPrice = Convert.ToInt32(product.Product_Price) - discount;
+                        
+                        totalProductPrice = Convert.ToInt32(discountPrice * c.Quantity);
+
+                        displaySpecial.InnerHtml = "<div class='alert alert-info'><strong>Heads up!</strong> This product is on special at a " + product.Product_SpclPercantage + " discount </div>";
+                        displaySpecial.Visible = true;
+
+                    }
+                    else
+                    {
+                        totalProductPrice = Convert.ToInt32(product.Product_Price * c.Quantity);
+                    }
+
 
                     //display all the infromation using innerHTML
                     //         display += "<div>";
@@ -150,7 +167,7 @@ namespace BetterTech_Webpage
                     displayCart += "                                               <a href = 'addQuantity.aspx?ProductId=" + product.Product_Id + "'>+</a>";
                     displayCart += "                                            </div>";
                     displayCart += "                                        </td>";
-                    displayCart += "                                         <td class='product - subtotal'>" + String.Format("{0:0.00}", totalProductPrice) + "</td>";
+                    displayCart += "                                         <td class='product-subtotal'>" + String.Format("{0:0.00}", totalProductPrice) + "</td>";
                     displayCart += "                                        <td class='product-remove'>";
                     displayCart += "                                            <a href = 'close.aspx?ProductId=" + product.Product_Id+ "'><i class='zmdi zmdi-close'></i></a>";
                     displayCart += "                                        </td>";
@@ -158,19 +175,48 @@ namespace BetterTech_Webpage
                     displayCart += "</tr>";
 
                     ++numOfProducts;
+
                     totalSubCart += Convert.ToInt32(totalProductPrice);
                     vat += Convert.ToInt64(totalProductPrice * 15/100);
                     shipping += Convert.ToInt64(totalProductPrice * 5 / 100);
                 }
-                
+
+                if(totalSubCart >= 5000)
+                {
+                    shipping = 0.00;
+
+                    shippingDiscount.InnerHtml = "<div class='alert alert-info'><strong>Heads up!</strong> For spending over R5000 your shipping is free </div>";
+                    /*
+                                "<div class='alert alert-info'><strong>Heads up!</strong> For spending over R5000 your shipping is free </div>"
+                     */
+                    shippingDiscount.Visible = true;
+                }
+
+                if (totalSubCart >= 15000)
+                {
+                    var discount = totalSubCart * (10/100);
+                    totalSubCart -= discount;
+
+                    overallDiscount.InnerHtml = "<div class='alert alert-info'><strong>Heads up!</strong> For spending over R15000 you get a 10% discount </div>";
+                    overallDiscount.Visible = true;
+                }
+                else if (totalSubCart >= 10000)
+                {
+                    var discount = totalSubCart * (5 / 100);
+                    totalSubCart -= discount;
+
+                    overallDiscount.InnerHtml = "<div class='alert alert-info'><strong>Heads up!</strong> For spending over R10000 you get a 5% discount </div>";
+                    overallDiscount.Visible = true;
+                }
+
                 displayCart += "</tbody>";
                 displayCart += "</table>";
             
                 var orderTotal = vat + shipping + totalSubCart;
 
                 tdCartSubtotal.InnerText = "R" + String.Format("{0:0.00}",totalSubCart);
-                tdShipping.InnerText = "R" + shipping;
-                tdVat.InnerText = "R" + vat;
+                tdShipping.InnerText = "R" + String.Format("{0:0.00}", shipping);
+                tdVat.InnerText = "R" + String.Format("{0:0.00}", vat);
                 tdTotalPrice.InnerText = "R" + String.Format("{0:0.00}", orderTotal);
                 cartDisplay.InnerHtml = displayCart;
 
@@ -178,7 +224,7 @@ namespace BetterTech_Webpage
 
                 var displayOrder = "";
 
-                displayOrder += "                                      <h6 class='widget -title border-left mb-20'>Your order</h6>";
+                displayOrder += "                                      <h6 class='widget-title border-left mb-20'>Your order</h6>";
                 displayOrder += "                                        <table>";
 
                 foreach (Cart c in cart)
@@ -190,33 +236,33 @@ namespace BetterTech_Webpage
                     displayOrder += "                                            <tr>";
                     if (c.Quantity > 1)
                     {
-                        displayOrder += "                                                <td class='td -title-1'>" + product.Product_Name + " X" + c.Quantity +"</td>";
+                        displayOrder += "                                                <td class='td-title-1'>" + product.Product_Name + " X" + c.Quantity +"</td>";
                     }else
                     {
-                        displayOrder += "                                                <td class='td -title-1'>" + product.Product_Name + "</td>";
+                        displayOrder += "                                                <td class='td-title-1'>" + product.Product_Name + "</td>";
 
                     }
-                    displayOrder += "                                                <td class='td -title-2'>R" + String.Format("{0: 0.00}", product.Product_Price) + "</td>";
+                    displayOrder += "                                                <td class='td-title-2'>R" + String.Format("{0: 0.00}", product.Product_Price) + "</td>";
                     displayOrder += "                                            </tr>";
                 }
 
                 displayOrder += "                                            <tr>";
-                displayOrder += "                                                <td class='td -title-1'>Cart Subtotal</td>";
-                displayOrder += "                                                <td class='td -title-2'>R" + String.Format("{0:0.00}", totalSubCart) + "</td>";
+                displayOrder += "                                                <td class='td-title-1'>Cart Subtotal</td>";
+                displayOrder += "                                                <td class='td-title-2'>R" + String.Format("{0:0.00}", totalSubCart) + "</td>";
                 displayOrder += "                                            </tr>";
 
                 displayOrder += "                                            <tr>";
-                displayOrder += "                                                <td class='td -title-1'>Shipping and Handing</td>";
-                displayOrder += "                                                <td class='td -title-2'>" + shipping +"</td>";
+                displayOrder += "                                                <td class='td-title-1'>Shipping and Handing</td>";
+                displayOrder += "                                                <td class='td-title-2'>R" + String.Format("{0:0.00}", shipping) + "</td>";
                 displayOrder += "                                            </tr>";
                 displayOrder += "                                            <tr>";
-                displayOrder += "                                                <td class='td -title-1'>Vat</td>";
-                displayOrder += "                                                <td class='td -title-2'>R"+ vat +"</td>";
+                displayOrder += "                                                <td class='td-title-1'>Vat</td>";
+                displayOrder += "                                                <td class='td-title-2'>R"+ String.Format("{0:0.00}", vat) + "</td>";
                 displayOrder += "                                            </tr>";
                 displayOrder += "                                            <tr>";
-                displayOrder += "                                                <td class='order -total'>Order Total</td>";
-                displayOrder += "                                                <td class='order -total-price'>R"+ String.Format("{0:0.00}", orderTotal)  + "</td>";
-                displayOrder += "                                            </tr>";
+                displayOrder += "                                                <td class='order-total'>Order Total</td>";
+                displayOrder += "                                                <td class='order-total-price'>R"+ String.Format("{0:0.00}", orderTotal)  + "</td>";
+                displayOrder += "                                           </tr>";
                 displayOrder += "                                       </table>";
                 
                 checkoutOrder.InnerHtml = displayOrder;
@@ -228,7 +274,13 @@ namespace BetterTech_Webpage
         {
             if(numOfProducts > 0)
             {
+                var city = txtCity.Value.Trim();
+                var country = txtCountry.Value.Trim();
                 var address = txtAddress.Value.Trim();
+
+                liCountry.InnerText = country;
+                liCity.InnerText = city;
+                liAddress.InnerText = address;
 
                 var db = new DataLinqDataContext();
 
@@ -250,7 +302,6 @@ namespace BetterTech_Webpage
 
                 foreach (Cart c in cart)
                 {
-
                     var product = (from Product p in db.Products
                                    where p.Product_Id.Equals(c.Product_Id)
                                    select p).FirstOrDefault();

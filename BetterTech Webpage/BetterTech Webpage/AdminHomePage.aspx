@@ -193,65 +193,9 @@
                         <div class="col-md-9 col-xs-12">
                             <div class="row">
                                 <!-- blog-option start -->
-                                <div class="col-md-12">
-                                    <div class="blog-option box-shadow mb-30  clearfix">
-                                        <!-- categories -->
-                                        <div class="dropdown f-left">
-                                            <button class="option-btn">
-                                                <i class="zmdi zmdi-chevron-down"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-width mt-30">
-                                                <aside class="widget widget-categories box-shadow">
-                                                    <h6 class="widget-title border-left mb-20">Product</h6>
-                                                    <div id="cat-treeview-2" class="product-cat">
-                                                        <ul>
-                                                            <li class="closed"><a href="CRUDProducts.aspx">Add Product</a></li>                                       
-                                                            <li class="open"><a href="CRUDProducts.aspx">Delete Product</a></li>
-                                                            <li class="closed"><a href="CRUDProducts.aspx">Edit Product details</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </aside>
-                                            </div>
-                                        </div>
-                                        <!-- Tags -->
-                                       <%-- <div class="dropdown f-left">
-                                            <button class="option-btn">
-                                                Tags
-                                                <i class="zmdi zmdi-chevron-down"></i>
-                                            </button>
-                                            <div class="dropdown-menu dropdown-width mt-30">
-                                                <aside class="widget widget-tags box-shadow">
-                                                    <h6 class="widget-title border-left mb-20">Tags</h6>
-                                                    <ul class="widget-tags-list">
-                                                        <li><a href="#">Bleckgerry ios</a></li>
-                                                        <li><a href="#">Symban</a></li>
-                                                        <li><a href="#">IOS</a></li>
-                                                        <li><a href="#">Bleckgerry</a></li>
-                                                        <li><a href="#">Windows Phone</a></li>
-                                                        <li><a href="#">Windows Phone</a></li>
-                                                        <li><a href="#">Androids</a></li>
-                                                    </ul>                  
-                                                </aside>      
-                                            </div>
-                                        </div>--%>
-                                    </div>
-                                </div>
-                                <!-- blog-option end -->
-                            </div>
+                               
                             <div class="row">
                                     <!-- ADDRESS SECTION START -->
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="contact-address box-shadow">
-                                <h3>Profit Made</h3>
-                                <h6>+25%</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="contact-address box-shadow">
-                                <h3>People</h3>
-                                <h6>+15%</h6>
-                            </div>
-                        </div>
             <!-- ADDRESS SECTION END --> 
                                 <!-- blog-item start -->
                                 <%--<div class="col-md-6 col-sm-6 col-xs-12">
@@ -416,6 +360,7 @@
                                         <li class="closed"><a href="CRUDProducts.aspx">Add Product</a></li>
                                         <li class="open"><a href="CRUDProducts.aspx">Delete Product</a></li>
                                         <li class="closed"><a href="CRUDProducts.aspx">Edit Product details</a></li>
+                                        <li class="closed"><a href="Reports.aspx">Reports</a></li>
                                     </ul>
                                 </div>
                             </aside>
