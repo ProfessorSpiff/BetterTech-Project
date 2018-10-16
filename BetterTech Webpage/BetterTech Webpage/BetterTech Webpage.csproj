@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="addQuantity.aspx" />
+    <Content Include="addToCart.aspx" />
     <Content Include="App_Media\Developers\Akshar_crop.jpg" />
     <Content Include="App_Media\Developers\Brij_crop.jpg" />
     <Content Include="App_Media\Developers\Jen_crop.jpg" />
@@ -131,6 +132,7 @@
     <Content Include="App_Media\Developers\Jen.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="minusQuantity.aspx" />
+    <Content Include="removeFromWishlist.aspx" />
     <Content Include="UserAccountInfoPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -162,6 +164,13 @@
     </Compile>
     <Compile Include="addQuantity.aspx.designer.cs">
       <DependentUpon>addQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addToCart.aspx.cs">
+      <DependentUpon>addToCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addToCart.aspx.designer.cs">
+      <DependentUpon>addToCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminHomePage.aspx.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
@@ -246,6 +255,13 @@
     </Compile>
     <Compile Include="minusQuantity.aspx.designer.cs">
       <DependentUpon>minusQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="removeFromWishlist.aspx.cs">
+      <DependentUpon>removeFromWishlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="removeFromWishlist.aspx.designer.cs">
+      <DependentUpon>removeFromWishlist.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserAccountInfoPage.aspx.cs">
       <DependentUpon>UserAccountInfoPage.aspx</DependentUpon>
