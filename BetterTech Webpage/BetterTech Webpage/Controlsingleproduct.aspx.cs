@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace BetterTech_Webpage
 {
@@ -25,14 +26,14 @@ namespace BetterTech_Webpage
             todisplay = todisplay + "<p>Current Product price:R " + Pro.Product_Price + "</p>";
             todisplay = todisplay + "<p>Current Discount Percentage: " + Pro.Product_SpclPercantage + "</p>";
 
-            if (Pro.Product_IsSpecial == true)
-            {
-                Cbspecial.Checked = true;
-            }
-            else
-            {
-                Cbspecial.Checked = false;
-            }
+            //if (Pro.Product_IsSpecial == true)
+            //{
+            //    Cbspecial.Checked = true;
+            //}
+            //else
+            //{
+            //    Cbspecial.Checked = false;
+            //}
 
             singlepro.InnerHtml = todisplay;
         }
@@ -58,13 +59,23 @@ namespace BetterTech_Webpage
                 int newcostdiff = Convert.ToInt32(Pro.Product_Price*(newpercent/100));
                 int totalcost= Convert.ToInt32(Pro.Product_Price - newcostdiff);
 
-                if (Cbspecial.Checked==true)
-                {
-                    Pro.Product_IsSpecial = true;
-                }
-                else if (Cbspecial.Checked == false)
+                //if (Cbspecial.Checked==true)
+                //{
+                //    Debug.WriteLine("Checked");
+                //    Pro.Product_IsSpecial = true;
+                //}
+                //else if (Cbspecial.Checked == false)
+                //{
+                //    Pro.Product_IsSpecial = false;
+                //}
+
+                if (newpercent == 0)
                 {
                     Pro.Product_IsSpecial = false;
+                }
+                else
+                {
+                    Pro.Product_IsSpecial = true;
                 }
                 try
                 {
