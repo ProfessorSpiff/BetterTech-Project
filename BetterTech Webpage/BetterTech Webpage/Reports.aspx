@@ -30,35 +30,14 @@
             <div class="blog-section mb-50">
                 <div class="container">
                     <div class="row">
+                        
                         <!-- blog-item start -->
                         <div class="col-sm-6 col-xs-12">
                             <div class="blog-item-2">
                                 <div class="row">
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-image">
-                                            <a href="single-blog.html"><img src="img/blog/4.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12">
-                                        <div class="blog-desc">
-                                            <h5 class="blog-title-2"><a href="ReportNumVisits.aspx">Number of Visits</a></h5>
-                                            <div id="numVisits" runat="server"></div>
-                                            <div class="read-more">
-                                                <a href="ReportNumVisits.aspx">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog-item end -->
-                        <!-- blog-item start -->
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="blog-item-2">
-                                <div class="row">
-                                    <div class="col-md-6 col-xs-12">
-                                        <div class="blog-image">
-                                            <a href="single-blog.html"><img src="img/blog/5.jpg" alt=""></a>
+                                            <a href="single-blog.html"><img src="App_Media/logo.jpg" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-xs-12">
@@ -80,7 +59,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-image">
-                                            <a href="single-blog.html"><img src="img/blog/4.jpg" alt=""></a>
+                                            <a href="single-blog.html"><img src="App_Media/logo.jpg" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-xs-12">
@@ -102,7 +81,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-image">
-                                            <a href="single-blog.html"><img src="img/blog/4.jpg" alt=""></a>
+                                            <a href="single-blog.html"><img src="App_Media/logo.jpg" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-xs-12">
@@ -124,7 +103,7 @@
                                 <div class="row">
                                     <div class="col-md-6 col-xs-12">
                                         <div class="blog-image">
-                                            <a href="single-blog.html"><img src="img/blog/5.jpg" alt=""></a>
+                                            <a href="single-blog.html"><img src="App_Media/logo.jpg" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-xs-12">
@@ -140,28 +119,7 @@
                             </div>
                         </div>
                         <!-- blog-item end -->
-                        <!-- blog-item start -->
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="blog-item-2">
-                                <div class="row">
-                                    <div class="col-md-6 col-xs-12">
-                                        <div class="blog-image">
-                                            <a href="single-blog.html"><img src="img/blog/4.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12">
-                                        <div class="blog-desc">
-                                            <h5 class="blog-title-2"><a href="ReportNumCustom.aspx">Number of Custom Computers Sold</a></h5>
-                                            <p>There are many variations of passages of in psum available, but the majority have sufe ered on in some form...</p>
-                                            <div class="read-more">
-                                                <a href="ReportNumCustom.aspx">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog-item end -->
+                        
                     </div>
                 </div>
             </div>
