@@ -15,15 +15,22 @@ namespace BetterTech_Webpage
         {
             if (HttpContext.Current.Session["Username"] != null)
             {
-                myaccountlink.Visible = true;
+                ifloggedin.Visible = true;
+                if ((String)HttpContext.Current.Session["AuthLevel"] == "Admin")
+                {
+                    myadminaccountlink.Visible = true;
+                    footaccAdmin.Visible = true;
+                }
+                if ((String)HttpContext.Current.Session["AuthLevel"] == "User")
+                {
+                    myuseraccountlink.Visible = true;
+                    footaccuser.Visible = true;
+                }
                 loginlink.Visible = false;
                 logoutlink.Visible = true;
             }
 
-            if ((String)HttpContext.Current.Session["AuthLevel"] == "Administrator")
-            {
-                cspecialslink.Visible = true;
-            }
+            
 
 
 
