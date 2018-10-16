@@ -107,11 +107,16 @@ namespace BetterTech_Webpage
                 {
                     userd.ZipCode = zipcode.Value;
                 }
-                if (!(pass1.Value.Equals("")))
-                {
-                    if (pass1.Value.Equals(pass2.Value))
+
+                if (Secrecy.Secrecy.HashPassword(oldPassword.Value).Equals(userd.Password))
+                {                 
+                    if (!(pass1.Value.Equals("")))
                     {
-                        userd.Password = Secrecy.Secrecy.HashPassword(pass1.Value);
+                        if (pass1.Value.Equals(pass2.Value))
+                        {
+                            userd.Password = Secrecy.Secrecy.HashPassword(pass1.Value);
+                            result.InnerText = "Password Changed";
+                        }
                     }
                 }
                 try

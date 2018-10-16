@@ -74,9 +74,10 @@
                                                             </div>
                                                         </div>
                                                         <label runat="server" id="Lblpass">Password: </label>
+                                                        <input type="password"  placeholder="Old Password" runat="server" id="oldPassword">
                                                         <input type="password"  placeholder="Password" runat="server" id="pass1">
                                                         <input type="password"  placeholder="Confirm Password" runat="server" id="pass2"> 
-                                                        
+                                                        <p id="result" runat="server"></p>
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <asp:Button ID="savebtn" runat="server" Text="Save" OnClick="savebtn_Click" />
