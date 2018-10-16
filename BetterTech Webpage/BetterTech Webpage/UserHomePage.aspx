@@ -47,8 +47,8 @@
                                                     <div class="p-30">
                                                         <div class="row">
                                                             <div class="col-sm-6">
-                                                                <label runat="server" id="lblun"> </label>
-                                                                 <input type="text"  placeholder="User Name" runat="server" id="UName">
+                                                                <h3 runat="server" id="lblun"> </h3>
+                                                                 <%--<input type="text"  placeholder="User Name" runat="server" id="UName">--%>
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <label runat="server" id="lblfn"> </label>

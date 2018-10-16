@@ -19,13 +19,14 @@ namespace BetterTech_Webpage
                                    where sessionuname.Equals(g.Username)
                                    select g).FirstOrDefault();
 
-                lblun.InnerText = "Username: " + userdetails.Username;
-                lblfn.InnerText = "First Name: " + userdetails.FirstName;
-                Labelln.InnerText = "Surname: " + userdetails.Surname;
-                Lble.InnerText = "E-Mail: " + userdetails.Email;
-                Labelp.InnerText = "Province/city: " + userdetails.AddressLine1;
-                Lblc.InnerText = "Physical Address: " + userdetails.AddressLine2;
-                Lblzip.InnerText = "Zip Code: " + userdetails.ZipCode;
+                    lblun.InnerText = "Username: " + userdetails.Username;           
+                    lblfn.InnerText = "First Name: " + userdetails.FirstName;                
+                    Labelln.InnerText = "Surname: " + userdetails.Surname;               
+                    Lble.InnerText = "E-Mail: " + userdetails.Email;                                        
+                    Labelp.InnerText = "Province/city: " + userdetails.AddressLine1;                                              
+                    Lblc.InnerText = "Physical Address: " + userdetails.AddressLine2;                                         
+                    Lblzip.InnerText = "Zip Code: " + userdetails.ZipCode;       
+                
 
                 //this code is copied from brij's attempt with the useraccountinfopage.aspx
                 dynamic InvoicesList = from invoices in db.Invoices
@@ -82,16 +83,36 @@ namespace BetterTech_Webpage
                                    where sessionuname.Equals(g.Username)
                                    select g).FirstOrDefault();
 
-                if (pass1.Value.Equals(pass2.Value))
+                if (!(fname.Value.Equals("")))
                 {
-                userd.Username = UName.Value;
-                userd.FirstName = fname.Value;
-                userd.Surname =lname.Value;
-                userd.Email =email.Value;
-                userd.AddressLine1 =location1.Value;
-                userd.AddressLine2 =location2.Value;
-                userd.ZipCode =zipcode.Value;
-                userd.Password = Secrecy.Secrecy.HashPassword(pass1.Value);
+                    userd.FirstName = fname.Value;
+                }
+                if (!(lname.Value.Equals("")))
+                {
+                    userd.Surname = lname.Value;
+                }
+                if (!(email.Value.Equals("")))
+                {
+                    userd.Email = email.Value;
+                }
+                if (!(location1.Value.Equals("")))
+                {
+                    userd.AddressLine1 = location1.Value;
+                }
+                if (!(location2.Value.Equals("")))
+                {
+                    userd.AddressLine2 = location2.Value;
+                }
+                if (!(zipcode.Value.Equals("")))
+                {
+                    userd.ZipCode = zipcode.Value;
+                }
+                if (!(pass1.Value.Equals("")))
+                {
+                    if (pass1.Value.Equals(pass2.Value))
+                    {
+                        userd.Password = Secrecy.Secrecy.HashPassword(pass1.Value);
+                    }
                 }
                 try
                 {
