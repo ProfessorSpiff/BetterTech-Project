@@ -36,9 +36,10 @@
                                 
                                     <div runat="server" class="login-account p-30 box-shadow">
                                         <p>If you have an account with us, Please log in.</p>
+                                        <label for="loginEmail">Email</label>
                                         <input runat="server" id="loginEmail" type="text" name="name" placeholder="Email Address">
+                                        <label for="loginPassword">Password</label>
                                         <input runat ="server" id="loginPassword" type="password" name="password" placeholder="Password">
-                                        <p><small><a href="#">Forgot your password?</a></small></p>
                                         <asp:Button id="loginb" runat="server" CssClass="submit-btn-1 btn-hover-1" OnClick="login_Click" Text="login"/>
                                         
                                     </div>
@@ -53,20 +54,29 @@
                                     <div class="login-account p-30 box-shadow">
                                         <div class="row">
                                             <div class="col-sm-6">
+                                                <label for="Username">Username</label>
                                                 <input runat="server" id="username" type="text"  placeholder="Username">
                                             </div>
                                             <div class="col-sm-6">
+                                                <label for="firstname">First Name</label>
                                                 <input runat="server" id="firstname" type="text"  placeholder="First Name">
                                             </div>
                                             <div class="col-sm-6">
+                                                <label for="lastname">Last Name</label>
                                                 <input type="text"  runat="server" id="lastname" placeholder="last Name">
                                             </div>
                                         </div>
+                                        <label for="add1">Address</label>
                                         <input type="text" runat="server" id="add1" placeholder="Address Line 1...">
+                                        <label for="add2">Address</label>
                                         <input type="text" runat="server" id="add2" placeholder="Address Line 2...">
+                                        <label for="zip">Zip Code</label>
                                         <input type="text" runat="server" id="zip" placeholder="Zip Code...">
+                                        <label for="email">Email</label>
                                         <input type="text" runat="server" id="email" placeholder="Email address here...">
+                                        <label for="pass1">Password</label>
                                         <input type="password"  runat="server" id="pass1" placeholder="Password">
+                                        <label for="pass2">Confirm Password</label>
                                         <input type="password" runat="server" id="pass2"  placeholder="Confirm Password">
                                         
                                         <div class="row">
