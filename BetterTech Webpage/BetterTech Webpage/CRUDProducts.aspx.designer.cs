@@ -139,13 +139,22 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlSelect edit;
         
         /// <summary>
-        /// prodEditThing control.
+        /// prodId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText prodEditThing;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText prodId;
+        
+        /// <summary>
+        /// prodEdit1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText prodEdit1;
         
         /// <summary>
         /// editButton control.

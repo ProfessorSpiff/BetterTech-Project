@@ -61,22 +61,26 @@
                             <div class="short-by f-left text-center">
                                 <span>Edit:</span>
                                 <select size="1" runat="server" name="edit" id="edit">
-                                    <option selected="selected" name="editID" runat="server">Product ID</option>
-                                    <option name="editName" runat="server">Product Name</option>
+                                    <option selected="selected" name="editName" runat="server">Product Name</option>
                                     <option name="editDesc" runat="server">Product Description</option>
                                     <option name="editType" runat="server">Product Type</option>
                                     <option name="editImg" runat="server">Product Image</option>
                                     <option name="editOH" runat="server">Product On Hand</option>
                                     <option name="editBrand" runat="server">Product Brand</option>
+                                    <option name="editPrice" runat="server">Product Price</option>
+                                    <option name="editBrand" runat="server">Active</option>
                                 </select>
                             </div>
                             <br />
                             <br />
-                            <input runat="server" id="prodEditThing" type="text" name="name" placeholder="Product...">
+                            <label for="prodId">Product ID</label>
+                            <input runat="server" id="prodId" type="text" name="name" placeholder="Product ID">
+                            <br />
+                            <input runat="server" id="prodEdit1" type="text" name="name" placeholder="Change...">
                             <br />
                             <br />
                             <asp:Button ID="editButton" runat="server" CssClass="submit-btn-1 btn-hover-1" Text="Edit" OnClick="editBtn_Click" />
-                            <!-- <div id="responseEdit" runat="server"></div> -->
+                            <div id="responseEdit" runat="server"></div>
                         </div>
 
                     </div>

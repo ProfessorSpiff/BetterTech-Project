@@ -11,7 +11,27 @@ namespace BetterTech_Webpage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var db = new DataLinqDataContext();
 
+            dynamic products = from a in db.Products
+                               select a;
+            string display = "";
+            foreach (Product p in products)
+            {
+                display += "<div class=\"col-sm-6 col-xs-12\">";
+                display += "        <div class=\"blog-item-2\">";
+                display += "            <div class=\"row\">";
+                display += "                <div class=\"col-md-6 col-xs-12\">";
+                display += "                    <div class=\"blog-desc\">";
+                display += "                        <h5 class=\"blog -title-2\">" + p.Product_OnHand + "</h5>";
+                display += "                        <p>" + p.Product_Name + "</p>";
+                display += "                    </div>";
+                display += "                </div>";
+                display += "            </div>";
+                display += "        </div>";
+                display += "    </div>";
+            }
+            main.InnerHtml = display;
         }
     }
 }

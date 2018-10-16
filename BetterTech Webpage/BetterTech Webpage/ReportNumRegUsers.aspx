@@ -46,6 +46,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-title  text-center mb-40">
+                                <h6 class="mb-40">This is the total number of registered users on this site in the past 7 days.</h6>
                                 <div runat="server" id="numRegGraph">
                                 </div>                           
                             </div>
@@ -53,19 +54,7 @@
                     </div><hr>
                 </div>
             </div>
-            <div class="theme-section mb-80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="section-title  text-center mb-40">
-                                <div runat="server" id="numRecent"></div>
-                                
-                                <h6 class="mb-40">This is the number of products added in the last 3 months.</h6>
-                            </div>
-                        </div>
-                    </div><hr>
-                </div>
-            </div>
+
             <!-- This is single section end-->
         </section>
         <!-- End page content -->

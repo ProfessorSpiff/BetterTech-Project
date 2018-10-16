@@ -96,7 +96,7 @@ namespace BetterTech_Webpage
                     AddressLine1 = add1.Value,
                     AddressLine2 = add2.Value,
                     ZipCode = zip.Value,
-                    DateRegistered = DateTime.Now
+                    DateRegistered = DateTime.Now.Date
                 };
                 db.Users.InsertOnSubmit(regUser);
                 try

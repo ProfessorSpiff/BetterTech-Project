@@ -47,7 +47,6 @@
                                     </ul>
                                     <!-- short-by -->
                                     <div class="short-by f-left text-center">
-                                        <a href="ControlSpecials.aspx">ControlSpecials.aspx</a>
                                         <span>Sort by :</span>
 
                                         <%--<select>
