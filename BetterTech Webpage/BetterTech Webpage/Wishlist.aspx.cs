@@ -250,12 +250,26 @@ namespace BetterTech_Webpage
 
                 foreach (Cart c in cart)
                 {
-                    db.Carts.DeleteOnSubmit(c);
-                    db.SubmitChanges();
 
                     var product = (from Product p in db.Products
                                    where p.Product_Id.Equals(c.Product_Id)
                                    select p).FirstOrDefault();
+
+                    var newItem = new Item
+                    {
+                        Invoice_Id = newInvoice.Invoice_Id,
+                        Product_Id = c.Product_Id,
+                        Item_Qty = c.Quantity,
+                        Item_SellingPrice = product.Product_Price
+                        
+                    };
+
+                    db.Items.InsertOnSubmit(newItem);
+                    db.SubmitChanges();
+
+                    db.Carts.DeleteOnSubmit(c);
+                    db.SubmitChanges();
+                    
 
                     product.Product_OnHand -= c.Quantity;
                     db.SubmitChanges();
