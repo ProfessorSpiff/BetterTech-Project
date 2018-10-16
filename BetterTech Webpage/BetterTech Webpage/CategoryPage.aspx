@@ -57,9 +57,10 @@
                                             
                                         </select>--%>
 
-                                        <asp:DropDownList ID="prcDrpDwn" runat="server">
-                                            <asp:ListItem>Ascending Price</asp:ListItem>
-                                            <asp:ListItem>Descending Price</asp:ListItem>
+                                        <asp:DropDownList ID="prcDrpDwn" AutoPostBack="true" runat="server" OnSelectedIndexChanged="prcDrpDwn_SelectedIndexChanged">
+                                            
+                                            <asp:ListItem Value="0">Ascending Price</asp:ListItem>
+                                            <asp:ListItem Value="1">Descending Price</asp:ListItem>
                                         </asp:DropDownList>
 
                                     </div> 
