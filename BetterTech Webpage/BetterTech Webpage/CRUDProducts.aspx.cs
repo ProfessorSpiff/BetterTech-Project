@@ -86,11 +86,12 @@ namespace BetterTech_Webpage
         protected void editBtn_Click(object sender, EventArgs e)
         {
             var db = new DataLinqDataContext();
-            dynamic products = from a in db.Products
-                               select a;
-            var editChoice = Request.Form.Get("edit");
 
-            responseEdit.InnerHtml = "<div class=alert alert-danger><strong>Warning!</strong>"+ editChoice +"</div>";
+            int productID = int.Parse(prodId.Value);
+            var prodd = (from Product a in db.Products
+                         where a.Product_Id.Equals(productID)
+                         select a).FirstOrDefault();
+            var thingtochange = Request.Form["edit"];
             
         }
     }
