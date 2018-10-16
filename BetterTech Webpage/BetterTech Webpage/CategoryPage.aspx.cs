@@ -13,6 +13,8 @@ namespace BetterTech_Webpage
    
     public partial class CategoryPage : System.Web.UI.Page
     {
+        private static Boolean ascSort = true;
+
         protected string strPrcRng = "";
         protected string strSrch = "";
 
@@ -141,16 +143,45 @@ namespace BetterTech_Webpage
                 intVal1 = Convert.ToInt32(strPrcRng.Substring(strPrcRng.IndexOf("R") + 1, strPrcRng.IndexOf("-") - 1));
                 intVal2 = Convert.ToInt32(strPrcRng.Substring(strPrcRng.IndexOf("-") + 3));
 
-                ProductImgLst = (from productImg in ProductImgLst
-                                 where ((productImg.Product_IsActive) == true)
-                                 && ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
-                                 select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
+                if(ascSort == true)
+                {
+                    ProductImgLst = (from productImg in ProductImgLst
+                                     orderby productImg.Product_Price ascending
+                                     where ((productImg.Product_IsActive) == true)
+                                     && ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
+                                     select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
+                }else
+                {
+                    ProductImgLst = (from productImg in ProductImgLst
+                                     orderby productImg.Product_Price descending
+                                     where ((productImg.Product_IsActive) == true)
+                                     && ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
+                                     select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
+                }
+                //ProductImgLst = (from productImg in ProductImgLst
+                                 
+                //                 where ((productImg.Product_IsActive) == true)
+                //                 && ((productImg.Product_Price) >= intVal1 && (productImg.Product_Price) <= intVal2)
+                //                 select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
             }
             else
             {
-                ProductImgLst = (from productImg in ProductImgLst
-                                 where ((productImg.Product_IsActive) == true)
-                                 select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
+                if(ascSort == true)
+                {
+                    ProductImgLst = (from productImg in ProductImgLst
+                                     orderby productImg.Product_Price ascending
+                                     where ((productImg.Product_IsActive) == true)
+                                     select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
+                }else
+                {
+                    ProductImgLst = (from productImg in ProductImgLst
+                                     orderby productImg.Product_Price descending
+                                     where ((productImg.Product_IsActive) == true)
+                                     select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
+                }
+                //ProductImgLst = (from productImg in ProductImgLst
+                //                 where ((productImg.Product_IsActive) == true)
+                //                 select productImg).Take(Convert.ToInt16(HttpContext.Current.Session["PgNum"]));
             }
             
             foreach (Product prdctImg in ProductImgLst)
@@ -296,6 +327,22 @@ namespace BetterTech_Webpage
             Session["PgNum"] = null;
             
             Page.Response.Redirect(Page.Request.Url.ToString());
+        }
+
+        protected void prcDrpDwn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if((prcDrpDwn.SelectedValue).Equals("1"))
+            {
+                //Debug.WriteLine("...............Ascending");
+                ascSort = true;
+                //Response.Redirect(Request.RawUrl);
+            }
+            else
+            {
+               // Debug.WriteLine("...............Descending");
+                ascSort = false;
+               // Response.Redirect(Request.RawUrl);
+            }
         }
     }
 }

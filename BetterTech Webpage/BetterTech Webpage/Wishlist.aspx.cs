@@ -207,7 +207,7 @@ namespace BetterTech_Webpage
 
                 displayOrder += "                                            <tr>";
                 displayOrder += "                                                <td class='td -title-1'>Shipping and Handing</td>";
-                displayOrder += "                                                <td class='td -title-2'>$15.00</td>";
+                displayOrder += "                                                <td class='td -title-2'>" + shipping +"</td>";
                 displayOrder += "                                            </tr>";
                 displayOrder += "                                            <tr>";
                 displayOrder += "                                                <td class='td -title-1'>Vat</td>";
@@ -229,8 +229,6 @@ namespace BetterTech_Webpage
             if(numOfProducts > 0)
             {
                 var address = txtAddress.Value.Trim();
-                var email = txtEmail.Value.Trim();
-                var phone = txtPhone.Value.Trim();
 
                 var db = new DataLinqDataContext();
 
@@ -245,7 +243,6 @@ namespace BetterTech_Webpage
                 db.SubmitChanges();
 
                 liAddress.InnerText = address;
-                liEmail.InnerText = email;
 
                 var cart = from Cart c in db.Carts
                            where c.Username.Equals(Session["username"])
@@ -265,9 +262,6 @@ namespace BetterTech_Webpage
                 }
 
                 displayOrderNo1.InnerText = Convert.ToString(newInvoice.Invoice_Id);
-                displayOrderNo2.InnerText = Convert.ToString(newInvoice.Invoice_Id);
-                displayOrderNo3.InnerText = Convert.ToString(newInvoice.Invoice_Id);
-                displayOrderNo4.InnerText = Convert.ToString(newInvoice.Invoice_Id);
 
                 // Response.Redirect("Wishlist.aspx#order-complete");
                 //  liPhone = phone;

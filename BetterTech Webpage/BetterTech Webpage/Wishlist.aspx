@@ -209,14 +209,6 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <div class="coupon-discount box-shadow p-30 mb-50">
-                                                        <h6 class="widget-title border-left mb-20">coupon discount</h6>
-                                                        <p>Enter your coupon code if you have one!</p>
-                                                        <input type="text" name="name" placeholder="Enter your code here.">
-                                                        <button class="submit-btn-1 black-bg btn-hover-2" type="submit">apply coupon</button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
                                                     <div class="payment-details box-shadow p-30 mb-50">
                                                         <h6 class="widget-title border-left mb-20">payment details</h6>
                                                         <table>
@@ -242,24 +234,6 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <div class="culculate-shipping box-shadow p-30">
-                                                        <h6 class="widget-title border-left mb-20">culculate shipping</h6>
-                                                        <p>Enter your coupon code if you have one!</p>
-                                                        <div class="row">
-                                                            <div class="col-sm-4 col-xs-12">
-                                                                <input type="text"  placeholder="Country">
-                                                            </div>
-                                                            <div class="col-sm-4 col-xs-12">
-                                                                <input type="text"  placeholder="Region / State">
-                                                            </div>
-                                                            <div class="col-sm-4 col-xs-12">
-                                                                <input type="text"  placeholder="Post code">
-                                                            </div>
-                                                            <div class="col-md-12">
-                                                                <button class="submit-btn-1 black-bg btn-hover-2">get a quote</button>   
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                     </div>
@@ -281,25 +255,11 @@
                                                 <div class="col-md-6">
                                                     <div class="billing-details pr-10">
                                                         <h6 class="widget-title border-left mb-20">billing details</h6>
-                                                        <input type="text"  placeholder="Your Name Here...">
-                                                        <input  runat="server" id="txtEmail" type="text"  placeholder="Email address here...">
-                                                        <input type="text"  runat="server" id="txtPhone" placeholder="Phone here...">
-                                                        <input type="text"  placeholder="Company name here...">
-                                                        <select class="custom-select">
-                                                            <option value="defalt">country</option>
-                                                            <option value="c-1">Australia</option>
-                                                            <option value="c-2">Bangladesh</option>
-                                                            <option value="c-3">Unitd States</option>
-                                                            <option value="c-4">Unitd Kingdom</option>
-                                                            <option value="c-5">South Africa</option>
-                                                        </select>
-                                                        <select class="custom-select">
-                                                            <option value="defalt">Town/City</option>
-                                                            <option value="c-1">Victoria</option>
-                                                            <option value="c-2">Chittagong</option>
-                                                            <option value="c-3">Boston</option>
-                                                            <option value="c-4">Cambridge</option>
-                                                        </select>
+                                                       
+                                                        
+                                                         <input type="text"  placeholder="Enter country...">
+                                                         <input type="text"  placeholder="Town/City...">
+
                                                         <textarea runat="server" id="txtAddress" class="custom-textarea" placeholder="Your address here..."></textarea>
                                                     </div>
                                                 </div>
@@ -320,36 +280,6 @@
                                                                 <div id="bank-transfer" class="panel-collapse collapse in" >
                                                                     <div class="payment-content">
                                                                     <p>Lorem Ipsum is simply in dummy text of the printing and type setting industry. Lorem Ipsum has been.</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="panel">
-                                                                <h4 class="payment-title box-shadow">
-                                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                                                    cheque payment
-                                                                    </a>
-                                                                </h4>
-                                                                <div id="collapseTwo" class="panel-collapse collapse">
-                                                                    <div class="payment-content">
-                                                                        <p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p> 
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="panel">
-                                                                <h4 class="payment-title box-shadow">
-                                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" >
-                                                                    paypal
-                                                                    </a>
-                                                                </h4>
-                                                                <div id="collapseThree" class="panel-collapse collapse" >
-                                                                    <div class="payment-content">
-                                                                        <p>Pay via PayPal; you can pay with your credit card if you don't have a PayPal account.</p>
-                                                                        <ul class="payent-type mt-10">
-                                                                            <li><a href="#"><img src="img/payment/1.png" alt=""></a></li>
-                                                                            <li><a href="#"><img src="img/payment/2.png" alt=""></a></li>
-                                                                            <li><a href="#"><img src="img/payment/3.png" alt=""></a></li>
-                                                                            <li><a href="#"><img src="img/payment/4.png" alt=""></a></li>
-                                                                        </ul>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -374,18 +304,6 @@
                                                 <li>
                                                     <h6>order no</h6>
                                                     <p runat="server" id="displayOrderNo1"></p>
-                                                </li>
-                                                <li>
-                                                    <h6>order no</h6>
-                                                    <p runat="server" id="displayOrderNo2"></p>
-                                                </li>
-                                                <li>
-                                                    <h6>order no</h6>
-                                                    <p runat="server" id="displayOrderNo3"></p>
-                                                </li>
-                                                <li>
-                                                    <h6>order no</h6>
-                                                    <p runat="server" id="displayOrderNo4"></p>
                                                 </li>
                                             </ul>
                                         </div>

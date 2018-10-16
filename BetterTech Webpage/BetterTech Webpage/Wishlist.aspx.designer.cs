@@ -67,24 +67,6 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl b;
         
         /// <summary>
-        /// txtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEmail;
-        
-        /// <summary>
-        /// txtPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPhone;
-        
-        /// <summary>
         /// txtAddress control.
         /// </summary>
         /// <remarks>
@@ -119,33 +101,6 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayOrderNo1;
-        
-        /// <summary>
-        /// displayOrderNo2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayOrderNo2;
-        
-        /// <summary>
-        /// displayOrderNo3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayOrderNo3;
-        
-        /// <summary>
-        /// displayOrderNo4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayOrderNo4;
         
         /// <summary>
         /// displayOrderComplete control.
