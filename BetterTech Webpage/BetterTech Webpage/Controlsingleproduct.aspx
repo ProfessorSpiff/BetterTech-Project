@@ -7,8 +7,8 @@
     </div>
     <asp:Label ID="Label1" runat="server" Text="New Special Percentage: "></asp:Label>
      <input type="text" runat="server" id="newper" placeholder="">
-        <asp:Label ID="Label2" runat="server" Text="On Special"></asp:Label>
-    <asp:CheckBox ID="Cbspecial" runat="server" />
+        <%--<asp:Label ID="Label2" runat="server" Text="On Special"></asp:Label>--%>
+    <%--<asp:CheckBox ID="Cbspecial" runat="server" />--%>
     <asp:Button ID="btnupdate" runat="server" Text="Update" OnClick="btnupdate_Click" />
 
 </asp:Content>

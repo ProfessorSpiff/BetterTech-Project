@@ -57,14 +57,14 @@
                                 <!-- shop-option start -->
                                 <div class="shop-option box-shadow mb-30 clearfix">
                                     <!-- Nav tabs -->
-                                    <ul class="shop-tab f-left" role="tablist">
+                                  <%--  <ul class="shop-tab f-left" role="tablist">
                                         <li>
                                             <a href="#grid-view" data-toggle="tab"><i class="zmdi zmdi-view-module"></i></a>
                                         </li>
                                         <li class="active">
                                             <a href="#list-view" data-toggle="tab"><i class="zmdi zmdi-view-list-alt"></i></a>
                                         </li>
-                                    </ul>
+                                    </ul>--%>
                                     <!-- sort-by -->
                                     <div class="short-by f-left text-center">
                                         <span>Sort by :</span>
@@ -77,10 +77,7 @@
                                         </select> 
                                         <asp:Button ID="btnsort" runat="server" Text="Sort" OnClick="btnsort_Click" />
                                     </div> 
-                                    <!-- showing -->
-                                    <div class="showing f-right text-right">
-                                        <span>Showing : 01-09 of 17.</span>
-                                    </div>                                   
+                                
                                 </div>
                                        <div id="productsearchdetails" runat="server">
                                              <!-- This is where the product will be displayed dynamically when searched -->
@@ -109,24 +106,6 @@
 
                             </div>
                         </div>
-                        <div class="col-md-3 col-xs-12">
-                            <!-- widget-search -->
-                            <aside class="widget-search mb-30">
-                                    <input type="text" placeholder="Search here...">
-                                    <button type="submit"><i class="zmdi zmdi-search"></i></button>
-                            </aside>
-                            <!-- shop-filter -->
-                            <aside class="widget shop-filter box-shadow mb-30">
-                                <h6 class="widget-title border-left mb-20">Price</h6>
-                                <div class="price_filter">
-                                    <div class="price_slider_amount">
-                                        <input type="submit"  value="You range :"/> 
-                                        <input type="text" id="amount" name="price"  placeholder="Add Your Price" /> 
-                                    </div>
-                                    <div id="slider-range"></div>
-                                </div>
-                            </aside>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -152,7 +131,7 @@
                                     </div>
                                 </div><!-- .product-images -->
                                 
-                                <div class="product-info">
+            <%--                    <div class="product-info">
                                     <h1>Aenean eu tristique</h1>
                                     <div class="price-box-3">
                                         <div class="s-price-box">
@@ -204,7 +183,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div><!-- .product-info -->
+                                </div><!-- .product-info -->--%>
                             </div><!-- .modal-product -->
                         </div><!-- .modal-body -->
                     </div><!-- .modal-content -->

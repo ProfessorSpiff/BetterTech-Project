@@ -20,7 +20,7 @@ namespace BetterTech_Webpage
             var db = new DataLinqDataContext();
             dynamic pro = from p in db.Products
                           select p;
-            Boolean productfound = false;
+            Boolean productfound = true;
 
             foreach (Product pr in pro)
             {

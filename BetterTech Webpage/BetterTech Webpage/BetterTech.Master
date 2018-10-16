@@ -107,9 +107,7 @@
                                                 <li><a href="index.aspx">Home</a>
                                                 </li>         
                                                 <%-- the control specials page is visible for testing only --%>
-                                                <li><a href="ControlSpecials.aspx" visible="true" id="cspecialslink" runat="server">Control Specials</a>
-                                                </li>
-                                                <li class="mega-parent"><a href="#">Hardware</a>
+                                                <li class="mega-parent"><a href="CategoryPage.aspx">Hardware</a>
                                                     <div class="mega-menu-area clearfix">
                                                         <div class="mega-menu-link mega-menu-link-4  f-left">
                                                             <ul class="single-mega-item">
@@ -139,7 +137,7 @@
                                                                     <a href="CategoryPage.aspx?Category=cooling">Fans,CPU and Liquid Cooling</a>
                                                                 </li>
                                                             </ul>
-                                                            <ul class="single-mega-item">
+                                                            <%--<ul class="single-mega-item">
                                                                 <li class="menu-title">Peripherals</li>
                                                                 <li>
                                                                     <a href="CategoryPage.aspx?Category=display">Moniters, Screens and Projectors</a>
@@ -162,83 +160,17 @@
                                                                 <li>
                                                                     <a href="CategoryPage.aspx?Category=network">Modems and Network Equipment</a>
                                                                 </li>                                                        
-                                                            </ul>
-                                                            <ul class="single-mega-item">
-                                                                <li class="menu-title">Other</li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=cables">Cables and Adapters</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=cams">Webcams and Camera's</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=software">Software</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=pwrpro">Power Protection Equipment</a>
-                                                                </li>                                                              
-                                                            </ul>                                                            
+                                                            </ul>--%>                                                            
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li class="mega-parent"><a href="#">Prebuilt</a>
-                                                    <div class="mega-menu-area clearfix">
-                                                        <div class="mega-menu-link f-left">
-                                                            <ul class="single-mega-item">
-                                                                <li class="menu-title">Gaming</li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=game&brand=nvidia">Nvidia Gaming Pc</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=game&brand=amd">Amd Gaming Pc</a>
-                                                                </li>
-                                                            </ul>
-                                                            <ul class="single-mega-item">
-                                                                <li class="menu-title">Workstations</li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=work&brand=intel">Intel workstations</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=work&brand=amd">AMD workstations</a>
-                                                                </li>
-                                                            </ul>
-                                                            <ul class="single-mega-item">
-                                                                <li class="menu-title">Content Creation</li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=content&type=simple">Simple Editing Pc's</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=content&type=music">Music Making Pc's</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=content&type=video">Video editing/movie making Pc's</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="CategoryPage.aspx?cat=content&type=appcreation">Game/Application Creation Pc's</a>
-                                                                </li>
-                                                            </ul>
-                                                             <ul class="single-mega-item">
-                                                                <li class="menu-title">Custom Builds</li>
-                                                                <li>
-                                                                    <a href="BuildCustomPc.aspx">Custom create your own Pc</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="mega-menu-photo f-left">
-                                                            <a href="#">
-                                                                <img src="img/mega-menu/1.jpg" alt="mega menu image">
-                                                            </a>
-                                                        </div>
-                                                    </div>
+                                                <li class="mega-parent"><a href="BuildCustomPC.aspx">Build PC</a>
                                                 </li> 
                                                 <li>
                                                     <a href="About.aspx">About us</a>
                                                 </li>
                                                 <li>
                                                     <a href="ContactUs.aspx">Contact</a>
-                                                </li>
-                                                   <li>
-                                                       <a href="CRUDProducts.aspx">CRUDProducts.aspx</a>
                                                 </li>
                                             </ul>
                                         </nav>
