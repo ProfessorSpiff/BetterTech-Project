@@ -189,16 +189,11 @@
                                                     <div class="f-left" style="margin-left: auto; margin-right: auto; text-align: center;">
                                                         <%--<input type="text" value="1" name="qtybutton" class="cart-plus-minus-box" id="inItemQty" runat="server" ClientIDMode="Static">--%>
                                                         
-                                                        <asp:Button ID="btnMinus" runat="server" Text="-" OnClick="btnMinus_Click" ></asp:Button>
-                                                        
-                                                        <asp:Label ID="lblQty" Text="1" runat="server" Width="50"></asp:Label>
-                                                        
-                                                        <%--<asp:TextBox ID="lblQty" runat="server" Type="Number"></asp:TextBox>--%>
-                                                        <div id="QtyCnt" runat="server">
-
-                                                        </div>
-
                                                         <asp:Button ID="btnPlus" runat="server" Text="+" OnClick="btnPlus_Click" ></asp:Button>
+
+                                                        <asp:Label ID="lblQty" Text="1" runat="server" style="text-align: center;" Width="50"></asp:Label>
+                                                        
+                                                        <asp:Button ID="btnMinus" runat="server" Text="-" OnClick="btnMinus_Click" ></asp:Button>
                                                         
                                                     </div>   
                                                 </div>

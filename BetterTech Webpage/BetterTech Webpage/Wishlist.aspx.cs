@@ -76,11 +76,11 @@ namespace BetterTech_Webpage
                     }
                     displayW += "                                         <td class='product-add-cart'>";
                     displayW += "                                             <a href = '#' title = 'Add To Cart'>";
-                    displayW += "                                                <i class='zmdi zmdi-shopping-cart-plus'></i>";
+                    displayW += "                                                <a href= 'addToCart.aspx?ProductId="+ w.Product_Id +"'><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
                     displayW += "                                            </a>";
                     displayW += "                                        </td>";
                     displayW += "                                        <td class='product-remove'>";
-                    displayW += "                                            <a href = '#'><i class='zmdi zmdi-close'></i></a>";
+                    displayW += "                                            <a href = 'removeFromWishlist.aspx?ProductId=" + w.Product_Id + "'><i class='zmdi zmdi-close'></i></a>";
                     displayW += "                                        </td>";
 
                     displayW += "</tr>";

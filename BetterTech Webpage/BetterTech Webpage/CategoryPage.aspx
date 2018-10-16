@@ -47,7 +47,8 @@
                                     </ul>
                                     <!-- short-by -->
                                     <div class="short-by f-left text-center">
-                                        <%--<span>Sort by :</span>--%>
+                                        <a href="ControlSpecials.aspx">ControlSpecials.aspx</a>
+                                        <span>Sort by :</span>
 
                                         <%--<select>
                                             <option value="lowestprice">Special Prices</option>
@@ -56,7 +57,10 @@
                                             
                                         </select>--%>
 
-                                        <%--<asp:DropDownList ID="prcDrpDwn" runat="server"></asp:DropDownList>--%>
+                                        <asp:DropDownList ID="prcDrpDwn" runat="server">
+                                            <asp:ListItem>Ascending Price</asp:ListItem>
+                                            <asp:ListItem>Descending Price</asp:ListItem>
+                                        </asp:DropDownList>
 
                                     </div> 
                                     <!-- showing -->

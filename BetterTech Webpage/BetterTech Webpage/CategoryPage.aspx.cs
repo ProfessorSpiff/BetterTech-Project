@@ -39,12 +39,14 @@ namespace BetterTech_Webpage
                                         (item.Product_IsActive == true))
                                         select item).Take(3);
                 divCategoryDisplay += "<ul>";
-                divCategoryDisplay += "<li><a href='CategoryPage.aspx?CategorySpcl=" + prdctType + "'>View All " + prdctType + " Specials</a></li>";
+                divCategoryDisplay += "<li><a href='CategoryPage.aspx?Category=" + prdctType + "'>View All " + prdctType + "</a></li>";
+                //divCategoryDisplay += "<li><a href='CategoryPage.aspx?CategorySpcl=" + prdctType + "'>View All " + prdctType + " Specials</a></li>";
                 foreach (Product prdctItm in ProductItmLst)
                 {
                     divCategoryDisplay += "<li><a href='ProductPage.aspx?ProductId=" + prdctItm.Product_Id+"'>" + prdctItm.Product_Name + "</a></li>";
                 }
-                divCategoryDisplay += "<li><a href='CategoryPage.aspx?Category="+prdctType+"'>View All "+prdctType+"</a></li>";
+                //divCategoryDisplay += "<li><a href='CategoryPage.aspx?Category="+prdctType+"'>View All "+prdctType+"</a></li>";
+                divCategoryDisplay += "<li><a href='CategoryPage.aspx?CategorySpcl=" + prdctType + "'>View All " + prdctType + " Specials</a></li>";
                 divCategoryDisplay += "</ul>";
                 divCategoryDisplay += "</li>";
             }
