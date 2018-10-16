@@ -25,8 +25,8 @@ namespace BetterTech_Webpage
                     Lble.InnerText = "E-Mail: " + userdetails.Email;                                        
                     Labelp.InnerText = "Province/city: " + userdetails.AddressLine1;                                              
                     Lblc.InnerText = "Physical Address: " + userdetails.AddressLine2;                                         
-                    Lblzip.InnerText = "Zip Code: " + userdetails.ZipCode;       
-                
+                    Lblzip.InnerText = "Zip Code: " + userdetails.ZipCode;
+                string strDisplay = "<h3>Invoice History:</h3>";
 
                 //this code is copied from brij's attempt with the useraccountinfopage.aspx
                 dynamic InvoicesList = from invoices in db.Invoices
@@ -36,10 +36,11 @@ namespace BetterTech_Webpage
 
                 if (InvoicesList != null)
                 {
-                    string strMnDisplay = "";
                     foreach (Invoice inv in InvoicesList)
                     {
-                        string strDisplay = "<div class='payment-details p-30'>";
+                        strDisplay += "<p></p>";
+                        strDisplay += "<div class='payment-details p-30'>";
+                        strDisplay += "<h4>Invoice:  " + inv.Invoice_Id + "</h4>";
                         strDisplay += "<table>";
 
                         dynamic ItemsList = from item in db.Items
@@ -63,10 +64,8 @@ namespace BetterTech_Webpage
                         strDisplay += "</tr>";
                         strDisplay += "</table>";
                         strDisplay += "</div>";
-
-                        strMnDisplay += strDisplay;
                     }
-                    Invoices.InnerHtml = strMnDisplay;
+                    Invoices.InnerHtml = strDisplay;
                 }
 
             }
