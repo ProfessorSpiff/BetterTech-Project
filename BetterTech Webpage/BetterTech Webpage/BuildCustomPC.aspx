@@ -56,21 +56,9 @@
                                     </a>
                         </li>
                         <li>
-                            <a href="#Additional" data-toggle="tab">
-                                <span>08</span>
-                                Additional Components
-                                    </a>
-                        </li>
-                        <li>
                             <a href="#case" data-toggle="tab">
-                                <span>09</span>
+                                <span>08</span>
                                 Case
-                                    </a>
-                        </li>
-                        <li>
-                            <a href="#finalise" data-toggle="tab">
-                                <span>F</span>
-                                Finalise
                                     </a>
                         </li>
                     </ul>
@@ -172,14 +160,6 @@
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="psuDiv" class="table-content table-responsive mb-50">
-                                           
-                                </div>
-                            </div>
-                        </div>
-                        <div runat="server" class="tab-pane" id="Additional">
-                            <div class="shopping-cart-content">
-
-                                <div runat="server" id="addDiv" class="table-content table-responsive mb-50">
                                            
                                 </div>
                             </div>
