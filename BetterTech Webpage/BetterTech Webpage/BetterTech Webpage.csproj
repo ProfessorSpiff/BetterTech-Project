@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="addQuantity.aspx" />
     <Content Include="addToCart.aspx" />
+    <Content Include="AdminEditDetails.aspx" />
     <Content Include="App_Media\Brand_AMD.jpg" />
     <Content Include="App_Media\Brand_Antec.jpg" />
     <Content Include="App_Media\Brand_Asus.jpg" />
@@ -103,14 +104,25 @@
     <Content Include="App_Media\Product\Brand_Asus.jpg" />
     <Content Include="App_Media\Product\Brand_Ballistix.jpg" />
     <Content Include="App_Media\Product\Brand_Bitfenix.jpg" />
+    <Content Include="App_Media\Product\Brand_CoolerMaster.jpg" />
     <Content Include="App_Media\Product\Brand_Corsair.jpg" />
+    <Content Include="App_Media\Product\Brand_EKWB.jpg" />
+    <Content Include="App_Media\Product\Brand_FractalDesign.jpg" />
     <Content Include="App_Media\Product\Brand_Galax.jpg" />
     <Content Include="App_Media\Product\Brand_Gigabyte.jpg" />
     <Content Include="App_Media\Product\Brand_Intel.jpg" />
+    <Content Include="App_Media\Product\Brand_Kingston.jpg" />
     <Content Include="App_Media\Product\Brand_MSI.jpg" />
     <Content Include="App_Media\Product\Brand_Pallit.jpg" />
+    <Content Include="App_Media\Product\Brand_Phanteks.jpg" />
     <Content Include="App_Media\Product\Brand_Raidmax.jpg" />
+    <Content Include="App_Media\Product\Brand_Reeven.jpg" />
+    <Content Include="App_Media\Product\Brand_Samsung.jpg" />
+    <Content Include="App_Media\Product\Brand_Seagate.jpg" />
+    <Content Include="App_Media\Product\Brand_Thermaltake.jpg" />
     <Content Include="App_Media\Product\Brand_WD.jpg" />
+    <Content Include="App_Media\Product\Brand_WesternDigital.jpg" />
+    <Content Include="App_Media\Product\logo.jpg" />
     <Content Include="App_Media\Product\Product_Id229.jpg" />
     <Content Include="App_Media\Product\Product_Id230.jpg" />
     <Content Include="App_Media\Product\Product_Id231.jpg" />
@@ -155,6 +167,9 @@
     <Content Include="App_Media\Product\Product_Id265.jpg" />
     <Content Include="App_Media\Product\Product_Id266.jpg" />
     <Content Include="App_Media\Product\Product_Id267.jpg" />
+    <Content Include="App_Media\Product\Product_Id268.jpg" />
+    <Content Include="App_Media\Product\Product_Id269.jpg" />
+    <Content Include="App_Media\Product\Product_Id270.jpg" />
     <Content Include="App_Media\Product\Product_Id271.jpg" />
     <Content Include="App_Media\Product\Product_Id272.jpg" />
     <Content Include="App_Media\Product\Product_Id274.jpg" />
@@ -395,6 +410,13 @@
     </Compile>
     <Compile Include="addToCart.aspx.designer.cs">
       <DependentUpon>addToCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditDetails.aspx.cs">
+      <DependentUpon>AdminEditDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminEditDetails.aspx.designer.cs">
+      <DependentUpon>AdminEditDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminHomePage.aspx.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>

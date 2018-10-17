@@ -354,13 +354,14 @@
                         <div class="col-md-3 col-xs-12">
                             <!-- widget-categories and links now work-->
                             <aside class="widget widget-categories box-shadow mb-30">
-                                <h6 class="widget-title border-left mb-20">Product</h6>
+                                <h6 class="widget-title border-left mb-20">Admin</h6>
                                 <div id="cat-treeview" class="product-cat">
                                     <ul>
                                         <li class="closed"><a href="CRUDProducts.aspx">Add Product</a></li>
                                         <li class="open"><a href="CRUDProducts.aspx">Delete Product</a></li>
                                         <li class="closed"><a href="CRUDProducts.aspx">Edit Product details</a></li>
                                         <li class="closed"><a href="Reports.aspx">Reports</a></li>
+                                        <li class="closed"><a href="UserHomePage.aspx">Home Page</a></li>
                                     </ul>
                                 </div>
                             </aside>
