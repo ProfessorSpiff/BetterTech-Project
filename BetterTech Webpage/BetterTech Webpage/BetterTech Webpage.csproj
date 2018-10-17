@@ -113,6 +113,7 @@
     </Content>
     <Content Include="App_Media\logo.jpg" />
     <Content Include="App_Media\Prodcut_Id355.jpg" />
+    <Content Include="App_Media\Prodcut_Id359 - Copy.jpg" />
     <Content Include="App_Media\Prodcut_Id359.jpg" />
     <Content Include="App_Media\Product\Brand_AMD.jpg" />
     <Content Include="App_Media\Product\Brand_Antec.jpg" />
@@ -138,6 +139,7 @@
     <Content Include="App_Media\Product\Brand_WD.jpg" />
     <Content Include="App_Media\Product\Brand_WesternDigital.jpg" />
     <Content Include="App_Media\Product\logo.jpg" />
+    <Content Include="App_Media\Product\Prodcut_Id359.jpg" />
     <Content Include="App_Media\Product\Product_Id229.jpg" />
     <Content Include="App_Media\Product\Product_Id230.jpg" />
     <Content Include="App_Media\Product\Product_Id231.jpg" />
@@ -256,6 +258,7 @@
     <Content Include="App_Media\Product\Product_Id341.jpg" />
     <Content Include="App_Media\Product\Product_Id4.jpg" />
     <Content Include="App_Media\Product\Product_Id5.jpg" />
+    <Content Include="App_Media\Product\Producut_Id352.jpg" />
     <Content Include="App_Media\Product_268.jpg" />
     <Content Include="App_Media\Product_349.jpg" />
     <Content Include="App_Media\Product_350.jpg" />
