@@ -58,6 +58,33 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlTableCell tdTotalPrice;
         
         /// <summary>
+        /// displaySpecial control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl displaySpecial;
+        
+        /// <summary>
+        /// shippingDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl shippingDiscount;
+        
+        /// <summary>
+        /// overallDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl overallDiscount;
+        
+        /// <summary>
         /// b control.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,24 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl b;
+        
+        /// <summary>
+        /// txtCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCountry;
+        
+        /// <summary>
+        /// txtCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCity;
         
         /// <summary>
         /// txtAddress control.
@@ -112,6 +157,24 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl displayOrderComplete;
         
         /// <summary>
+        /// liCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liCountry;
+        
+        /// <summary>
+        /// liCity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liCity;
+        
+        /// <summary>
         /// liAddress control.
         /// </summary>
         /// <remarks>
@@ -119,23 +182,5 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl liAddress;
-        
-        /// <summary>
-        /// liEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liEmail;
-        
-        /// <summary>
-        /// liPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liPhone;
     }
 }

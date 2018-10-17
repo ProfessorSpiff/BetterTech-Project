@@ -32,7 +32,7 @@ namespace BetterTech_Webpage
             {
                 if(missingField.Visible) missingField.Visible = false;
 
-                string to = "telegraf@ixtwhjqz4a992xj.tk"; //To address    
+                string to = "betterbettertech@gmail.com"; //To address    
                 string from = email; //From address    
                 MailMessage mailMessage = new MailMessage(from, to);
 

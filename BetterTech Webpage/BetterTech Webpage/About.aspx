@@ -40,7 +40,7 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="about-photo p-20 bg-img-1">
-                                <img src="img/others/about.jpg" alt="">
+                                <img src="App_Media/logo.jpg" alt="" height="320" width="440">
                             </div>
                         </div>
                         <div class="col-md-7">
