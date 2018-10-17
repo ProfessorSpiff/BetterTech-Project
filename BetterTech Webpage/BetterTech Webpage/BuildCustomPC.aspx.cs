@@ -50,7 +50,7 @@ namespace BetterTech_Webpage
             var caseBud = bud * casePer;
             var coolBud = bud * coolPer;
             var accBud = bud * accPer;
-            var differential = bud * 0.05;
+            var differential = bud * 0.1;
             string cpuDis = "";
 
             cpuDis += "<table class=text-center>";
@@ -255,7 +255,7 @@ namespace BetterTech_Webpage
             var cool1 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 4))
                          select b).FirstOrDefault();
 
 
@@ -281,7 +281,7 @@ namespace BetterTech_Webpage
             var cool2 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 4))
                          select b).FirstOrDefault();
 
             coolDis += "<tr>";
@@ -305,7 +305,7 @@ namespace BetterTech_Webpage
             var cool3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
+                         where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
                          select b).FirstOrDefault();
 
             coolDis += "<tr>";
@@ -813,7 +813,7 @@ namespace BetterTech_Webpage
             var caseBud = bud * casePer;
             var coolBud = bud * coolPer;
             var accBud = bud * accPer;
-            var differential = bud * 0.05;
+            var differential = bud * 0.1;
             
             string cpuDis = "";
 
@@ -1019,7 +1019,7 @@ namespace BetterTech_Webpage
             var cool1 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 4))
                          select b).FirstOrDefault();
 
 
@@ -1045,7 +1045,7 @@ namespace BetterTech_Webpage
             var cool2 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 4))
                          select b).FirstOrDefault();
 
             coolDis += "<tr>";
@@ -1069,7 +1069,7 @@ namespace BetterTech_Webpage
             var cool3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
+                         where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
                          select b).FirstOrDefault();
 
             coolDis += "<tr>";
@@ -1579,7 +1579,7 @@ namespace BetterTech_Webpage
             var caseBud = bud * casePer;
             var coolBud = bud * coolPer;
             var accBud = bud * accPer;
-            var differential = bud * 0.05;
+            var differential = bud * 0.1;
 
             cpuDis += "<table class=text-center>";
             cpuDis += "<thead>";
@@ -1783,7 +1783,7 @@ namespace BetterTech_Webpage
             var cool1 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 4))
                          select b).FirstOrDefault();
 
 
@@ -1809,7 +1809,7 @@ namespace BetterTech_Webpage
             var cool2 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 2))
                          select b).FirstOrDefault();
 
             coolDis += "<tr>";
@@ -1833,7 +1833,7 @@ namespace BetterTech_Webpage
             var cool3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Cooling")
-                         where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
+                         where b.Product_Price >= (Convert.ToDecimal(coolBud)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
                          select b).FirstOrDefault();
 
             coolDis += "<tr>";
