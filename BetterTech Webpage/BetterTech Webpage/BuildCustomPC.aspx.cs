@@ -135,11 +135,7 @@ namespace BetterTech_Webpage
             cpuDis += "</table>";
 
             cpuDiv.InnerHtml = cpuDis;
-            preferences.Attributes.Remove("class");
-            preferences.Attributes.Add("class", "tab-pane");
-            cpuBut.Attributes.Add("class", "active");
-            cpu.Attributes.Remove("class");
-            cpu.Attributes.Add("class", "tab-pane active");
+
 
             string moboDis = "";
 
@@ -148,7 +144,6 @@ namespace BetterTech_Webpage
             moboDis += "<tr>";
             moboDis += "<th class=product-thumbnail>product</th>";
             moboDis += "<th class=product-price>price</th>";
-            moboDis += "<th class=product-remove>select</th>";
             moboDis += "</tr>";
             moboDis += "</thead>";
             moboDis += "<tbody>";
@@ -231,7 +226,6 @@ namespace BetterTech_Webpage
             coolDis += "<tr>";
             coolDis += "<th class=product-thumbnail>product</th>";
             coolDis += "<th class=product-price>price</th>";
-            coolDis += "<th class=product-remove>select</th>";
             coolDis += "</tr>";
             coolDis += "</thead>";
             coolDis += "<tbody>";
@@ -314,7 +308,6 @@ namespace BetterTech_Webpage
             gpuDis += "<tr>";
             gpuDis += "<th class=product-thumbnail>product</th>";
             gpuDis += "<th class=product-price>price</th>";
-            gpuDis += "<th class=product-remove>select</th>";
             gpuDis += "</tr>";
             gpuDis += "</thead>";
             gpuDis += "<tbody>";
@@ -397,7 +390,6 @@ namespace BetterTech_Webpage
             memDis += "<tr>";
             memDis += "<th class=product-thumbnail>product</th>";
             memDis += "<th class=product-price>price</th>";
-            memDis += "<th class=product-remove>select</th>";
             memDis += "</tr>";
             memDis += "</thead>";
             memDis += "<tbody>";
@@ -480,7 +472,6 @@ namespace BetterTech_Webpage
             hardDis += "<tr>";
             hardDis += "<th class=product-thumbnail>product</th>";
             hardDis += "<th class=product-price>price</th>";
-            hardDis += "<th class=product-remove>select</th>";
             hardDis += "</tr>";
             hardDis += "</thead>";
             hardDis += "<tbody>";
@@ -563,7 +554,6 @@ namespace BetterTech_Webpage
             psuDis += "<tr>";
             psuDis += "<th class=product-thumbnail>product</th>";
             psuDis += "<th class=product-price>price</th>";
-            psuDis += "<th class=product-remove>select</th>";
             psuDis += "</tr>";
             psuDis += "</thead>";
             psuDis += "<tbody>";
@@ -646,7 +636,6 @@ namespace BetterTech_Webpage
             caseDis += "<tr>";
             caseDis += "<th class=product-thumbnail>product</th>";
             caseDis += "<th class=product-price>price</th>";
-            caseDis += "<th class=product-remove>select</th>";
             caseDis += "</tr>";
             caseDis += "</thead>";
             caseDis += "<tbody>";
@@ -829,11 +818,7 @@ namespace BetterTech_Webpage
             cpuDis += "</table>";
 
             cpuDiv.InnerHtml = cpuDis;
-            preferences.Attributes.Remove("class");
-            preferences.Attributes.Add("class", "tab-pane");
-            cpuBut.Attributes.Add("class", "active");
-            cpu.Attributes.Remove("class");
-            cpu.Attributes.Add("class", "tab-pane active");
+
 
             string moboDis = "";
 
@@ -842,7 +827,6 @@ namespace BetterTech_Webpage
             moboDis += "<tr>";
             moboDis += "<th class=product-thumbnail>product</th>";
             moboDis += "<th class=product-price>price</th>";
-            moboDis += "<th class=product-remove>select</th>";
             moboDis += "</tr>";
             moboDis += "</thead>";
             moboDis += "<tbody>";
@@ -925,7 +909,6 @@ namespace BetterTech_Webpage
             coolDis += "<tr>";
             coolDis += "<th class=product-thumbnail>product</th>";
             coolDis += "<th class=product-price>price</th>";
-            coolDis += "<th class=product-remove>select</th>";
             coolDis += "</tr>";
             coolDis += "</thead>";
             coolDis += "<tbody>";
@@ -1008,7 +991,6 @@ namespace BetterTech_Webpage
             gpuDis += "<tr>";
             gpuDis += "<th class=product-thumbnail>product</th>";
             gpuDis += "<th class=product-price>price</th>";
-            gpuDis += "<th class=product-remove>select</th>";
             gpuDis += "</tr>";
             gpuDis += "</thead>";
             gpuDis += "<tbody>";
@@ -1091,7 +1073,6 @@ namespace BetterTech_Webpage
             memDis += "<tr>";
             memDis += "<th class=product-thumbnail>product</th>";
             memDis += "<th class=product-price>price</th>";
-            memDis += "<th class=product-remove>select</th>";
             memDis += "</tr>";
             memDis += "</thead>";
             memDis += "<tbody>";
@@ -1143,7 +1124,7 @@ namespace BetterTech_Webpage
             var mem3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
                         where b.Product_Type.Equals("Memory")
-                        where b.Product_Price >= (Convert.ToDecimal(ramBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential))
+                        where b.Product_Price >= (Convert.ToDecimal(ramBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential * 2))
                         select b).FirstOrDefault();
 
             memDis += "<tr>";
@@ -1174,7 +1155,6 @@ namespace BetterTech_Webpage
             hardDis += "<tr>";
             hardDis += "<th class=product-thumbnail>product</th>";
             hardDis += "<th class=product-price>price</th>";
-            hardDis += "<th class=product-remove>select</th>";
             hardDis += "</tr>";
             hardDis += "</thead>";
             hardDis += "<tbody>";
@@ -1182,7 +1162,7 @@ namespace BetterTech_Webpage
             var hard1 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Hard Drive")
-                         where b.Product_Price >= (Convert.ToDecimal(hardBud - differential)) && b.Product_Price <= (Convert.ToDecimal(hardBud - differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(hardBud - differential / 4))
                          select b).FirstOrDefault();
 
 
@@ -1205,7 +1185,7 @@ namespace BetterTech_Webpage
             var hard2 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Hard Drive")
-                         where b.Product_Price >= (Convert.ToDecimal(hardBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(hardBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential / 2))
                          select b).FirstOrDefault();
 
             hardDis += "<tr>";
@@ -1257,7 +1237,6 @@ namespace BetterTech_Webpage
             psuDis += "<tr>";
             psuDis += "<th class=product-thumbnail>product</th>";
             psuDis += "<th class=product-price>price</th>";
-            psuDis += "<th class=product-remove>select</th>";
             psuDis += "</tr>";
             psuDis += "</thead>";
             psuDis += "<tbody>";
@@ -1265,7 +1244,7 @@ namespace BetterTech_Webpage
             var psu1 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
                         where b.Product_Type.Equals("PSU")
-                        where b.Product_Price >= (Convert.ToDecimal(psuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(psuBud - differential / 2))
+                        where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(1800))
                         select b).FirstOrDefault();
 
 
@@ -1288,7 +1267,7 @@ namespace BetterTech_Webpage
             var psu2 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
                         where b.Product_Type.Equals("PSU")
-                        where b.Product_Price >= (Convert.ToDecimal(psuBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential / 2))
+                        where b.Product_Price >= (Convert.ToDecimal(1800)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential / 2))
                         select b).FirstOrDefault();
 
             psuDis += "<tr>";
@@ -1340,15 +1319,14 @@ namespace BetterTech_Webpage
             caseDis += "<tr>";
             caseDis += "<th class=product-thumbnail>product</th>";
             caseDis += "<th class=product-price>price</th>";
-            caseDis += "<th class=product-remove>select</th>";
             caseDis += "</tr>";
             caseDis += "</thead>";
             caseDis += "<tbody>";
 
             var case1 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
-                         where b.Product_Type.Equals("Case")
-                         where b.Product_Price >= (Convert.ToDecimal(caseBud - differential)) && b.Product_Price <= (Convert.ToDecimal(caseBud - differential / 2))
+                         where b.Product_Type.Equals("Gaming Case")
+                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(caseBud - differential / 4))
                          select b).FirstOrDefault();
 
 
@@ -1370,8 +1348,8 @@ namespace BetterTech_Webpage
 
             var case2 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
-                         where b.Product_Type.Equals("Case")
-                         where b.Product_Price >= (Convert.ToDecimal(caseBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential / 2))
+                         where b.Product_Type.Equals("Gaming Case")
+                         where b.Product_Price >= (Convert.ToDecimal(caseBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential / 2))
                          select b).FirstOrDefault();
 
             caseDis += "<tr>";
@@ -1391,7 +1369,7 @@ namespace BetterTech_Webpage
 
             var case3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
-                         where b.Product_Type.Equals("Case")
+                         where b.Product_Type.Equals("Gaming Case")
                          where b.Product_Price >= (Convert.ToDecimal(caseBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential))
                          select b).FirstOrDefault();
 
@@ -1524,11 +1502,7 @@ namespace BetterTech_Webpage
             cpuDis += "</table>";
 
             cpuDiv.InnerHtml = cpuDis;
-            preferences.Attributes.Remove("class");
-            preferences.Attributes.Add("class", "tab-pane");
-            cpuBut.Attributes.Add("class", "active");
-            cpu.Attributes.Remove("class");
-            cpu.Attributes.Add("class", "tab-pane active");
+
 
             string moboDis = "";
 
@@ -1537,7 +1511,6 @@ namespace BetterTech_Webpage
             moboDis += "<tr>";
             moboDis += "<th class=product-thumbnail>product</th>";
             moboDis += "<th class=product-price>price</th>";
-            moboDis += "<th class=product-remove>select</th>";
             moboDis += "</tr>";
             moboDis += "</thead>";
             moboDis += "<tbody>";
@@ -1620,7 +1593,6 @@ namespace BetterTech_Webpage
             coolDis += "<tr>";
             coolDis += "<th class=product-thumbnail>product</th>";
             coolDis += "<th class=product-price>price</th>";
-            coolDis += "<th class=product-remove>select</th>";
             coolDis += "</tr>";
             coolDis += "</thead>";
             coolDis += "<tbody>";
@@ -1703,7 +1675,6 @@ namespace BetterTech_Webpage
             gpuDis += "<tr>";
             gpuDis += "<th class=product-thumbnail>product</th>";
             gpuDis += "<th class=product-price>price</th>";
-            gpuDis += "<th class=product-remove>select</th>";
             gpuDis += "</tr>";
             gpuDis += "</thead>";
             gpuDis += "<tbody>";
@@ -1786,7 +1757,6 @@ namespace BetterTech_Webpage
             memDis += "<tr>";
             memDis += "<th class=product-thumbnail>product</th>";
             memDis += "<th class=product-price>price</th>";
-            memDis += "<th class=product-remove>select</th>";
             memDis += "</tr>";
             memDis += "</thead>";
             memDis += "<tbody>";
@@ -1838,7 +1808,7 @@ namespace BetterTech_Webpage
             var mem3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
                         where b.Product_Type.Equals("Memory")
-                        where b.Product_Price >= (Convert.ToDecimal(ramBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential))
+                        where b.Product_Price >= (Convert.ToDecimal(ramBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential * 2))
                         select b).FirstOrDefault();
 
             memDis += "<tr>";
@@ -1869,7 +1839,6 @@ namespace BetterTech_Webpage
             hardDis += "<tr>";
             hardDis += "<th class=product-thumbnail>product</th>";
             hardDis += "<th class=product-price>price</th>";
-            hardDis += "<th class=product-remove>select</th>";
             hardDis += "</tr>";
             hardDis += "</thead>";
             hardDis += "<tbody>";
@@ -1877,7 +1846,7 @@ namespace BetterTech_Webpage
             var hard1 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Hard Drive")
-                         where b.Product_Price >= (Convert.ToDecimal(hardBud - differential)) && b.Product_Price <= (Convert.ToDecimal(hardBud - differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(hardBud - differential / 4))
                          select b).FirstOrDefault();
 
 
@@ -1900,7 +1869,7 @@ namespace BetterTech_Webpage
             var hard2 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
                          where b.Product_Type.Equals("Hard Drive")
-                         where b.Product_Price >= (Convert.ToDecimal(hardBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential / 2))
+                         where b.Product_Price >= (Convert.ToDecimal(hardBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential / 2))
                          select b).FirstOrDefault();
 
             hardDis += "<tr>";
@@ -1952,7 +1921,6 @@ namespace BetterTech_Webpage
             psuDis += "<tr>";
             psuDis += "<th class=product-thumbnail>product</th>";
             psuDis += "<th class=product-price>price</th>";
-            psuDis += "<th class=product-remove>select</th>";
             psuDis += "</tr>";
             psuDis += "</thead>";
             psuDis += "<tbody>";
@@ -1960,7 +1928,7 @@ namespace BetterTech_Webpage
             var psu1 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
                         where b.Product_Type.Equals("PSU")
-                        where b.Product_Price >= (Convert.ToDecimal(psuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(psuBud - differential / 2))
+                        where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(1800))
                         select b).FirstOrDefault();
 
 
@@ -1983,7 +1951,7 @@ namespace BetterTech_Webpage
             var psu2 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
                         where b.Product_Type.Equals("PSU")
-                        where b.Product_Price >= (Convert.ToDecimal(psuBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential / 2))
+                        where b.Product_Price >= (Convert.ToDecimal(1800)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential / 2))
                         select b).FirstOrDefault();
 
             psuDis += "<tr>";
@@ -2035,15 +2003,14 @@ namespace BetterTech_Webpage
             caseDis += "<tr>";
             caseDis += "<th class=product-thumbnail>product</th>";
             caseDis += "<th class=product-price>price</th>";
-            caseDis += "<th class=product-remove>select</th>";
             caseDis += "</tr>";
             caseDis += "</thead>";
             caseDis += "<tbody>";
 
             var case1 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
-                         where b.Product_Type.Equals("Case")
-                         where b.Product_Price >= (Convert.ToDecimal(caseBud - differential)) && b.Product_Price <= (Convert.ToDecimal(caseBud - differential / 2))
+                         where b.Product_Type.Equals("Gaming Case")
+                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(caseBud - differential / 4))
                          select b).FirstOrDefault();
 
 
@@ -2065,8 +2032,8 @@ namespace BetterTech_Webpage
 
             var case2 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
-                         where b.Product_Type.Equals("Case")
-                         where b.Product_Price >= (Convert.ToDecimal(caseBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential / 2))
+                         where b.Product_Type.Equals("Gaming Case")
+                         where b.Product_Price >= (Convert.ToDecimal(caseBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential / 2))
                          select b).FirstOrDefault();
 
             caseDis += "<tr>";
@@ -2086,7 +2053,7 @@ namespace BetterTech_Webpage
 
             var case3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
-                         where b.Product_Type.Equals("Case")
+                         where b.Product_Type.Equals("Gaming Case")
                          where b.Product_Price >= (Convert.ToDecimal(caseBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential))
                          select b).FirstOrDefault();
 

@@ -31,15 +31,6 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor cpuBut;
         
         /// <summary>
-        /// preferences control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl preferences;
-        
-        /// <summary>
         /// pref control.
         /// </summary>
         /// <remarks>
@@ -85,15 +76,6 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.WebControls.Button general;
         
         /// <summary>
-        /// cpu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpu;
-        
-        /// <summary>
         /// cpuDiv control.
         /// </summary>
         /// <remarks>
@@ -101,15 +83,6 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpuDiv;
-        
-        /// <summary>
-        /// motherboard control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl motherboard;
         
         /// <summary>
         /// moboDiv control.
@@ -121,15 +94,6 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl moboDiv;
         
         /// <summary>
-        /// cooling control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cooling;
-        
-        /// <summary>
         /// coolDiv control.
         /// </summary>
         /// <remarks>
@@ -137,15 +101,6 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl coolDiv;
-        
-        /// <summary>
-        /// graphics control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl graphics;
         
         /// <summary>
         /// gpuDiv control.
@@ -157,15 +112,6 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gpuDiv;
         
         /// <summary>
-        /// memory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl memory;
-        
-        /// <summary>
         /// memDiv control.
         /// </summary>
         /// <remarks>
@@ -173,15 +119,6 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl memDiv;
-        
-        /// <summary>
-        /// harddrives control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl harddrives;
         
         /// <summary>
         /// hardDiv control.
@@ -193,15 +130,6 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hardDiv;
         
         /// <summary>
-        /// PSU control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PSU;
-        
-        /// <summary>
         /// psuDiv control.
         /// </summary>
         /// <remarks>
@@ -209,15 +137,6 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl psuDiv;
-        
-        /// <summary>
-        /// case control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl @case;
         
         /// <summary>
         /// caseDiv control.
