@@ -78,14 +78,27 @@
     <Content Include="App_Media\Brand_Asus.jpg" />
     <Content Include="App_Media\Brand_Ballistix.jpg" />
     <Content Include="App_Media\Brand_Bitfenix.jpg" />
+    <Content Include="App_Media\Brand_CoolerMaster.jpg" />
     <Content Include="App_Media\Brand_Corsair.jpg" />
+    <Content Include="App_Media\Brand_EKWB.jpg" />
+    <Content Include="App_Media\Brand_FractalDesign.jpg" />
     <Content Include="App_Media\Brand_Galax.jpg" />
     <Content Include="App_Media\Brand_Gigabyte.jpg" />
+    <Content Include="App_Media\Brand_HP.png" />
+    <Content Include="App_Media\Brand_HyperX.jpg" />
     <Content Include="App_Media\Brand_Intel.jpg" />
+    <Content Include="App_Media\Brand_Kingston.jpg" />
     <Content Include="App_Media\Brand_MSI.jpg" />
+    <Content Include="App_Media\Brand_Mushkin.jpg" />
     <Content Include="App_Media\Brand_Pallit.jpg" />
+    <Content Include="App_Media\Brand_Phanteks.jpg" />
     <Content Include="App_Media\Brand_Raidmax.jpg" />
+    <Content Include="App_Media\Brand_Reeven.jpg" />
+    <Content Include="App_Media\Brand_Samsung.jpg" />
+    <Content Include="App_Media\Brand_Seagate.jpg" />
+    <Content Include="App_Media\Brand_Thermaltake.jpg" />
     <Content Include="App_Media\Brand_WD.jpg" />
+    <Content Include="App_Media\Brand_WesternDigital.jpg" />
     <Content Include="App_Media\Developers\Akshar_crop.jpg" />
     <Content Include="App_Media\Developers\Brij_crop.jpg" />
     <Content Include="App_Media\Developers\Jen_crop.jpg" />
@@ -99,6 +112,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Media\logo.jpg" />
+    <Content Include="App_Media\Prodcut_Id355.jpg" />
+    <Content Include="App_Media\Prodcut_Id359.jpg" />
     <Content Include="App_Media\Product\Brand_AMD.jpg" />
     <Content Include="App_Media\Product\Brand_Antec.jpg" />
     <Content Include="App_Media\Product\Brand_Asus.jpg" />
@@ -241,6 +256,9 @@
     <Content Include="App_Media\Product\Product_Id341.jpg" />
     <Content Include="App_Media\Product\Product_Id4.jpg" />
     <Content Include="App_Media\Product\Product_Id5.jpg" />
+    <Content Include="App_Media\Product_268.jpg" />
+    <Content Include="App_Media\Product_349.jpg" />
+    <Content Include="App_Media\Product_350.jpg" />
     <Content Include="App_Media\Product_Id1.jpg" />
     <Content Include="App_Media\Product_Id224.jpg" />
     <Content Include="App_Media\Product_Id225.jpg" />
@@ -334,6 +352,7 @@
     <Content Include="App_Media\Product_Id317.jpg" />
     <Content Include="App_Media\Product_Id318.jpg" />
     <Content Include="App_Media\Product_Id319.jpg" />
+    <Content Include="App_Media\Product_Id32.jpg" />
     <Content Include="App_Media\Product_Id320.jpg" />
     <Content Include="App_Media\Product_Id321.jpg" />
     <Content Include="App_Media\Product_Id323.jpg" />
@@ -355,6 +374,20 @@
     <Content Include="App_Media\Product_Id339.jpg" />
     <Content Include="App_Media\Product_Id340.jpg" />
     <Content Include="App_Media\Product_Id341.jpg" />
+    <Content Include="App_Media\Product_Id342.jpg" />
+    <Content Include="App_Media\Product_Id343.jpg" />
+    <Content Include="App_Media\Product_Id344.jpg" />
+    <Content Include="App_Media\Product_Id345.jpg" />
+    <Content Include="App_Media\Product_Id346.jpg" />
+    <Content Include="App_Media\Product_Id347.jpg" />
+    <Content Include="App_Media\Product_Id348.jpg" />
+    <Content Include="App_Media\Product_Id351.jpg" />
+    <Content Include="App_Media\Product_Id353.jpg" />
+    <Content Include="App_Media\Product_Id354.jpg" />
+    <Content Include="App_Media\Product_Id358.jpg" />
+    <Content Include="App_Media\Product_Id360.jpg" />
+    <Content Include="App_Media\Product_Id361.jpg" />
+    <Content Include="App_Media\Product_Id362.jpg" />
     <Content Include="App_Media\Product_Id4.jpg" />
     <Content Include="App_Media\Product_Id5.jpg" />
     <Content Include="BuildCustomPC.aspx" />
