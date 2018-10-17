@@ -91,8 +91,37 @@ namespace BetterTech_Webpage
             var prodd = (from Product a in db.Products
                          where a.Product_Id.Equals(productID)
                          select a).FirstOrDefault();
-            var thingtochange = Request.Form["edit"];
-            
+            var thingtochange = edit.Value;
+            string value = prodEdit1.Value;
+            if (thingtochange.Equals("editName"))
+            {
+                prodd.Product_Name = value;
+            }
+            if (thingtochange.Equals("editPrice"))
+            {
+                prodd.Product_Price = Convert.ToDecimal(value);
+            }
+            if (thingtochange.Equals("editDesc"))
+            {
+                prodd.Product_Description = value;
+            }
+            if (thingtochange.Equals("editType"))
+            {
+                prodd.Product_Type = value;
+            }
+            if (thingtochange.Equals("editImg"))
+            {
+                prodd.Product_Img = value;
+            }
+            if (thingtochange.Equals("editOH"))
+            {
+                prodd.Product_OnHand = int.Parse(value);
+            }
+            if (thingtochange.Equals("editBrand"))
+            {
+                prodd.Product_Brand = value;
+            }
+            db.SubmitChanges();
         }
     }
 }

@@ -56,21 +56,9 @@
                                     </a>
                         </li>
                         <li>
-                            <a href="#Additional" data-toggle="tab">
-                                <span>08</span>
-                                Additional Components
-                                    </a>
-                        </li>
-                        <li>
                             <a href="#case" data-toggle="tab">
-                                <span>09</span>
+                                <span>08</span>
                                 Case
-                                    </a>
-                        </li>
-                        <li>
-                            <a href="#finalise" data-toggle="tab">
-                                <span>F</span>
-                                Finalise
                                     </a>
                         </li>
                     </ul>
@@ -78,7 +66,8 @@
                 <div class="col-md-10 col-sm-12">
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div runat="server" class="tab-pane active" id="preferences">
+
+                        <div class="tab-pane active" id="preferences">
                             <div class="shopping-cart-content">
                                 <div runat="server" id="pref" class="table-content table-responsive mb-50">
                                     <div class="login-account p-30 box-shadow">
@@ -120,7 +109,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="cpu">
+
+                        <div class="tab-pane" id="cpu">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="cpuDiv" class="table-content table-responsive mb-50">
@@ -128,7 +118,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="motherboard">
+
+                        <div class="tab-pane" id="motherboard">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="moboDiv" class="table-content table-responsive mb-50">
@@ -136,7 +127,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="cooling">
+
+                        <div class="tab-pane" id="cooling">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="coolDiv" class="table-content table-responsive mb-50">
@@ -144,7 +136,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="graphics">
+                        <div class="tab-pane" id="graphics">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="gpuDiv" class="table-content table-responsive mb-50">
@@ -152,7 +144,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="memory">
+                        <div class="tab-pane" id="memory">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="memDiv" class="table-content table-responsive mb-50">
@@ -160,7 +152,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="harddrives">
+                        <div class="tab-pane" id="harddrives">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="hardDiv" class="table-content table-responsive mb-50">
@@ -168,7 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="PSU">
+                        <div class="tab-pane" id="PSU">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="psuDiv" class="table-content table-responsive mb-50">
@@ -176,15 +168,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div runat="server" class="tab-pane" id="Additional">
-                            <div class="shopping-cart-content">
-
-                                <div runat="server" id="addDiv" class="table-content table-responsive mb-50">
-                                           
-                                </div>
-                            </div>
-                        </div>
-                        <div runat="server" class="tab-pane" id="case">
+                        <div class="tab-pane" id="case">
                             <div class="shopping-cart-content">
 
                                 <div runat="server" id="caseDiv" class="table-content table-responsive mb-50">
