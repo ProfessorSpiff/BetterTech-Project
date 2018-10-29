@@ -96,7 +96,7 @@
                                     <div class="col-md-2 col-sm-6 col-xs-12">
                                         <div class="logo">
                                             <a href="index.aspx">
-                                                <img height="30" width="71" src="App_Media/logo.jpg" alt="main logo">
+                                                <img height="30" width="71" src="App_Media/logo.png" alt="main logo">
                                             </a>
                                         </div>
                                     </div>
@@ -432,7 +432,7 @@
                                         <div class="col-lg-4 col-md-5 col-sm-4">
                                             <div class="single-footer footer-about">
                                                 <div class="footer-logo">
-                                                    <img height="30" width="71" src="App_Media/logo.jpg" alt="main logo">
+                                                    <img height="30" width="71" src="App_Media/logo.png" alt="main logo">
                                                 </div>
                                                 <div class="footer-brief">
                                                     <h4>BetterTech</h4>

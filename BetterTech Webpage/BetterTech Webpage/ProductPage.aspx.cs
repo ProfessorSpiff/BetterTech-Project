@@ -130,7 +130,13 @@ namespace BetterTech_Webpage
                 strBtnActnDsply += "<li>";
                 strBtnActnDsply += "<a href='ProductPage.aspx?AddToShpCrt="+(Request.QueryString["ProductId"]) +"' title='Add to cart' tabindex='0'><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
                 strBtnActnDsply += "</li>";
-
+                
+                    if (Session["AuthLevel"].Equals("Admin")) {
+                        strBtnActnDsply += "<li>";
+                        strBtnActnDsply += "<a href='DeleteProduct.aspx?ID=" + (Request.QueryString["ProductId"]) + "' title='Delete' tabindex='0'><i class='zmdi zmdi-shopping-cart-plus'></i></a>";
+                        strBtnActnDsply += "</li>";
+                    }
+                
                 strBtnActnDsply += "</ul>";
 
                 btnAction.InnerHtml = strBtnActnDsply;

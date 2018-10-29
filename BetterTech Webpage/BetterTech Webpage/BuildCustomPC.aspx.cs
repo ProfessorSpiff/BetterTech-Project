@@ -58,6 +58,7 @@ namespace BetterTech_Webpage
             cpuDis += "<tr>";
             cpuDis += "<th class=product-thumbnail>product</th>";
             cpuDis += "<th class=product-price>price</th>";
+            cpuDis += "<th class=product-price>select</th>";
 
             cpuDis += "</tr>";
             cpuDis += "</thead>";
@@ -69,22 +70,35 @@ namespace BetterTech_Webpage
                        where b.Product_Price >= (Convert.ToDecimal(cpuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(cpuBud - differential/2))
                        select b).FirstOrDefault();
 
-
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu1.Product_Img + " alt=>";
-            cpuDis += "</div>";       
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";                                           
-            cpuDis += "<h6 class=\"product-title-2\">";                                
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu1.Product_Id + ">" + cpu1.Product_Name + "</a>" ;
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu1.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";           
-
-            cpuDis += "</tr>";
+            if (cpu1 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu1.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu1.Product_Id + ">Below Budget: " + cpu1.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu1.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r1\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
 
             var cpu2 = (from Product b in db.Products
@@ -92,21 +106,35 @@ namespace BetterTech_Webpage
                         where b.Product_Type.Equals("CPU")
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud - differential/2)) && b.Product_Price <= (Convert.ToDecimal(cpuBud + differential/2))
                         select b).FirstOrDefault();
-
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu2.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">" + cpu2.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu2.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
-            cpuDis += "</tr>";
+            if (cpu2 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu2.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">On Budget: " + cpu2.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu2.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r2\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
             var cpu3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -114,21 +142,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud + differential/2)) && b.Product_Price <= (Convert.ToDecimal(cpuBud + differential))
                         select b).FirstOrDefault();
 
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu3.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">" + cpu3.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu3.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
-
-            cpuDis += "</tr>";
+            if (cpu3 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu3.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Above Budget: " + cpu3.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu3.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r3\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
 
             cpuDis += "</tbody>";
@@ -144,6 +186,7 @@ namespace BetterTech_Webpage
             moboDis += "<tr>";
             moboDis += "<th class=product-thumbnail>product</th>";
             moboDis += "<th class=product-price>price</th>";
+            moboDis += "<th class=product-price>select</th>";
             moboDis += "</tr>";
             moboDis += "</thead>";
             moboDis += "<tbody>";
@@ -154,21 +197,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(moboBud - differential)) && b.Product_Price <= (Convert.ToDecimal(moboBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo1.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo1.Product_Id + ">" + mobo1.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo1.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo1.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo1 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo1.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo1.Product_Id + ">Below Budget: " + mobo1.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo1.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo1.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo1r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
 
             var mobo2 = (from Product b in db.Products
@@ -177,20 +234,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(moboBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(moboBud + differential / 2))
                         select b).FirstOrDefault();
 
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo2.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">" + mobo2.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo2.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo2.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo2 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo2.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">On Budget: " + mobo2.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo2.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo2.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo2r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
             var mobo3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -198,20 +270,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(moboBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(moboBud + differential))
                         select b).FirstOrDefault();
 
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo3.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">" + mobo3.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo3.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo3.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo3 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo3.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Above Budget: " + mobo3.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo3.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo3.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo3r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
 
             moboDis += "</tbody>";
@@ -226,6 +313,7 @@ namespace BetterTech_Webpage
             coolDis += "<tr>";
             coolDis += "<th class=product-thumbnail>product</th>";
             coolDis += "<th class=product-price>price</th>";
+            coolDis += "<th class=product-price>select</th>";
             coolDis += "</tr>";
             coolDis += "</thead>";
             coolDis += "<tbody>";
@@ -236,21 +324,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 4))
                          select b).FirstOrDefault();
 
-
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool1.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool1.Product_Id + ">" + cool1.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool1.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool1.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool1 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool1.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool1.Product_Id + ">Below Budget: " + cool1.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool1.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool1.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool1r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
 
             var cool2 = (from Product b in db.Products
@@ -259,20 +361,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 4))
                          select b).FirstOrDefault();
 
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool2.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">" + cool2.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool2.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool2.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool2 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool2.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">On Budget: " + cool2.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool2.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool2.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool2r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
             var cool3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -280,20 +397,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
                          select b).FirstOrDefault();
 
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool3.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">" + cool3.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool3.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool3.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool3 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool3.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Above Budget: " + cool3.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool3.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool3.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool3r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
 
             coolDis += "</tbody>";
@@ -303,11 +435,13 @@ namespace BetterTech_Webpage
 
             string gpuDis = "";
 
+
             gpuDis += "<table class=text-center>";
             gpuDis += "<thead>";
             gpuDis += "<tr>";
             gpuDis += "<th class=product-thumbnail>product</th>";
             gpuDis += "<th class=product-price>price</th>";
+            gpuDis += "<th class=product-price>select</th>";
             gpuDis += "</tr>";
             gpuDis += "</thead>";
             gpuDis += "<tbody>";
@@ -318,21 +452,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(gpuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(gpuBud - differential / 2))
                          select b).FirstOrDefault();
 
-
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu1.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu1.Product_Id + ">" + gpu1.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu1.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu1.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu1 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu1.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu1.Product_Id + ">Below Budget: " + gpu1.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu1.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu1.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu1r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
 
             var gpu2 = (from Product b in db.Products
@@ -341,20 +489,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(gpuBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(gpuBud + differential / 2))
                          select b).FirstOrDefault();
 
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu2.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">" + gpu2.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu2.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu2.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu2 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu2.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">On Budget: " + gpu2.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu2.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu2.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu2r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
             var gpu3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -362,20 +525,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(gpuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(gpuBud + differential))
                          select b).FirstOrDefault();
 
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu3.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">" + gpu3.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu3.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu3.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu3 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu3.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Above Budget: " + gpu3.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu3.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu3.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu3r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
 
             gpuDis += "</tbody>";
@@ -390,6 +568,7 @@ namespace BetterTech_Webpage
             memDis += "<tr>";
             memDis += "<th class=product-thumbnail>product</th>";
             memDis += "<th class=product-price>price</th>";
+            memDis += "<th class=product-price>select</th>";
             memDis += "</tr>";
             memDis += "</thead>";
             memDis += "<tbody>";
@@ -400,21 +579,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud - differential)) && b.Product_Price <= (Convert.ToDecimal(ramBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem1.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem1.Product_Id + ">" + mem1.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem1.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem1.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem1 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem1.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem1.Product_Id + ">Below Budget: " + mem1.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem1.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem1.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem1r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
 
             var mem2 = (from Product b in db.Products
@@ -423,20 +616,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential / 2))
                         select b).FirstOrDefault();
 
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem2.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">" + mem2.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem2.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem2.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem2 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem2.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">On Budget: " + mem2.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem2.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem2.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem2r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
             var mem3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -444,20 +652,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential*2))
                         select b).FirstOrDefault();
 
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem3.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">" + mem3.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem3.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem3.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem3 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem3.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Above Budget: " + mem3.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem3.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem3.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem3r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
 
             memDis += "</tbody>";
@@ -472,6 +695,7 @@ namespace BetterTech_Webpage
             hardDis += "<tr>";
             hardDis += "<th class=product-thumbnail>product</th>";
             hardDis += "<th class=product-price>price</th>";
+            hardDis += "<th class=product-price>select</th>";
             hardDis += "</tr>";
             hardDis += "</thead>";
             hardDis += "<tbody>";
@@ -482,21 +706,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(hardBud - differential / 4))
                         select b).FirstOrDefault();
 
-
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard1.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard1.Product_Id + ">" + hard1.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard1.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard1.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard1 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard1.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard1.Product_Id + ">Below Budget: " + hard1.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard1.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard1.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard1r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
 
             var hard2 = (from Product b in db.Products
@@ -505,20 +743,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(hardBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential / 2))
                         select b).FirstOrDefault();
 
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard2.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">" + hard2.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard2.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard2.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard2 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard2.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">On Budget: " + hard2.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard2.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard2.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard2r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
             var hard3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -526,20 +779,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(hardBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential))
                         select b).FirstOrDefault();
 
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard3.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">" + hard3.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard3.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard3.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard3 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard3.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Above Budget: " + hard3.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard3.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard3.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard3r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
 
             hardDis += "</tbody>";
@@ -554,6 +822,7 @@ namespace BetterTech_Webpage
             psuDis += "<tr>";
             psuDis += "<th class=product-thumbnail>product</th>";
             psuDis += "<th class=product-price>price</th>";
+            psuDis += "<th class=product-price>select</th>";
             psuDis += "</tr>";
             psuDis += "</thead>";
             psuDis += "<tbody>";
@@ -564,21 +833,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(1800))
                          select b).FirstOrDefault();
 
-
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu1.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu1.Product_Id + ">" + psu1.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu1.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu1.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu1 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu1.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu1.Product_Id + ">Below Budget: " + psu1.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu1.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu1.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu1r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
 
             var psu2 = (from Product b in db.Products
@@ -587,20 +870,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(1800)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential / 2))
                          select b).FirstOrDefault();
 
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu2.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">" + psu2.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu2.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu2.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu2 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu2.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">On Budget: " + psu2.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu2.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu2.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu2r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
             var psu3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -608,20 +906,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(psuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential))
                          select b).FirstOrDefault();
 
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu3.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">" + psu3.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu3.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu3.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu3 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu3.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Above Budget: " + psu3.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu3.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu3.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu3r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
 
             psuDis += "</tbody>";
@@ -636,6 +949,7 @@ namespace BetterTech_Webpage
             caseDis += "<tr>";
             caseDis += "<th class=product-thumbnail>product</th>";
             caseDis += "<th class=product-price>price</th>";
+            caseDis += "<th class=product-price>select</th>";
             caseDis += "</tr>";
             caseDis += "</thead>";
             caseDis += "<tbody>";
@@ -646,21 +960,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(caseBud - differential / 4))
                         select b).FirstOrDefault();
 
-
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case1.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case1.Product_Id + ">" + case1.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case1.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case1.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case1 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case1.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case1.Product_Id + ">Below Budget: " + case1.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case1.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case1.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case1r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
 
             var case2 = (from Product b in db.Products
@@ -669,20 +997,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(caseBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential / 2))
                         select b).FirstOrDefault();
 
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case2.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">" + case2.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case2.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case2.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case2 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case2.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">On Budget: " + case2.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case2.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case2.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case2r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
             var case3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -690,20 +1033,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(caseBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential))
                         select b).FirstOrDefault();
 
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case3.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">" + case3.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case3.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case3.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case3 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case3.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Above Budget: " + case3.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case3.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case3.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case3r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
 
             caseDis += "</tbody>";
@@ -741,6 +1099,7 @@ namespace BetterTech_Webpage
             cpuDis += "<tr>";
             cpuDis += "<th class=product-thumbnail>product</th>";
             cpuDis += "<th class=product-price>price</th>";
+            cpuDis += "<th class=product-price>select</th>";
 
             cpuDis += "</tr>";
             cpuDis += "</thead>";
@@ -752,22 +1111,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(cpuBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu1.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu1.Product_Id + ">" + cpu1.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu1.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";
-
-            cpuDis += "</tr>";
+            if (cpu1 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu1.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu1.Product_Id + ">Below Budget: " + cpu1.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu1.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r1\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
 
             var cpu2 = (from Product b in db.Products
@@ -775,21 +1147,35 @@ namespace BetterTech_Webpage
                         where b.Product_Type.Equals("CPU")
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(cpuBud + differential / 2))
                         select b).FirstOrDefault();
-
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu2.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">" + cpu2.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu2.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
-            cpuDis += "</tr>";
+            if (cpu2 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu2.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">On Budget: " + cpu2.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu2.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r2\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
             var cpu3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -797,21 +1183,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(cpuBud + differential))
                         select b).FirstOrDefault();
 
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu3.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">" + cpu3.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu3.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
-
-            cpuDis += "</tr>";
+            if (cpu3 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu3.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Above Budget: " + cpu3.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu3.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r3\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
 
             cpuDis += "</tbody>";
@@ -827,6 +1227,7 @@ namespace BetterTech_Webpage
             moboDis += "<tr>";
             moboDis += "<th class=product-thumbnail>product</th>";
             moboDis += "<th class=product-price>price</th>";
+            moboDis += "<th class=product-price>select</th>";
             moboDis += "</tr>";
             moboDis += "</thead>";
             moboDis += "<tbody>";
@@ -837,21 +1238,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(moboBud - differential)) && b.Product_Price <= (Convert.ToDecimal(moboBud - differential / 2))
                          select b).FirstOrDefault();
 
-
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo1.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo1.Product_Id + ">" + mobo1.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo1.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo1.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo1 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo1.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo1.Product_Id + ">Below Budget: " + mobo1.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo1.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo1.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo1r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
 
             var mobo2 = (from Product b in db.Products
@@ -860,20 +1275,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(moboBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(moboBud + differential / 2))
                          select b).FirstOrDefault();
 
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo2.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">" + mobo2.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo2.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo2.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo2 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo2.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">On Budget: " + mobo2.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo2.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo2.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo2r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
             var mobo3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -881,20 +1311,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(moboBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(moboBud + differential))
                          select b).FirstOrDefault();
 
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo3.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">" + mobo3.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo3.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo3.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo3 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo3.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Above Budget: " + mobo3.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo3.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo3.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo3r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
 
             moboDis += "</tbody>";
@@ -909,6 +1354,7 @@ namespace BetterTech_Webpage
             coolDis += "<tr>";
             coolDis += "<th class=product-thumbnail>product</th>";
             coolDis += "<th class=product-price>price</th>";
+            coolDis += "<th class=product-price>select</th>";
             coolDis += "</tr>";
             coolDis += "</thead>";
             coolDis += "<tbody>";
@@ -919,21 +1365,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 4))
                          select b).FirstOrDefault();
 
-
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool1.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool1.Product_Id + ">" + cool1.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool1.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool1.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool1 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool1.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool1.Product_Id + ">Below Budget: " + cool1.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool1.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool1.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool1r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
 
             var cool2 = (from Product b in db.Products
@@ -942,20 +1402,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 4))
                          select b).FirstOrDefault();
 
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool2.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">" + cool2.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool2.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool2.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool2 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool2.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">On Budget: " + cool2.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool2.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool2.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool2r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
             var cool3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -963,20 +1438,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
                          select b).FirstOrDefault();
 
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool3.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">" + cool3.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool3.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool3.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool3 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool3.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Above Budget: " + cool3.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool3.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool3.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool3r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
 
             coolDis += "</tbody>";
@@ -986,11 +1476,13 @@ namespace BetterTech_Webpage
 
             string gpuDis = "";
 
+
             gpuDis += "<table class=text-center>";
             gpuDis += "<thead>";
             gpuDis += "<tr>";
             gpuDis += "<th class=product-thumbnail>product</th>";
             gpuDis += "<th class=product-price>price</th>";
+            gpuDis += "<th class=product-price>select</th>";
             gpuDis += "</tr>";
             gpuDis += "</thead>";
             gpuDis += "<tbody>";
@@ -1001,21 +1493,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(gpuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(gpuBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu1.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu1.Product_Id + ">" + gpu1.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu1.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu1.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu1 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu1.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu1.Product_Id + ">Below Budget: " + gpu1.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu1.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu1.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu1r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
 
             var gpu2 = (from Product b in db.Products
@@ -1024,20 +1530,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(gpuBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(gpuBud + differential / 2))
                         select b).FirstOrDefault();
 
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu2.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">" + gpu2.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu2.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu2.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu2 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu2.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">On Budget: " + gpu2.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu2.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu2.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu2r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
             var gpu3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -1045,20 +1566,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(gpuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(gpuBud + differential))
                         select b).FirstOrDefault();
 
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu3.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">" + gpu3.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu3.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu3.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu3 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu3.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Above Budget: " + gpu3.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu3.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu3.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu3r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
 
             gpuDis += "</tbody>";
@@ -1073,6 +1609,7 @@ namespace BetterTech_Webpage
             memDis += "<tr>";
             memDis += "<th class=product-thumbnail>product</th>";
             memDis += "<th class=product-price>price</th>";
+            memDis += "<th class=product-price>select</th>";
             memDis += "</tr>";
             memDis += "</thead>";
             memDis += "<tbody>";
@@ -1083,21 +1620,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud - differential)) && b.Product_Price <= (Convert.ToDecimal(ramBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem1.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem1.Product_Id + ">" + mem1.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem1.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem1.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem1 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem1.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem1.Product_Id + ">Below Budget: " + mem1.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem1.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem1.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem1r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
 
             var mem2 = (from Product b in db.Products
@@ -1106,20 +1657,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential / 2))
                         select b).FirstOrDefault();
 
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem2.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">" + mem2.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem2.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem2.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem2 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem2.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">On Budget: " + mem2.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem2.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem2.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem2r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
             var mem3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -1127,20 +1693,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential * 2))
                         select b).FirstOrDefault();
 
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem3.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">" + mem3.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem3.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem3.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem3 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem3.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Above Budget: " + mem3.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem3.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem3.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem3r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
 
             memDis += "</tbody>";
@@ -1155,6 +1736,7 @@ namespace BetterTech_Webpage
             hardDis += "<tr>";
             hardDis += "<th class=product-thumbnail>product</th>";
             hardDis += "<th class=product-price>price</th>";
+            hardDis += "<th class=product-price>select</th>";
             hardDis += "</tr>";
             hardDis += "</thead>";
             hardDis += "<tbody>";
@@ -1165,21 +1747,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(hardBud - differential / 4))
                          select b).FirstOrDefault();
 
-
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard1.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard1.Product_Id + ">" + hard1.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard1.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard1.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard1 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard1.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard1.Product_Id + ">Below Budget: " + hard1.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard1.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard1.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard1r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
 
             var hard2 = (from Product b in db.Products
@@ -1188,20 +1784,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(hardBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential / 2))
                          select b).FirstOrDefault();
 
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard2.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">" + hard2.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard2.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard2.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard2 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard2.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">On Budget: " + hard2.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard2.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard2.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard2r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
             var hard3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -1209,20 +1820,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(hardBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential))
                          select b).FirstOrDefault();
 
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard3.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">" + hard3.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard3.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard3.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard3 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard3.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Above Budget: " + hard3.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard3.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard3.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard3r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
 
             hardDis += "</tbody>";
@@ -1237,6 +1863,7 @@ namespace BetterTech_Webpage
             psuDis += "<tr>";
             psuDis += "<th class=product-thumbnail>product</th>";
             psuDis += "<th class=product-price>price</th>";
+            psuDis += "<th class=product-price>select</th>";
             psuDis += "</tr>";
             psuDis += "</thead>";
             psuDis += "<tbody>";
@@ -1247,21 +1874,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(1800))
                         select b).FirstOrDefault();
 
-
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu1.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu1.Product_Id + ">" + psu1.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu1.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu1.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu1 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu1.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu1.Product_Id + ">Below Budget: " + psu1.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu1.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu1.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu1r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
 
             var psu2 = (from Product b in db.Products
@@ -1270,20 +1911,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(1800)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential / 2))
                         select b).FirstOrDefault();
 
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu2.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">" + psu2.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu2.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu2.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu2 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu2.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">On Budget: " + psu2.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu2.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu2.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu2r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
             var psu3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -1291,20 +1947,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(psuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential))
                         select b).FirstOrDefault();
 
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu3.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">" + psu3.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu3.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu3.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu3 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu3.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Above Budget: " + psu3.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu3.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu3.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu3r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
 
             psuDis += "</tbody>";
@@ -1319,6 +1990,7 @@ namespace BetterTech_Webpage
             caseDis += "<tr>";
             caseDis += "<th class=product-thumbnail>product</th>";
             caseDis += "<th class=product-price>price</th>";
+            caseDis += "<th class=product-price>select</th>";
             caseDis += "</tr>";
             caseDis += "</thead>";
             caseDis += "<tbody>";
@@ -1329,21 +2001,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(caseBud - differential / 4))
                          select b).FirstOrDefault();
 
-
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case1.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case1.Product_Id + ">" + case1.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case1.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case1.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case1 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case1.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case1.Product_Id + ">Below Budget: " + case1.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case1.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case1.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case1r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
 
             var case2 = (from Product b in db.Products
@@ -1352,20 +2038,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(caseBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential / 2))
                          select b).FirstOrDefault();
 
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case2.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">" + case2.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case2.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case2.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case2 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case2.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">On Budget: " + case2.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case2.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case2.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case2r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
             var case3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -1373,20 +2074,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(caseBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential))
                          select b).FirstOrDefault();
 
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case3.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">" + case3.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case3.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case3.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case3 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case3.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Above Budget: " + case3.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case3.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case3.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case3r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
 
             caseDis += "</tbody>";
@@ -1394,6 +2110,7 @@ namespace BetterTech_Webpage
 
             caseDiv.InnerHtml = caseDis;
         }
+    
 
         protected void general_Click(object sender, EventArgs e)
         {
@@ -1425,6 +2142,7 @@ namespace BetterTech_Webpage
             cpuDis += "<tr>";
             cpuDis += "<th class=product-thumbnail>product</th>";
             cpuDis += "<th class=product-price>price</th>";
+            cpuDis += "<th class=product-price>select</th>";
 
             cpuDis += "</tr>";
             cpuDis += "</thead>";
@@ -1436,22 +2154,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(cpuBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu1.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu1.Product_Id + ">" + cpu1.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu1.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";
-
-            cpuDis += "</tr>";
+            if (cpu1 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu1.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu1.Product_Id + ">Below Budget: " + cpu1.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu1.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r1\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
 
             var cpu2 = (from Product b in db.Products
@@ -1459,21 +2190,35 @@ namespace BetterTech_Webpage
                         where b.Product_Type.Equals("CPU")
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(cpuBud + differential / 2))
                         select b).FirstOrDefault();
-
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu2.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">" + cpu2.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu2.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
-            cpuDis += "</tr>";
+            if (cpu2 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu2.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">On Budget: " + cpu2.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu2.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r2\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
             var cpu3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -1481,21 +2226,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(cpuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(cpuBud + differential))
                         select b).FirstOrDefault();
 
-            cpuDis += "<tr>";
-            cpuDis += "<td class=\"product-thumbnail\">";
-            cpuDis += "<div class=\"pro-thumbnail-img\">";
-            cpuDis += "<img src=" + cpu3.Product_Img + " alt=>";
-            cpuDis += "</div>";
-            cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            cpuDis += "<h6 class=\"product-title-2\">";
-            cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">" + cpu3.Product_Name + "</a>";
-            cpuDis += "</h6>";
-            cpuDis += "<p>Brand: " + cpu3.Product_Brand + "</p>";
-            cpuDis += "</div>";
-            cpuDis += "</td>";
-            cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
-
-            cpuDis += "</tr>";
+            if (cpu3 != null)
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-img\">";
+                cpuDis += "<img src=" + cpu3.Product_Img + " alt=>";
+                cpuDis += "</div>";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Above Budget: " + cpu3.Product_Name + "</a>";
+                cpuDis += "</h6>";
+                cpuDis += "<p>Brand: " + cpu3.Product_Brand + "</p>";
+                cpuDis += "</div>";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r3\" runat=\"server\"/></td>";
+                cpuDis += "</tr>";
+            }
+            else
+            {
+                cpuDis += "<tr>";
+                cpuDis += "<td class=\"product-thumbnail\">";
+                cpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                cpuDis += "<h6 class=\"product-title-2\">";
+                cpuDis += "No Product Found for this Price Range";
+                cpuDis += "</td>";
+                cpuDis += "<td class=\"product-price\"></td>";
+                cpuDis += "</tr>";
+            }
 
 
             cpuDis += "</tbody>";
@@ -1511,6 +2270,7 @@ namespace BetterTech_Webpage
             moboDis += "<tr>";
             moboDis += "<th class=product-thumbnail>product</th>";
             moboDis += "<th class=product-price>price</th>";
+            moboDis += "<th class=product-price>select</th>";
             moboDis += "</tr>";
             moboDis += "</thead>";
             moboDis += "<tbody>";
@@ -1521,21 +2281,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(moboBud - differential)) && b.Product_Price <= (Convert.ToDecimal(moboBud - differential / 2))
                          select b).FirstOrDefault();
 
-
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo1.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo1.Product_Id + ">" + mobo1.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo1.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo1.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo1 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo1.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo1.Product_Id + ">Below Budget: " + mobo1.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo1.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo1.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo1r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
 
             var mobo2 = (from Product b in db.Products
@@ -1544,20 +2318,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(moboBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(moboBud + differential / 2))
                          select b).FirstOrDefault();
 
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo2.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">" + mobo2.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo2.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo2.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo2 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo2.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">On Budget: " + mobo2.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo2.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo2.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo2r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
             var mobo3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -1565,20 +2354,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(moboBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(moboBud + differential))
                          select b).FirstOrDefault();
 
-            moboDis += "<tr>";
-            moboDis += "<td class=\"product-thumbnail\">";
-            moboDis += "<div class=\"pro-thumbnail-img\">";
-            moboDis += "<img src=" + mobo3.Product_Img + " alt=>";
-            moboDis += "</div>";
-            moboDis += "<div class=\"pro-thumbnail-info text-left\">";
-            moboDis += "<h6 class=\"product-title-2\">";
-            moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">" + mobo3.Product_Name + "</a>";
-            moboDis += "</h6>";
-            moboDis += "<p>Brand: " + mobo3.Product_Brand + "</p>";
-            moboDis += "</div>";
-            moboDis += "</td>";
-            moboDis += "<td class=\"product-price\">" + mobo3.Product_Price + "</td>";
-            moboDis += "</tr>";
+            if (mobo3 != null)
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-img\">";
+                moboDis += "<img src=" + mobo3.Product_Img + " alt=>";
+                moboDis += "</div>";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Above Budget: " + mobo3.Product_Name + "</a>";
+                moboDis += "</h6>";
+                moboDis += "<p>Brand: " + mobo3.Product_Brand + "</p>";
+                moboDis += "</div>";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\">" + mobo3.Product_Price + "</td>";
+                moboDis += "<td class=\"product-price\"><input type=\"radio\" name=\"mobor\" id=\"mobo3r\" runat=\"server\"/></td>";
+                moboDis += "</tr>";
+            }
+            else
+            {
+                moboDis += "<tr>";
+                moboDis += "<td class=\"product-thumbnail\">";
+                moboDis += "<div class=\"pro-thumbnail-info text-left\">";
+                moboDis += "<h6 class=\"product-title-2\">";
+                moboDis += "No Product Found for this Price Range";
+                moboDis += "</td>";
+                moboDis += "<td class=\"product-price\"></td>";
+                moboDis += "</tr>";
+            }
 
 
             moboDis += "</tbody>";
@@ -1593,6 +2397,7 @@ namespace BetterTech_Webpage
             coolDis += "<tr>";
             coolDis += "<th class=product-thumbnail>product</th>";
             coolDis += "<th class=product-price>price</th>";
+            coolDis += "<th class=product-price>select</th>";
             coolDis += "</tr>";
             coolDis += "</thead>";
             coolDis += "<tbody>";
@@ -1603,21 +2408,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(coolBud - differential / 4))
                          select b).FirstOrDefault();
 
-
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool1.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool1.Product_Id + ">" + cool1.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool1.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool1.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool1 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool1.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool1.Product_Id + ">Below Budget: " + cool1.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool1.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool1.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool1r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
 
             var cool2 = (from Product b in db.Products
@@ -1626,20 +2445,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(coolBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential / 4))
                          select b).FirstOrDefault();
 
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool2.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">" + cool2.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool2.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool2.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool2 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool2.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">On Budget: " + cool2.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool2.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool2.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool2r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
             var cool3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -1647,20 +2481,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(coolBud + differential / 4)) && b.Product_Price <= (Convert.ToDecimal(coolBud + differential))
                          select b).FirstOrDefault();
 
-            coolDis += "<tr>";
-            coolDis += "<td class=\"product-thumbnail\">";
-            coolDis += "<div class=\"pro-thumbnail-img\">";
-            coolDis += "<img src=" + cool3.Product_Img + " alt=>";
-            coolDis += "</div>";
-            coolDis += "<div class=\"pro-thumbnail-info text-left\">";
-            coolDis += "<h6 class=\"product-title-2\">";
-            coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">" + cool3.Product_Name + "</a>";
-            coolDis += "</h6>";
-            coolDis += "<p>Brand: " + cool3.Product_Brand + "</p>";
-            coolDis += "</div>";
-            coolDis += "</td>";
-            coolDis += "<td class=\"product-price\">" + cool3.Product_Price + "</td>";
-            coolDis += "</tr>";
+            if (cool3 != null)
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-img\">";
+                coolDis += "<img src=" + cool3.Product_Img + " alt=>";
+                coolDis += "</div>";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Above Budget: " + cool3.Product_Name + "</a>";
+                coolDis += "</h6>";
+                coolDis += "<p>Brand: " + cool3.Product_Brand + "</p>";
+                coolDis += "</div>";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\">" + cool3.Product_Price + "</td>";
+                coolDis += "<td class=\"product-price\"><input type=\"radio\" name=\"coolr\" id=\"cool3r\" runat=\"server\"/></td>";
+                coolDis += "</tr>";
+            }
+            else
+            {
+                coolDis += "<tr>";
+                coolDis += "<td class=\"product-thumbnail\">";
+                coolDis += "<div class=\"pro-thumbnail-info text-left\">";
+                coolDis += "<h6 class=\"product-title-2\">";
+                coolDis += "No Product Found for this Price Range";
+                coolDis += "</td>";
+                coolDis += "<td class=\"product-price\"></td>";
+                coolDis += "</tr>";
+            }
 
 
             coolDis += "</tbody>";
@@ -1670,11 +2519,13 @@ namespace BetterTech_Webpage
 
             string gpuDis = "";
 
+
             gpuDis += "<table class=text-center>";
             gpuDis += "<thead>";
             gpuDis += "<tr>";
             gpuDis += "<th class=product-thumbnail>product</th>";
             gpuDis += "<th class=product-price>price</th>";
+            gpuDis += "<th class=product-price>select</th>";
             gpuDis += "</tr>";
             gpuDis += "</thead>";
             gpuDis += "<tbody>";
@@ -1685,21 +2536,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(gpuBud - differential)) && b.Product_Price <= (Convert.ToDecimal(gpuBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu1.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu1.Product_Id + ">" + gpu1.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu1.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu1.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu1 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu1.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu1.Product_Id + ">Below Budget: " + gpu1.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu1.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu1.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu1r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
 
             var gpu2 = (from Product b in db.Products
@@ -1708,20 +2573,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(gpuBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(gpuBud + differential / 2))
                         select b).FirstOrDefault();
 
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu2.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">" + gpu2.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu2.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu2.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu2 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu2.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">On Budget: " + gpu2.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu2.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu2.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu2r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
             var gpu3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -1729,20 +2609,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(gpuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(gpuBud + differential))
                         select b).FirstOrDefault();
 
-            gpuDis += "<tr>";
-            gpuDis += "<td class=\"product-thumbnail\">";
-            gpuDis += "<div class=\"pro-thumbnail-img\">";
-            gpuDis += "<img src=" + gpu3.Product_Img + " alt=>";
-            gpuDis += "</div>";
-            gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            gpuDis += "<h6 class=\"product-title-2\">";
-            gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">" + gpu3.Product_Name + "</a>";
-            gpuDis += "</h6>";
-            gpuDis += "<p>Brand: " + gpu3.Product_Brand + "</p>";
-            gpuDis += "</div>";
-            gpuDis += "</td>";
-            gpuDis += "<td class=\"product-price\">" + gpu3.Product_Price + "</td>";
-            gpuDis += "</tr>";
+            if (gpu3 != null)
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-img\">";
+                gpuDis += "<img src=" + gpu3.Product_Img + " alt=>";
+                gpuDis += "</div>";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Above Budget: " + gpu3.Product_Name + "</a>";
+                gpuDis += "</h6>";
+                gpuDis += "<p>Brand: " + gpu3.Product_Brand + "</p>";
+                gpuDis += "</div>";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\">" + gpu3.Product_Price + "</td>";
+                gpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"gpur\" id=\"gpu3r\" runat=\"server\"/></td>";
+                gpuDis += "</tr>";
+            }
+            else
+            {
+                gpuDis += "<tr>";
+                gpuDis += "<td class=\"product-thumbnail\">";
+                gpuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                gpuDis += "<h6 class=\"product-title-2\">";
+                gpuDis += "No Product Found for this Price Range";
+                gpuDis += "</td>";
+                gpuDis += "<td class=\"product-price\"></td>";
+                gpuDis += "</tr>";
+            }
 
 
             gpuDis += "</tbody>";
@@ -1757,6 +2652,7 @@ namespace BetterTech_Webpage
             memDis += "<tr>";
             memDis += "<th class=product-thumbnail>product</th>";
             memDis += "<th class=product-price>price</th>";
+            memDis += "<th class=product-price>select</th>";
             memDis += "</tr>";
             memDis += "</thead>";
             memDis += "<tbody>";
@@ -1767,21 +2663,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud - differential)) && b.Product_Price <= (Convert.ToDecimal(ramBud - differential / 2))
                         select b).FirstOrDefault();
 
-
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem1.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem1.Product_Id + ">" + mem1.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem1.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem1.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem1 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem1.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem1.Product_Id + ">Below Budget: " + mem1.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem1.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem1.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem1r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
 
             var mem2 = (from Product b in db.Products
@@ -1790,20 +2700,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud - differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential / 2))
                         select b).FirstOrDefault();
 
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem2.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">" + mem2.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem2.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem2.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem2 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem2.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">On Budget: " + mem2.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem2.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem2.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem2r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
             var mem3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -1811,20 +2736,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(ramBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(ramBud + differential * 2))
                         select b).FirstOrDefault();
 
-            memDis += "<tr>";
-            memDis += "<td class=\"product-thumbnail\">";
-            memDis += "<div class=\"pro-thumbnail-img\">";
-            memDis += "<img src=" + mem3.Product_Img + " alt=>";
-            memDis += "</div>";
-            memDis += "<div class=\"pro-thumbnail-info text-left\">";
-            memDis += "<h6 class=\"product-title-2\">";
-            memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">" + mem3.Product_Name + "</a>";
-            memDis += "</h6>";
-            memDis += "<p>Brand: " + mem3.Product_Brand + "</p>";
-            memDis += "</div>";
-            memDis += "</td>";
-            memDis += "<td class=\"product-price\">" + mem3.Product_Price + "</td>";
-            memDis += "</tr>";
+            if (mem3 != null)
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-img\">";
+                memDis += "<img src=" + mem3.Product_Img + " alt=>";
+                memDis += "</div>";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Above Budget: " + mem3.Product_Name + "</a>";
+                memDis += "</h6>";
+                memDis += "<p>Brand: " + mem3.Product_Brand + "</p>";
+                memDis += "</div>";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\">" + mem3.Product_Price + "</td>";
+                memDis += "<td class=\"product-price\"><input type=\"radio\" name=\"memr\" id=\"mem3r\" runat=\"server\"/></td>";
+                memDis += "</tr>";
+            }
+            else
+            {
+                memDis += "<tr>";
+                memDis += "<td class=\"product-thumbnail\">";
+                memDis += "<div class=\"pro-thumbnail-info text-left\">";
+                memDis += "<h6 class=\"product-title-2\">";
+                memDis += "No Product Found for this Price Range";
+                memDis += "</td>";
+                memDis += "<td class=\"product-price\"></td>";
+                memDis += "</tr>";
+            }
 
 
             memDis += "</tbody>";
@@ -1839,6 +2779,7 @@ namespace BetterTech_Webpage
             hardDis += "<tr>";
             hardDis += "<th class=product-thumbnail>product</th>";
             hardDis += "<th class=product-price>price</th>";
+            hardDis += "<th class=product-price>select</th>";
             hardDis += "</tr>";
             hardDis += "</thead>";
             hardDis += "<tbody>";
@@ -1849,21 +2790,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(hardBud - differential / 4))
                          select b).FirstOrDefault();
 
-
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard1.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard1.Product_Id + ">" + hard1.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard1.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard1.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard1 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard1.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard1.Product_Id + ">Below Budget: " + hard1.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard1.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard1.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard1r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
 
             var hard2 = (from Product b in db.Products
@@ -1872,20 +2827,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(hardBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential / 2))
                          select b).FirstOrDefault();
 
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard2.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">" + hard2.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard2.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard2.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard2 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard2.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">On Budget: " + hard2.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard2.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard2.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard2r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
             var hard3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -1893,20 +2863,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(hardBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(hardBud + differential))
                          select b).FirstOrDefault();
 
-            hardDis += "<tr>";
-            hardDis += "<td class=\"product-thumbnail\">";
-            hardDis += "<div class=\"pro-thumbnail-img\">";
-            hardDis += "<img src=" + hard3.Product_Img + " alt=>";
-            hardDis += "</div>";
-            hardDis += "<div class=\"pro-thumbnail-info text-left\">";
-            hardDis += "<h6 class=\"product-title-2\">";
-            hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">" + hard3.Product_Name + "</a>";
-            hardDis += "</h6>";
-            hardDis += "<p>Brand: " + hard3.Product_Brand + "</p>";
-            hardDis += "</div>";
-            hardDis += "</td>";
-            hardDis += "<td class=\"product-price\">" + hard3.Product_Price + "</td>";
-            hardDis += "</tr>";
+            if (hard3 != null)
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-img\">";
+                hardDis += "<img src=" + hard3.Product_Img + " alt=>";
+                hardDis += "</div>";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Above Budget: " + hard3.Product_Name + "</a>";
+                hardDis += "</h6>";
+                hardDis += "<p>Brand: " + hard3.Product_Brand + "</p>";
+                hardDis += "</div>";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\">" + hard3.Product_Price + "</td>";
+                hardDis += "<td class=\"product-price\"><input type=\"radio\" name=\"hardr\" id=\"hard3r\" runat=\"server\"/></td>";
+                hardDis += "</tr>";
+            }
+            else
+            {
+                hardDis += "<tr>";
+                hardDis += "<td class=\"product-thumbnail\">";
+                hardDis += "<div class=\"pro-thumbnail-info text-left\">";
+                hardDis += "<h6 class=\"product-title-2\">";
+                hardDis += "No Product Found for this Price Range";
+                hardDis += "</td>";
+                hardDis += "<td class=\"product-price\"></td>";
+                hardDis += "</tr>";
+            }
 
 
             hardDis += "</tbody>";
@@ -1921,6 +2906,7 @@ namespace BetterTech_Webpage
             psuDis += "<tr>";
             psuDis += "<th class=product-thumbnail>product</th>";
             psuDis += "<th class=product-price>price</th>";
+            psuDis += "<th class=product-price>select</th>";
             psuDis += "</tr>";
             psuDis += "</thead>";
             psuDis += "<tbody>";
@@ -1931,21 +2917,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(1800))
                         select b).FirstOrDefault();
 
-
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu1.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu1.Product_Id + ">" + psu1.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu1.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu1.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu1 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu1.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu1.Product_Id + ">Below Budget: " + psu1.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu1.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu1.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu1r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
 
             var psu2 = (from Product b in db.Products
@@ -1954,20 +2954,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(1800)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential / 2))
                         select b).FirstOrDefault();
 
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu2.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">" + psu2.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu2.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu2.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu2 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu2.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">On Budget: " + psu2.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu2.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu2.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu2r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
             var psu3 = (from Product b in db.Products
                         where b.Product_IsActive.Equals(true)
@@ -1975,20 +2990,35 @@ namespace BetterTech_Webpage
                         where b.Product_Price >= (Convert.ToDecimal(psuBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(psuBud + differential))
                         select b).FirstOrDefault();
 
-            psuDis += "<tr>";
-            psuDis += "<td class=\"product-thumbnail\">";
-            psuDis += "<div class=\"pro-thumbnail-img\">";
-            psuDis += "<img src=" + psu3.Product_Img + " alt=>";
-            psuDis += "</div>";
-            psuDis += "<div class=\"pro-thumbnail-info text-left\">";
-            psuDis += "<h6 class=\"product-title-2\">";
-            psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">" + psu3.Product_Name + "</a>";
-            psuDis += "</h6>";
-            psuDis += "<p>Brand: " + psu3.Product_Brand + "</p>";
-            psuDis += "</div>";
-            psuDis += "</td>";
-            psuDis += "<td class=\"product-price\">" + psu3.Product_Price + "</td>";
-            psuDis += "</tr>";
+            if (psu3 != null)
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-img\">";
+                psuDis += "<img src=" + psu3.Product_Img + " alt=>";
+                psuDis += "</div>";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Above Budget: " + psu3.Product_Name + "</a>";
+                psuDis += "</h6>";
+                psuDis += "<p>Brand: " + psu3.Product_Brand + "</p>";
+                psuDis += "</div>";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\">" + psu3.Product_Price + "</td>";
+                psuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"psur\" id=\"psu3r\" runat=\"server\"/></td>";
+                psuDis += "</tr>";
+            }
+            else
+            {
+                psuDis += "<tr>";
+                psuDis += "<td class=\"product-thumbnail\">";
+                psuDis += "<div class=\"pro-thumbnail-info text-left\">";
+                psuDis += "<h6 class=\"product-title-2\">";
+                psuDis += "No Product Found for this Price Range";
+                psuDis += "</td>";
+                psuDis += "<td class=\"product-price\"></td>";
+                psuDis += "</tr>";
+            }
 
 
             psuDis += "</tbody>";
@@ -2003,6 +3033,7 @@ namespace BetterTech_Webpage
             caseDis += "<tr>";
             caseDis += "<th class=product-thumbnail>product</th>";
             caseDis += "<th class=product-price>price</th>";
+            caseDis += "<th class=product-price>select</th>";
             caseDis += "</tr>";
             caseDis += "</thead>";
             caseDis += "<tbody>";
@@ -2013,21 +3044,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(0)) && b.Product_Price <= (Convert.ToDecimal(caseBud - differential / 4))
                          select b).FirstOrDefault();
 
-
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case1.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case1.Product_Id + ">" + case1.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case1.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case1.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case1 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case1.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case1.Product_Id + ">Below Budget: " + case1.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case1.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case1.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case1r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
 
             var case2 = (from Product b in db.Products
@@ -2036,20 +3081,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(caseBud - differential / 4)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential / 2))
                          select b).FirstOrDefault();
 
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case2.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">" + case2.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case2.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case2.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case2 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case2.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">On Budget: " + case2.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case2.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case2.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case2r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
             var case3 = (from Product b in db.Products
                          where b.Product_IsActive.Equals(true)
@@ -2057,20 +3117,35 @@ namespace BetterTech_Webpage
                          where b.Product_Price >= (Convert.ToDecimal(caseBud + differential / 2)) && b.Product_Price <= (Convert.ToDecimal(caseBud + differential))
                          select b).FirstOrDefault();
 
-            caseDis += "<tr>";
-            caseDis += "<td class=\"product-thumbnail\">";
-            caseDis += "<div class=\"pro-thumbnail-img\">";
-            caseDis += "<img src=" + case3.Product_Img + " alt=>";
-            caseDis += "</div>";
-            caseDis += "<div class=\"pro-thumbnail-info text-left\">";
-            caseDis += "<h6 class=\"product-title-2\">";
-            caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">" + case3.Product_Name + "</a>";
-            caseDis += "</h6>";
-            caseDis += "<p>Brand: " + case3.Product_Brand + "</p>";
-            caseDis += "</div>";
-            caseDis += "</td>";
-            caseDis += "<td class=\"product-price\">" + case3.Product_Price + "</td>";
-            caseDis += "</tr>";
+            if (case3 != null)
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-img\">";
+                caseDis += "<img src=" + case3.Product_Img + " alt=>";
+                caseDis += "</div>";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Above Budget: " + case3.Product_Name + "</a>";
+                caseDis += "</h6>";
+                caseDis += "<p>Brand: " + case3.Product_Brand + "</p>";
+                caseDis += "</div>";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\">" + case3.Product_Price + "</td>";
+                caseDis += "<td class=\"product-price\"><input type=\"radio\" name=\"caser\" id=\"case3r\" runat=\"server\"/></td>";
+                caseDis += "</tr>";
+            }
+            else
+            {
+                caseDis += "<tr>";
+                caseDis += "<td class=\"product-thumbnail\">";
+                caseDis += "<div class=\"pro-thumbnail-info text-left\">";
+                caseDis += "<h6 class=\"product-title-2\">";
+                caseDis += "No Product Found for this Price Range";
+                caseDis += "</td>";
+                caseDis += "<td class=\"product-price\"></td>";
+                caseDis += "</tr>";
+            }
 
 
             caseDis += "</tbody>";
@@ -2078,5 +3153,6 @@ namespace BetterTech_Webpage
 
             caseDiv.InnerHtml = caseDis;
         }
+    
     }
 }
