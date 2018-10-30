@@ -61,6 +61,12 @@
                                 Case
                                     </a>
                         </li>
+                        <li>
+                            <a href="#final" data-toggle="tab">
+                                <span>F</span>
+                                Finalise
+                                    </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-10 col-sm-12">
@@ -173,6 +179,13 @@
 
                                 <div runat="server" id="caseDiv" class="table-content table-responsive mb-50">
                                            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="final">
+                            <div class="shopping-cart-content">
+                                <div runat="server" id="whatevs" class="table-content table-responsive mb-50">
+                                    <asp:Button runat="server" ID="finalise" CssClass="submit-btn-1 mt-20 btn-hover-1" Text="Finalise" OnClick="finalise_Click"/>
                                 </div>
                             </div>
                         </div>

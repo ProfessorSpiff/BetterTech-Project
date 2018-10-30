@@ -407,6 +407,7 @@
     <Content Include="App_Media\Developers\Chris.jpg" />
     <Content Include="App_Media\Developers\Brij.jpg" />
     <Content Include="App_Media\Developers\Jen.jpg" />
+    <Content Include="Finalise.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="minusQuantity.aspx" />
     <Content Include="removeFromWishlist.aspx" />
@@ -523,6 +524,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataLinq.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Finalise.aspx.cs">
+      <DependentUpon>Finalise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Finalise.aspx.designer.cs">
+      <DependentUpon>Finalise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
