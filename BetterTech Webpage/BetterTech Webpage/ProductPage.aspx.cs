@@ -133,7 +133,7 @@ namespace BetterTech_Webpage
 
                 if ((HttpContext.Current.Session["AuthLevel"] != null) && (HttpContext.Current.Session["AuthLevel"].Equals("Admin"))) {
                     strBtnActnDsply += "<li>";
-                    strBtnActnDsply += "<a href='EditProductPage.aspx?ID=" + (Request.QueryString["ProductId"]) + "' title='Edit Product' tabindex='0'><i class='zmdi zmdi zmdi-edit'></i></a>";
+                    strBtnActnDsply += "<a href='EditProductPage.aspx?EdtPrdctID=" + (Request.QueryString["ProductId"]) + "' title='Edit Product' tabindex='0'><i class='zmdi zmdi zmdi-edit'></i></a>";
                     strBtnActnDsply += "</li>";
                 }
                 
