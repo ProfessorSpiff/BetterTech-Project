@@ -32,7 +32,7 @@ namespace BetterTech_Webpage
                 strDisplay += "<h1 class='slider-title-1 text-uppercase text-black-1'>" + prdct.Product_Name + "</h1>";
 
                 strDisplay += "<div class='slider-brief text-black-2'>";
-                strDisplay += "<p>"+prdct.Product_Description+"</p>";
+                strDisplay += "<p style='width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>" + prdct.Product_Description+"</p>";
                 strDisplay += "</div>";
                 strDisplay += "<a href='ProductPage.aspx?ProductId=" + prdct.Product_Id+"' class='button extra-small button-black'>";
                 strDisplay += "<span class='text-uppercase'>View Product</span>";
