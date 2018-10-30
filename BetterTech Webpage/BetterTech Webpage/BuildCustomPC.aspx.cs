@@ -85,7 +85,7 @@ namespace BetterTech_Webpage
                 cpuDis += "</div>";
                 cpuDis += "</td>";
                 cpuDis += "<td class=\"product-price\">" + cpu1.Product_Price + "</td>";
-                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r1\" runat=\"server\"/></td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r1\"/></td>";
                 cpuDis += "</tr>";
             }
             else
@@ -121,7 +121,7 @@ namespace BetterTech_Webpage
                 cpuDis += "</div>";
                 cpuDis += "</td>";
                 cpuDis += "<td class=\"product-price\">" + cpu2.Product_Price + "</td>";
-                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r2\" runat=\"server\"/></td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r2\"/></td>";
                 cpuDis += "</tr>";
             }
             else
@@ -157,7 +157,7 @@ namespace BetterTech_Webpage
                 cpuDis += "</div>";
                 cpuDis += "</td>";
                 cpuDis += "<td class=\"product-price\">" + cpu3.Product_Price + "</td>";
-                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r3\" runat=\"server\"/></td>";
+                cpuDis += "<td class=\"product-price\"><input type=\"radio\" name=\"cpur\" id=\"cpu1r3\"/></td>";
                 cpuDis += "</tr>";
             }
             else
@@ -3156,23 +3156,27 @@ namespace BetterTech_Webpage
 
         protected void finalise_Click(object sender, EventArgs e)
         {
-            var checkedButtonCpu = cpuDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String cpuID = checkedButtonCpu.ID;
+            //string checkedButtonCpu = cpuDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).ID;
+            var checkedButtonCpu = cpuDiv.Controls
+                             .OfType<RadioButton>()
+                             .FirstOrDefault(r => r.GroupName == "cpur" && r.Checked);
+            string cpuId = checkedButtonCpu.ID;
+            check111.InnerHtml = "<p>" + cpuId + "</p>";
             var checkedButtonMobo = moboDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String moboID = checkedButtonMobo.ID;
-            var checkedButtonCool = coolDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String coolID = checkedButtonCool.ID;
-            var checkedButtonGpu = gpuDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String gpuID = checkedButtonGpu.ID;
-            var checkedButtonMem = memDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String memID = checkedButtonMem.ID;
-            var checkedButtonHard = hardDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String hardID = checkedButtonHard.ID;
-            var checkedButtonPsu = psuDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String psuID = checkedButtonPsu.ID;
-            var checkedButtonCase = caseDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            String caseID = checkedButtonCase.ID;
-            Response.Redirect("Finalise.aspx?cpu=" + cpuID + "&" + "mobo=" + moboID + "&" + "cool=" + coolID + "&" + "gpu=" + gpuID + "&" + "mem=" + memID + " & " + "hard=" + hardID + "&" + "psu=" + psuID + "&" + "case=" + caseID);
+            //String moboID = checkedButtonMobo.ID;
+            //var checkedButtonCool = coolDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //String coolID = checkedButtonCool.ID;
+            //var checkedButtonGpu = gpuDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //String gpuID = checkedButtonGpu.ID;
+            //var checkedButtonMem = memDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //String memID = checkedButtonMem.ID;
+            //var checkedButtonHard = hardDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //String hardID = checkedButtonHard.ID;
+            //var checkedButtonPsu = psuDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //String psuID = checkedButtonPsu.ID;
+            //var checkedButtonCase = caseDiv.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //String caseID = checkedButtonCase.ID;
+            //Response.Redirect("Finalise.aspx?cpu=" + cpuID + "&" + "mobo=" + moboID + "&" + "cool=" + coolID + "&" + "gpu=" + gpuID + "&" + "mem=" + memID + " & " + "hard=" + hardID + "&" + "psu=" + psuID + "&" + "case=" + caseID);
         }
     }
 }

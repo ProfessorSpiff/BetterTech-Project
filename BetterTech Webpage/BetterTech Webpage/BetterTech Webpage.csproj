@@ -408,6 +408,7 @@
     <Content Include="App_Media\Developers\Brij.jpg" />
     <Content Include="App_Media\Developers\Jen.jpg" />
     <Content Include="EditProductPage.aspx" />
+    <Content Include="Finalise.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="minusQuantity.aspx" />
     <Content Include="removeFromWishlist.aspx" />
@@ -531,6 +532,13 @@
     </Compile>
     <Compile Include="EditProductPage.aspx.designer.cs">
       <DependentUpon>EditProductPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Finalise.aspx.cs">
+      <DependentUpon>Finalise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Finalise.aspx.designer.cs">
+      <DependentUpon>Finalise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
