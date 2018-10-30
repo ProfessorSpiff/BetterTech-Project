@@ -193,7 +193,7 @@
 
                                                         <asp:Label ID="lblQty" Text="1" runat="server" style="text-align: center;" Width="50"></asp:Label>
                                                         
-                                                        <asp:Button ID="btnMinus" runat="server" Text="-" OnClick="btnMinus_Click" ></asp:Button>
+                                                        <asp:Button ID="btnMinus" runat="server" Text="-" OnClick="btnMinus_Click"></asp:Button>
                                                         
                                                     </div>   
                                                 </div>
