@@ -166,6 +166,7 @@ namespace BetterTech_Webpage
             display += "</tr>";
             display += "</tbody>";
             display += "</table>";
+            stuff.InnerHtml = display;
         }
 
         protected void final_Click(object sender, EventArgs e)
@@ -174,27 +175,85 @@ namespace BetterTech_Webpage
             var cpu = (from Product b in db.Products
                        where b.Product_Id.Equals(Request.QueryString["cpu"])
                        select b).FirstOrDefault();
+            Cart aa = new Cart
+            {
+                Product_Id = cpu.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(aa);
             var mobo = (from Product c in db.Products
                         where c.Product_Id.Equals(Request.QueryString["mobo"])
                         select c).FirstOrDefault();
+            Cart bb = new Cart
+            {
+                Product_Id = mobo.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(bb);
             var cool = (from Product d in db.Products
                         where d.Product_Id.Equals(Request.QueryString["cool"])
                         select d).FirstOrDefault();
+            Cart cc = new Cart
+            {
+                Product_Id = cool.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(cc);
             var gpu = (from Product f in db.Products
                        where f.Product_Id.Equals(Request.QueryString["gpu"])
                        select f).FirstOrDefault();
+            Cart dd = new Cart
+            {
+                Product_Id = gpu.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(dd);
             var mem = (from Product g in db.Products
                        where g.Product_Id.Equals(Request.QueryString["mem"])
                        select g).FirstOrDefault();
+            Cart ff = new Cart
+            {
+                Product_Id = mem.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(ff);
             var hard = (from Product h in db.Products
                         where h.Product_Id.Equals(Request.QueryString["hard"])
                         select h).FirstOrDefault();
+            Cart gg = new Cart
+            {
+                Product_Id = hard.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(gg);
             var psu = (from Product i in db.Products
                        where i.Product_Id.Equals(Request.QueryString["psu"])
                        select i).FirstOrDefault();
+            Cart pp = new Cart
+            {
+                Product_Id = psu.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(pp);
             var casee = (from Product j in db.Products
                          where j.Product_Id.Equals(Request.QueryString["case"])
                          select j).FirstOrDefault();
+            Cart hh = new Cart
+            {
+                Product_Id = casee.Product_Id,
+                Quantity = 1,
+                Username = Convert.ToString(Session["Username"])
+            };
+            db.Carts.InsertOnSubmit(hh);
+            db.SubmitChanges();
+            Response.Redirect("Index.aspx");
         }
     }
 }

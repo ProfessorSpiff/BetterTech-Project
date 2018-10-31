@@ -175,6 +175,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpuDiv;
         
         /// <summary>
+        /// budgetCpu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetCpu;
+        
+        /// <summary>
         /// cpu1img control.
         /// </summary>
         /// <remarks>
@@ -211,13 +220,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpu1price;
         
         /// <summary>
-        /// cpur1 control.
+        /// cpu1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cpur1;
+        protected global::System.Web.UI.WebControls.RadioButton cpu1r;
         
         /// <summary>
         /// cpu2img control.
@@ -256,13 +265,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpu2price;
         
         /// <summary>
-        /// cpur2 control.
+        /// cpu2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cpur2;
+        protected global::System.Web.UI.WebControls.RadioButton cpu2r;
         
         /// <summary>
         /// cpu3img control.
@@ -301,13 +310,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cpu3price;
         
         /// <summary>
-        /// cpur3 control.
+        /// cpu3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton cpur3;
+        protected global::System.Web.UI.WebControls.RadioButton cpu3r;
         
         /// <summary>
         /// backCpu control.
@@ -346,6 +355,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl moboDiv;
         
         /// <summary>
+        /// budgetMobo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetMobo;
+        
+        /// <summary>
         /// mobo1img control.
         /// </summary>
         /// <remarks>
@@ -382,13 +400,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mobo1price;
         
         /// <summary>
-        /// mobor1 control.
+        /// mobo1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton mobor1;
+        protected global::System.Web.UI.WebControls.RadioButton mobo1r;
         
         /// <summary>
         /// mobo2img control.
@@ -427,13 +445,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mobo2price;
         
         /// <summary>
-        /// mobor2 control.
+        /// mobo2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton mobor2;
+        protected global::System.Web.UI.WebControls.RadioButton mobo2r;
         
         /// <summary>
         /// mobo3img control.
@@ -472,13 +490,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mobo3price;
         
         /// <summary>
-        /// mobor3 control.
+        /// mobo3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton mobor3;
+        protected global::System.Web.UI.WebControls.RadioButton mobo3r;
         
         /// <summary>
         /// backMobo control.
@@ -517,6 +535,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl coolDiv;
         
         /// <summary>
+        /// budgetCool control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetCool;
+        
+        /// <summary>
         /// cool1img control.
         /// </summary>
         /// <remarks>
@@ -553,13 +580,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cool1price;
         
         /// <summary>
-        /// coolr1 control.
+        /// cool1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton coolr1;
+        protected global::System.Web.UI.WebControls.RadioButton cool1r;
         
         /// <summary>
         /// cool2img control.
@@ -598,13 +625,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cool2price;
         
         /// <summary>
-        /// coolr2 control.
+        /// cool2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton coolr2;
+        protected global::System.Web.UI.WebControls.RadioButton cool2r;
         
         /// <summary>
         /// cool3img control.
@@ -643,13 +670,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cool3price;
         
         /// <summary>
-        /// coolr3 control.
+        /// cool3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton coolr3;
+        protected global::System.Web.UI.WebControls.RadioButton cool3r;
         
         /// <summary>
         /// coolBack control.
@@ -688,6 +715,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gpuDiv;
         
         /// <summary>
+        /// budgetGpu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetGpu;
+        
+        /// <summary>
         /// gpu1img control.
         /// </summary>
         /// <remarks>
@@ -724,13 +760,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gpu1price;
         
         /// <summary>
-        /// gpur1 control.
+        /// gpu1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton gpur1;
+        protected global::System.Web.UI.WebControls.RadioButton gpu1r;
         
         /// <summary>
         /// gpu2img control.
@@ -769,13 +805,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gpu2price;
         
         /// <summary>
-        /// gpur2 control.
+        /// gpu2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton gpur2;
+        protected global::System.Web.UI.WebControls.RadioButton gpu2r;
         
         /// <summary>
         /// gpu3img control.
@@ -814,13 +850,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl gpu3price;
         
         /// <summary>
-        /// gpur3 control.
+        /// gpu3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton gpur3;
+        protected global::System.Web.UI.WebControls.RadioButton gpu3r;
         
         /// <summary>
         /// gpuBack control.
@@ -859,6 +895,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl memDiv;
         
         /// <summary>
+        /// budgetMem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetMem;
+        
+        /// <summary>
         /// mem1img control.
         /// </summary>
         /// <remarks>
@@ -895,13 +940,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mem1price;
         
         /// <summary>
-        /// memr1 control.
+        /// mem1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton memr1;
+        protected global::System.Web.UI.WebControls.RadioButton mem1r;
         
         /// <summary>
         /// mem2img control.
@@ -940,13 +985,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mem2price;
         
         /// <summary>
-        /// memr2 control.
+        /// mem2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton memr2;
+        protected global::System.Web.UI.WebControls.RadioButton mem2r;
         
         /// <summary>
         /// mem3img control.
@@ -985,13 +1030,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl mem3price;
         
         /// <summary>
-        /// memr3 control.
+        /// mem3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton memr3;
+        protected global::System.Web.UI.WebControls.RadioButton mem3r;
         
         /// <summary>
         /// memBack control.
@@ -1030,6 +1075,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hardDiv;
         
         /// <summary>
+        /// budgetHard control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetHard;
+        
+        /// <summary>
         /// hard1img control.
         /// </summary>
         /// <remarks>
@@ -1066,13 +1120,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hard1price;
         
         /// <summary>
-        /// hardr1 control.
+        /// hard1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton hardr1;
+        protected global::System.Web.UI.WebControls.RadioButton hard1r;
         
         /// <summary>
         /// hard2img control.
@@ -1111,13 +1165,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hard2price;
         
         /// <summary>
-        /// hardr2 control.
+        /// hard2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton hardr2;
+        protected global::System.Web.UI.WebControls.RadioButton hard2r;
         
         /// <summary>
         /// hard3img control.
@@ -1156,13 +1210,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl hard3price;
         
         /// <summary>
-        /// hardr3 control.
+        /// hard3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton hardr3;
+        protected global::System.Web.UI.WebControls.RadioButton hard3r;
         
         /// <summary>
         /// hardBack control.
@@ -1201,6 +1255,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl psuDiv;
         
         /// <summary>
+        /// budgetPsu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetPsu;
+        
+        /// <summary>
         /// psu1img control.
         /// </summary>
         /// <remarks>
@@ -1237,13 +1300,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl psu1price;
         
         /// <summary>
-        /// psur1 control.
+        /// psu1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton psur1;
+        protected global::System.Web.UI.WebControls.RadioButton psu1r;
         
         /// <summary>
         /// psu2img control.
@@ -1282,13 +1345,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl psu2price;
         
         /// <summary>
-        /// psur2 control.
+        /// psu2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton psur2;
+        protected global::System.Web.UI.WebControls.RadioButton psu2r;
         
         /// <summary>
         /// psu3img control.
@@ -1327,13 +1390,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl psu3price;
         
         /// <summary>
-        /// psur3 control.
+        /// psu3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton psur3;
+        protected global::System.Web.UI.WebControls.RadioButton psu3r;
         
         /// <summary>
         /// psuBack control.
@@ -1372,6 +1435,15 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl caseDiv;
         
         /// <summary>
+        /// budgetCase control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl budgetCase;
+        
+        /// <summary>
         /// case1img control.
         /// </summary>
         /// <remarks>
@@ -1408,13 +1480,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl case1price;
         
         /// <summary>
-        /// caser1 control.
+        /// case1r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton caser1;
+        protected global::System.Web.UI.WebControls.RadioButton case1r;
         
         /// <summary>
         /// case2img control.
@@ -1453,13 +1525,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl case2price;
         
         /// <summary>
-        /// caser2 control.
+        /// case2r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton caser2;
+        protected global::System.Web.UI.WebControls.RadioButton case2r;
         
         /// <summary>
         /// case3img control.
@@ -1498,13 +1570,13 @@ namespace BetterTech_Webpage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl case3price;
         
         /// <summary>
-        /// caser3 control.
+        /// case3r control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton caser3;
+        protected global::System.Web.UI.WebControls.RadioButton case3r;
         
         /// <summary>
         /// caseBack control.
@@ -1541,15 +1613,6 @@ namespace BetterTech_Webpage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl whatevs;
-        
-        /// <summary>
-        /// check111 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl check111;
         
         /// <summary>
         /// finalise control.
