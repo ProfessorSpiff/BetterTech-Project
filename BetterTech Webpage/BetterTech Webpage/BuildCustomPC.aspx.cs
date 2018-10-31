@@ -127,7 +127,7 @@ namespace BetterTech_Webpage
                 cpu2img.InnerHtml = "<img src=" + cpu2.Product_Img + " alt=>";
 
                 cpuDis += "<h6 class=\"product-title-2\">";
-                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">Below Budget: " + cpu2.Product_Name + "</a>";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">On Budget: " + cpu2.Product_Name + "</a>";
                 cpuDis += "</h6>";
                 cpu2name.InnerHtml = cpuDis;
 
@@ -156,7 +156,7 @@ namespace BetterTech_Webpage
                 cpu3img.InnerHtml = "<img src=" + cpu3.Product_Img + " alt=>";
 
                 cpuDis += "<h6 class=\"product-title-2\">";
-                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Below Budget: " + cpu3.Product_Name + "</a>";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Above Budget: " + cpu3.Product_Name + "</a>";
                 cpuDis += "</h6>";
                 cpu3name.InnerHtml = cpuDis;
 
@@ -221,7 +221,7 @@ namespace BetterTech_Webpage
                 mobo2img.InnerHtml = "<img src=" + mobo2.Product_Img + " alt=>";
 
                 moboDis += "<h6 class=\"product-title-2\">";
-                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">Below Budget: " + mobo2.Product_Name + "</a>";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">On Budget: " + mobo2.Product_Name + "</a>";
                 moboDis += "</h6>";
                 mobo2name.InnerHtml = moboDis;
 
@@ -250,7 +250,7 @@ namespace BetterTech_Webpage
                 mobo3img.InnerHtml = "<img src=" + mobo3.Product_Img + " alt=>";
 
                 moboDis += "<h6 class=\"product-title-2\">";
-                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Below Budget: " + mobo3.Product_Name + "</a>";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Above Budget: " + mobo3.Product_Name + "</a>";
                 moboDis += "</h6>";
                 mobo3name.InnerHtml = moboDis;
 
@@ -309,7 +309,7 @@ namespace BetterTech_Webpage
                 cool2img.InnerHtml = "<img src=" + cool2.Product_Img + " alt=>";
 
                 coolDis += "<h6 class=\"product-title-2\">";
-                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">Below Budget: " + cool2.Product_Name + "</a>";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">On Budget: " + cool2.Product_Name + "</a>";
                 coolDis += "</h6>";
                 cool2name.InnerHtml = coolDis;
 
@@ -338,7 +338,7 @@ namespace BetterTech_Webpage
                 cool3img.InnerHtml = "<img src=" + cool3.Product_Img + " alt=>";
 
                 coolDis += "<h6 class=\"product-title-2\">";
-                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Below Budget: " + cool3.Product_Name + "</a>";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Above Budget: " + cool3.Product_Name + "</a>";
                 coolDis += "</h6>";
                 cool3name.InnerHtml = coolDis;
 
@@ -397,7 +397,7 @@ namespace BetterTech_Webpage
                 gpu2img.InnerHtml = "<img src=" + gpu2.Product_Img + " alt=>";
 
                 gpuDis += "<h6 class=\"product-title-2\">";
-                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">Below Budget: " + gpu2.Product_Name + "</a>";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">On Budget: " + gpu2.Product_Name + "</a>";
                 gpuDis += "</h6>";
                 gpu2name.InnerHtml = gpuDis;
 
@@ -426,7 +426,7 @@ namespace BetterTech_Webpage
                 gpu3img.InnerHtml = "<img src=" + gpu3.Product_Img + " alt=>";
 
                 gpuDis += "<h6 class=\"product-title-2\">";
-                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Below Budget: " + gpu3.Product_Name + "</a>";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Above Budget: " + gpu3.Product_Name + "</a>";
                 gpuDis += "</h6>";
                 gpu3name.InnerHtml = gpuDis;
 
@@ -440,7 +440,7 @@ namespace BetterTech_Webpage
                 gpuDis += "<h6 class=\"product-title-2\">";
                 gpuDis += "No Product Found for this Price Range";
                 gpuDis += "</h6>";
-                gpu1name.InnerHtml = gpuDis;
+                gpu3name.InnerHtml = gpuDis;
             }
 
             mem1 = (from Product b in db.Products
@@ -485,7 +485,7 @@ namespace BetterTech_Webpage
                 mem2img.InnerHtml = "<img src=" + mem2.Product_Img + " alt=>";
 
                 memDis += "<h6 class=\"product-title-2\">";
-                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">Below Budget: " + mem2.Product_Name + "</a>";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">On Budget: " + mem2.Product_Name + "</a>";
                 memDis += "</h6>";
                 mem2name.InnerHtml = memDis;
 
@@ -514,7 +514,7 @@ namespace BetterTech_Webpage
                 mem3img.InnerHtml = "<img src=" + mem3.Product_Img + " alt=>";
 
                 memDis += "<h6 class=\"product-title-2\">";
-                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Below Budget: " + mem3.Product_Name + "</a>";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Above Budget: " + mem3.Product_Name + "</a>";
                 memDis += "</h6>";
                 mem3name.InnerHtml = memDis;
 
@@ -573,7 +573,7 @@ namespace BetterTech_Webpage
                 hard2img.InnerHtml = "<img src=" + hard2.Product_Img + " alt=>";
 
                 hardDis += "<h6 class=\"product-title-2\">";
-                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">Below Budget: " + hard2.Product_Name + "</a>";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">On Budget: " + hard2.Product_Name + "</a>";
                 hardDis += "</h6>";
                 hard2name.InnerHtml = hardDis;
 
@@ -602,7 +602,7 @@ namespace BetterTech_Webpage
                 hard3img.InnerHtml = "<img src=" + hard3.Product_Img + " alt=>";
 
                 hardDis += "<h6 class=\"product-title-2\">";
-                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Below Budget: " + hard3.Product_Name + "</a>";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Above Budget: " + hard3.Product_Name + "</a>";
                 hardDis += "</h6>";
                 hard3name.InnerHtml = hardDis;
 
@@ -661,7 +661,7 @@ namespace BetterTech_Webpage
                 psu2img.InnerHtml = "<img src=" + psu2.Product_Img + " alt=>";
 
                 psuDis += "<h6 class=\"product-title-2\">";
-                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">Below Budget: " + psu2.Product_Name + "</a>";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">On Budget: " + psu2.Product_Name + "</a>";
                 psuDis += "</h6>";
                 psu2name.InnerHtml = psuDis;
 
@@ -690,7 +690,7 @@ namespace BetterTech_Webpage
                 psu3img.InnerHtml = "<img src=" + psu3.Product_Img + " alt=>";
 
                 psuDis += "<h6 class=\"product-title-2\">";
-                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Below Budget: " + psu3.Product_Name + "</a>";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Above Budget: " + psu3.Product_Name + "</a>";
                 psuDis += "</h6>";
                 psu3name.InnerHtml = psuDis;
 
@@ -749,7 +749,7 @@ namespace BetterTech_Webpage
                 case2img.InnerHtml = "<img src=" + case2.Product_Img + " alt=>";
 
                 caseDis += "<h6 class=\"product-title-2\">";
-                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">Below Budget: " + case2.Product_Name + "</a>";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">On Budget: " + case2.Product_Name + "</a>";
                 caseDis += "</h6>";
                 case2name.InnerHtml = caseDis;
 
@@ -778,7 +778,7 @@ namespace BetterTech_Webpage
                 case3img.InnerHtml = "<img src=" + case3.Product_Img + " alt=>";
 
                 caseDis += "<h6 class=\"product-title-2\">";
-                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Below Budget: " + case3.Product_Name + "</a>";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Above Budget: " + case3.Product_Name + "</a>";
                 caseDis += "</h6>";
                 case3name.InnerHtml = caseDis;
 
@@ -858,7 +858,7 @@ namespace BetterTech_Webpage
                 cpu2img.InnerHtml = "<img src=" + cpu2.Product_Img + " alt=>";
 
                 cpuDis += "<h6 class=\"product-title-2\">";
-                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">Below Budget: " + cpu2.Product_Name + "</a>";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">On Budget: " + cpu2.Product_Name + "</a>";
                 cpuDis += "</h6>";
                 cpu2name.InnerHtml = cpuDis;
 
@@ -887,7 +887,7 @@ namespace BetterTech_Webpage
                 cpu3img.InnerHtml = "<img src=" + cpu3.Product_Img + " alt=>";
 
                 cpuDis += "<h6 class=\"product-title-2\">";
-                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Below Budget: " + cpu3.Product_Name + "</a>";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Above Budget: " + cpu3.Product_Name + "</a>";
                 cpuDis += "</h6>";
                 cpu3name.InnerHtml = cpuDis;
 
@@ -952,7 +952,7 @@ namespace BetterTech_Webpage
                 mobo2img.InnerHtml = "<img src=" + mobo2.Product_Img + " alt=>";
 
                 moboDis += "<h6 class=\"product-title-2\">";
-                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">Below Budget: " + mobo2.Product_Name + "</a>";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">On Budget: " + mobo2.Product_Name + "</a>";
                 moboDis += "</h6>";
                 mobo2name.InnerHtml = moboDis;
 
@@ -981,7 +981,7 @@ namespace BetterTech_Webpage
                 mobo3img.InnerHtml = "<img src=" + mobo3.Product_Img + " alt=>";
 
                 moboDis += "<h6 class=\"product-title-2\">";
-                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Below Budget: " + mobo3.Product_Name + "</a>";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Above Budget: " + mobo3.Product_Name + "</a>";
                 moboDis += "</h6>";
                 mobo3name.InnerHtml = moboDis;
 
@@ -1040,7 +1040,7 @@ namespace BetterTech_Webpage
                 cool2img.InnerHtml = "<img src=" + cool2.Product_Img + " alt=>";
 
                 coolDis += "<h6 class=\"product-title-2\">";
-                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">Below Budget: " + cool2.Product_Name + "</a>";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">On Budget: " + cool2.Product_Name + "</a>";
                 coolDis += "</h6>";
                 cool2name.InnerHtml = coolDis;
 
@@ -1069,7 +1069,7 @@ namespace BetterTech_Webpage
                 cool3img.InnerHtml = "<img src=" + cool3.Product_Img + " alt=>";
 
                 coolDis += "<h6 class=\"product-title-2\">";
-                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Below Budget: " + cool3.Product_Name + "</a>";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Above Budget: " + cool3.Product_Name + "</a>";
                 coolDis += "</h6>";
                 cool3name.InnerHtml = coolDis;
 
@@ -1128,7 +1128,7 @@ namespace BetterTech_Webpage
                 gpu2img.InnerHtml = "<img src=" + gpu2.Product_Img + " alt=>";
 
                 gpuDis += "<h6 class=\"product-title-2\">";
-                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">Below Budget: " + gpu2.Product_Name + "</a>";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">On Budget: " + gpu2.Product_Name + "</a>";
                 gpuDis += "</h6>";
                 gpu2name.InnerHtml = gpuDis;
 
@@ -1157,7 +1157,7 @@ namespace BetterTech_Webpage
                 gpu3img.InnerHtml = "<img src=" + gpu3.Product_Img + " alt=>";
 
                 gpuDis += "<h6 class=\"product-title-2\">";
-                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Below Budget: " + gpu3.Product_Name + "</a>";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Above Budget: " + gpu3.Product_Name + "</a>";
                 gpuDis += "</h6>";
                 gpu3name.InnerHtml = gpuDis;
 
@@ -1216,7 +1216,7 @@ namespace BetterTech_Webpage
                 mem2img.InnerHtml = "<img src=" + mem2.Product_Img + " alt=>";
 
                 memDis += "<h6 class=\"product-title-2\">";
-                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">Below Budget: " + mem2.Product_Name + "</a>";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">On Budget: " + mem2.Product_Name + "</a>";
                 memDis += "</h6>";
                 mem2name.InnerHtml = memDis;
 
@@ -1245,7 +1245,7 @@ namespace BetterTech_Webpage
                 mem3img.InnerHtml = "<img src=" + mem3.Product_Img + " alt=>";
 
                 memDis += "<h6 class=\"product-title-2\">";
-                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Below Budget: " + mem3.Product_Name + "</a>";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Above Budget: " + mem3.Product_Name + "</a>";
                 memDis += "</h6>";
                 mem3name.InnerHtml = memDis;
 
@@ -1304,7 +1304,7 @@ namespace BetterTech_Webpage
                 hard2img.InnerHtml = "<img src=" + hard2.Product_Img + " alt=>";
 
                 hardDis += "<h6 class=\"product-title-2\">";
-                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">Below Budget: " + hard2.Product_Name + "</a>";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">On Budget: " + hard2.Product_Name + "</a>";
                 hardDis += "</h6>";
                 hard2name.InnerHtml = hardDis;
 
@@ -1333,7 +1333,7 @@ namespace BetterTech_Webpage
                 hard3img.InnerHtml = "<img src=" + hard3.Product_Img + " alt=>";
 
                 hardDis += "<h6 class=\"product-title-2\">";
-                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Below Budget: " + hard3.Product_Name + "</a>";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Above Budget: " + hard3.Product_Name + "</a>";
                 hardDis += "</h6>";
                 hard3name.InnerHtml = hardDis;
 
@@ -1392,7 +1392,7 @@ namespace BetterTech_Webpage
                 psu2img.InnerHtml = "<img src=" + psu2.Product_Img + " alt=>";
 
                 psuDis += "<h6 class=\"product-title-2\">";
-                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">Below Budget: " + psu2.Product_Name + "</a>";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">On Budget: " + psu2.Product_Name + "</a>";
                 psuDis += "</h6>";
                 psu2name.InnerHtml = psuDis;
 
@@ -1421,7 +1421,7 @@ namespace BetterTech_Webpage
                 psu3img.InnerHtml = "<img src=" + psu3.Product_Img + " alt=>";
 
                 psuDis += "<h6 class=\"product-title-2\">";
-                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Below Budget: " + psu3.Product_Name + "</a>";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Above Budget: " + psu3.Product_Name + "</a>";
                 psuDis += "</h6>";
                 psu3name.InnerHtml = psuDis;
 
@@ -1480,7 +1480,7 @@ namespace BetterTech_Webpage
                 case2img.InnerHtml = "<img src=" + case2.Product_Img + " alt=>";
 
                 caseDis += "<h6 class=\"product-title-2\">";
-                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">Below Budget: " + case2.Product_Name + "</a>";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">On Budget: " + case2.Product_Name + "</a>";
                 caseDis += "</h6>";
                 case2name.InnerHtml = caseDis;
 
@@ -1509,7 +1509,7 @@ namespace BetterTech_Webpage
                 case3img.InnerHtml = "<img src=" + case3.Product_Img + " alt=>";
 
                 caseDis += "<h6 class=\"product-title-2\">";
-                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Below Budget: " + case3.Product_Name + "</a>";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Above Budget: " + case3.Product_Name + "</a>";
                 caseDis += "</h6>";
                 case3name.InnerHtml = caseDis;
 
@@ -1591,7 +1591,7 @@ namespace BetterTech_Webpage
                 cpu2img.InnerHtml = "<img src=" + cpu2.Product_Img + " alt=>";
 
                 cpuDis += "<h6 class=\"product-title-2\">";
-                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">Below Budget: " + cpu2.Product_Name + "</a>";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu2.Product_Id + ">On Budget: " + cpu2.Product_Name + "</a>";
                 cpuDis += "</h6>";
                 cpu2name.InnerHtml = cpuDis;
 
@@ -1620,7 +1620,7 @@ namespace BetterTech_Webpage
                 cpu3img.InnerHtml = "<img src=" + cpu3.Product_Img + " alt=>";
 
                 cpuDis += "<h6 class=\"product-title-2\">";
-                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Below Budget: " + cpu3.Product_Name + "</a>";
+                cpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cpu3.Product_Id + ">Above Budget: " + cpu3.Product_Name + "</a>";
                 cpuDis += "</h6>";
                 cpu3name.InnerHtml = cpuDis;
 
@@ -1685,7 +1685,7 @@ namespace BetterTech_Webpage
                 mobo2img.InnerHtml = "<img src=" + mobo2.Product_Img + " alt=>";
 
                 moboDis += "<h6 class=\"product-title-2\">";
-                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">Below Budget: " + mobo2.Product_Name + "</a>";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo2.Product_Id + ">On Budget: " + mobo2.Product_Name + "</a>";
                 moboDis += "</h6>";
                 mobo2name.InnerHtml = moboDis;
 
@@ -1714,7 +1714,7 @@ namespace BetterTech_Webpage
                 mobo3img.InnerHtml = "<img src=" + mobo3.Product_Img + " alt=>";
 
                 moboDis += "<h6 class=\"product-title-2\">";
-                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Below Budget: " + mobo3.Product_Name + "</a>";
+                moboDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mobo3.Product_Id + ">Above Budget: " + mobo3.Product_Name + "</a>";
                 moboDis += "</h6>";
                 mobo3name.InnerHtml = moboDis;
 
@@ -1773,7 +1773,7 @@ namespace BetterTech_Webpage
                 cool2img.InnerHtml = "<img src=" + cool2.Product_Img + " alt=>";
 
                 coolDis += "<h6 class=\"product-title-2\">";
-                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">Below Budget: " + cool2.Product_Name + "</a>";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool2.Product_Id + ">On Budget: " + cool2.Product_Name + "</a>";
                 coolDis += "</h6>";
                 cool2name.InnerHtml = coolDis;
 
@@ -1802,7 +1802,7 @@ namespace BetterTech_Webpage
                 cool3img.InnerHtml = "<img src=" + cool3.Product_Img + " alt=>";
 
                 coolDis += "<h6 class=\"product-title-2\">";
-                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Below Budget: " + cool3.Product_Name + "</a>";
+                coolDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + cool3.Product_Id + ">Above Budget: " + cool3.Product_Name + "</a>";
                 coolDis += "</h6>";
                 cool3name.InnerHtml = coolDis;
 
@@ -1861,7 +1861,7 @@ namespace BetterTech_Webpage
                 gpu2img.InnerHtml = "<img src=" + gpu2.Product_Img + " alt=>";
 
                 gpuDis += "<h6 class=\"product-title-2\">";
-                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">Below Budget: " + gpu2.Product_Name + "</a>";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu2.Product_Id + ">On Budget: " + gpu2.Product_Name + "</a>";
                 gpuDis += "</h6>";
                 gpu2name.InnerHtml = gpuDis;
 
@@ -1890,7 +1890,7 @@ namespace BetterTech_Webpage
                 gpu3img.InnerHtml = "<img src=" + gpu3.Product_Img + " alt=>";
 
                 gpuDis += "<h6 class=\"product-title-2\">";
-                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Below Budget: " + gpu3.Product_Name + "</a>";
+                gpuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + gpu3.Product_Id + ">Above Budget: " + gpu3.Product_Name + "</a>";
                 gpuDis += "</h6>";
                 gpu3name.InnerHtml = gpuDis;
 
@@ -1949,7 +1949,7 @@ namespace BetterTech_Webpage
                 mem2img.InnerHtml = "<img src=" + mem2.Product_Img + " alt=>";
 
                 memDis += "<h6 class=\"product-title-2\">";
-                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">Below Budget: " + mem2.Product_Name + "</a>";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem2.Product_Id + ">On Budget: " + mem2.Product_Name + "</a>";
                 memDis += "</h6>";
                 mem2name.InnerHtml = memDis;
 
@@ -1978,7 +1978,7 @@ namespace BetterTech_Webpage
                 mem3img.InnerHtml = "<img src=" + mem3.Product_Img + " alt=>";
 
                 memDis += "<h6 class=\"product-title-2\">";
-                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Below Budget: " + mem3.Product_Name + "</a>";
+                memDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + mem3.Product_Id + ">Above Budget: " + mem3.Product_Name + "</a>";
                 memDis += "</h6>";
                 mem3name.InnerHtml = memDis;
 
@@ -2037,7 +2037,7 @@ namespace BetterTech_Webpage
                 hard2img.InnerHtml = "<img src=" + hard2.Product_Img + " alt=>";
 
                 hardDis += "<h6 class=\"product-title-2\">";
-                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">Below Budget: " + hard2.Product_Name + "</a>";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard2.Product_Id + ">On Budget: " + hard2.Product_Name + "</a>";
                 hardDis += "</h6>";
                 hard2name.InnerHtml = hardDis;
 
@@ -2066,7 +2066,7 @@ namespace BetterTech_Webpage
                 hard3img.InnerHtml = "<img src=" + hard3.Product_Img + " alt=>";
 
                 hardDis += "<h6 class=\"product-title-2\">";
-                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Below Budget: " + hard3.Product_Name + "</a>";
+                hardDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + hard3.Product_Id + ">Above Budget: " + hard3.Product_Name + "</a>";
                 hardDis += "</h6>";
                 hard3name.InnerHtml = hardDis;
 
@@ -2125,7 +2125,7 @@ namespace BetterTech_Webpage
                 psu2img.InnerHtml = "<img src=" + psu2.Product_Img + " alt=>";
 
                 psuDis += "<h6 class=\"product-title-2\">";
-                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">Below Budget: " + psu2.Product_Name + "</a>";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu2.Product_Id + ">On Budget: " + psu2.Product_Name + "</a>";
                 psuDis += "</h6>";
                 psu2name.InnerHtml = psuDis;
 
@@ -2154,7 +2154,7 @@ namespace BetterTech_Webpage
                 psu3img.InnerHtml = "<img src=" + psu3.Product_Img + " alt=>";
 
                 psuDis += "<h6 class=\"product-title-2\">";
-                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Below Budget: " + psu3.Product_Name + "</a>";
+                psuDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + psu3.Product_Id + ">Above Budget: " + psu3.Product_Name + "</a>";
                 psuDis += "</h6>";
                 psu3name.InnerHtml = psuDis;
 
@@ -2213,7 +2213,7 @@ namespace BetterTech_Webpage
                 case2img.InnerHtml = "<img src=" + case2.Product_Img + " alt=>";
 
                 caseDis += "<h6 class=\"product-title-2\">";
-                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">Below Budget: " + case2.Product_Name + "</a>";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case2.Product_Id + ">On Budget: " + case2.Product_Name + "</a>";
                 caseDis += "</h6>";
                 case2name.InnerHtml = caseDis;
 
@@ -2242,7 +2242,7 @@ namespace BetterTech_Webpage
                 case3img.InnerHtml = "<img src=" + case3.Product_Img + " alt=>";
 
                 caseDis += "<h6 class=\"product-title-2\">";
-                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Below Budget: " + case3.Product_Name + "</a>";
+                caseDis += "<a target=\"_blank\" rel=\"noopener noreferrer\" href=ProductPage.aspx?ProductId=" + case3.Product_Id + ">Above Budget: " + case3.Product_Name + "</a>";
                 caseDis += "</h6>";
                 case3name.InnerHtml = caseDis;
 
@@ -2430,7 +2430,13 @@ namespace BetterTech_Webpage
             int cpuId1 = cpu1.Product_Id;
             budA = budA - Convert.ToInt32(cpu1.Product_Price);
             budgetCpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
-            
+            cpu.Attributes.Remove("class");
+            cpu.Attributes.Add("class", "tab-pane");
+            moboBut.Attributes.Add("class", "active");
+            motherboard.Attributes.Remove("class");
+            motherboard.Attributes.Add("class", "tab-pane active");
+            budgetMobo.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+
         }
 
         protected void cpu2r_CheckedChanged(object sender, EventArgs e)
@@ -2438,6 +2444,12 @@ namespace BetterTech_Webpage
             cpuId = cpu2.Product_Id;
             budA = budA - Convert.ToInt32(cpu2.Product_Price);
             budgetCpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cpu.Attributes.Remove("class");
+            cpu.Attributes.Add("class", "tab-pane");
+            moboBut.Attributes.Add("class", "active");
+            motherboard.Attributes.Remove("class");
+            motherboard.Attributes.Add("class", "tab-pane active");
+            budgetMobo.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void cpu3r_CheckedChanged(object sender, EventArgs e)
@@ -2445,6 +2457,12 @@ namespace BetterTech_Webpage
             cpuId = cpu3.Product_Id;
             budA = budA - Convert.ToInt32(cpu3.Product_Price);
             budgetCpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cpu.Attributes.Remove("class");
+            cpu.Attributes.Add("class", "tab-pane");
+            moboBut.Attributes.Add("class", "active");
+            motherboard.Attributes.Remove("class");
+            motherboard.Attributes.Add("class", "tab-pane active");
+            budgetMobo.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void mobo1r_CheckedChanged(object sender, EventArgs e)
@@ -2452,6 +2470,12 @@ namespace BetterTech_Webpage
             moboId = mobo1.Product_Id;
             budA = budA - Convert.ToInt32(mobo1.Product_Price);
             budgetMobo.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            motherboard.Attributes.Remove("class");
+            motherboard.Attributes.Add("class", "tab-pane");
+            coolBut.Attributes.Add("class", "active");
+            cooling.Attributes.Remove("class");
+            cooling.Attributes.Add("class", "tab-pane active");
+            budgetCool.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void mobo2r_CheckedChanged(object sender, EventArgs e)
@@ -2459,6 +2483,12 @@ namespace BetterTech_Webpage
             moboId = mobo2.Product_Id;
             budA = budA - Convert.ToInt32(mobo2.Product_Price);
             budgetMobo.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            motherboard.Attributes.Remove("class");
+            motherboard.Attributes.Add("class", "tab-pane");
+            coolBut.Attributes.Add("class", "active");
+            cooling.Attributes.Remove("class");
+            cooling.Attributes.Add("class", "tab-pane active");
+            budgetCool.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void mobo3r_CheckedChanged(object sender, EventArgs e)
@@ -2466,6 +2496,12 @@ namespace BetterTech_Webpage
             moboId = mobo3.Product_Id;
             budA = budA - Convert.ToInt32(mobo3.Product_Price);
             budgetMobo.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            motherboard.Attributes.Remove("class");
+            motherboard.Attributes.Add("class", "tab-pane");
+            coolBut.Attributes.Add("class", "active");
+            cooling.Attributes.Remove("class");
+            cooling.Attributes.Add("class", "tab-pane active");
+            budgetCool.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void cool1r_CheckedChanged(object sender, EventArgs e)
@@ -2473,6 +2509,12 @@ namespace BetterTech_Webpage
             coolId = cool1.Product_Id;
             budA = budA - Convert.ToInt32(cool1.Product_Price);
             budgetCool.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cooling.Attributes.Remove("class");
+            cooling.Attributes.Add("class", "tab-pane");
+            gpuBut.Attributes.Add("class", "active");
+            graphics.Attributes.Remove("class");
+            graphics.Attributes.Add("class", "tab-pane active");
+            budgetGpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void cool2r_CheckedChanged(object sender, EventArgs e)
@@ -2480,6 +2522,12 @@ namespace BetterTech_Webpage
             coolId = cool2.Product_Id;
             budA = budA - Convert.ToInt32(cool2.Product_Price);
             budgetCool.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cooling.Attributes.Remove("class");
+            cooling.Attributes.Add("class", "tab-pane");
+            gpuBut.Attributes.Add("class", "active");
+            graphics.Attributes.Remove("class");
+            graphics.Attributes.Add("class", "tab-pane active");
+            budgetGpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void cool3r_CheckedChanged(object sender, EventArgs e)
@@ -2487,6 +2535,12 @@ namespace BetterTech_Webpage
             coolId = cool3.Product_Id;
             budA = budA - Convert.ToInt32(cool3.Product_Price);
             budgetCool.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cooling.Attributes.Remove("class");
+            cooling.Attributes.Add("class", "tab-pane");
+            gpuBut.Attributes.Add("class", "active");
+            graphics.Attributes.Remove("class");
+            graphics.Attributes.Add("class", "tab-pane active");
+            budgetGpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void gpu1r_CheckedChanged(object sender, EventArgs e)
@@ -2494,6 +2548,12 @@ namespace BetterTech_Webpage
             gpuId = gpu1.Product_Id;
             budA = budA - Convert.ToInt32(gpu1.Product_Price);
             budgetGpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            graphics.Attributes.Remove("class");
+            graphics.Attributes.Add("class", "tab-pane");
+            memBut.Attributes.Add("class", "active");
+            memory.Attributes.Remove("class");
+            memory.Attributes.Add("class", "tab-pane active");
+            budgetMem.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void gpu2r_CheckedChanged(object sender, EventArgs e)
@@ -2501,6 +2561,12 @@ namespace BetterTech_Webpage
             gpuId = gpu2.Product_Id;
             budA = budA - Convert.ToInt32(gpu2.Product_Price);
             budgetGpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            graphics.Attributes.Remove("class");
+            graphics.Attributes.Add("class", "tab-pane");
+            memBut.Attributes.Add("class", "active");
+            memory.Attributes.Remove("class");
+            memory.Attributes.Add("class", "tab-pane active");
+            budgetMem.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void gpu3r_CheckedChanged(object sender, EventArgs e)
@@ -2508,6 +2574,12 @@ namespace BetterTech_Webpage
             gpuId = gpu3.Product_Id;
             budA = budA - Convert.ToInt32(gpu3.Product_Price);
             budgetGpu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            graphics.Attributes.Remove("class");
+            graphics.Attributes.Add("class", "tab-pane");
+            memBut.Attributes.Add("class", "active");
+            memory.Attributes.Remove("class");
+            memory.Attributes.Add("class", "tab-pane active");
+            budgetMem.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void mem1r_CheckedChanged(object sender, EventArgs e)
@@ -2515,6 +2587,12 @@ namespace BetterTech_Webpage
             memId = mem1.Product_Id;
             budA = budA - Convert.ToInt32(mem1.Product_Price);
             budgetMem.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            memory.Attributes.Remove("class");
+            memory.Attributes.Add("class", "tab-pane");
+            hardBut.Attributes.Add("class", "active");
+            harddrives.Attributes.Remove("class");
+            harddrives.Attributes.Add("class", "tab-pane active");
+            budgetHard.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void mem2r_CheckedChanged(object sender, EventArgs e)
@@ -2522,6 +2600,12 @@ namespace BetterTech_Webpage
             memId = mem2.Product_Id;
             budA = budA - Convert.ToInt32(mem2.Product_Price);
             budgetMem.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            memory.Attributes.Remove("class");
+            memory.Attributes.Add("class", "tab-pane");
+            hardBut.Attributes.Add("class", "active");
+            harddrives.Attributes.Remove("class");
+            harddrives.Attributes.Add("class", "tab-pane active");
+            budgetHard.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void mem3r_CheckedChanged(object sender, EventArgs e)
@@ -2529,6 +2613,12 @@ namespace BetterTech_Webpage
             memId = mem3.Product_Id;
             budA = budA - Convert.ToInt32(mem3.Product_Price);
             budgetMem.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            memory.Attributes.Remove("class");
+            memory.Attributes.Add("class", "tab-pane");
+            hardBut.Attributes.Add("class", "active");
+            harddrives.Attributes.Remove("class");
+            harddrives.Attributes.Add("class", "tab-pane active");
+            budgetHard.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void hard1r_CheckedChanged(object sender, EventArgs e)
@@ -2536,6 +2626,12 @@ namespace BetterTech_Webpage
             hardId = hard1.Product_Id;
             budA = budA - Convert.ToInt32(hard1.Product_Price);
             budgetHard.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            harddrives.Attributes.Remove("class");
+            harddrives.Attributes.Add("class", "tab-pane");
+            psuBut.Attributes.Add("class", "active");
+            PSU.Attributes.Remove("class");
+            PSU.Attributes.Add("class", "tab-pane active");
+            budgetPsu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void hard2r_CheckedChanged(object sender, EventArgs e)
@@ -2543,6 +2639,12 @@ namespace BetterTech_Webpage
             hardId = hard2.Product_Id;
             budA = budA - Convert.ToInt32(hard2.Product_Price);
             budgetHard.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            harddrives.Attributes.Remove("class");
+            harddrives.Attributes.Add("class", "tab-pane");
+            psuBut.Attributes.Add("class", "active");
+            PSU.Attributes.Remove("class");
+            PSU.Attributes.Add("class", "tab-pane active");
+            budgetPsu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void hard3r_CheckedChanged(object sender, EventArgs e)
@@ -2550,6 +2652,12 @@ namespace BetterTech_Webpage
             hardId = hard3.Product_Id;
             budA = budA - Convert.ToInt32(hard3.Product_Price);
             budgetHard.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            harddrives.Attributes.Remove("class");
+            harddrives.Attributes.Add("class", "tab-pane");
+            psuBut.Attributes.Add("class", "active");
+            PSU.Attributes.Remove("class");
+            PSU.Attributes.Add("class", "tab-pane active");
+            budgetPsu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void psu1r_CheckedChanged(object sender, EventArgs e)
@@ -2557,6 +2665,12 @@ namespace BetterTech_Webpage
             psuId = psu1.Product_Id;
             budA = budA - Convert.ToInt32(psu1.Product_Price);
             budgetPsu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            PSU.Attributes.Remove("class");
+            PSU.Attributes.Add("class", "tab-pane");
+            caseBut.Attributes.Add("class", "active");
+            cases.Attributes.Remove("class");
+            cases.Attributes.Add("class", "tab-pane active");
+            budgetCase.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void psu2r_CheckedChanged(object sender, EventArgs e)
@@ -2564,6 +2678,12 @@ namespace BetterTech_Webpage
             psuId = psu2.Product_Id;
             budA = budA - Convert.ToInt32(psu2.Product_Price);
             budgetPsu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            PSU.Attributes.Remove("class");
+            PSU.Attributes.Add("class", "tab-pane");
+            caseBut.Attributes.Add("class", "active");
+            cases.Attributes.Remove("class");
+            cases.Attributes.Add("class", "tab-pane active");
+            budgetCase.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void psu3r_CheckedChanged(object sender, EventArgs e)
@@ -2571,6 +2691,12 @@ namespace BetterTech_Webpage
             psuId = psu3.Product_Id;
             budA = budA - Convert.ToInt32(psu3.Product_Price);
             budgetPsu.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            PSU.Attributes.Remove("class");
+            PSU.Attributes.Add("class", "tab-pane");
+            caseBut.Attributes.Add("class", "active");
+            cases.Attributes.Remove("class");
+            cases.Attributes.Add("class", "tab-pane active");
+            budgetCase.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
         }
 
         protected void case1r_CheckedChanged(object sender, EventArgs e)
@@ -2578,6 +2704,11 @@ namespace BetterTech_Webpage
             caseId = case1.Product_Id;
             budA = budA - Convert.ToInt32(case1.Product_Price);
             budgetCase.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cases.Attributes.Remove("class");
+            cases.Attributes.Add("class", "tab-pane");
+            finBut.Attributes.Add("class", "active");
+            final.Attributes.Remove("class");
+            final.Attributes.Add("class", "tab-pane active");
         }
 
         protected void case2r_CheckedChanged(object sender, EventArgs e)
@@ -2585,6 +2716,11 @@ namespace BetterTech_Webpage
             caseId = case2.Product_Id;
             budA = budA - Convert.ToInt32(case2.Product_Price);
             budgetCase.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cases.Attributes.Remove("class");
+            cases.Attributes.Add("class", "tab-pane");
+            finBut.Attributes.Add("class", "active");
+            final.Attributes.Remove("class");
+            final.Attributes.Add("class", "tab-pane active");
         }
 
         protected void case3r_CheckedChanged(object sender, EventArgs e)
@@ -2592,6 +2728,11 @@ namespace BetterTech_Webpage
             caseId = case3.Product_Id;
             budA = budA - Convert.ToInt32(case3.Product_Price);
             budgetCase.InnerHtml = "<h6 class=\"product-title-2\">Budget: " + budA + "</h6>";
+            cases.Attributes.Remove("class");
+            cases.Attributes.Add("class", "tab-pane");
+            finBut.Attributes.Add("class", "active");
+            final.Attributes.Remove("class");
+            final.Attributes.Add("class", "tab-pane active");
         }
     }
 }

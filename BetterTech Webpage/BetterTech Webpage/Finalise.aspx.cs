@@ -182,6 +182,7 @@ namespace BetterTech_Webpage
                 Username = Convert.ToString(Session["Username"])
             };
             db.Carts.InsertOnSubmit(aa);
+            db.SubmitChanges();
             var mobo = (from Product c in db.Products
                         where c.Product_Id.Equals(Request.QueryString["mobo"])
                         select c).FirstOrDefault();
@@ -192,6 +193,7 @@ namespace BetterTech_Webpage
                 Username = Convert.ToString(Session["Username"])
             };
             db.Carts.InsertOnSubmit(bb);
+            db.SubmitChanges();
             var cool = (from Product d in db.Products
                         where d.Product_Id.Equals(Request.QueryString["cool"])
                         select d).FirstOrDefault();
@@ -202,6 +204,7 @@ namespace BetterTech_Webpage
                 Username = Convert.ToString(Session["Username"])
             };
             db.Carts.InsertOnSubmit(cc);
+            db.SubmitChanges();
             var gpu = (from Product f in db.Products
                        where f.Product_Id.Equals(Request.QueryString["gpu"])
                        select f).FirstOrDefault();
@@ -212,6 +215,7 @@ namespace BetterTech_Webpage
                 Username = Convert.ToString(Session["Username"])
             };
             db.Carts.InsertOnSubmit(dd);
+            db.SubmitChanges();
             var mem = (from Product g in db.Products
                        where g.Product_Id.Equals(Request.QueryString["mem"])
                        select g).FirstOrDefault();
@@ -222,6 +226,7 @@ namespace BetterTech_Webpage
                 Username = Convert.ToString(Session["Username"])
             };
             db.Carts.InsertOnSubmit(ff);
+            db.SubmitChanges();
             var hard = (from Product h in db.Products
                         where h.Product_Id.Equals(Request.QueryString["hard"])
                         select h).FirstOrDefault();
@@ -232,6 +237,7 @@ namespace BetterTech_Webpage
                 Username = Convert.ToString(Session["Username"])
             };
             db.Carts.InsertOnSubmit(gg);
+            db.SubmitChanges();
             var psu = (from Product i in db.Products
                        where i.Product_Id.Equals(Request.QueryString["psu"])
                        select i).FirstOrDefault();
@@ -242,6 +248,7 @@ namespace BetterTech_Webpage
                 Username = Convert.ToString(Session["Username"])
             };
             db.Carts.InsertOnSubmit(pp);
+            db.SubmitChanges();
             var casee = (from Product j in db.Products
                          where j.Product_Id.Equals(Request.QueryString["case"])
                          select j).FirstOrDefault();

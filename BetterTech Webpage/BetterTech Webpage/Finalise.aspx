@@ -7,8 +7,9 @@
             <div class="row">
                 <div class="col-md-2 col-sm-12">
                     <div id="stuff" runat="server"></div>
+                    <asp:Button runat="server" ID="final" CssClass="submit-btn-1 mt-20 btn-hover-1" Text="Add To Cart" OnClick="final_Click"/>
                     </div>
-                <asp:Button runat="server" ID="final" CssClass="submit-btn-1 mt-20 btn-hover-1" Text="Add To Cart" OnClick="final_Click"/>
+                
                 </div>
             </div>
         </div>
